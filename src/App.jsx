@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import Chapter1 from "./pages/chapter1";
+import Book from "./pages/book";
 
 function App() {
   const [page, setPage] = useState(true);
@@ -50,7 +50,7 @@ function App() {
           </div>
         </div>
       ) : (
-        <Chapter1 />
+        <Book />
       )}
     </>
   );
