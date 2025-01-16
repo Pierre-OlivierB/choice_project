@@ -16,3 +16,7 @@ npm install
 npm run dev
 
 ## next
+
+## histoire
+
+petit jeu d'essai pour découvrir le role play.
