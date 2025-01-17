@@ -1,0 +1,34 @@
+[
+    {
+      "salle_de_bain": "beignoire",
+      "cuisine": "couteau",
+      "numero_chapitre": "0",
+      "txt": "voluptatum illo dolore blanditiis nostrum est sunt? Nam magnam assumenda laboriosam libero ex minima dicta ut ducimus laborum.",
+      "choix1": "0",
+      "choix2": "2"
+    },
+    {
+      "numero_chapitre": "1",
+      "salle_de_bain": "cuisine",
+      "cuisine": "pierre",
+      "txt": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      "choix1": "1",
+      "choix2": "3"
+    },{
+        "salle_de_bain": "plante",
+        "cuisine": "table",
+        "numero_chapitre": "2",
+        "txt": "blanditiis nostrum est sunt? Nam magnam assumenda laboriosam libero ex minima dicta ut ducimus laborum.",
+        "choix1": "0",
+        "choix2": "1"
+      },
+      {
+        "numero_chapitre": "3",
+        "salle_de_bain": "cuisine",
+        "cuisine": "pierre",
+        "txt": " adipisicing elit.",
+        "choix1": "1",
+        "choix2": "2"
+      }
+  ]
+  
