@@ -1,11 +1,12 @@
 import React from "react";
 import { useState } from "react";
-import Chapter1 from "./chapter1/chapter1";
+import Chapter from "./chapter/chapter";
 
 function Book() {
   const [stories, setStories] = useState({
     salle_de_bain: "beignoire",
     cuisine: "couteau",
+    numero_chapitre: "0",
   });
 
   function handleClick() {
@@ -13,7 +14,11 @@ function Book() {
 
     console.log(stories);
 
-    handleChange({ salle_de_bain: "cuisine", cuisine: "pierre" });
+    handleChange({
+      numero_chapitre: "1",
+      salle_de_bain: "cuisine",
+      cuisine: "pierre",
+    });
   }
 
   function handleChange(newInfos) {
@@ -23,13 +28,13 @@ function Book() {
   }
 
   let arr = [];
-  // var stories = { salle_de_bain: "beignoire", cuisine: "couteau" };
 
   return (
     <>
-      <Chapter1
+      <Chapter
         where={stories.salle_de_bain}
         what={stories.cuisine}
+        chpt={stories.numero_chapitre}
         onChange={handleChange}
       />
       <div className="container-fluid">

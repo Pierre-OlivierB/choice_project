@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import Book from "./pages/book";
+import Book from "./contents/book";
 
 function App() {
   const [page, setPage] = useState(true);
