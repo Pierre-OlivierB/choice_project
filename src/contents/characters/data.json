@@ -1,0 +1,28 @@
+[{
+    "name": "Chris",
+    "type": "costo",
+    "constitution": "75",
+    "dexterite": "50",
+    "intelligence": "25",
+    "choix": "0"
+
+  },
+  {
+    "name": "Jamie",
+    "type": "intello",
+    "constitution": "25",
+    "dexterite": "50",
+    "intelligence": "75",
+    "choix": "1"
+
+  },
+  {
+    "name": "Sacha",
+    "type": "brio",
+    "constitution": "25",
+    "dexterite": "75",
+    "intelligence": "50",
+    "choix": "2"
+
+  }
+]

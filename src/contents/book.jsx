@@ -3,7 +3,10 @@ import { useState } from "react";
 import Chapter from "./chapter/chapter";
 import storiesData from "./chapter/stories.json";
 
-function Book() {
+function Book(props) {
+  const perso = props;
+  console.log(perso);
+
   const [choice, setChoice] = useState(0);
 
   const stories = storiesData;
