@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import Book from "./book";
+import Characters from "./characters/characters";
 
 function Home() {
   const [page, setPage] = useState(true);
@@ -48,7 +49,8 @@ function Home() {
           </div>
         </div>
       ) : (
-        <Book />
+        <Characters />
+        // <Book />
       )}
     </>
   );
