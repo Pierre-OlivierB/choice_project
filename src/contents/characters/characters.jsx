@@ -22,9 +22,12 @@ function Characters() {
         <div className="test">
           <div className="main-content container-fluid d-flex justify-content-center">
             <div className="main-content row d-flex justify-content-evenly">
-              {data.map((tmp) => {
+              {data.map((tmp, key) => {
                 return (
-                  <div className="col col-4 d-flex justify-content-md-center align-items-center">
+                  <div
+                    className="col col-4 d-flex justify-content-md-center align-items-center"
+                    key={key}
+                  >
                     <div className="card card-charac ">
                       <div className="card-body">
                         <h4 className="card-title">Nom : {tmp.name}</h4>

@@ -1,14 +1,18 @@
 import React from "react";
+import { useState } from "react";
 
-function Chapter(props) {
-  const chpt = props.chpt;
-  const txt = props.txt;
+function Events(props) {
   const perso = props.perso;
+  const story = props.choice;
+  //   console.log(perso, story);
+
+  const [dice, setDice] = useState("");
+  const [flag, setFlag] = useState(true);
 
   function handleClick() {
-    console.log("render");
+    setDice(Math.floor(Math.random() * 100));
+    setFlag(!flag);
   }
-
   return (
     <div className="test">
       <div className="main-content container-fluid d-flex flex-column justify-content-evenly">
@@ -16,7 +20,8 @@ function Chapter(props) {
           <div className="col col-6">
             <div className="row">
               <div className="col col-6">
-                <h1>chapitre {chpt}</h1>
+                <h1>Event</h1>
+                <h2>chapitre {story.numero_chapitre}</h2>
               </div>
               <div className="col col-6">
                 <div className="card card-charac">
@@ -34,12 +39,22 @@ function Chapter(props) {
         </div>
         <div className="row justify-content-md-center">
           <div className="col col-10">
-            <p>{txt}</p>
+            <p>Where : {story.salle_de_bain}</p>
+            <p>What : {story.cuisine}</p>
           </div>
+        </div>
+        <div className="container-fluid">
+          {flag ? (
+            <button className="btn btn-danger" onClick={handleClick}>
+              Dice
+            </button>
+          ) : (
+            <p>{dice}</p>
+          )}
         </div>
       </div>
     </div>
   );
 }
 
-export default Chapter;
+export default Events;
