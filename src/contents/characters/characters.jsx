@@ -4,11 +4,13 @@ import Book from "../book";
 import charactereData from "./data.json";
 
 function Characters() {
+  // get data from json of all characteres
   const data = charactereData;
-  //   console.log(data);
+  // set flag to hide charactere choice
   const [flag, setFlag] = useState(true);
+  // set var to save player charac choice
   const [perso, setPerso] = useState([]);
-
+  // get choice at player click and change page content
   function handleClick(e) {
     const persoId = e.target.childNodes[1].data;
     const charac = data[parseInt(persoId) - 1];

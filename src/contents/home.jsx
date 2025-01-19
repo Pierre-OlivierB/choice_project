@@ -1,11 +1,11 @@
 import React from "react";
 import { useState } from "react";
-import Book from "./book";
 import Characters from "./characters/characters";
 
 function Home() {
+  // show home page or other content
   const [page, setPage] = useState(true);
-
+  // toggle for content
   function handleClick() {
     setPage(false);
   }
@@ -50,7 +50,6 @@ function Home() {
         </div>
       ) : (
         <Characters />
-        // <Book />
       )}
     </>
   );

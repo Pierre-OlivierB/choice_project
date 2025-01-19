@@ -5,23 +5,30 @@ import storiesData from "./chapter/stories.json";
 import Events from "./events/events";
 
 function Book(props) {
+  //get player choice
   const perso = props.perso;
-  // console.log(perso);
-
+  // set button player choice
   const [choice, setChoice] = useState(0);
-
+  // set content show
   const [flag, setFlag] = useState(true);
-
+  // get all stories from json
   const stories = storiesData;
-
+  // set actual storie
   const currentStories = stories[choice];
-
+  // set content show
   function handleClick(newChapter) {
     setChoice(newChapter);
     setFlag(!flag);
   }
-  function handleFlag() {
-    setFlag(!flag);
+
+  //! get dice ? have to del
+  // const [dice, setDice] = useState("");
+
+  // get data from child event
+  function handleDiceFromEvent(child_choice) {
+    // setDice(child_dice[0]);
+    setFlag(child_choice);
+    // console.log(child_dice);
   }
 
   return (
@@ -35,7 +42,12 @@ function Book(props) {
           perso={perso}
         />
       ) : (
-        <Events perso={perso} choice={currentStories} />
+        <Events
+          perso={perso}
+          choice={currentStories}
+          onSendData={handleDiceFromEvent}
+          flag={flag}
+        />
       )}
 
       <div className="container-fluid position-absolute top-50 start-0 d-flex justify-content-evenly">
@@ -61,14 +73,7 @@ function Book(props) {
             </button>
           </>
         ) : (
-          <>
-            <button className="btn btn-success" onClick={handleFlag}>
-              event 1
-            </button>
-            <button className="btn btn-warning" onClick={handleFlag}>
-              event 2
-            </button>
-          </>
+          <></>
         )}
       </div>
     </div>

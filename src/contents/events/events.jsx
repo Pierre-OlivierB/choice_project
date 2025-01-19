@@ -4,15 +4,46 @@ import { useState } from "react";
 function Events(props) {
   const perso = props.perso;
   const story = props.choice;
+  const flag = props.flag;
   //   console.log(perso, story);
 
+  //   set result dice
   const [dice, setDice] = useState("");
-  const [flag, setFlag] = useState(true);
+  //   set event show
+  const [flagevent, setFlagevent] = useState(true);
+  const [hideDice, setHideDice] = useState(false);
 
-  function handleClick() {
-    setDice(Math.floor(Math.random() * 100));
-    setFlag(!flag);
+  //   event current choice
+  const [caracChoice, setCaracChoice] = useState("");
+  //   roll the dice
+  function handleClickDice() {
+    const result = Math.floor(Math.random() * 100);
+    setDice(result);
+    setFlagevent(!flagevent);
   }
+  // send result form child to parent
+  function handleClickContinu() {
+    props.onSendData(!flag);
+  }
+  //  player choice the possibility to action
+  function handleClickEvent(id) {
+    setHideDice(true);
+    switch (id) {
+      case "constitution":
+        setCaracChoice(perso.constitution);
+        break;
+      case "dexterite":
+        setCaracChoice(perso.dexterite);
+        break;
+      case "intelligence":
+        setCaracChoice(perso.intelligence);
+        break;
+
+      default:
+        break;
+    }
+  }
+
   return (
     <div className="test">
       <div className="main-content container-fluid d-flex flex-column justify-content-evenly">
@@ -43,13 +74,56 @@ function Events(props) {
             <p>What : {story.cuisine}</p>
           </div>
         </div>
+        <div className="container-fluid position-absolute top-50 start-0 d-flex justify-content-evenly">
+          <button
+            className="btn btn-success"
+            id="intelligence"
+            onClick={(e) => {
+              const id = e.target.id;
+              handleClickEvent(id);
+            }}
+          >
+            Raisonner
+          </button>
+          <button
+            className="btn btn-warning"
+            id="dexterite"
+            onClick={(e) => {
+              const id = e.target.id;
+              handleClickEvent(id);
+            }}
+          >
+            Eviter
+          </button>
+          <button
+            className="btn btn-danger"
+            id="constitution"
+            onClick={(e) => {
+              const id = e.target.id;
+              handleClickEvent(id);
+            }}
+          >
+            Combattre
+          </button>
+        </div>
         <div className="container-fluid">
-          {flag ? (
-            <button className="btn btn-danger" onClick={handleClick}>
-              Dice
-            </button>
+          {flagevent && hideDice ? (
+            <>
+              <button className="btn btn-danger" onClick={handleClickDice}>
+                Dice
+              </button>
+              <p>
+                Il faut faire moins ou égale à la caractéristique : /
+                {caracChoice}
+              </p>
+            </>
           ) : (
-            <p>{dice}</p>
+            <>
+              <p>{dice} </p>
+              <button className="btn btn-success" onClick={handleClickContinu}>
+                Continue
+              </button>
+            </>
           )}
         </div>
       </div>
