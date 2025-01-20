@@ -15,6 +15,9 @@ function Book(props) {
   const stories = storiesData;
   // set actual storie
   const currentStories = stories[choice];
+
+  const [precendentAction, setPrecendentAction] = useState([]);
+
   // set content show
   function handleClick(newChapter) {
     setChoice(newChapter);
@@ -27,7 +30,32 @@ function Book(props) {
   // get data from child event
   function handleDiceFromEvent(child_choice) {
     // setDice(child_dice[0]);
-    setFlag(child_choice);
+    setFlag(child_choice[0]);
+    console.log(child_choice[1]);
+    setPrecendentAction(child_choice[1]);
+    switch (child_choice[1]) {
+      case "c_w":
+        setChoice("c_w");
+        break;
+      case "d_w":
+        setChoice("d_w");
+        break;
+      case "i_w":
+        setChoice("i_w");
+        break;
+      case "c_l":
+        setChoice("c_l");
+        break;
+      case "d_l":
+        setChoice("d_l");
+        break;
+      case "i_l":
+        setChoice("i_l");
+        break;
+
+      default:
+        break;
+    }
     // console.log(child_dice);
   }
 

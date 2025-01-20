@@ -13,6 +13,11 @@ function Events(props) {
   const [flagevent, setFlagevent] = useState(true);
   const [hideDice, setHideDice] = useState(false);
 
+  // result dice
+  const [win, setWin] = useState(true);
+  // action done
+  const [currentAction, setCurrentAction] = useState("");
+
   //   event current choice
   const [caracChoice, setCaracChoice] = useState("");
   //   roll the dice
@@ -20,14 +25,17 @@ function Events(props) {
     const result = Math.floor(Math.random() * 100);
     setDice(result);
     setFlagevent(!flagevent);
+    const action = result / caracChoice;
+    action > 1 ? setWin(false) : "";
   }
   // send result form child to parent
   function handleClickContinu() {
-    props.onSendData(!flag);
+    props.onSendData([!flag, [currentAction, win]]);
   }
   //  player choice the possibility to action
   function handleClickEvent(id) {
     setHideDice(true);
+    setCurrentAction(id);
     switch (id) {
       case "constitution":
         setCaracChoice(perso.constitution);
@@ -106,26 +114,41 @@ function Events(props) {
             Combattre
           </button>
         </div>
-        <div className="container-fluid">
-          {flagevent && hideDice ? (
-            <>
-              <button className="btn btn-danger" onClick={handleClickDice}>
-                Dice
-              </button>
-              <p>
-                Il faut faire moins ou égale à la caractéristique : /
-                {caracChoice}
-              </p>
-            </>
-          ) : (
-            <>
-              <p>{dice} </p>
-              <button className="btn btn-success" onClick={handleClickContinu}>
-                Continue
-              </button>
-            </>
-          )}
-        </div>
+        {hideDice ? (
+          <div className="container-fluid">
+            {flagevent && hideDice ? (
+              <>
+                <button className="btn btn-danger" onClick={handleClickDice}>
+                  Dice
+                </button>
+                <p>
+                  Il faut faire moins ou égale à la caractéristique : /
+                  {caracChoice}
+                </p>
+              </>
+            ) : (
+              <>
+                <p>
+                  Result : {dice} / {caracChoice}
+                </p>
+                {win ? (
+                  <p>Tu as réussi ton action</p>
+                ) : (
+                  <p>Tu as échoué dans ton action</p>
+                )}
+
+                <button
+                  className="btn btn-success"
+                  onClick={handleClickContinu}
+                >
+                  Continue
+                </button>
+              </>
+            )}
+          </div>
+        ) : (
+          <></>
+        )}
       </div>
     </div>
   );
