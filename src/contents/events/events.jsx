@@ -30,7 +30,23 @@ function Events(props) {
   }
   // send result form child to parent
   function handleClickContinu() {
-    props.onSendData([!flag, [currentAction, win]]);
+    let next = "";
+    if (currentAction == "constitution" && win) {
+      next = "c_w";
+    } else if (currentAction == "constitution" && win == false) {
+      next = "c_l";
+    }
+    if (currentAction == "dexterite" && win) {
+      next = "d_w";
+    } else if (currentAction == "dexterite" && win == false) {
+      next = "d_l";
+    }
+    if (currentAction == "intelligence" && win) {
+      next = "i_w";
+    } else if (currentAction == "intelligence" && win == false) {
+      next = "i_l";
+    }
+    props.onSendData([!flag, next]);
   }
   //  player choice the possibility to action
   function handleClickEvent(id) {

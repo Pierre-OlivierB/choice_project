@@ -16,7 +16,8 @@ function Book(props) {
   // set actual storie
   const currentStories = stories[choice];
 
-  const [precendentAction, setPrecendentAction] = useState([]);
+  // set precedent action
+  const [precendentAction, setPrecendentAction] = useState(currentStories.txt);
 
   // set content show
   function handleClick(newChapter) {
@@ -31,26 +32,25 @@ function Book(props) {
   function handleDiceFromEvent(child_choice) {
     // setDice(child_dice[0]);
     setFlag(child_choice[0]);
-    console.log(child_choice[1]);
-    setPrecendentAction(child_choice[1]);
+    // event by the action win or not
     switch (child_choice[1]) {
       case "c_w":
-        setChoice("c_w");
+        setPrecendentAction(currentStories.c_w);
         break;
       case "d_w":
-        setChoice("d_w");
+        setPrecendentAction(currentStories.d_w);
         break;
       case "i_w":
-        setChoice("i_w");
+        setPrecendentAction(currentStories.i_w);
         break;
       case "c_l":
-        setChoice("c_l");
+        setPrecendentAction(currentStories.c_l);
         break;
       case "d_l":
-        setChoice("d_l");
+        setPrecendentAction(currentStories.d_l);
         break;
       case "i_l":
-        setChoice("i_l");
+        setPrecendentAction(currentStories.i_l);
         break;
 
       default:
@@ -66,7 +66,7 @@ function Book(props) {
           where={currentStories.salle_de_bain}
           what={currentStories.cuisine}
           chpt={currentStories.numero_chapitre}
-          txt={currentStories.txt}
+          txt={precendentAction}
           perso={perso}
         />
       ) : (
