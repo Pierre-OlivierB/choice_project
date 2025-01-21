@@ -3,54 +3,58 @@
     "cuisine": "couteau",
     "numero_chapitre": "0",
     "txt": "voluptatum illo dolore blanditiis nostrum est sunt? Nam magnam assumenda laboriosam libero ex minima dicta ut ducimus laborum.",
-    "choix1": "0",
-    "choix2": "2",
+    "choix": ["1", "2"],
+    "btn_choix": ["Autour de toi", "Tes poches"],
     "c_w": "constitution réussi blabla",
     "d_w": "agilité réussi blabla",
     "i_w": "réflexion réussit blabla",
     "c_l": "constitution échoué blabla",
     "d_l": "agilité échoué blabla",
-    "i_l": "réflexion échoué blabla"
+    "i_l": "réflexion échoué blabla",
+    "actions": "test"
   },
   {
     "numero_chapitre": "1",
     "salle_de_bain": "cuisine",
     "cuisine": "pierre",
     "txt": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    "choix1": "1",
-    "choix2": "3",
+    "choix": ["0", "3"],
+    "btn_choix": ["Tu cherches dans le canapé", "Tu te lèves"],
     "c_w": "constitution réussi blabla",
     "d_w": "agilité réussi blabla",
     "i_w": "réflexion réussit blabla",
     "c_l": "constitution échoué blabla",
     "d_l": "agilité échoué blabla",
-    "i_l": "réflexion échoué blabla"
+    "i_l": "réflexion échoué blabla",
+    "actions": "test"
   }, {
     "salle_de_bain": "plante",
     "cuisine": "table",
     "numero_chapitre": "2",
     "txt": "blanditiis nostrum est sunt? Nam magnam assumenda laboriosam libero ex minima dicta ut ducimus laborum.",
-    "choix1": "0",
-    "choix2": "1",
+    "choix": ["1", "3"],
+    "btn_choix": ["Autour de toi", "Tu te lèves"],
     "c_w": "constitution réussi blabla",
     "d_w": "agilité réussi blabla",
     "i_w": "réflexion réussit blabla",
     "c_l": "constitution échoué blabla",
     "d_l": "agilité échoué blabla",
-    "i_l": "réflexion échoué blabla"
+    "i_l": "réflexion échoué blabla",
+    "actions": "test"
   },
   {
     "numero_chapitre": "3",
     "salle_de_bain": "cuisine",
     "cuisine": "pierre",
     "txt": " adipisicing elit.",
-    "choix1": "1",
-    "choix2": "2",
+    "choix": ["0", "2"],
+    "btn_choix": ["Tu cherches dans le canapé", "Tes poches"],
     "c_w": "constitution réussi blabla",
     "d_w": "agilité réussi blabla",
     "i_w": "réflexion réussit blabla",
     "c_l": "constitution échoué blabla",
     "d_l": "agilité échoué blabla",
-    "i_l": "réflexion échoué blabla"
+    "i_l": "réflexion échoué blabla",
+    "actions": "test"
   }
 ]

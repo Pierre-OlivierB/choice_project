@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import { useState } from "react";
 import Chapter from "./chapter/chapter";
 import storiesData from "./chapter/stories.json";
@@ -24,9 +25,6 @@ function Book(props) {
     setChoice(newChapter);
     setFlag(!flag);
   }
-
-  //! get dice ? have to del
-  // const [dice, setDice] = useState("");
 
   // get data from child event
   function handleDiceFromEvent(child_choice) {
@@ -56,8 +54,31 @@ function Book(props) {
       default:
         break;
     }
-    // console.log(child_dice);
   }
+
+  // set all buttons from data
+  const btnList = currentStories.btn_choix;
+
+  const [btnChoiceContent, setBtnChoiceContent] = useState([]);
+  // reload list of buttons when choices was done
+  useEffect(() => {
+    let listBtn = [];
+    for (let i = 0; i < btnList.length; i++) {
+      listBtn.push(
+        <button
+          key={i}
+          className="btn btn-success"
+          onClick={() => {
+            const chc = currentStories.choix[i];
+            handleClick(chc);
+          }}
+        >
+          {currentStories.btn_choix[i]}
+        </button>
+      );
+    }
+    setBtnChoiceContent(listBtn);
+  }, []);
 
   return (
     <div className="position-relative">
@@ -68,6 +89,7 @@ function Book(props) {
           chpt={currentStories.numero_chapitre}
           txt={precendentAction}
           perso={perso}
+          actions={currentStories.actions}
         />
       ) : (
         <Events
@@ -79,30 +101,7 @@ function Book(props) {
       )}
 
       <div className="container-fluid position-absolute top-50 start-0 d-flex justify-content-evenly">
-        {flag ? (
-          <>
-            <button
-              className="btn btn-warning"
-              onClick={() => {
-                const chc = currentStories.choix1;
-                handleClick(chc);
-              }}
-            >
-              choix 1
-            </button>
-            <button
-              className="btn btn-success"
-              onClick={() => {
-                const chc = currentStories.choix2;
-                handleClick(chc);
-              }}
-            >
-              choix 2
-            </button>
-          </>
-        ) : (
-          <></>
-        )}
+        {flag ? <>{btnChoiceContent}</> : <></>}
       </div>
     </div>
   );
