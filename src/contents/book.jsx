@@ -89,7 +89,6 @@ function Book(props) {
           chpt={currentStories.numero_chapitre}
           txt={precendentAction}
           perso={perso}
-          actions={currentStories.actions}
         />
       ) : (
         <Events
@@ -97,6 +96,7 @@ function Book(props) {
           choice={currentStories}
           onSendData={handleDiceFromEvent}
           flag={flag}
+          actions={currentStories.actions}
         />
       )}
 

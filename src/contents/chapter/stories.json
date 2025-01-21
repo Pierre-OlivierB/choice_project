@@ -11,7 +11,10 @@
     "c_l": "constitution échoué blabla",
     "d_l": "agilité échoué blabla",
     "i_l": "réflexion échoué blabla",
-    "actions": "test"
+    "actions": {
+      "btn": ["Appeller à l'aide", "Ecouter les bruits environnant"],
+      "carac": ["constitution", "dexterite"]
+    }
   },
   {
     "numero_chapitre": "1",
@@ -26,7 +29,10 @@
     "c_l": "constitution échoué blabla",
     "d_l": "agilité échoué blabla",
     "i_l": "réflexion échoué blabla",
-    "actions": "test"
+    "actions": {
+      "btn": ["Essayer de comprendre ce qui t'entoure", "Fouiller l'espace environnant"],
+      "carac": ["intelligence", "dexterite"]
+    }
   }, {
     "salle_de_bain": "plante",
     "cuisine": "table",
@@ -40,7 +46,10 @@
     "c_l": "constitution échoué blabla",
     "d_l": "agilité échoué blabla",
     "i_l": "réflexion échoué blabla",
-    "actions": "test"
+    "actions": {
+      "btn": ["Fouiller tes poches consencieusement", "Fouiller tes poches rapidement"],
+      "carac": ["intelligence", "dexterite"]
+    }
   },
   {
     "numero_chapitre": "3",
@@ -48,13 +57,16 @@
     "cuisine": "pierre",
     "txt": " adipisicing elit.",
     "choix": ["0", "2"],
-    "btn_choix": ["Tu cherches dans le canapé", "Tes poches"],
+    "btn_choix": ["Tu tatonnes autour de toi puis te rassois", "Maintenant de bout tu fouilles tes poches"],
     "c_w": "constitution réussi blabla",
     "d_w": "agilité réussi blabla",
     "i_w": "réflexion réussit blabla",
     "c_l": "constitution échoué blabla",
     "d_l": "agilité échoué blabla",
     "i_l": "réflexion échoué blabla",
-    "actions": "test"
+    "actions": {
+      "btn": ["Tu tatonnes", "Tu fouilles tes poches"],
+      "carac": ["dexterite", "dexterite"]
+    }
   }
 ]

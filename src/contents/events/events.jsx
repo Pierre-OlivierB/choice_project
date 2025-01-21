@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 
 function Events(props) {
   const perso = props.perso;
   const story = props.choice;
   const flag = props.flag;
+  const actions = props.actions;
   //   console.log(perso, story);
 
   //   set result dice
@@ -68,6 +69,28 @@ function Events(props) {
     }
   }
 
+  const [btnChoiceContent, setBtnChoiceContent] = useState([]);
+  // reload list of buttons when choices was done
+  useEffect(() => {
+    let listBtn = [];
+    for (let i = 0; i < actions.btn.length; i++) {
+      listBtn.push(
+        <button
+          key={i}
+          className="btn btn-success"
+          id={actions.carac[i]}
+          onClick={(e) => {
+            const id = e.target.id;
+            handleClickEvent(id);
+          }}
+        >
+          {actions.btn[i]}
+        </button>
+      );
+    }
+    setBtnChoiceContent(listBtn);
+  }, []);
+
   return (
     <div className="test">
       <div className="main-content container-fluid d-flex flex-column justify-content-evenly">
@@ -99,36 +122,7 @@ function Events(props) {
           </div>
         </div>
         <div className="container-fluid position-absolute top-50 start-0 d-flex justify-content-evenly">
-          <button
-            className="btn btn-success"
-            id="intelligence"
-            onClick={(e) => {
-              const id = e.target.id;
-              handleClickEvent(id);
-            }}
-          >
-            Raisonner
-          </button>
-          <button
-            className="btn btn-warning"
-            id="dexterite"
-            onClick={(e) => {
-              const id = e.target.id;
-              handleClickEvent(id);
-            }}
-          >
-            Eviter
-          </button>
-          <button
-            className="btn btn-danger"
-            id="constitution"
-            onClick={(e) => {
-              const id = e.target.id;
-              handleClickEvent(id);
-            }}
-          >
-            Combattre
-          </button>
+          <>{btnChoiceContent}</>
         </div>
         {hideDice ? (
           <div className="container-fluid">
