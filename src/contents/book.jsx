@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import Chapter from "./chapter/chapter";
@@ -19,6 +19,14 @@ function Book(props) {
 
   // set precedent action
   const [precendentAction, setPrecendentAction] = useState(currentStories.txt);
+
+  // save
+  var save = useRef([]);
+  // console.log(save);
+  useEffect(() => {
+    save.current.push([precendentAction, choice]);
+    console.log("histo : ", save.current);
+  }, [precendentAction]);
 
   // set content show
   function handleClick(newChapter) {

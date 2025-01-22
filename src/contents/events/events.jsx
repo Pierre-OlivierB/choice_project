@@ -122,7 +122,7 @@ function Events(props) {
           </div>
         </div>
         <div className="container-fluid position-absolute top-50 start-0 d-flex justify-content-evenly">
-          <>{btnChoiceContent}</>
+          {hideDice ? <></> : btnChoiceContent}
         </div>
         {hideDice ? (
           <div className="container-fluid">
