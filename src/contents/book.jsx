@@ -24,7 +24,7 @@ function Book(props) {
   var save = useRef([]);
   // console.log(save);
   useEffect(() => {
-    save.current.push([precendentAction, choice]);
+    save.current.push([precendentAction, choice, perso]);
     console.log("histo : ", save.current);
   }, [precendentAction]);
 
