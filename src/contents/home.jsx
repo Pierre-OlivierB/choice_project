@@ -31,18 +31,19 @@ function Home() {
             <div className="row justify-content-md-center">
               <div className="col col-10">
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut
-                  nobis recusandae id voluptas vel aperiam exercitationem
-                  tempore veritatis beatae aut alias similique ad, voluptatum
-                  illo dolore blanditiis nostrum est sunt? Nam magnam assumenda
-                  laboriosam libero ex minima dicta ut ducimus laborum. Neque
-                  nihil animi debitis quibusdam cupiditate necessitatibus.
-                  Expedita recusandae laborum eius voluptatibus reiciendis
-                  inventore? Distinctio incidunt rem voluptate aliquid. Officiis
-                  pariatur at molestiae. Laborum eaque temporibus reprehenderit
-                  eius similique earum alias maxime architecto consequatur
-                  nobis? Minus totam optio similique neque? Eum omnis sed autem
-                  perferendis, ducimus aut nemo amet.
+                  Je vous propose de vous plonger dans une expérience de jeu de
+                  role ("Role Play", RP) afin de découvrir les intéractions que
+                  vous pourriez avoir sur un monde imaginaire qui entoure votre
+                  personnage. Le but de cette expérience est de vous donner un
+                  apperçu automatisé et solitaire de ce que vous pourriez vivre
+                  en tant que joueur/euse seul/e dans un évènement aléatoire
+                  d'une histoire de RP. Les choix que vous allez faire auront un
+                  impact sur le récit. Récit que vous retrouverez à la fin de
+                  votre aventure. Je vous donnerai les outils dans le but de
+                  partager cette aventure à votre LLM préféré pour qu'il puisse
+                  narrer votre incroyable histoire. <br /> <br /> Et maintenant
+                  à vous de jouer.
+                  <br /> Bonne aventure.
                 </p>
               </div>
             </div>
