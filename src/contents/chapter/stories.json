@@ -1,8 +1,8 @@
 [{
-    "salle_de_bain": "beignoire",
-    "cuisine": "couteau",
     "numero_chapitre": "0",
-    "txt": "voluptatum illo dolore blanditiis nostrum est sunt? Nam magnam assumenda laboriosam libero ex minima dicta ut ducimus laborum.",
+    "card_context": "Tu es en position assise, il fait noir.",
+    "mj_question": "Que fais-tu ?",
+    "txt": "Tu es en position assise, il fait noir, tu ne sais pas qui tu es, tu ne sais pas ce que tu fais là. L'amnèsie es total.",
     "choix": ["1", "2"],
     "btn_choix": ["Autour de toi", "Tes poches"],
     "c_w": "constitution réussi blabla",
@@ -18,8 +18,8 @@
   },
   {
     "numero_chapitre": "1",
-    "salle_de_bain": "cuisine",
-    "cuisine": "pierre",
+    "card_context": "Tu veux savoir ce qui t'entoure, mais plusieurs choix s'offre à toi.",
+    "mj_question": "Comment veux tu saisir ton environnement ?",
     "txt": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     "choix": ["0", "3"],
     "btn_choix": ["Tu cherches dans le canapé", "Tu te lèves"],
@@ -34,9 +34,9 @@
       "carac": ["intelligence", "dexterite"]
     }
   }, {
-    "salle_de_bain": "plante",
-    "cuisine": "table",
     "numero_chapitre": "2",
+    "card_context": "plante",
+    "mj_question": "Que fais-tu ?",
     "txt": "blanditiis nostrum est sunt? Nam magnam assumenda laboriosam libero ex minima dicta ut ducimus laborum.",
     "choix": ["1", "3"],
     "btn_choix": ["Autour de toi", "Tu te lèves"],
@@ -53,8 +53,8 @@
   },
   {
     "numero_chapitre": "3",
-    "salle_de_bain": "cuisine",
-    "cuisine": "pierre",
+    "card_context": "test",
+    "mj_question": "Que fais-tu ?",
     "txt": " adipisicing elit.",
     "choix": ["0", "2"],
     "btn_choix": ["Tu tatonnes autour de toi puis te rassois", "Maintenant de bout tu fouilles tes poches"],

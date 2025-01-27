@@ -92,10 +92,11 @@ function Book(props) {
     <div className="position-relative">
       {flag ? (
         <Chapter
-          where={currentStories.salle_de_bain}
-          what={currentStories.cuisine}
+          where={currentStories.card_context}
+          what={currentStories.mj_question}
           chpt={currentStories.numero_chapitre}
           txt={precendentAction}
+          mj={currentStories.mj_question}
           perso={perso}
         />
       ) : (

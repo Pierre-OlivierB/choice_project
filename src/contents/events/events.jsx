@@ -19,6 +19,9 @@ function Events(props) {
   // action done
   const [currentAction, setCurrentAction] = useState("");
 
+  // catch content button actyion choice
+  const [contentBtnActionChoice, setContentBtnActionChoice] = useState("");
+
   //   event current choice
   const [caracChoice, setCaracChoice] = useState("");
   //   roll the dice
@@ -82,6 +85,7 @@ function Events(props) {
           onClick={(e) => {
             const id = e.target.id;
             handleClickEvent(id);
+            setContentBtnActionChoice(actions.btn[i]);
           }}
         >
           {actions.btn[i]}
@@ -117,8 +121,8 @@ function Events(props) {
         </div>
         <div className="row justify-content-md-center">
           <div className="col col-10">
-            <p>Where : {story.salle_de_bain}</p>
-            <p>What : {story.cuisine}</p>
+            <p>{story.card_context}</p>
+            <p>{story.mj_question}</p>
           </div>
         </div>
         <div className="container-fluid position-absolute top-50 start-0 d-flex justify-content-evenly">
@@ -131,6 +135,8 @@ function Events(props) {
                 <button className="btn btn-danger" onClick={handleClickDice}>
                   Dice
                 </button>
+                {console.log(contentBtnActionChoice)}
+                <p> Ton choix : {contentBtnActionChoice}</p>
                 <p>
                   Il faut faire moins ou égale à la caractéristique : /
                   {caracChoice}

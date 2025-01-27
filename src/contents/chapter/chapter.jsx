@@ -4,6 +4,7 @@ function Chapter(props) {
   const chpt = props.chpt;
   const txt = props.txt;
   const perso = props.perso;
+  const mj = props.mj;
 
   function handleClick() {
     console.log("render");
@@ -35,6 +36,7 @@ function Chapter(props) {
         <div className="row justify-content-md-center">
           <div className="col col-10">
             <p>{txt}</p>
+            <p>{mj}</p>
           </div>
         </div>
       </div>
