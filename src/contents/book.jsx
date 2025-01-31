@@ -19,6 +19,7 @@ function Book(props) {
 
   // set precedent action
   const [precendentAction, setPrecendentAction] = useState(currentStories.txt);
+  const [actionSup, setActionSup] = useState([]);
 
   // save
   var save = useRef([]);
@@ -38,34 +39,42 @@ function Book(props) {
   function handleDiceFromEvent(child_choice) {
     // setDice(child_dice[0]);
     setFlag(child_choice[0]);
+
     // event by the action win or not
     switch (child_choice[1]) {
       case "c_w":
-        setPrecendentAction(currentStories.c_w);
+        setPrecendentAction(currentStories.c_w[0]);
+        setActionSup(currentStories.c_w[1]);
         break;
       case "d_w":
-        setPrecendentAction(currentStories.d_w);
+        setPrecendentAction(currentStories.d_w[0]);
+        setActionSup(currentStories.d_w[1]);
         break;
       case "i_w":
-        setPrecendentAction(currentStories.i_w);
+        setPrecendentAction(currentStories.i_w[0]);
+        setActionSup(currentStories.i_w[1]);
         break;
       case "c_l":
-        setPrecendentAction(currentStories.c_l);
+        setPrecendentAction(currentStories.c_l[0]);
+        setActionSup(currentStories.c_l[1]);
         break;
       case "d_l":
-        setPrecendentAction(currentStories.d_l);
+        setPrecendentAction(currentStories.d_l[0]);
+        setActionSup(currentStories.d_l[1]);
         break;
       case "i_l":
-        setPrecendentAction(currentStories.i_l);
+        setPrecendentAction(currentStories.i_l[0]);
+        setActionSup(currentStories.i_l[1]);
         break;
 
       default:
         break;
     }
   }
-
+  // console.log("Add : ", actionSup);
   // set all buttons from data
   const btnList = currentStories.btn_choix;
+  // console.log("btnlist = ", btnList);
 
   const [btnChoiceContent, setBtnChoiceContent] = useState([]);
   // reload list of buttons when choices was done
@@ -85,8 +94,24 @@ function Book(props) {
         </button>
       );
     }
+    // if action to add from precedent action, add button
+    if (actionSup.length != 0 && actionSup) {
+      listBtn.push(
+        <button
+          key={5}
+          className="btn btn-success"
+          onClick={() => {
+            const chc = actionSup[0];
+            setChoice(chc);
+          }}
+        >
+          {actionSup[1]}
+        </button>
+      );
+      console.log("test actionsup", actionSup);
+    }
     setBtnChoiceContent(listBtn);
-  }, []);
+  }, [currentStories, actionSup]);
 
   return (
     <div className="position-relative">

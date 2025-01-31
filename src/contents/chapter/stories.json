@@ -2,52 +2,58 @@
     "numero_chapitre": "0",
     "card_context": "Tu es en position assise, il fait noir.",
     "mj_question": "Que fais-tu ?",
-    "txt": "Tu es en position assise, il fait noir, tu ne sais pas qui tu es, tu ne sais pas ce que tu fais là. L'amnèsie es total.",
-    "choix": ["1", "2"],
-    "btn_choix": ["Autour de toi", "Tes poches"],
-    "c_w": "constitution réussi blabla",
-    "d_w": "agilité réussi blabla",
-    "i_w": "réflexion réussit blabla",
-    "c_l": "constitution échoué blabla",
-    "d_l": "agilité échoué blabla",
-    "i_l": "réflexion échoué blabla",
+    "txt": "Tu es en position assise, il fait noir, tu ne sais pas qui tu es, tu ne sais pas ce que tu fais là. L'amnèsie es total. Plusieurs option s'offrent à toi. Tu peux chercher autour de toi ou fouiller tes poches.",
+    "choix": ["1", "2", "5"],
+    "btn_choix": ["Autour de toi", "Tes poches", "Tu te lèves"],
+    "c_w": ["constitution réussi blabla"],
+    "d_w": ["agilité réussi blabla"],
+    "i_w": ["réflexion réussit blabla"],
+    "c_l": ["constitution échoué blabla"],
+    "d_l": ["agilité échoué blabla"],
+    "i_l": ["réflexion échoué blabla"],
     "actions": {
       "btn": ["Appeller à l'aide", "Ecouter les bruits environnant"],
-      "carac": ["constitution", "dexterite"]
+      "carac": ["constitution", "dexterite", "constitution"]
     }
   },
   {
     "numero_chapitre": "1",
-    "card_context": "Tu veux savoir ce qui t'entoure, mais plusieurs choix s'offre à toi.",
+    "card_context": "Tu veux savoir ce qui t'entoure. Mais il fait beaucoup trop noir dans la pièce pour que tu puisses voir quelque chose. Plusieurs choix s'offre à toi.",
     "mj_question": "Comment veux tu saisir ton environnement ?",
     "txt": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    "choix": ["0", "3"],
-    "btn_choix": ["Tu cherches dans le canapé", "Tu te lèves"],
-    "c_w": "constitution réussi blabla",
-    "d_w": "agilité réussi blabla",
-    "i_w": "réflexion réussit blabla",
-    "c_l": "constitution échoué blabla",
-    "d_l": "agilité échoué blabla",
-    "i_l": "réflexion échoué blabla",
+    "choix": ["1", "2", "5"],
+    "btn_choix": ["Tu continues de chercher autour de toi", "Tes poches", "Tu te lèves"],
+    "c_w": ["constitution réussi blabla"],
+    "d_w": ["Tu tâtes autour de toi et tu trouves une manette de télévision coincé entre 2 coussins derrière toi. Visiblement tu es assis sur un canapé de mauvaise facture.", [
+      ["6"],
+      ["Apuyer sur les bouton de la manette"]
+    ]],
+    "i_w": ["Au loin tu entends des voitures, tu ne dois pas être loin d'un voie passante. Mais à part ça, les alentours te semble étrangement calme.", [
+      ["7"],
+      ["Crier en espérant qu'on t'entende"]
+    ]],
+    "c_l": ["constitution échoué blabla"],
+    "d_l": ["Tu tâte autour de toi et tu sens un objet coincé entre 2 coussins derrière toi. Visiblement tu es assis sur un canapé."],
+    "i_l": ["Au loin tu entends du bruits que tu n'arrives pas à califier. Au moins tu entends de la vie quelle qu'elle soit."],
     "actions": {
-      "btn": ["Essayer de comprendre ce qui t'entoure", "Fouiller l'espace environnant"],
-      "carac": ["intelligence", "dexterite"]
+      "btn": ["Tu cherches avec les mains autour de toi", "Tu essayes d'écouter attentivement"],
+      "carac": ["dexterite", "intelligence"]
     }
   }, {
     "numero_chapitre": "2",
-    "card_context": "plante",
+    "card_context": "Tu veux fouiller tes poches en espérant trouvé des informations sur toi. Ton nom, ton adresse peut être ou un mot ?",
     "mj_question": "Que fais-tu ?",
     "txt": "blanditiis nostrum est sunt? Nam magnam assumenda laboriosam libero ex minima dicta ut ducimus laborum.",
-    "choix": ["1", "3"],
-    "btn_choix": ["Autour de toi", "Tu te lèves"],
-    "c_w": "constitution réussi blabla",
-    "d_w": "agilité réussi blabla",
-    "i_w": "réflexion réussit blabla",
-    "c_l": "constitution échoué blabla",
-    "d_l": "agilité échoué blabla",
-    "i_l": "réflexion échoué blabla",
+    "choix": ["6", "3"],
+    "btn_choix": ["Tu essayes d'allumer le portable", "Tu te lèves"],
+    "c_w": ["constitution réussi blabla"],
+    "d_w": ["agilité réussi blabla"],
+    "i_w": ["Le temps te semble interminable. Cette fouille ne te prend pas beaucoup de temps. Te voilà en possetion d'un portable éteint et d'un porte monnai. Malheureusement le noir profond dans lequel tu es t'empêche de disserner quoi que ce soit."],
+    "c_l": ["constitution échoué blabla"],
+    "d_l": ["agilité échoué blabla"],
+    "i_l": ["Le temps te semble interminable. Cette fouille est beaucoup trop longue. Te voilà en possetion d'un portable éteint et d'un porte monnai. Malheureusement le noir profond dans lequel tu es t'empêche de disserner quoi que ce soit."],
     "actions": {
-      "btn": ["Fouiller tes poches consencieusement", "Fouiller tes poches rapidement"],
+      "btn": ["Fouiller tes poches consencieusement en prenant tout ton temps", "Fouiller tes poches rapidement"],
       "carac": ["intelligence", "dexterite"]
     }
   },
@@ -58,12 +64,82 @@
     "txt": " adipisicing elit.",
     "choix": ["0", "2"],
     "btn_choix": ["Tu tatonnes autour de toi puis te rassois", "Maintenant de bout tu fouilles tes poches"],
-    "c_w": "constitution réussi blabla",
-    "d_w": "agilité réussi blabla",
-    "i_w": "réflexion réussit blabla",
-    "c_l": "constitution échoué blabla",
-    "d_l": "agilité échoué blabla",
-    "i_l": "réflexion échoué blabla",
+    "c_w": ["constitution réussi blabla"],
+    "d_w": ["agilité réussi blabla"],
+    "i_w": ["réflexion réussit blabla"],
+    "c_l": ["constitution échoué blabla"],
+    "d_l": ["agilité échoué blabla"],
+    "i_l": ["réflexion échoué blabla"],
+    "actions": {
+      "btn": ["Tu tatonnes", "Tu fouilles tes poches"],
+      "carac": ["dexterite", "dexterite"]
+    }
+  }, {
+    "numero_chapitre": "4",
+    "card_context": "test",
+    "mj_question": "Que fais-tu ?",
+    "txt": " adipisicing elit.",
+    "choix": ["0", "2"],
+    "btn_choix": ["Tu tatonnes autour de toi puis te rassois", "Maintenant de bout tu fouilles tes poches"],
+    "c_w": ["constitution réussi blabla"],
+    "d_w": ["agilité réussi blabla"],
+    "i_w": ["réflexion réussit blabla"],
+    "c_l": ["constitution échoué blabla"],
+    "d_l": ["agilité échoué blabla"],
+    "i_l": ["réflexion échoué blabla"],
+    "actions": {
+      "btn": ["Tu tatonnes", "Tu fouilles tes poches"],
+      "carac": ["dexterite", "dexterite"]
+    }
+  }, {
+    "numero_chapitre": "5",
+    "card_context": "Tu te lèves et te voilà avec difficulté debout, tu sens tous tes muscles engourdi. Des questions fusent dans ta tête. Depuis combien de temps es tu là ? Pourquoi es tu seul ? ",
+    "mj_question": "Que fais-tu ?",
+    "txt": " Tu te lèves et te voilà avec difficulté debout, tu sens tous tes muscles engourdi. Des questions fusent dans ta tête. Depuis combien de temps es tu là ? Pourquoi es tu seul ? ",
+    "choix": ["0", "2"],
+    "btn_choix": ["Tu tatonnes autour de toi puis te rassois", "Maintenant debout tu fouilles tes poches"],
+    "c_w": ["constitution réussi blabla"],
+    "d_w": ["agilité réussi blabla"],
+    "i_w": ["réflexion réussit blabla"],
+    "c_l": ["constitution échoué blabla"],
+    "d_l": ["agilité échoué blabla"],
+    "i_l": ["réflexion échoué blabla"],
+    "actions": {
+      "btn": ["Tu tatonnes", "Tu fouilles tes poches"],
+      "carac": ["dexterite", "dexterite"]
+    }
+  },
+  {
+    "numero_chapitre": "6",
+    "card_context": "Tu allumes le portable, évidemment il te demande un code pin. Tu essayes  0000 et 1234 mais ça ne marche pas. Dans le doute tu n'essayes pas un autre code sans en savoir plus La lumière te dévoile la pièce dans la quelle tu es. Attention  il ne te reste que trop peu de batterie pour rester la lumière allumé. Déjà un logo de batterie s'affiche tu as une action possible avec la lumière du portable.",
+    "mj_question": "Que fais-tu ?",
+    "txt": " adipisicing elit.",
+    "choix": ["8", "9", "10", "11", "12"],
+    "btn_choix": ["Tu fouilles les alentours", "tu fouilles tes poches", "tu fonces sur la télé qui semble branché", "tu fonces sur la porte", "tu fonces sur la fenêtre"],
+    "c_w": ["constitution réussi blabla"],
+    "d_w": ["agilité réussi blabla"],
+    "i_w": ["réflexion réussit blabla"],
+    "c_l": ["constitution échoué blabla"],
+    "d_l": ["agilité échoué blabla"],
+    "i_l": ["réflexion échoué blabla"],
+    "actions": {
+      "btn": ["Tu tatonnes", "Tu fouilles tes poches"],
+      "carac": ["dexterite", "dexterite"]
+    }
+  },
+  {
+    "numero_chapitre": "7",
+    "card_context": "test",
+    "mj_question": "Que fais-tu ?",
+    "txt": " Tu cris de toutes tes force, mais rien ne semble perturber le calme alentour pas un bruit supplémentaire après tes appel à l'aide. ",
+    "choix": ["0", "2"],
+    "btn_choix": ["Tu tatonnes autour de toi puis te rassois", "Maintenant de bout tu fouilles tes poches"],
+    "c_w": ["constitution réussi blabla"],
+    "d_w": ["agilité réussi blabla"],
+    "i_w": ["réflexion réussit blabla"],
+    "c_l": ["constitution échoué blabla"],
+    "d_l": ["agilité échoué blabla"],
+    "i_l": ["réflexion échoué blabla"],
     "actions": {
       "btn": ["Tu tatonnes", "Tu fouilles tes poches"],
       "carac": ["dexterite", "dexterite"]
