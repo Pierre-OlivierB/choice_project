@@ -20,6 +20,7 @@ function Book(props) {
   // set precedent action
   const [precendentAction, setPrecendentAction] = useState(currentStories.txt);
   const [actionSup, setActionSup] = useState([]);
+  const [actionActive, setActionActive] = useState(false);
 
   // save
   var save = useRef([]);
@@ -71,6 +72,7 @@ function Book(props) {
         break;
     }
   }
+  console.log(currentStories);
   // console.log("Add : ", actionSup);
   // set all buttons from data
   const btnList = currentStories.btn_choix;
@@ -94,15 +96,25 @@ function Book(props) {
         </button>
       );
     }
+    // console.log("test today before", currentStories.card_context);
+
+    console.log("render 1", actionActive);
+    actionActive ? setPrecendentAction(currentStories.card_context) : null;
+
     // if action to add from precedent action, add button
+
     if (actionSup.length != 0 && actionSup) {
       listBtn.push(
         <button
           key={5}
           className="btn btn-success"
           onClick={() => {
+            console.log("render 2");
             const chc = actionSup[0];
             setChoice(chc);
+            setActionSup([]);
+            setActionActive(!actionActive);
+            // console.log("test today", currentStories.card_context);
           }}
         >
           {actionSup[1]}

@@ -3,7 +3,7 @@
     "card_context": "Tu es en position assise, il fait noir.",
     "mj_question": "Que fais-tu ?",
     "txt": "Tu es en position assise, il fait noir, tu ne sais pas qui tu es, tu ne sais pas ce que tu fais là. L'amnèsie es total. Plusieurs option s'offrent à toi. Tu peux chercher autour de toi ou fouiller tes poches.",
-    "choix": ["1", "2", "5"],
+    "choix": ["1", "2", "3"],
     "btn_choix": ["Autour de toi", "Tes poches", "Tu te lèves"],
     "c_w": ["constitution réussi blabla"],
     "d_w": ["agilité réussi blabla"],
@@ -21,11 +21,11 @@
     "card_context": "Tu veux savoir ce qui t'entoure. Mais il fait beaucoup trop noir dans la pièce pour que tu puisses voir quelque chose. Plusieurs choix s'offre à toi.",
     "mj_question": "Comment veux tu saisir ton environnement ?",
     "txt": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    "choix": ["1", "2", "5"],
-    "btn_choix": ["Tu continues de chercher autour de toi", "Tes poches", "Tu te lèves"],
+    "choix": ["6", "7"],
+    "btn_choix": ["Tes poches", "Tu te lèves"],
     "c_w": ["constitution réussi blabla"],
-    "d_w": ["Tu tâtes autour de toi et tu trouves une manette de télévision coincé entre 2 coussins derrière toi. Visiblement tu es assis sur un canapé de mauvaise facture.", [
-      ["6"],
+    "d_w": ["Tu tâtes autour de toi et tu trouves une manette de télévision coincé entre 2 coussins derrière toi. Visiblement tu es assis sur un canapé de mauvaise facture. Il n'y a plus rien à fouiller autour de toi.", [
+      ["4"],
       ["Apuyer sur les bouton de la manette"]
     ]],
     "i_w": ["Au loin tu entends des voitures, tu ne dois pas être loin d'un voie passante. Mais à part ça, les alentours te semble étrangement calme.", [
@@ -33,7 +33,10 @@
       ["Crier en espérant qu'on t'entende"]
     ]],
     "c_l": ["constitution échoué blabla"],
-    "d_l": ["Tu tâte autour de toi et tu sens un objet coincé entre 2 coussins derrière toi. Visiblement tu es assis sur un canapé."],
+    "d_l": ["Tu tâtes autour de toi et tu sens un objet coincé entre 2 coussins derrière toi. Visiblement tu es assis sur un canapé. Au touché cet objet ressemble à une manette de télévison. Il n'y a plus rien à fouiller autour de toi.", [
+      ["4"],
+      ["Apuyer sur les bouton de la manette"]
+    ]],
     "i_l": ["Au loin tu entends du bruits que tu n'arrives pas à califier. Au moins tu entends de la vie quelle qu'elle soit."],
     "actions": {
       "btn": ["Tu cherches avec les mains autour de toi", "Tu essayes d'écouter attentivement"],
@@ -76,11 +79,11 @@
     }
   }, {
     "numero_chapitre": "4",
-    "card_context": "test",
+    "card_context": "En appuyant sur la manette de la télévision, la télévision s'allume et les infos en continues s'affiche devant toi en t'éblouissant. Une information boucle, ça parle d'une disparition d'une personne un certain /insertname a disparu depuis 2 jours et n'a pas donné de nouvelle la description de ses vêtements correspond à ce que tu portes. En plus de ces informations, la télévision éclaire ton lieu c'est une salle rustique avec un canapé en face une télévision à droite un bureau avec une fenêtre fermé d'un rideau et enface une porte fermée.",
     "mj_question": "Que fais-tu ?",
     "txt": " adipisicing elit.",
-    "choix": ["0", "2"],
-    "btn_choix": ["Tu tatonnes autour de toi puis te rassois", "Maintenant de bout tu fouilles tes poches"],
+    "choix": ["8", "9", "10", "11"],
+    "btn_choix": ["Fouiller tes affaires", "Atteindre le bureau", "Atteindre la porte", "Atteindre la télé"],
     "c_w": ["constitution réussi blabla"],
     "d_w": ["agilité réussi blabla"],
     "i_w": ["réflexion réussit blabla"],
