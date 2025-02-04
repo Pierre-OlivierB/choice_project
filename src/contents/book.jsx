@@ -72,7 +72,7 @@ function Book(props) {
         break;
     }
   }
-  console.log(currentStories);
+  // console.log(currentStories);
   // console.log("Add : ", actionSup);
   // set all buttons from data
   const btnList = currentStories.btn_choix;
@@ -90,6 +90,7 @@ function Book(props) {
           onClick={() => {
             const chc = currentStories.choix[i];
             handleClick(chc);
+            setActionActive(false);
           }}
         >
           {currentStories.btn_choix[i]}
@@ -98,12 +99,12 @@ function Book(props) {
     }
     // console.log("test today before", currentStories.card_context);
 
-    console.log("render 1", actionActive);
+    console.log("render 1", actionActive, actionSup);
     actionActive ? setPrecendentAction(currentStories.card_context) : null;
 
     // if action to add from precedent action, add button
 
-    if (actionSup.length != 0 && actionSup) {
+    if (actionSup && actionSup.length != 0) {
       listBtn.push(
         <button
           key={5}
@@ -113,7 +114,7 @@ function Book(props) {
             const chc = actionSup[0];
             setChoice(chc);
             setActionSup([]);
-            setActionActive(!actionActive);
+            setActionActive(true);
             // console.log("test today", currentStories.card_context);
           }}
         >

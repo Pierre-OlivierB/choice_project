@@ -147,5 +147,83 @@
       "btn": ["Tu tatonnes", "Tu fouilles tes poches"],
       "carac": ["dexterite", "dexterite"]
     }
+  },
+  {
+    "numero_chapitre": "8",
+    "card_context": "test",
+    "mj_question": "Que fais-tu ?",
+    "txt": " Tu cris de toutes tes force, mais rien ne semble perturber le calme alentour pas un bruit supplémentaire après tes appel à l'aide. ",
+    "choix": ["0", "2"],
+    "btn_choix": ["Tu tatonnes autour de toi puis te rassois", "Maintenant de bout tu fouilles tes poches"],
+    "c_w": ["constitution réussi blabla"],
+    "d_w": ["agilité réussi blabla"],
+    "i_w": ["réflexion réussit blabla"],
+    "c_l": ["constitution échoué blabla"],
+    "d_l": ["agilité échoué blabla"],
+    "i_l": ["réflexion échoué blabla"],
+    "actions": {
+      "btn": ["Tu tatonnes", "Tu fouilles tes poches"],
+      "carac": ["dexterite", "dexterite"]
+    }
+  },
+  {
+    "numero_chapitre": "9",
+    "card_context": "Tu arrives devant le bureau. Il est sommaire. Sur le bureau il semble y avoir comme une sorte de manivelle, la chaise est rentrée, mais un tiroir fait toute la longueur de la table. Au dessus, une fenêtre fermée sans ouverture possible avec un volet coulissant fermé lui aussi. Le mécanisme est absent, c'est surement la manivelle qui a du être arrachée",
+    "mj_question": "Que fais-tu ?",
+    "txt": "Txt qu'on doit pas voir",
+    "choix": ["12", "13", "14"],
+    "btn_choix": ["Essayer d'ouvrir le volet", "Atteindre la télé", "Atteindre la porte"],
+    "c_w": ["constitution réussi blabla"],
+    "d_w": ["Tu ouvres délicatement le tiroir et tu scrutes consciencieusement l'intérieur du tiroir et tu vois un objet brillant au fond c'est une clef de chambre d'hotel", [
+      ["15"],
+      ["Tu vas vers la porte pour utiliser la clef dessus"]
+    ]],
+    "i_w": ["réflexion réussit blabla"],
+    "c_l": ["constitution échoué blabla"],
+    "d_l": ["Tu ouvres délicatement le tiroir et tu scrutes rapidement l'intérieur. Le temps te semble une éternité. Mais à force de fouiller avec tes mains, tu fini par toucher un objet froid. C'est une clef de chambre d'hotel", [
+      ["15"],
+      ["Tu vas vers la porte pour utiliser la clef dessus"]
+    ]],
+    "i_l": ["réflexion échoué blabla"],
+    "actions": {
+      "btn": ["Fouiller le tiroir", "Essayer d'ouvrir le volet par la force", "Essayer d'ouvrir le volet grâce à la manivelle"],
+      "carac": ["dexterite", "constitution", "intelligence"]
+    }
+  },
+  {
+    "numero_chapitre": "10",
+    "card_context": "test",
+    "mj_question": "Que fais-tu ?",
+    "txt": " Tu cris de toutes tes force, mais rien ne semble perturber le calme alentour pas un bruit supplémentaire après tes appel à l'aide. ",
+    "choix": ["0", "2"],
+    "btn_choix": ["Tu tatonnes autour de toi puis te rassois", "Maintenant de bout tu fouilles tes poches"],
+    "c_w": ["constitution réussi blabla"],
+    "d_w": ["agilité réussi blabla"],
+    "i_w": ["réflexion réussit blabla"],
+    "c_l": ["constitution échoué blabla"],
+    "d_l": ["agilité échoué blabla"],
+    "i_l": ["réflexion échoué blabla"],
+    "actions": {
+      "btn": ["Tu tatonnes", "Tu fouilles tes poches"],
+      "carac": ["dexterite", "dexterite"]
+    }
+  },
+  {
+    "numero_chapitre": "11",
+    "card_context": "test",
+    "mj_question": "Que fais-tu ?",
+    "txt": " Tu cris de toutes tes force, mais rien ne semble perturber le calme alentour pas un bruit supplémentaire après tes appel à l'aide. ",
+    "choix": ["0", "2"],
+    "btn_choix": ["Tu tatonnes autour de toi puis te rassois", "Maintenant de bout tu fouilles tes poches"],
+    "c_w": ["constitution réussi blabla"],
+    "d_w": ["agilité réussi blabla"],
+    "i_w": ["réflexion réussit blabla"],
+    "c_l": ["constitution échoué blabla"],
+    "d_l": ["agilité échoué blabla"],
+    "i_l": ["réflexion échoué blabla"],
+    "actions": {
+      "btn": ["Tu tatonnes", "Tu fouilles tes poches"],
+      "carac": ["dexterite", "dexterite"]
+    }
   }
 ]
