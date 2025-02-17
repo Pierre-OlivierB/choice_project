@@ -225,5 +225,355 @@
       "btn": ["Tu tatonnes", "Tu fouilles tes poches"],
       "carac": ["dexterite", "dexterite"]
     }
+  }, {
+    "numero_chapitre": "12",
+    "card_context": "Tu arrives devant le bureau. Il est sommaire. Sur le bureau il semble y avoir comme une sorte de manivelle, la chaise est rentrée, mais un tiroir fait toute la longueur de la table. Au dessus, une fenêtre fermée sans ouverture possible avec un volet coulissant fermé lui aussi. Le mécanisme est absent, c'est surement la manivelle qui a du être arrachée",
+    "mj_question": "Que fais-tu ?",
+    "txt": "Txt qu'on doit pas voir",
+    "choix": ["12", "13", "14"],
+    "btn_choix": ["Essayer d'ouvrir le volet", "Atteindre la télé", "Atteindre la porte"],
+    "c_w": ["constitution réussi blabla"],
+    "d_w": ["Tu ouvres délicatement le tiroir et tu scrutes consciencieusement l'intérieur du tiroir et tu vois un objet brillant au fond c'est une clef de chambre d'hotel", [
+      ["15"],
+      ["Tu vas vers la porte pour utiliser la clef dessus"]
+    ]],
+    "i_w": ["réflexion réussit blabla"],
+    "c_l": ["constitution échoué blabla"],
+    "d_l": ["Tu ouvres délicatement le tiroir et tu scrutes rapidement l'intérieur. Le temps te semble une éternité. Mais à force de fouiller avec tes mains, tu fini par toucher un objet froid. C'est une clef de chambre d'hotel", [
+      ["15"],
+      ["Tu vas vers la porte pour utiliser la clef dessus"]
+    ]],
+    "i_l": ["réflexion échoué blabla"],
+    "actions": {
+      "btn": ["Fouiller le tiroir", "Essayer d'ouvrir le volet par la force", "Essayer d'ouvrir le volet grâce à la manivelle"],
+      "carac": ["dexterite", "constitution", "intelligence"]
+    }
+  }, {
+    "numero_chapitre": "13",
+    "card_context": "Tu arrives devant le bureau. Il est sommaire. Sur le bureau il semble y avoir comme une sorte de manivelle, la chaise est rentrée, mais un tiroir fait toute la longueur de la table. Au dessus, une fenêtre fermée sans ouverture possible avec un volet coulissant fermé lui aussi. Le mécanisme est absent, c'est surement la manivelle qui a du être arrachée",
+    "mj_question": "Que fais-tu ?",
+    "txt": "Txt qu'on doit pas voir",
+    "choix": ["12", "13", "14"],
+    "btn_choix": ["Essayer d'ouvrir le volet", "Atteindre la télé", "Atteindre la porte"],
+    "c_w": ["constitution réussi blabla"],
+    "d_w": ["Tu ouvres délicatement le tiroir et tu scrutes consciencieusement l'intérieur du tiroir et tu vois un objet brillant au fond c'est une clef de chambre d'hotel", [
+      ["15"],
+      ["Tu vas vers la porte pour utiliser la clef dessus"]
+    ]],
+    "i_w": ["réflexion réussit blabla"],
+    "c_l": ["constitution échoué blabla"],
+    "d_l": ["Tu ouvres délicatement le tiroir et tu scrutes rapidement l'intérieur. Le temps te semble une éternité. Mais à force de fouiller avec tes mains, tu fini par toucher un objet froid. C'est une clef de chambre d'hotel", [
+      ["15"],
+      ["Tu vas vers la porte pour utiliser la clef dessus"]
+    ]],
+    "i_l": ["réflexion échoué blabla"],
+    "actions": {
+      "btn": ["Fouiller le tiroir", "Essayer d'ouvrir le volet par la force", "Essayer d'ouvrir le volet grâce à la manivelle"],
+      "carac": ["dexterite", "constitution", "intelligence"]
+    }
+  }, {
+    "numero_chapitre": "14",
+    "card_context": "Tu arrives devant la porte. Il est sommaire. Sur le bureau il semble y avoir comme une sorte de manivelle, la chaise est rentrée, mais un tiroir fait toute la longueur de la table. Au dessus, une fenêtre fermée sans ouverture possible avec un volet coulissant fermé lui aussi. Le mécanisme est absent, c'est surement la manivelle qui a du être arrachée",
+    "mj_question": "Que fais-tu ?",
+    "txt": "Txt qu'on doit pas voir",
+    "choix": ["12", "13", "14"],
+    "btn_choix": ["Essayer d'ouvrir le volet", "Atteindre la télé", "Atteindre la porte"],
+    "c_w": ["constitution réussi blabla"],
+    "d_w": ["Tu ouvres délicatement le tiroir et tu scrutes consciencieusement l'intérieur du tiroir et tu vois un objet brillant au fond c'est une clef de chambre d'hotel", [
+      ["15"],
+      ["Tu vas vers la porte pour utiliser la clef dessus"]
+    ]],
+    "i_w": ["réflexion réussit blabla"],
+    "c_l": ["constitution échoué blabla"],
+    "d_l": ["Tu ouvres délicatement le tiroir et tu scrutes rapidement l'intérieur. Le temps te semble une éternité. Mais à force de fouiller avec tes mains, tu fini par toucher un objet froid. C'est une clef de chambre d'hotel", [
+      ["15"],
+      ["Tu vas vers la porte pour utiliser la clef dessus"]
+    ]],
+    "i_l": ["réflexion échoué blabla"],
+    "actions": {
+      "btn": ["Fouiller le tiroir", "Essayer d'ouvrir le volet par la force", "Essayer d'ouvrir le volet grâce à la manivelle"],
+      "carac": ["dexterite", "constitution", "intelligence"]
+    }
+  }, {
+    "numero_chapitre": "15",
+    "card_context": "Tu arrives devant la porte. La porte semble peu résistant. Tu essayes essaye de l'ouvrir et tu découvre qu'elle est fermée à clef.",
+    "mj_question": "Que fais-tu ?",
+    "txt": "Txt qu'on doit pas voir",
+    "choix": ["16", "17", "18", "19", "20"],
+    "btn_choix": ["Forcer la porte", "Atteindre la télé", "Revenir au bureau", "Utiliser la clef dans la serrure", "Révenir au canapé"],
+    "c_w": ["constitution réussi blabla"],
+    "d_w": ["Tu ouvres délicatement le tiroir et tu scrutes consciencieusement l'intérieur du tiroir et tu vois un objet brillant au fond c'est une clef de chambre d'hotel", [
+      ["15"],
+      ["Tu vas vers la porte pour utiliser la clef dessus"]
+    ]],
+    "i_w": ["réflexion réussit blabla"],
+    "c_l": ["constitution échoué blabla"],
+    "d_l": ["Tu ouvres délicatement le tiroir et tu scrutes rapidement l'intérieur. Le temps te semble une éternité. Mais à force de fouiller avec tes mains, tu fini par toucher un objet froid. C'est une clef de chambre d'hotel", [
+      ["15"],
+      ["Tu vas vers la porte pour utiliser la clef dessus"]
+    ]],
+    "i_l": ["réflexion échoué blabla"],
+    "actions": {
+      "btn": ["Fouiller le tiroir", "Essayer d'ouvrir le volet par la force", "Essayer d'ouvrir le volet grâce à la manivelle"],
+      "carac": ["dexterite", "constitution", "intelligence"]
+    }
+  }, {
+    "numero_chapitre": "16",
+    "card_context": "Tu arrives devant le bureau. Il est sommaire. Sur le bureau il semble y avoir comme une sorte de manivelle, la chaise est rentrée, mais un tiroir fait toute la longueur de la table. Au dessus, une fenêtre fermée sans ouverture possible avec un volet coulissant fermé lui aussi. Le mécanisme est absent, c'est surement la manivelle qui a du être arrachée",
+    "mj_question": "Que fais-tu ?",
+    "txt": "Txt qu'on doit pas voir",
+    "choix": ["12", "13", "14"],
+    "btn_choix": ["Essayer d'ouvrir le volet", "Atteindre la télé", "Atteindre la porte"],
+    "c_w": ["constitution réussi blabla"],
+    "d_w": ["Tu ouvres délicatement le tiroir et tu scrutes consciencieusement l'intérieur du tiroir et tu vois un objet brillant au fond c'est une clef de chambre d'hotel", [
+      ["15"],
+      ["Tu vas vers la porte pour utiliser la clef dessus"]
+    ]],
+    "i_w": ["réflexion réussit blabla"],
+    "c_l": ["constitution échoué blabla"],
+    "d_l": ["Tu ouvres délicatement le tiroir et tu scrutes rapidement l'intérieur. Le temps te semble une éternité. Mais à force de fouiller avec tes mains, tu fini par toucher un objet froid. C'est une clef de chambre d'hotel", [
+      ["15"],
+      ["Tu vas vers la porte pour utiliser la clef dessus"]
+    ]],
+    "i_l": ["réflexion échoué blabla"],
+    "actions": {
+      "btn": ["Fouiller le tiroir", "Essayer d'ouvrir le volet par la force", "Essayer d'ouvrir le volet grâce à la manivelle"],
+      "carac": ["dexterite", "constitution", "intelligence"]
+    }
+  }, {
+    "numero_chapitre": "17",
+    "card_context": "Tu arrives devant le bureau. Il est sommaire. Sur le bureau il semble y avoir comme une sorte de manivelle, la chaise est rentrée, mais un tiroir fait toute la longueur de la table. Au dessus, une fenêtre fermée sans ouverture possible avec un volet coulissant fermé lui aussi. Le mécanisme est absent, c'est surement la manivelle qui a du être arrachée",
+    "mj_question": "Que fais-tu ?",
+    "txt": "Txt qu'on doit pas voir",
+    "choix": ["12", "13", "14"],
+    "btn_choix": ["Essayer d'ouvrir le volet", "Atteindre la télé", "Atteindre la porte"],
+    "c_w": ["constitution réussi blabla"],
+    "d_w": ["Tu ouvres délicatement le tiroir et tu scrutes consciencieusement l'intérieur du tiroir et tu vois un objet brillant au fond c'est une clef de chambre d'hotel", [
+      ["15"],
+      ["Tu vas vers la porte pour utiliser la clef dessus"]
+    ]],
+    "i_w": ["réflexion réussit blabla"],
+    "c_l": ["constitution échoué blabla"],
+    "d_l": ["Tu ouvres délicatement le tiroir et tu scrutes rapidement l'intérieur. Le temps te semble une éternité. Mais à force de fouiller avec tes mains, tu fini par toucher un objet froid. C'est une clef de chambre d'hotel", [
+      ["15"],
+      ["Tu vas vers la porte pour utiliser la clef dessus"]
+    ]],
+    "i_l": ["réflexion échoué blabla"],
+    "actions": {
+      "btn": ["Fouiller le tiroir", "Essayer d'ouvrir le volet par la force", "Essayer d'ouvrir le volet grâce à la manivelle"],
+      "carac": ["dexterite", "constitution", "intelligence"]
+    }
+  }, {
+    "numero_chapitre": "18",
+    "card_context": "Tu arrives devant le bureau. Il est sommaire. Sur le bureau il semble y avoir comme une sorte de manivelle, la chaise est rentrée, mais un tiroir fait toute la longueur de la table. Au dessus, une fenêtre fermée sans ouverture possible avec un volet coulissant fermé lui aussi. Le mécanisme est absent, c'est surement la manivelle qui a du être arrachée",
+    "mj_question": "Que fais-tu ?",
+    "txt": "Txt qu'on doit pas voir",
+    "choix": ["12", "13", "14"],
+    "btn_choix": ["Essayer d'ouvrir le volet", "Atteindre la télé", "Atteindre la porte"],
+    "c_w": ["constitution réussi blabla"],
+    "d_w": ["Tu ouvres délicatement le tiroir et tu scrutes consciencieusement l'intérieur du tiroir et tu vois un objet brillant au fond c'est une clef de chambre d'hotel", [
+      ["15"],
+      ["Tu vas vers la porte pour utiliser la clef dessus"]
+    ]],
+    "i_w": ["réflexion réussit blabla"],
+    "c_l": ["constitution échoué blabla"],
+    "d_l": ["Tu ouvres délicatement le tiroir et tu scrutes rapidement l'intérieur. Le temps te semble une éternité. Mais à force de fouiller avec tes mains, tu fini par toucher un objet froid. C'est une clef de chambre d'hotel", [
+      ["15"],
+      ["Tu vas vers la porte pour utiliser la clef dessus"]
+    ]],
+    "i_l": ["réflexion échoué blabla"],
+    "actions": {
+      "btn": ["Fouiller le tiroir", "Essayer d'ouvrir le volet par la force", "Essayer d'ouvrir le volet grâce à la manivelle"],
+      "carac": ["dexterite", "constitution", "intelligence"]
+    }
+  }, {
+    "numero_chapitre": "19",
+    "card_context": "La clef rentre très naturellement dnas le barrilé. Et la clef tourne facilement. Tu ouvres la porte et tu as devant toi un forêt sombre avec une route goudronné qui te sépare de cette nature. Des places de parking sont dessinées sur ce bitume. Un ensemble de chambre se suivent et se ressemble sur ton côté gauche. De l'autre côté un parking d'une vingtainte de place se dévoile sous tes yeux. La présence d'un homme assez grand et corpulent en plein milieu du parking cigarette à la bouche te fait froid dans le dos. Cette masse peu réconfortante jette sa cigarette d'un geste brusque en te voyant. Et se dirige vers toi l'air déterminé et peu amical. Sa voiture à les fares allumés, et la fenêtre est à moitier ouverte",
+    "mj_question": "Que fais-tu ?",
+    "txt": "Txt qu'on doit pas voir",
+    "choix": ["20", "21", "22"],
+    "btn_choix": ["J'essaye de forcer le passage", "J'essaye de courrir pour l'éviter et rentrer dans la voiture", "J'essaye de lui parler"],
+    "c_w": ["constitution réussi blabla"],
+    "d_w": ["Tu essayes de courrir pour l'éviter. Tu sens ton coeur battre à tout rompre, tu réussis assez simplement"],
+    "i_w": ["réflexion réussit blabla"],
+    "c_l": ["constitution échoué blabla"],
+    "d_l": ["Tu essayes de courrir pour l'éviter. Tu sens ton coeur battre à tout rompre, tu le fais avec difficulté."],
+    "i_l": ["réflexion échoué blabla"],
+    "actions": {
+      "btn": ["Je m'enferme dans la chambre et je tiens la porte", "J'essaye de courrir pour prendre la voiture", "J'essaye de lui parler"],
+      "carac": ["constitution", "dexterite", "intelligence"]
+    }
+  }, {
+    "numero_chapitre": "20",
+    "card_context": "Tu arrives devant le bureau. Il est sommaire. Sur le bureau il semble y avoir comme une sorte de manivelle, la chaise est rentrée, mais un tiroir fait toute la longueur de la table. Au dessus, une fenêtre fermée sans ouverture possible avec un volet coulissant fermé lui aussi. Le mécanisme est absent, c'est surement la manivelle qui a du être arrachée",
+    "mj_question": "Que fais-tu ?",
+    "txt": "Txt qu'on doit pas voir",
+    "choix": ["12", "13", "14"],
+    "btn_choix": ["Essayer d'ouvrir le volet", "Atteindre la télé", "Atteindre la porte"],
+    "c_w": ["constitution réussi blabla"],
+    "d_w": ["Tu ouvres délicatement le tiroir et tu scrutes consciencieusement l'intérieur du tiroir et tu vois un objet brillant au fond c'est une clef de chambre d'hotel", [
+      ["15"],
+      ["Tu vas vers la porte pour utiliser la clef dessus"]
+    ]],
+    "i_w": ["réflexion réussit blabla"],
+    "c_l": ["constitution échoué blabla"],
+    "d_l": ["Tu ouvres délicatement le tiroir et tu scrutes rapidement l'intérieur. Le temps te semble une éternité. Mais à force de fouiller avec tes mains, tu fini par toucher un objet froid. C'est une clef de chambre d'hotel", [
+      ["15"],
+      ["Tu vas vers la porte pour utiliser la clef dessus"]
+    ]],
+    "i_l": ["réflexion échoué blabla"],
+    "actions": {
+      "btn": ["Fouiller le tiroir", "Essayer d'ouvrir le volet par la force", "Essayer d'ouvrir le volet grâce à la manivelle"],
+      "carac": ["dexterite", "constitution", "intelligence"]
+    }
+  }, {
+    "numero_chapitre": "21",
+    "card_context": "Tu vois que tu as une ouverture pour essayer de l'éviter",
+    "mj_question": "Sachant que ça peut être ta dernière action. Que fais-tu ?",
+    "txt": "Txt qu'on doit pas voir",
+    "choix": ["24", "25", "26"],
+    "btn_choix": ["Essayer de démarer la voiture", "Claxonner", "Ouvrir violamment la porte pour percuter l'inconnu"],
+    "c_w": ["constitution réussi blabla"],
+    "d_w": ["Tu te jettes par la fenêtre avec grâce, tu tombes pile au bon endroit pour le pas te faire mal"],
+    "i_w": ["réflexion réussit blabla"],
+    "c_l": ["constitution échoué blabla"],
+    "d_l": ["Tu te jettes par la fenêtre en explosant la vitre, tu sens la boîte de vitesse percuter tes côtés avec violence."],
+    "i_l": ["réflexion échoué blabla"],
+    "actions": {
+      "btn": ["Se jetter par la fenêtre", "Casser la vitre pour ouvrir la porte", "Espérer que la porte ne soit pas fermer à clef"],
+      "carac": ["dexterite", "constitution", "intelligence"]
+    }
+  }, {
+    "numero_chapitre": "22",
+    "card_context": "Tu essayes de courrir pour l'éviter. Tu sens ton coeur battre à tout rompre.",
+    "mj_question": "Que fais-tu ?",
+    "txt": "Txt qu'on doit pas voir",
+    "choix": ["12", "13", "14"],
+    "btn_choix": ["Essayer d'ouvrir le volet", "Atteindre la télé", "Atteindre la porte"],
+    "c_w": ["constitution réussi blabla"],
+    "d_w": ["Tu ouvres délicatement le tiroir et tu scrutes consciencieusement l'intérieur du tiroir et tu vois un objet brillant au fond c'est une clef de chambre d'hotel"],
+    "i_w": ["réflexion réussit blabla"],
+    "c_l": ["constitution échoué blabla"],
+    "d_l": ["Tu ouvres délicatement le tiroir et tu scrutes rapidement l'intérieur. Le temps te semble une éternité. Mais à force de fouiller avec tes mains, tu fini par toucher un objet froid. C'est une clef de chambre d'hotel"],
+    "i_l": ["réflexion échoué blabla"],
+    "actions": {
+      "btn": ["Courrir de toute te forces", "Jetter ton portable au visage de l'inconnu", "Lui dire que les flics arrivent derrrière lui"],
+      "carac": ["constitution", "dexterite", "intelligence"]
+    }
+  }, {
+    "numero_chapitre": "23",
+    "card_context": "Tu arrives devant le bureau. Il est sommaire. Sur le bureau il semble y avoir comme une sorte de manivelle, la chaise est rentrée, mais un tiroir fait toute la longueur de la table. Au dessus, une fenêtre fermée sans ouverture possible avec un volet coulissant fermé lui aussi. Le mécanisme est absent, c'est surement la manivelle qui a du être arrachée",
+    "mj_question": "Que fais-tu ?",
+    "txt": "Txt qu'on doit pas voir",
+    "choix": ["12", "13", "14"],
+    "btn_choix": ["Essayer d'ouvrir le volet", "Atteindre la télé", "Atteindre la porte"],
+    "c_w": ["constitution réussi blabla"],
+    "d_w": ["Tu ouvres délicatement le tiroir et tu scrutes consciencieusement l'intérieur du tiroir et tu vois un objet brillant au fond c'est une clef de chambre d'hotel", [
+      ["15"],
+      ["Tu vas vers la porte pour utiliser la clef dessus"]
+    ]],
+    "i_w": ["réflexion réussit blabla"],
+    "c_l": ["constitution échoué blabla"],
+    "d_l": ["Tu ouvres délicatement le tiroir et tu scrutes rapidement l'intérieur. Le temps te semble une éternité. Mais à force de fouiller avec tes mains, tu fini par toucher un objet froid. C'est une clef de chambre d'hotel", [
+      ["15"],
+      ["Tu vas vers la porte pour utiliser la clef dessus"]
+    ]],
+    "i_l": ["réflexion échoué blabla"],
+    "actions": {
+      "btn": ["Fouiller le tiroir", "Essayer d'ouvrir le volet par la force", "Essayer d'ouvrir le volet grâce à la manivelle"],
+      "carac": ["dexterite", "constitution", "intelligence"]
+    }
+  }, {
+    "numero_chapitre": "24",
+    "card_context": "Tu démarre la voiture sans difficulté et tu t'éloigne de cette situation incompréhensible.",
+    "mj_question": "Que fais-tu ?",
+    "txt": "Txt qu'on doit pas voir",
+    "choix": ["27"],
+    "btn_choix": ["Démarer la voiture"],
+    "c_w": ["constitution réussi blabla"],
+    "d_w": ["Tu ouvres délicatement le tiroir et tu scrutes consciencieusement l'intérieur du tiroir et tu vois un objet brillant au fond c'est une clef de chambre d'hotel", [
+      ["15"],
+      ["Tu vas vers la porte pour utiliser la clef dessus"]
+    ]],
+    "i_w": ["réflexion réussit blabla"],
+    "c_l": ["constitution échoué blabla"],
+    "d_l": ["Tu ouvres délicatement le tiroir et tu scrutes rapidement l'intérieur. Le temps te semble une éternité. Mais à force de fouiller avec tes mains, tu fini par toucher un objet froid. C'est une clef de chambre d'hotel", [
+      ["15"],
+      ["Tu vas vers la porte pour utiliser la clef dessus"]
+    ]],
+    "i_l": ["réflexion échoué blabla"],
+    "actions": {
+      "btn": ["Fouiller le tiroir", "Essayer d'ouvrir le volet par la force", "Essayer d'ouvrir le volet grâce à la manivelle"],
+      "carac": ["dexterite", "constitution", "intelligence"]
+    }
+  }, {
+    "numero_chapitre": "25",
+    "card_context": "Tu arrives devant le bureau. Il est sommaire. Sur le bureau il semble y avoir comme une sorte de manivelle, la chaise est rentrée, mais un tiroir fait toute la longueur de la table. Au dessus, une fenêtre fermée sans ouverture possible avec un volet coulissant fermé lui aussi. Le mécanisme est absent, c'est surement la manivelle qui a du être arrachée",
+    "mj_question": "Que fais-tu ?",
+    "txt": "Txt qu'on doit pas voir",
+    "choix": ["12", "13", "14"],
+    "btn_choix": ["Essayer d'ouvrir le volet", "Atteindre la télé", "Atteindre la porte"],
+    "c_w": ["constitution réussi blabla"],
+    "d_w": ["Tu ouvres délicatement le tiroir et tu scrutes consciencieusement l'intérieur du tiroir et tu vois un objet brillant au fond c'est une clef de chambre d'hotel", [
+      ["15"],
+      ["Tu vas vers la porte pour utiliser la clef dessus"]
+    ]],
+    "i_w": ["réflexion réussit blabla"],
+    "c_l": ["constitution échoué blabla"],
+    "d_l": ["Tu ouvres délicatement le tiroir et tu scrutes rapidement l'intérieur. Le temps te semble une éternité. Mais à force de fouiller avec tes mains, tu fini par toucher un objet froid. C'est une clef de chambre d'hotel", [
+      ["15"],
+      ["Tu vas vers la porte pour utiliser la clef dessus"]
+    ]],
+    "i_l": ["réflexion échoué blabla"],
+    "actions": {
+      "btn": ["Fouiller le tiroir", "Essayer d'ouvrir le volet par la force", "Essayer d'ouvrir le volet grâce à la manivelle"],
+      "carac": ["dexterite", "constitution", "intelligence"]
+    }
+  }, {
+    "numero_chapitre": "26",
+    "card_context": "Tu arrives devant le bureau. Il est sommaire. Sur le bureau il semble y avoir comme une sorte de manivelle, la chaise est rentrée, mais un tiroir fait toute la longueur de la table. Au dessus, une fenêtre fermée sans ouverture possible avec un volet coulissant fermé lui aussi. Le mécanisme est absent, c'est surement la manivelle qui a du être arrachée",
+    "mj_question": "Que fais-tu ?",
+    "txt": "Txt qu'on doit pas voir",
+    "choix": ["12", "13", "14"],
+    "btn_choix": ["Essayer d'ouvrir le volet", "Atteindre la télé", "Atteindre la porte"],
+    "c_w": ["constitution réussi blabla"],
+    "d_w": ["Tu ouvres délicatement le tiroir et tu scrutes consciencieusement l'intérieur du tiroir et tu vois un objet brillant au fond c'est une clef de chambre d'hotel", [
+      ["15"],
+      ["Tu vas vers la porte pour utiliser la clef dessus"]
+    ]],
+    "i_w": ["réflexion réussit blabla"],
+    "c_l": ["constitution échoué blabla"],
+    "d_l": ["Tu ouvres délicatement le tiroir et tu scrutes rapidement l'intérieur. Le temps te semble une éternité. Mais à force de fouiller avec tes mains, tu fini par toucher un objet froid. C'est une clef de chambre d'hotel", [
+      ["15"],
+      ["Tu vas vers la porte pour utiliser la clef dessus"]
+    ]],
+    "i_l": ["réflexion échoué blabla"],
+    "actions": {
+      "btn": ["Fouiller le tiroir", "Essayer d'ouvrir le volet par la force", "Essayer d'ouvrir le volet grâce à la manivelle"],
+      "carac": ["dexterite", "constitution", "intelligence"]
+    }
+  }, {
+    "numero_chapitre": "27",
+    "card_context": "Tu démarre la voiture sans difficulté et tu t'éloignes de cette situation incompréhensible.",
+    "mj_question": "Veux tu générer ton histoire ?",
+    "txt": "Txt qu'on doit pas voir",
+    "choix": ["27"],
+    "btn_choix": ["Générer l'histoire"],
+    "c_w": ["constitution réussi blabla"],
+    "d_w": ["Tu ouvres délicatement le tiroir et tu scrutes consciencieusement l'intérieur du tiroir et tu vois un objet brillant au fond c'est une clef de chambre d'hotel", [
+      ["15"],
+      ["Tu vas vers la porte pour utiliser la clef dessus"]
+    ]],
+    "i_w": ["réflexion réussit blabla"],
+    "c_l": ["constitution échoué blabla"],
+    "d_l": ["Tu ouvres délicatement le tiroir et tu scrutes rapidement l'intérieur. Le temps te semble une éternité. Mais à force de fouiller avec tes mains, tu fini par toucher un objet froid. C'est une clef de chambre d'hotel", [
+      ["15"],
+      ["Tu vas vers la porte pour utiliser la clef dessus"]
+    ]],
+    "i_l": ["réflexion échoué blabla"],
+    "actions": {
+      "btn": ["Générer l'histoire"],
+      "carac": ["fin"]
+    }
   }
 ]

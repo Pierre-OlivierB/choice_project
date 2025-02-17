@@ -14,6 +14,9 @@ function Events(props) {
   const [flagevent, setFlagevent] = useState(true);
   const [hideDice, setHideDice] = useState(false);
 
+  // set story end
+  const [storyEnd, setStoryEnd] = useState(false);
+
   // result dice
   const [win, setWin] = useState(true);
   // action done
@@ -66,8 +69,8 @@ function Events(props) {
       case "intelligence":
         setCaracChoice(perso.intelligence);
         break;
-
       default:
+        setStoryEnd(true);
         break;
     }
   }
