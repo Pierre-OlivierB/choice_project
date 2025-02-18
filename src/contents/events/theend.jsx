@@ -1,0 +1,15 @@
+import React, { useEffect } from "react";
+import { useState } from "react";
+
+function TheEnd(props) {
+  const save = props.save;
+  const story = save.map((step, key) => <div key={key}>{step[0]}</div>);
+  return (
+    <>
+      <h1>The end</h1>
+      <div>{story}</div>
+    </>
+  );
+}
+
+export default TheEnd;

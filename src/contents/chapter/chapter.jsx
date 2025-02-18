@@ -6,6 +6,11 @@ function Chapter(props) {
   const perso = props.perso;
   const mj = props.mj;
 
+  // console.log("chapter" + chpt);
+
+  // if (chpt === "end") {
+  //   console.log("this is the end");
+  // }
   function handleClick() {
     console.log("render");
   }

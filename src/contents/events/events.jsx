@@ -1,11 +1,13 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
+import TheEnd from "./theend";
 
 function Events(props) {
   const perso = props.perso;
   const story = props.choice;
   const flag = props.flag;
   const actions = props.actions;
+  const save = props.save;
   //   console.log(perso, story);
 
   //   set result dice
@@ -71,6 +73,7 @@ function Events(props) {
         break;
       default:
         setStoryEnd(true);
+        console.log("This is the end" + storyEnd);
         break;
     }
   }
@@ -128,45 +131,54 @@ function Events(props) {
             <p>{story.mj_question}</p>
           </div>
         </div>
-        <div className="container-fluid position-absolute top-50 start-0 d-flex justify-content-evenly">
-          {hideDice ? <></> : btnChoiceContent}
-        </div>
-        {hideDice ? (
-          <div className="container-fluid">
-            {flagevent && hideDice ? (
-              <>
-                <button className="btn btn-danger" onClick={handleClickDice}>
-                  Dice
-                </button>
-                {console.log(contentBtnActionChoice)}
-                <p> Ton choix : {contentBtnActionChoice}</p>
-                <p>
-                  Il faut faire moins ou égale à la caractéristique : /
-                  {caracChoice}
-                </p>
-              </>
-            ) : (
-              <>
-                <p>
-                  Result : {dice} / {caracChoice}
-                </p>
-                {win ? (
-                  <p>Tu as réussi ton action</p>
+        {!storyEnd ? (
+          <>
+            <div className="container-fluid position-absolute top-50 start-0 d-flex justify-content-evenly">
+              {hideDice ? <></> : btnChoiceContent}
+            </div>
+            {hideDice ? (
+              <div className="container-fluid">
+                {flagevent && hideDice ? (
+                  <>
+                    <button
+                      className="btn btn-danger"
+                      onClick={handleClickDice}
+                    >
+                      Dice
+                    </button>
+                    {console.log(contentBtnActionChoice)}
+                    <p> Ton choix : {contentBtnActionChoice}</p>
+                    <p>
+                      Il faut faire moins ou égale à la caractéristique : /
+                      {caracChoice}
+                    </p>
+                  </>
                 ) : (
-                  <p>Tu as échoué dans ton action</p>
-                )}
+                  <>
+                    <p>
+                      Result : {dice} / {caracChoice}
+                    </p>
+                    {win ? (
+                      <p>Tu as réussi ton action</p>
+                    ) : (
+                      <p>Tu as échoué dans ton action</p>
+                    )}
 
-                <button
-                  className="btn btn-success"
-                  onClick={handleClickContinu}
-                >
-                  Continue
-                </button>
-              </>
+                    <button
+                      className="btn btn-success"
+                      onClick={handleClickContinu}
+                    >
+                      Continue
+                    </button>
+                  </>
+                )}
+              </div>
+            ) : (
+              <></>
             )}
-          </div>
+          </>
         ) : (
-          <></>
+          <TheEnd save={save} />
         )}
       </div>
     </div>

@@ -144,6 +144,7 @@ function Book(props) {
           onSendData={handleDiceFromEvent}
           flag={flag}
           actions={currentStories.actions}
+          save={save.current}
         />
       )}
 
