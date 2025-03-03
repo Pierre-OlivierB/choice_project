@@ -103,7 +103,7 @@ function Events(props) {
 
   return (
     <div className="test">
-      <div className="main-content container-fluid d-flex flex-column justify-content-evenly">
+      <div className="inside-content container-fluid d-flex flex-column justify-content-evenly">
         <div className="row justify-content-md-center">
           <div className="col col-6">
             <div className="row">
@@ -131,6 +131,7 @@ function Events(props) {
             <p>{story.mj_question}</p>
           </div>
         </div>
+
         {!storyEnd ? (
           <>
             <div className="container-fluid position-absolute top-50 start-0 d-flex justify-content-evenly">

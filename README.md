@@ -17,6 +17,8 @@ npm run dev
 
 ## next
 
+change buttons by swipes
+
 ## histoire
 
 petit jeu d'essai pour découvrir le role play.

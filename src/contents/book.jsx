@@ -108,7 +108,12 @@ function Book(props) {
         <ChoiceCard
           key={i}
           content={currentStories.btn_choix[i]}
-          onSwipeRight={() => handleSwipeRight(i)}
+          onSwipeRight={() => {
+            handleSwipeRight(i);
+            const chc = currentStories.choix[i];
+            handleClick(chc);
+            setActionActive(false);
+          }}
           isDisabled={swipedCardIndex !== null && swipedCardIndex !== i}
         />
       );
@@ -143,7 +148,7 @@ function Book(props) {
   }, [currentStories, actionSup, swipedCardIndex]);
 
   return (
-    <div className="position-relative">
+    <div className="d-flex flex-column main-content">
       {flag ? (
         <Chapter
           where={currentStories.card_context}
@@ -164,7 +169,7 @@ function Book(props) {
         />
       )}
 
-      <div className="container-fluid position-absolute top-50 start-0 d-flex justify-content-evenly">
+      <div className="d-flex justify-content-evenly footer-content test">
         {flag ? <>{btnChoiceContent}</> : <></>}
       </div>
     </div>

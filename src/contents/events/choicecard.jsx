@@ -37,6 +37,7 @@ const ChoiceCard = ({ content, onSwipeRight, isDisabled }) => {
             <h5 className="card-title">{content}</h5>
           </div>
         </div>
+        <p>Swipe right to choose </p>
         {/* {swiped && (
         <>
           <div className="card-dis-choice">
@@ -49,11 +50,11 @@ const ChoiceCard = ({ content, onSwipeRight, isDisabled }) => {
       )} */}
       </div>
 
-      <div className="absolute btn-choice-positions">
+      {/* <div className="absolute btn-choice-positions">
         <button onClick={() => alert("Choix confirmé !")}>Annuler</button>
 
         <button onClick={() => alert("Choix confirmé !")}>Confirmer</button>
-      </div>
+      </div> */}
     </div>
   );
 };

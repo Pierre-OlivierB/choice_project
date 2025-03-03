@@ -2,6 +2,14 @@
     height: 100vh;
 }
 
+.inside-content {
+    height: 80vh;
+}
+
+.footer-content {
+    height: 20vh;
+}
+
 
 .test {
     background-color: hsl(160, 100%, 90%);
