@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import Chapter from "./chapter/chapter";
 import storiesData from "./chapter/stories.json";
+import ChoiceCard from "./events/choicecard";
 import Events from "./events/events";
 
 function Book(props) {
@@ -80,21 +81,36 @@ function Book(props) {
 
   const [btnChoiceContent, setBtnChoiceContent] = useState([]);
   // reload list of buttons when choices was done
+
+  // to del if not working
+  const [swipedCardIndex, setSwipedCardIndex] = useState(null);
+  const handleSwipeRight = (index) => {
+    setSwipedCardIndex(index);
+    console.log(`Card ${index} swiped right!`);
+  };
+  //end to del
+
   useEffect(() => {
     let listBtn = [];
     for (let i = 0; i < btnList.length; i++) {
       listBtn.push(
-        <button
+        // <button
+        //   key={i}
+        //   className="btn btn-success"
+        //   onClick={() => {
+        //     const chc = currentStories.choix[i];
+        //     handleClick(chc);
+        //     setActionActive(false);
+        //   }}
+        // >
+        //   {currentStories.btn_choix[i]}
+        // </button>
+        <ChoiceCard
           key={i}
-          className="btn btn-success"
-          onClick={() => {
-            const chc = currentStories.choix[i];
-            handleClick(chc);
-            setActionActive(false);
-          }}
-        >
-          {currentStories.btn_choix[i]}
-        </button>
+          content={currentStories.btn_choix[i]}
+          onSwipeRight={() => handleSwipeRight(i)}
+          isDisabled={swipedCardIndex !== null && swipedCardIndex !== i}
+        />
       );
     }
     // console.log("test today before", currentStories.card_context);
@@ -124,7 +140,7 @@ function Book(props) {
       console.log("test actionsup", actionSup);
     }
     setBtnChoiceContent(listBtn);
-  }, [currentStories, actionSup]);
+  }, [currentStories, actionSup, swipedCardIndex]);
 
   return (
     <div className="position-relative">

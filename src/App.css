@@ -1,3 +1,87 @@
 h1 {
   color: blue;
 }
+
+.cardChoice {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  cursor: grab;
+}
+
+.cardChoice.swiped {
+  transform: translateX(50%);
+}
+
+.cardChoice-content {
+  padding: 20px;
+}
+
+.card-dis-choice,
+.card-ok-choice {
+  position: absolute;
+  top: 0;
+  right: -100px;
+  width: 100px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: right 0.3s ease;
+}
+
+.cardChoice.swiped .card-ok-choice {
+  right: 0;
+  background-color: hsl(120, 40%, 50%);
+}
+
+.cardChoice.swiped .card-ok-choice button,
+.cardChoice.swiped .card-dis-choice button {
+  background-color: transparent;
+  border: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.cardChoice.swiped .card-dis-choice {
+  left: 0;
+  background-color: hsl(350, 40%, 50%);
+}
+
+.no-select {
+  -webkit-user-select: none;
+  /* Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+.cardChoice.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.btn-choice-positions {
+  top: 50%;
+  z-index: 0;
+}
+
+.cards-positions {
+  z-index: 1;
+}
