@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
+import ChoiceCard from "./choicecard";
 import TheEnd from "./theend";
 
 function Events(props) {
@@ -84,18 +85,15 @@ function Events(props) {
     let listBtn = [];
     for (let i = 0; i < actions.btn.length; i++) {
       listBtn.push(
-        <button
+        <ChoiceCard
           key={i}
-          className="btn btn-success"
-          id={actions.carac[i]}
-          onClick={(e) => {
-            const id = e.target.id;
-            handleClickEvent(id);
+          onSwipeRight={() => {
+            console.log("TEST event" + actions.carac[i]);
+            handleClickEvent(actions.carac[i]);
             setContentBtnActionChoice(actions.btn[i]);
           }}
-        >
-          {actions.btn[i]}
-        </button>
+          content={actions.btn[i]}
+        />
       );
     }
     setBtnChoiceContent(listBtn);
@@ -141,12 +139,10 @@ function Events(props) {
               <div className="container-fluid">
                 {flagevent && hideDice ? (
                   <>
-                    <button
-                      className="btn btn-danger"
-                      onClick={handleClickDice}
-                    >
-                      Dice
-                    </button>
+                    <ChoiceCard
+                      content={"Dice"}
+                      onSwipeRight={() => handleClickDice()}
+                    />
                     {console.log(contentBtnActionChoice)}
                     <p> Ton choix : {contentBtnActionChoice}</p>
                     <p>
@@ -164,13 +160,10 @@ function Events(props) {
                     ) : (
                       <p>Tu as échoué dans ton action</p>
                     )}
-
-                    <button
-                      className="btn btn-success"
-                      onClick={handleClickContinu}
-                    >
-                      Continue
-                    </button>
+                    <ChoiceCard
+                      content={"Continue"}
+                      onSwipeRight={() => handleClickContinu()}
+                    />
                   </>
                 )}
               </div>

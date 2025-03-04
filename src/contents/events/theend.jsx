@@ -3,7 +3,8 @@ import { useState } from "react";
 
 function TheEnd(props) {
   const save = props.save;
-  const story = save.map((step, key) => <div key={key}>{step[0]}</div>);
+  console.log(save);
+  const story = save.current.map((step, key) => <div key={key}>{step[0]}</div>);
   return (
     <>
       <h1>The end</h1>

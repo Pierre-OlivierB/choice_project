@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import Characters from "./characters/characters";
+import ChoiceCard from "./events/choicecard";
 
 function Home() {
   // show home page or other content
@@ -9,6 +10,7 @@ function Home() {
   function handleClick() {
     setPage(false);
   }
+  const content = " Entrez dans l'aventure";
   return (
     <>
       {page ? (
@@ -23,9 +25,10 @@ function Home() {
             </div>
             <div className="row justify-content-md-center">
               <div className="col col-2 d-flex justify-content-center">
-                <button className="btn btn-primary" onClick={handleClick}>
-                  Entrez dans l'aventure
-                </button>
+                <ChoiceCard
+                  content={content}
+                  onSwipeRight={() => handleClick()}
+                />
               </div>
             </div>
             <div className="row justify-content-md-center">

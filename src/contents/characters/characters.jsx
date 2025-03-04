@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import Book from "../book";
+import ChoiceCard from "../events/choicecard";
 import charactereData from "./data.json";
 
 function Characters() {
@@ -11,9 +12,8 @@ function Characters() {
   // set var to save player charac choice
   const [perso, setPerso] = useState([]);
   // get choice at player click and change page content
-  function handleClick(e) {
-    const persoId = e.target.childNodes[1].data;
-    const charac = data[parseInt(persoId) - 1];
+  function handleClick(id) {
+    const charac = data[parseInt(id)];
     setPerso(charac);
     setFlag(false);
   }
@@ -43,12 +43,16 @@ function Characters() {
                         <p className="card-text">
                           Intelligence (I) : {tmp.intelligence}
                         </p>
-                        <button
+                        {/* <button
                           className="btn btn-primary"
                           onClick={(e) => handleClick(e)}
                         >
                           choix : {parseInt(tmp.choix) + 1}
-                        </button>
+                        </button> */}
+                        <ChoiceCard
+                          content={"choix : " + (parseInt(tmp.choix) + 1)}
+                          onSwipeRight={() => handleClick(tmp.choix)}
+                        />
                       </div>
                     </div>
                   </div>

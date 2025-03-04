@@ -5,6 +5,7 @@ import Chapter from "./chapter/chapter";
 import storiesData from "./chapter/stories.json";
 import ChoiceCard from "./events/choicecard";
 import Events from "./events/events";
+import TheEnd from "./events/theend";
 
 function Book(props) {
   //get player choice
@@ -25,16 +26,23 @@ function Book(props) {
 
   // save
   var save = useRef([]);
-  // console.log(save);
+
   useEffect(() => {
     save.current.push([precendentAction, choice, perso]);
     console.log("histo : ", save.current);
   }, [precendentAction]);
 
+  // set story end
+  const [storyEnd, setStoryEnd] = useState(false);
+
   // set content show
   function handleClick(newChapter) {
     setChoice(newChapter);
     setFlag(!flag);
+
+    if (newChapter == 24) {
+      setStoryEnd(true);
+    }
   }
 
   // get data from child event
@@ -73,38 +81,23 @@ function Book(props) {
         break;
     }
   }
-  // console.log(currentStories);
-  // console.log("Add : ", actionSup);
+
   // set all buttons from data
   const btnList = currentStories.btn_choix;
-  // console.log("btnlist = ", btnList);
 
   const [btnChoiceContent, setBtnChoiceContent] = useState([]);
   // reload list of buttons when choices was done
 
-  // to del if not working
+  // choose card with swipe
   const [swipedCardIndex, setSwipedCardIndex] = useState(null);
   const handleSwipeRight = (index) => {
     setSwipedCardIndex(index);
-    console.log(`Card ${index} swiped right!`);
   };
-  //end to del
 
   useEffect(() => {
     let listBtn = [];
     for (let i = 0; i < btnList.length; i++) {
       listBtn.push(
-        // <button
-        //   key={i}
-        //   className="btn btn-success"
-        //   onClick={() => {
-        //     const chc = currentStories.choix[i];
-        //     handleClick(chc);
-        //     setActionActive(false);
-        //   }}
-        // >
-        //   {currentStories.btn_choix[i]}
-        // </button>
         <ChoiceCard
           key={i}
           content={currentStories.btn_choix[i]}
@@ -113,12 +106,11 @@ function Book(props) {
             const chc = currentStories.choix[i];
             handleClick(chc);
             setActionActive(false);
+            console.log("TEST book" + currentStories.choix[i]);
           }}
-          isDisabled={swipedCardIndex !== null && swipedCardIndex !== i}
         />
       );
     }
-    // console.log("test today before", currentStories.card_context);
 
     console.log("render 1", actionActive, actionSup);
     actionActive ? setPrecendentAction(currentStories.card_context) : null;
@@ -127,27 +119,23 @@ function Book(props) {
 
     if (actionSup && actionSup.length != 0) {
       listBtn.push(
-        <button
+        <ChoiceCard
           key={5}
-          className="btn btn-success"
-          onClick={() => {
-            console.log("render 2");
+          content={actionSup[1]}
+          onSwipeRight={() => {
             const chc = actionSup[0];
             setChoice(chc);
             setActionSup([]);
             setActionActive(true);
-            // console.log("test today", currentStories.card_context);
           }}
-        >
-          {actionSup[1]}
-        </button>
+        />
       );
       console.log("test actionsup", actionSup);
     }
     setBtnChoiceContent(listBtn);
   }, [currentStories, actionSup, swipedCardIndex]);
 
-  return (
+  return !storyEnd ? (
     <div className="d-flex flex-column main-content">
       {flag ? (
         <Chapter
@@ -173,6 +161,8 @@ function Book(props) {
         {flag ? <>{btnChoiceContent}</> : <></>}
       </div>
     </div>
+  ) : (
+    <TheEnd save={save} />
   );
 }
 
