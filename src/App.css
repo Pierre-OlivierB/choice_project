@@ -3,6 +3,8 @@ h1 {
 }
 
 .cardChoice {
+  display: flex;
+  flex-direction: column;
   position: relative;
   width: 300px;
   height: 150px;
@@ -84,4 +86,55 @@ h1 {
 
 .cards-positions {
   z-index: 1;
+}
+
+.cardChoice {
+  animation: move-right 3s infinite ease;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #cacaca, #f0f0f0);
+  box-shadow: 21px 21px 30px #b3b3b3,
+    -21px -21px 30px #ffffff;
+  border: 0;
+  padding: 5px;
+}
+
+.card,
+.card-body,
+.card-title {
+  border: 0;
+}
+
+.mouse-move-right {
+  width: 30px;
+  height: 30px;
+  animation: mouse-move-right 3s infinite ease;
+
+}
+
+@keyframes move-right {
+  0% {
+    left: 0;
+  }
+
+  50% {
+    left: 5px;
+  }
+
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes mouse-move-right {
+  0% {
+    left: 0;
+  }
+
+  50% {
+    transform: translateX(30px);
+  }
+
+  100% {
+    left: 0;
+  }
 }

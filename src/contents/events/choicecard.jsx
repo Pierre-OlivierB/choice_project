@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useSwipeable } from "react-swipeable";
 import "../../App.css"; // Assurez-vous d'avoir un fichier CSS pour les styles
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHandPointer } from "@fortawesome/free-solid-svg-icons";
 
 const ChoiceCard = ({ content, onSwipeRight, isDisabled }) => {
   const [swiped, setSwiped] = useState(false);
@@ -36,7 +38,8 @@ const ChoiceCard = ({ content, onSwipeRight, isDisabled }) => {
             <h5 className="card-title">{content}</h5>
           </div>
         </div>
-        <p>Swipe right to choose </p>
+        <p></p>
+        <FontAwesomeIcon className="mouse-move-right" icon={faHandPointer} />
       </div>
     </div>
   );
