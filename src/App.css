@@ -91,9 +91,10 @@ h1 {
 .cardChoice {
   animation: move-right 3s infinite ease;
   border-radius: 10px;
-  background: linear-gradient(145deg, #cacaca, #f0f0f0);
-  box-shadow: 21px 21px 30px #b3b3b3,
-    -21px -21px 30px #ffffff;
+  /* background-color: hsl(160, 100%, 90%); */
+  background: linear-gradient(145deg, hsl(331, 100%, 93%), hsl(340, 48%, 81%));
+  box-shadow: 25px 25px 71px #a88792,
+    -25px -25px 71px #ffffff;
   border: 0;
   padding: 5px;
 }
@@ -105,10 +106,15 @@ h1 {
 }
 
 .mouse-move-right {
+  width: 0px;
+  height: 0px;
+}
+
+.cardChoice:hover .mouse-move-right {
+  transform: translateX(50px);
   width: 30px;
   height: 30px;
   animation: mouse-move-right 3s infinite ease;
-
 }
 
 @keyframes move-right {
@@ -127,14 +133,14 @@ h1 {
 
 @keyframes mouse-move-right {
   0% {
-    left: 0;
+    left: 50px;
   }
 
   50% {
-    transform: translateX(30px);
+    transform: translateX(150px);
   }
 
   100% {
-    left: 0;
+    left: 50px;
   }
 }
