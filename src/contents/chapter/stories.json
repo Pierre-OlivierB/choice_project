@@ -21,40 +21,27 @@
     "card_context": "Tu veux savoir ce qui t'entoure. Mais il fait beaucoup trop noir dans la pièce pour que tu puisses voir quelque chose. Plusieurs choix s'offre à toi.",
     "mj_question": "Comment veux tu saisir ton environnement ?",
     "txt": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    "choix": ["6", "7"],
-    "btn_choix": ["Tes poches", "Tu te lèves"],
-    "c_w": ["constitution réussi blabla"],
-    "d_w": ["Tu tâtes autour de toi et tu trouves une manette de télévision coincé entre 2 coussins derrière toi. Visiblement tu es assis sur un canapé de mauvaise facture. Il n'y a plus rien à fouiller autour de toi.", [
-      ["4"],
-      ["Apuyer sur les bouton de la manette"]
-    ]],
-    "i_w": ["Au loin tu entends des voitures, tu ne dois pas être loin d'un voie passante. Mais à part ça, les alentours te semble étrangement calme.", [
-      ["7"],
-      ["Crier en espérant qu'on t'entende"]
-    ]],
-    "c_l": ["constitution échoué blabla"],
-    "d_l": ["Tu tâtes autour de toi et tu sens un objet coincé entre 2 coussins derrière toi. Visiblement tu es assis sur un canapé. Au touché cet objet ressemble à une manette de télévison. Il n'y a plus rien à fouiller autour de toi.", [
-      ["4"],
-      ["Apuyer sur les bouton de la manette"]
-    ]],
-    "i_l": ["Au loin tu entends du bruits que tu n'arrives pas à califier. Au moins tu entends de la vie quelle qu'elle soit."],
+    "choix": ["6", "9", "10", "11"],
+    "btn_choix": ["Tes poches", "Atteindre le bureau", "atteindre la porte", "atteindre la télé"],
+    "d_w": ["Tu cherches en prenant tout ton temps autour de toi et tu trouves une manette de télévision coincé entre 2 coussins derrière toi. Visiblement tu es assis sur un canapé de mauvaise facture. En la prenant en main tu ne sais pas très bien comment et la télévision s'allume. Grâce à la lumière tu vois ce qui t'entoure. A ta droite un bureau à côté d'une fenêtre fermée par un volet. Devant toi la télévision. Derrière la télévision une porte fermée. Grâce à la lumière tu en es sûr il n'y a plus rien à fouiller autour de toi."],
+    "i_w": ["Tu tâtes autour de toi et tu trouves une manette de télévision coincé entre 2 coussins derrière toi. Visiblement tu es assis sur un canapé de mauvaise facture. En la prenant en main tu ne sais pas très bien comment et la télévision s'allume. Grâce à la lumière tu vois ce qui t'entoure. A ta droite un bureau à côté d'une fenêtre fermée par un volet. Devant toi la télévision. Derrière la télévision une porte fermée. Grâce à la lumière tu en es sûr il n'y a plus rien à fouiller autour de toi"],
+    "d_l": ["Tu tâtes autour de toi et tu sens un objet coincé entre 2 coussins derrière toi. Visiblement tu es assis sur un canapé. Au touché cet objet ressemble à une manette de télévison. En la prenant en main tu ne sais pas très bien comment et la télévision s'allume. Grâce à la lumière tu vois ce qui t'entoure. A ta droite un bureau à côté d'une fenêtre fermée par un volet. Devant toi la télévision. Derrière la télévision une porte fermée. Grâce à la lumière tu en es sûr il n'y a plus rien à fouiller autour de toi"],
+    "i_l": ["Tu tâtes autour de toi et tu sens un objet coincé entre 2 coussins derrière toi. Visiblement tu es assis sur un canapé. Au touché cet objet ressemble à une manette de télévison. En la prenant en main tu ne sais pas très bien comment et la télévision s'allume. Grâce à la lumière tu vois ce qui t'entoure. A ta droite un bureau à côté d'une fenêtre fermée par un volet. Devant toi la télévision. Derrière la télévision une porte fermée. Grâce à la lumière tu en es sûr il n'y a plus rien à fouiller autour de toi"],
     "actions": {
-      "btn": ["Tu cherches avec les mains autour de toi", "Tu essayes d'écouter attentivement"],
-      "carac": ["dexterite", "intelligence"]
+      "btn": ["Tu tâtonnes consciencieusement", "Tu tâtonnes rapidement"],
+      "carac": ["intelligence", "dexterite"]
     }
   }, {
     "numero_chapitre": "2",
     "card_context": "Tu veux fouiller tes poches en espérant trouvé des informations sur toi. Ton nom, ton adresse peut être ou un mot ?",
     "mj_question": "Que fais-tu ?",
-    "txt": "blanditiis nostrum est sunt? Nam magnam assumenda laboriosam libero ex minima dicta ut ducimus laborum.",
-    "choix": ["6", "3"],
-    "btn_choix": ["Tu essayes d'allumer le portable", "Tu te lèves"],
-    "c_w": ["constitution réussi blabla"],
-    "d_w": ["agilité réussi blabla"],
-    "i_w": ["Le temps te semble interminable. Cette fouille ne te prend pas beaucoup de temps. Te voilà en possetion d'un portable éteint et d'un porte monnai. Malheureusement le noir profond dans lequel tu es t'empêche de disserner quoi que ce soit."],
-    "c_l": ["constitution échoué blabla"],
-    "d_l": ["agilité échoué blabla"],
-    "i_l": ["Le temps te semble interminable. Cette fouille est beaucoup trop longue. Te voilà en possetion d'un portable éteint et d'un porte monnai. Malheureusement le noir profond dans lequel tu es t'empêche de disserner quoi que ce soit."],
+    "txt": "",
+    "choix": ["1", "3"],
+    "btn_choix": ["autour de toi", "Tu te lèves"],
+    "d_w": ["Le temps te semble interminable. Cette fouille ne te prend pas beaucoup de temps. Te voilà en possetion d'un portable éteint. Tu essayes d'allumer le portable, mais celui-ci s'éteint instantannément, plus de batterie. Malheureusement le noir profond dans lequel tu es t'empêche de disserner quoi que ce soit."],
+    "i_w": ["Le temps te semble interminable. Cette fouille ne te prend pas beaucoup de temps. Te voilà en possetion d'un portable éteint. Tu essayes d'allumer le portable, mais celui-ci s'éteint instantannément, plus de batterie.  Malheureusement le noir profond dans lequel tu es t'empêche de disserner quoi que ce soit."],
+    "d_l": ["Le temps te semble interminable. Cette fouille est beaucoup trop longue. Te voilà en possetion d'un portable éteint. Tu essayes d'allumer le portable, mais celui-ci s'éteint instantannément, plus de batterie.  Malheureusement le noir profond dans lequel tu es t'empêche de disserner quoi que ce soit."],
+    "i_l": ["Le temps te semble interminable. Cette fouille est beaucoup trop longue. Te voilà en possetion d'un portable éteint. Tu essayes d'allumer le portable, mais celui-ci s'éteint instantannément, plus de batterie.  Malheureusement le noir profond dans lequel tu es t'empêche de disserner quoi que ce soit."],
     "actions": {
       "btn": ["Fouiller tes poches consencieusement en prenant tout ton temps", "Fouiller tes poches rapidement"],
       "carac": ["intelligence", "dexterite"]
@@ -67,15 +54,13 @@
     "txt": " adipisicing elit.",
     "choix": ["0", "2"],
     "btn_choix": ["Tu tatonnes autour de toi puis te rassois", "Maintenant de bout tu fouilles tes poches"],
-    "c_w": ["constitution réussi blabla"],
-    "d_w": ["agilité réussi blabla"],
-    "i_w": ["réflexion réussit blabla"],
-    "c_l": ["constitution échoué blabla"],
-    "d_l": ["agilité échoué blabla"],
-    "i_l": ["réflexion échoué blabla"],
+    "c_w": ["Tu sens ton corps trembler, tu ne sens plus rien. Tu arrives à peine à faire en sorte de ne pas te faire mal en retombant. Ton corps réagit comme si tu avais été drogué."],
+    "d_w": ["Tu sens ton corps trembler, tu ne sens plus rien. Tu tombes en arrière et tu te fracasse sur le canapé sur le quel tu étais. Ton corps réagit comme si tu avais été drogué."],
+    "c_l": ["Tu sens ton corps trembler, tu ne sens plus rien. Tu arrives à peine à faire en sorte de ne pas te faire mal en retombant. Ton corps réagit comme si tu avais été drogué."],
+    "d_l": ["Tu sens ton corps trembler, tu ne sens plus rien.  Tu tombes en arrière et tu te fracasse sur le canapé sur le quel tu étais. Ton corps réagit comme si tu avais été drogué."],
     "actions": {
-      "btn": ["Tu tatonnes", "Tu fouilles tes poches"],
-      "carac": ["dexterite", "dexterite"]
+      "btn": ["Tu te lèves brutalement", "Tu prends ton temps"],
+      "carac": ["constitution", "dexterite"]
     }
   }, {
     "numero_chapitre": "4",
