@@ -1328,7 +1328,7 @@
         <mxCell id="ojWSzpdNRe1vm9Hle58x-58" value="24 - Rentrer dans la voiture et essayer de démarrer la voiture" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="ojWSzpdNRe1vm9Hle58x-57" vertex="1">
           <mxGeometry y="30" width="290" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="ojWSzpdNRe1vm9Hle58x-59" value="28 - courir au loin" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="ojWSzpdNRe1vm9Hle58x-57" vertex="1">
+        <mxCell id="ojWSzpdNRe1vm9Hle58x-59" value="26 - courir au loin" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="ojWSzpdNRe1vm9Hle58x-57" vertex="1">
           <mxGeometry y="60" width="290" height="30" as="geometry" />
         </mxCell>
         <mxCell id="ojWSzpdNRe1vm9Hle58x-62" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.003;entryY=0.189;entryDx=0;entryDy=0;entryPerimeter=0;" parent="pnk6eSNMhnhxJrGRFuTv-1" source="ojWSzpdNRe1vm9Hle58x-58" target="pnk6eSNMhnhxJrGRFuTv-74" edge="1">
