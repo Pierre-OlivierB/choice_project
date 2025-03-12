@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36" version="26.1.0" pages="2">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36" version="26.1.0" pages="2">
   <diagram name="Page-1" id="FFIjwc0M4ICV1_GguwHn">
     <mxGraphModel dx="1398" dy="1545" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
@@ -423,7 +423,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="Copie de Page-1" id="m_a13MJ87UJKYPncnSow">
-    <mxGraphModel dx="3559" dy="2070" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="2256" dy="1703" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="pnk6eSNMhnhxJrGRFuTv-0" />
         <mxCell id="pnk6eSNMhnhxJrGRFuTv-1" parent="pnk6eSNMhnhxJrGRFuTv-0" />
@@ -1133,8 +1133,8 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="iAANMyzKoAnhCtGlSeD2-141" value="STOP ICI - 14" style="rhombus;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=9.0551;" parent="pnk6eSNMhnhxJrGRFuTv-1" vertex="1">
-          <mxGeometry x="2885" y="490" width="185" height="165" as="geometry" />
+        <mxCell id="iAANMyzKoAnhCtGlSeD2-141" value="STOP ICI - 21" style="rhombus;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=9.0551;" parent="pnk6eSNMhnhxJrGRFuTv-1" vertex="1">
+          <mxGeometry x="4100" y="122.5" width="185" height="165" as="geometry" />
         </mxCell>
         <mxCell id="iAANMyzKoAnhCtGlSeD2-142" value="ajouter inventaire dans personnage" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="pnk6eSNMhnhxJrGRFuTv-1" vertex="1">
           <mxGeometry x="2950" y="260" width="120" height="80" as="geometry" />
@@ -1657,7 +1657,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="9ueiJQElbsFf-dfXedeA-0" value="Si le 2 a été fait le 6 est impossible" style="rhombus;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="pnk6eSNMhnhxJrGRFuTv-1">
+        <mxCell id="9ueiJQElbsFf-dfXedeA-0" value="Si le 2 a été fait le 6 est impossible" style="rhombus;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="pnk6eSNMhnhxJrGRFuTv-1" vertex="1">
           <mxGeometry x="1356.5" y="-450" width="185" height="165" as="geometry" />
         </mxCell>
       </root>
