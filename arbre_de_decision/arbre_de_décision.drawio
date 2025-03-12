@@ -423,7 +423,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="Copie de Page-1" id="m_a13MJ87UJKYPncnSow">
-    <mxGraphModel dx="2856" dy="1705" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="3559" dy="2070" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="pnk6eSNMhnhxJrGRFuTv-0" />
         <mxCell id="pnk6eSNMhnhxJrGRFuTv-1" parent="pnk6eSNMhnhxJrGRFuTv-0" />
@@ -495,7 +495,7 @@
         <mxCell id="pnk6eSNMhnhxJrGRFuTv-32" value="10 - tu ouvres le tiroir et tu scrutes" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="pnk6eSNMhnhxJrGRFuTv-1" vertex="1">
           <mxGeometry x="1980" y="-10" width="240" height="150" as="geometry" />
         </mxCell>
-        <mxCell id="pnk6eSNMhnhxJrGRFuTv-33" value="12 - essayer d&#39;ouvrir le volet" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="pnk6eSNMhnhxJrGRFuTv-32" vertex="1">
+        <mxCell id="pnk6eSNMhnhxJrGRFuTv-33" value="13 - essayer d&#39;ouvrir le volet" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="pnk6eSNMhnhxJrGRFuTv-32" vertex="1">
           <mxGeometry y="30" width="240" height="30" as="geometry" />
         </mxCell>
         <mxCell id="pnk6eSNMhnhxJrGRFuTv-34" value="11 - atteindre la télé" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="pnk6eSNMhnhxJrGRFuTv-32" vertex="1">
@@ -1133,8 +1133,8 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="iAANMyzKoAnhCtGlSeD2-141" value="STOP ICI" style="rhombus;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=9.0551;" parent="pnk6eSNMhnhxJrGRFuTv-1" vertex="1">
-          <mxGeometry x="2930" y="-810" width="185" height="165" as="geometry" />
+        <mxCell id="iAANMyzKoAnhCtGlSeD2-141" value="STOP ICI - 14" style="rhombus;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=9.0551;" parent="pnk6eSNMhnhxJrGRFuTv-1" vertex="1">
+          <mxGeometry x="2885" y="490" width="185" height="165" as="geometry" />
         </mxCell>
         <mxCell id="iAANMyzKoAnhCtGlSeD2-142" value="ajouter inventaire dans personnage" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="pnk6eSNMhnhxJrGRFuTv-1" vertex="1">
           <mxGeometry x="2950" y="260" width="120" height="80" as="geometry" />
@@ -1656,6 +1656,9 @@
               <mxPoint x="5610" y="133" />
             </Array>
           </mxGeometry>
+        </mxCell>
+        <mxCell id="9ueiJQElbsFf-dfXedeA-0" value="Si le 2 a été fait le 6 est impossible" style="rhombus;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="pnk6eSNMhnhxJrGRFuTv-1">
+          <mxGeometry x="1356.5" y="-450" width="185" height="165" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

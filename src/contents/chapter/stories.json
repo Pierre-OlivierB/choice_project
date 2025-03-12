@@ -52,8 +52,8 @@
     "card_context": "test",
     "mj_question": "Que fais-tu ?",
     "txt": " adipisicing elit.",
-    "choix": ["0", "2"],
-    "btn_choix": ["Tu tatonnes autour de toi puis te rassois", "Maintenant de bout tu fouilles tes poches"],
+    "choix": ["1", "2"],
+    "btn_choix": ["Autour de toi", "Tu fouilles tes poches"],
     "c_w": ["Tu sens ton corps trembler, tu ne sens plus rien. Tu arrives à peine à faire en sorte de ne pas te faire mal en retombant. Ton corps réagit comme si tu avais été drogué."],
     "d_w": ["Tu sens ton corps trembler, tu ne sens plus rien. Tu tombes en arrière et tu te fracasse sur le canapé sur le quel tu étais. Ton corps réagit comme si tu avais été drogué."],
     "c_l": ["Tu sens ton corps trembler, tu ne sens plus rien. Tu arrives à peine à faire en sorte de ne pas te faire mal en retombant. Ton corps réagit comme si tu avais été drogué."],
@@ -67,25 +67,23 @@
     "card_context": "En appuyant sur la manette de la télévision, la télévision s'allume et les infos en continues s'affiche devant toi en t'éblouissant. Une information boucle, ça parle d'une disparition d'une personne un certain /insertname a disparu depuis 2 jours et n'a pas donné de nouvelle la description de ses vêtements correspond à ce que tu portes. En plus de ces informations, la télévision éclaire ton lieu c'est une salle rustique avec un canapé en face une télévision à droite un bureau avec une fenêtre fermé d'un rideau et enface une porte fermée.",
     "mj_question": "Que fais-tu ?",
     "txt": " adipisicing elit.",
-    "choix": ["8", "9", "10", "11"],
-    "btn_choix": ["Fouiller tes affaires", "Atteindre le bureau", "Atteindre la porte", "Atteindre la télé"],
-    "c_w": ["constitution réussi blabla"],
-    "d_w": ["agilité réussi blabla"],
-    "i_w": ["réflexion réussit blabla"],
-    "c_l": ["constitution échoué blabla"],
-    "d_l": ["agilité échoué blabla"],
-    "i_l": ["réflexion échoué blabla"],
+    "choix": ["9", "15", "11"],
+    "btn_choix": ["Atteindre le bureau", "Atteindre la porte", "Atteindre la télé"],
+    "d_w": ["En écoutant rapidement tu entends des voitures passées au loin."],
+    "i_w": ["En écoutant attentivement tu entends des voitures passées au loin, tu prends ton temps et tu évalues que tu dois être aux abords d'une route très passante, une autoroute par exemple."],
+    "d_l": ["En écoutant rapidement tu entends de la pluie ou alors c'est peut être ton imagination"],
+    "i_l": ["En écoutant attentivement tu entends du ressac ou alors c'est peut être ton imagination"],
     "actions": {
-      "btn": ["Tu tatonnes", "Tu fouilles tes poches"],
-      "carac": ["dexterite", "dexterite"]
+      "btn": ["Ecouter rapidement", "Ecouter attentivement"],
+      "carac": ["dexterite", "intelligence"]
     }
   }, {
     "numero_chapitre": "5",
-    "card_context": "Tu te lèves et te voilà avec difficulté debout, tu sens tous tes muscles engourdi. Des questions fusent dans ta tête. Depuis combien de temps es tu là ? Pourquoi es tu seul ? ",
+    "card_context": " ",
     "mj_question": "Que fais-tu ?",
-    "txt": " Tu te lèves et te voilà avec difficulté debout, tu sens tous tes muscles engourdi. Des questions fusent dans ta tête. Depuis combien de temps es tu là ? Pourquoi es tu seul ? ",
-    "choix": ["0", "2"],
-    "btn_choix": ["Tu tatonnes autour de toi puis te rassois", "Maintenant debout tu fouilles tes poches"],
+    "txt": "",
+    "choix": ["0"],
+    "btn_choix": [],
     "c_w": ["constitution réussi blabla"],
     "d_w": ["agilité réussi blabla"],
     "i_w": ["réflexion réussit blabla"],
@@ -93,35 +91,33 @@
     "d_l": ["agilité échoué blabla"],
     "i_l": ["réflexion échoué blabla"],
     "actions": {
-      "btn": ["Tu tatonnes", "Tu fouilles tes poches"],
-      "carac": ["dexterite", "dexterite"]
+      "btn": ["Tu tatonnes"],
+      "carac": ["dexterite"]
     }
   },
   {
     "numero_chapitre": "6",
-    "card_context": "Tu allumes le portable, évidemment il te demande un code pin. Tu essayes  0000 et 1234 mais ça ne marche pas. Dans le doute tu n'essayes pas un autre code sans en savoir plus La lumière te dévoile la pièce dans la quelle tu es. Attention  il ne te reste que trop peu de batterie pour rester la lumière allumé. Déjà un logo de batterie s'affiche tu as une action possible avec la lumière du portable.",
+    "card_context": "Tu essayes de faire le vide dans ta tête et tu écoutes ton environnement.",
     "mj_question": "Que fais-tu ?",
     "txt": " adipisicing elit.",
-    "choix": ["8", "9", "10", "11", "12"],
-    "btn_choix": ["Tu fouilles les alentours", "tu fouilles tes poches", "tu fonces sur la télé qui semble branché", "tu fonces sur la porte", "tu fonces sur la fenêtre"],
-    "c_w": ["constitution réussi blabla"],
-    "d_w": ["agilité réussi blabla"],
-    "i_w": ["réflexion réussit blabla"],
-    "c_l": ["constitution échoué blabla"],
-    "d_l": ["agilité échoué blabla"],
-    "i_l": ["réflexion échoué blabla"],
+    "choix": ["4", "9", "15", "11"],
+    "btn_choix": ["Tu ne fais plus de bruit et tu écoutes", "atteindre le bureau", "atteindre la porte", "atteindre la télé"],
+    "d_w": ["Le temps te semble interminable. Cette fouille ne te prend pas beaucoup de temps. Te voilà en possetion d'un portable éteint. Tu essayes d'allumer le portable, mais celui-ci s'éteint instantannément, plus de batterie"],
+    "i_w": ["Le temps te semble interminable. Cette fouille ne te prend pas beaucoup de temps. Te voilà en possetion d'un portable éteint. Tu essayes d'allumer le portable, mais celui-ci s'éteint instantannément, plus de batterie."],
+    "d_l": ["Le temps te semble interminable. Cette fouille est beaucoup trop longue. Te voilà en possetion d'un portable éteint. Tu essayes d'allumer le portable, mais celui-ci s'éteint instantannément, plus de batterie."],
+    "i_l": ["Le temps te semble interminable. Cette fouille est beaucoup trop longue. Te voilà en possetion d'un portable éteint. Tu essayes d'allumer le portable, mais celui-ci s'éteint instantannément, plus de batterie."],
     "actions": {
-      "btn": ["Tu tatonnes", "Tu fouilles tes poches"],
-      "carac": ["dexterite", "dexterite"]
+      "btn": ["Fouilles réfléchit", "Fouilles rapide"],
+      "carac": ["intelligence", "dexterite"]
     }
   },
   {
     "numero_chapitre": "7",
     "card_context": "test",
     "mj_question": "Que fais-tu ?",
-    "txt": " Tu cris de toutes tes force, mais rien ne semble perturber le calme alentour pas un bruit supplémentaire après tes appel à l'aide. ",
-    "choix": ["0", "2"],
-    "btn_choix": ["Tu tatonnes autour de toi puis te rassois", "Maintenant de bout tu fouilles tes poches"],
+    "txt": "  ",
+    "choix": ["0"],
+    "btn_choix": ["Tu tatonnes autour de toi puis te rassois"],
     "c_w": ["constitution réussi blabla"],
     "d_w": ["agilité réussi blabla"],
     "i_w": ["réflexion réussit blabla"],
@@ -129,17 +125,17 @@
     "d_l": ["agilité échoué blabla"],
     "i_l": ["réflexion échoué blabla"],
     "actions": {
-      "btn": ["Tu tatonnes", "Tu fouilles tes poches"],
-      "carac": ["dexterite", "dexterite"]
+      "btn": ["Tu tatonnes"],
+      "carac": ["dexterite"]
     }
   },
   {
     "numero_chapitre": "8",
     "card_context": "test",
     "mj_question": "Que fais-tu ?",
-    "txt": " Tu cris de toutes tes force, mais rien ne semble perturber le calme alentour pas un bruit supplémentaire après tes appel à l'aide. ",
-    "choix": ["0", "2"],
-    "btn_choix": ["Tu tatonnes autour de toi puis te rassois", "Maintenant de bout tu fouilles tes poches"],
+    "txt": "  ",
+    "choix": ["0"],
+    "btn_choix": ["Tu tatonnes autour de toi puis te rassois"],
     "c_w": ["constitution réussi blabla"],
     "d_w": ["agilité réussi blabla"],
     "i_w": ["réflexion réussit blabla"],
@@ -147,8 +143,8 @@
     "d_l": ["agilité échoué blabla"],
     "i_l": ["réflexion échoué blabla"],
     "actions": {
-      "btn": ["Tu tatonnes", "Tu fouilles tes poches"],
-      "carac": ["dexterite", "dexterite"]
+      "btn": ["Tu tatonnes"],
+      "carac": ["dexterite"]
     }
   },
   {
@@ -156,128 +152,94 @@
     "card_context": "Tu arrives devant le bureau. Il est sommaire. Sur le bureau il semble y avoir comme une sorte de manivelle, la chaise est rentrée, mais un tiroir fait toute la longueur de la table. Au dessus, une fenêtre fermée sans ouverture possible avec un volet coulissant fermé lui aussi. Le mécanisme est absent, c'est surement la manivelle qui a du être arrachée",
     "mj_question": "Que fais-tu ?",
     "txt": "Txt qu'on doit pas voir",
-    "choix": ["12", "13", "14"],
-    "btn_choix": ["Essayer d'ouvrir le volet", "Atteindre la télé", "Atteindre la porte"],
-    "c_w": ["constitution réussi blabla"],
-    "d_w": ["Tu ouvres délicatement le tiroir et tu scrutes consciencieusement l'intérieur du tiroir et tu vois un objet brillant au fond c'est une clef de chambre d'hotel", [
-      ["15"],
-      ["Tu vas vers la porte pour utiliser la clef dessus"]
-    ]],
-    "i_w": ["réflexion réussit blabla"],
-    "c_l": ["constitution échoué blabla"],
-    "d_l": ["Tu ouvres délicatement le tiroir et tu scrutes rapidement l'intérieur. Le temps te semble une éternité. Mais à force de fouiller avec tes mains, tu fini par toucher un objet froid. C'est une clef de chambre d'hotel", [
-      ["15"],
-      ["Tu vas vers la porte pour utiliser la clef dessus"]
-    ]],
-    "i_l": ["réflexion échoué blabla"],
+    "choix": ["10", "13", "11", "15", "4"],
+    "btn_choix": ["fouiller le bureau", "Essayer d'ouvrir le volet", "Atteindre la télé", "Atteindre la porte", "tu ne fais pas de bruit et tu écoutes"],
+    "c_w": ["Tu cours le plus vite, ton stress monte. Tu manques de glisser sur le sol, tes jambes sont en coton mais tu atteinds le bureau sans difficulté mais pas sans faire de bruit."],
+    "d_w": ["Tu va doucement vers le bureau en essayant de ne pas faire de bruit, ton stress monte. Tes jambes sont en coton mais tu atteinds le bureau sans difficulté et sans faire de bruit."],
+    "c_l": ["Tu cours le plus vite, ton stress monte. Tu glisses sur le sol et tu tombes en avant, tes jambes sont en coton mais tu atteinds le bureau avec difficulté et en faisant beaucoup de bruit."],
+    "d_l": ["Tu va doucement vers le bureau en essayant de ne pas faire de bruit, ton stress monte. Tes jambes sont en coton et tu atteinds le bureau avec difficulté et les planches sous tes pieds font à chaque pas un bruit à réveillé le diable."],
     "actions": {
-      "btn": ["Fouiller le tiroir", "Essayer d'ouvrir le volet par la force", "Essayer d'ouvrir le volet grâce à la manivelle"],
-      "carac": ["dexterite", "constitution", "intelligence"]
+      "btn": ["j'y vais sans bruit'", "je cours vers le bureau"],
+      "carac": ["dexterite", "constitution"]
     }
   },
   {
     "numero_chapitre": "10",
     "card_context": "test",
     "mj_question": "Que fais-tu ?",
-    "txt": " Tu cris de toutes tes force, mais rien ne semble perturber le calme alentour pas un bruit supplémentaire après tes appel à l'aide. ",
-    "choix": ["0", "2"],
-    "btn_choix": ["Tu tatonnes autour de toi puis te rassois", "Maintenant de bout tu fouilles tes poches"],
-    "c_w": ["constitution réussi blabla"],
-    "d_w": ["agilité réussi blabla"],
-    "i_w": ["réflexion réussit blabla"],
-    "c_l": ["constitution échoué blabla"],
-    "d_l": ["agilité échoué blabla"],
-    "i_l": ["réflexion échoué blabla"],
+    "txt": " Tu ouvres le tiroir et tu scrutes à l'intérieur. ",
+    "choix": ["13", "11", "15", "4"],
+    "btn_choix": ["Essayer d'ouvrir le volet", "Atteindre la télé", "Atteindre la porte", "tu ne fais pas de bruit et tu écoutes"],
+    "d_w": ["Tu fouilles rapidement dans le tiroir. A première vue le tiroir semble vide, mais finalement ta main sens un objet petit et froid. En sortant l'objet du tiroir te voilà en possesion d'une clef. Mais à quoi peut bien t elle servir?"],
+    "i_w": ["Tu fouilles consiencieusement dans le tiroir. A force de recherhce ta main sens un objet petit et froid. En sortant l'objet du tiroir te voilà en possesion d'une clef. Mais à quoi peut bien t elle servir?"],
+    "d_l": ["Tu fouilles rapidement dans le tiroir. A première vue le tiroir semble vide, la recherche rapide prends finalement un temps infini comme si tu devais chercher un objet dedans. Enfin ta main sens un objet petit et froid. En sortant l'objet du tiroir te voilà en possesion d'une clef. Mais à quoi peut bien t elle servir?"],
+    "i_l": ["Tu fouilles rapidement dans le tiroir. A première vue le tiroir semble vide, la recherche lente prends un tournur infini comme si tu devais chercher un objet dedans. Enfin ta main sens un objet petit et froid. En sortant l'objet du tiroir te voilà en possesion d'une clef. Mais à quoi peut bien t elle servir?"],
     "actions": {
-      "btn": ["Tu tatonnes", "Tu fouilles tes poches"],
-      "carac": ["dexterite", "dexterite"]
+      "btn": ["Fouiller le tiroir consciencieusement", "Fouiller le tiroir rapidement"],
+      "carac": ["intelligence", "dexterite"]
     }
   },
   {
     "numero_chapitre": "11",
     "card_context": "test",
     "mj_question": "Que fais-tu ?",
-    "txt": " Tu cris de toutes tes force, mais rien ne semble perturber le calme alentour pas un bruit supplémentaire après tes appel à l'aide. ",
-    "choix": ["0", "2"],
-    "btn_choix": ["Tu tatonnes autour de toi puis te rassois", "Maintenant de bout tu fouilles tes poches"],
-    "c_w": ["constitution réussi blabla"],
-    "d_w": ["agilité réussi blabla"],
-    "i_w": ["réflexion réussit blabla"],
-    "c_l": ["constitution échoué blabla"],
-    "d_l": ["agilité échoué blabla"],
-    "i_l": ["réflexion échoué blabla"],
+    "txt": "Tu décides d'aller vers la télé.",
+    "choix": ["14", "9", "15", "4"],
+    "btn_choix": ["Fouiller le meuble de télévision", "Atteindre le bureau", "Atteindre la porte", "tu ne fais pas de bruit et tu écoutes"],
+    "c_w": ["Tu cours le plus vite, ton stress monte. Tu manques de glisser sur le sol, tes jambes sont en coton mais tu atteinds la télé sans difficulté mais pas sans faire de bruit."],
+    "d_w": ["Tu va doucement vers la télé en essayant de ne pas faire de bruit, ton stress monte. Tes jambes sont en coton mais tu atteinds la télé sans difficulté et sans faire de bruit."],
+    "c_l": ["Tu cours le plus vite, ton stress monte. Tu glisses sur le sol et tu tombes en arrière, tes jambes sont en coton mais tu atteinds la télé avec difficulté et en faisant beaucoup de bruit."],
+    "d_l": ["Tu va doucement vers la télé en essayant de ne pas faire de bruit, ton stress monte. Tes jambes sont en coton et tu atteinds la télé avec difficulté et les planches sous tes pieds font à chaque pas grince comme si tu faisait plusieurs tonnes."],
     "actions": {
-      "btn": ["Tu tatonnes", "Tu fouilles tes poches"],
-      "carac": ["dexterite", "dexterite"]
+      "btn": ["j'y vais sans bruit'", "je cours vers la télé"],
+      "carac": ["dexterite", "constitution"]
     }
   }, {
     "numero_chapitre": "12",
-    "card_context": "Tu arrives devant le bureau. Il est sommaire. Sur le bureau il semble y avoir comme une sorte de manivelle, la chaise est rentrée, mais un tiroir fait toute la longueur de la table. Au dessus, une fenêtre fermée sans ouverture possible avec un volet coulissant fermé lui aussi. Le mécanisme est absent, c'est surement la manivelle qui a du être arrachée",
+    "card_context": "",
     "mj_question": "Que fais-tu ?",
     "txt": "Txt qu'on doit pas voir",
-    "choix": ["12", "13", "14"],
-    "btn_choix": ["Essayer d'ouvrir le volet", "Atteindre la télé", "Atteindre la porte"],
+    "choix": ["0"],
+    "btn_choix": ["Essayer d'ouvrir le volet"],
     "c_w": ["constitution réussi blabla"],
-    "d_w": ["Tu ouvres délicatement le tiroir et tu scrutes consciencieusement l'intérieur du tiroir et tu vois un objet brillant au fond c'est une clef de chambre d'hotel", [
-      ["15"],
-      ["Tu vas vers la porte pour utiliser la clef dessus"]
-    ]],
+    "d_w": ["constitution réussi blabla"],
     "i_w": ["réflexion réussit blabla"],
     "c_l": ["constitution échoué blabla"],
-    "d_l": ["Tu ouvres délicatement le tiroir et tu scrutes rapidement l'intérieur. Le temps te semble une éternité. Mais à force de fouiller avec tes mains, tu fini par toucher un objet froid. C'est une clef de chambre d'hotel", [
-      ["15"],
-      ["Tu vas vers la porte pour utiliser la clef dessus"]
-    ]],
+    "d_l": ["constitution réussi blabla"],
     "i_l": ["réflexion échoué blabla"],
     "actions": {
-      "btn": ["Fouiller le tiroir", "Essayer d'ouvrir le volet par la force", "Essayer d'ouvrir le volet grâce à la manivelle"],
-      "carac": ["dexterite", "constitution", "intelligence"]
+      "btn": ["Fouiller le tiroir"],
+      "carac": ["dexterite"]
     }
   }, {
     "numero_chapitre": "13",
     "card_context": "Tu arrives devant le bureau. Il est sommaire. Sur le bureau il semble y avoir comme une sorte de manivelle, la chaise est rentrée, mais un tiroir fait toute la longueur de la table. Au dessus, une fenêtre fermée sans ouverture possible avec un volet coulissant fermé lui aussi. Le mécanisme est absent, c'est surement la manivelle qui a du être arrachée",
     "mj_question": "Que fais-tu ?",
-    "txt": "Txt qu'on doit pas voir",
-    "choix": ["12", "13", "14"],
-    "btn_choix": ["Essayer d'ouvrir le volet", "Atteindre la télé", "Atteindre la porte"],
-    "c_w": ["constitution réussi blabla"],
-    "d_w": ["Tu ouvres délicatement le tiroir et tu scrutes consciencieusement l'intérieur du tiroir et tu vois un objet brillant au fond c'est une clef de chambre d'hotel", [
-      ["15"],
-      ["Tu vas vers la porte pour utiliser la clef dessus"]
-    ]],
-    "i_w": ["réflexion réussit blabla"],
-    "c_l": ["constitution échoué blabla"],
-    "d_l": ["Tu ouvres délicatement le tiroir et tu scrutes rapidement l'intérieur. Le temps te semble une éternité. Mais à force de fouiller avec tes mains, tu fini par toucher un objet froid. C'est une clef de chambre d'hotel", [
-      ["15"],
-      ["Tu vas vers la porte pour utiliser la clef dessus"]
-    ]],
-    "i_l": ["réflexion échoué blabla"],
+    "txt": " Le volet devant toi est complétement fermé. Et la fenêtre n'a pas de poignet. Pas un rayon de lumière ne passe à travers. La manivelle du volet est sur le bureau. Tu peux essayer de réparer le volet rapidement ou tu peux essayer de forcer le mécanisme. ",
+    "choix": ["11", "15", "4"],
+    "btn_choix": ["Atteindre la télé", "Atteindre la porte", "tu ne fais pas de bruit et tu écoutes"],
+    "c_w": ["Malgrè tout tes efforts tu ne peux que faire appraître une entre baillure dans le volet et le mécanisme se casse. Juste assez pour voir que dehors il fait nuit, il ne pleut pas et que tu es à côté d'un parking. Une seule voiture y est arrêté."],
+    "d_w": ["Malgrè tout tes efforts tu ne peux que faire appraître une entre baillure dans le volet et la manivelle casse le mécanisme. Juste assez pour voir que dehors il fait nuit, il ne pleut pas et que tu es à côté d'un parking. Une seule voiture y est arrêté."],
+    "c_l": ["Malgrè tout tes efforts tu ne peux n'arrives pas à faire bouger le volet. De plus le mécanisme se casse"],
+    "d_l": ["Malgrè tout tes efforts tu ne peux n'arrives pas à faire bouger le volet. De plus la manivelle casse le mécanisme."],
     "actions": {
-      "btn": ["Fouiller le tiroir", "Essayer d'ouvrir le volet par la force", "Essayer d'ouvrir le volet grâce à la manivelle"],
-      "carac": ["dexterite", "constitution", "intelligence"]
+      "btn": ["ouvrir le volet avec la manivelle", "ouvrir le volet avec force"],
+      "carac": ["dexterite", "dexterite"]
     }
   }, {
     "numero_chapitre": "14",
-    "card_context": "Tu arrives devant la porte. Il est sommaire. Sur le bureau il semble y avoir comme une sorte de manivelle, la chaise est rentrée, mais un tiroir fait toute la longueur de la table. Au dessus, une fenêtre fermée sans ouverture possible avec un volet coulissant fermé lui aussi. Le mécanisme est absent, c'est surement la manivelle qui a du être arrachée",
+    "card_context": "Tu es devant la télévision qui diffuse une pub puis une autre. Aucun programme ne semble être diffusé à cette heure. D'ailleurs quelle heure est-il ? Tu ne peux avoir de réponse à cette question pour l'instant. Tu te mets à fouiller le meuble de télévision",
     "mj_question": "Que fais-tu ?",
-    "txt": "Txt qu'on doit pas voir",
-    "choix": ["12", "13", "14"],
-    "btn_choix": ["Essayer d'ouvrir le volet", "Atteindre la télé", "Atteindre la porte"],
-    "c_w": ["constitution réussi blabla"],
-    "d_w": ["Tu ouvres délicatement le tiroir et tu scrutes consciencieusement l'intérieur du tiroir et tu vois un objet brillant au fond c'est une clef de chambre d'hotel", [
-      ["15"],
-      ["Tu vas vers la porte pour utiliser la clef dessus"]
-    ]],
-    "i_w": ["réflexion réussit blabla"],
-    "c_l": ["constitution échoué blabla"],
-    "d_l": ["Tu ouvres délicatement le tiroir et tu scrutes rapidement l'intérieur. Le temps te semble une éternité. Mais à force de fouiller avec tes mains, tu fini par toucher un objet froid. C'est une clef de chambre d'hotel", [
-      ["15"],
-      ["Tu vas vers la porte pour utiliser la clef dessus"]
-    ]],
-    "i_l": ["réflexion échoué blabla"],
+    "txt": "Tu es devant la télévision qui diffuse une pub puis une autre. Aucun programme ne semble être diffusé à cette heure. D'ailleurs quelle heure est-il ? Tu ne peux avoir de réponse à cette question pour l'instant. Tu te mets à fouiller le meuble de télévision",
+    "choix": ["10", "15", "4"],
+    "btn_choix": ["Atteindre le bureau", "Atteindre la porte", "tu ne fais pas de bruit et tu écoutes"],
+    "d_w": ["Tu fouilles rapidement le meuble télé. Sans grande difficulté tu tombes sur un porte document. A l'intérieur des feuilles qui décrivent les habitudes d'une personne. Le nom est barré en noir. La photo qui y est accroché te semble familière. Tu plis les feuilles et tu les ranges dans ta veste"],
+    "i_w": ["Tu fouilles consciencieusement le meuble télé. Sans grande difficulté tu tombes sur un porte document. A l'intérieur des feuilles qui décrivent les habitudes d'une personne. Le nom est barré en noir. La photo qui y est accroché te semble familière et de ce que tu as pu voir dans les reflets cette personne te reseemble beaucoup. Tu plis les feuilles et tu les ranges dans ta veste"],
+    "d_l": ["Tu fouilles rapidement le meuble télé. Les pubs s'enchaînent, tu es comme hypnotysé par ces contenus. Tout semble s'arrêter quand ta main tombe sur un porte document. A l'intérieur des feuilles qui décrivent les habitudes d'une personne. Le nom est barré en noir. La photo qui y est accroché te semble familière. Tu plis les feuilles et tu les ranges dans ta veste"],
+    "i_l": ["Tu fouilles consciencieusement le meuble télé.  Les pubs s'enchaînent, tu es comme hypnotysé par ces contenus. Tout semble s'arrêter quand ta main tombe sur un porte document. A l'intérieur des feuilles qui décrivent les habitudes d'une personne. Le nom est barré en noir. La photo qui y est accroché te semble familière. Tu plis les feuilles et tu les ranges dans ta veste"],
     "actions": {
-      "btn": ["Fouiller le tiroir", "Essayer d'ouvrir le volet par la force", "Essayer d'ouvrir le volet grâce à la manivelle"],
-      "carac": ["dexterite", "constitution", "intelligence"]
+      "btn": ["Fouiller le meuble consciencieusement", "Fouiller le meuble rapidement"],
+      "carac": ["intelligence", "dexterite"]
     }
   }, {
     "numero_chapitre": "15",
