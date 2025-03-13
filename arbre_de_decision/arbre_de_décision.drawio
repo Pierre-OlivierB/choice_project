@@ -423,7 +423,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="Copie de Page-1" id="m_a13MJ87UJKYPncnSow">
-    <mxGraphModel dx="2256" dy="1703" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="2837" dy="1695" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="pnk6eSNMhnhxJrGRFuTv-0" />
         <mxCell id="pnk6eSNMhnhxJrGRFuTv-1" parent="pnk6eSNMhnhxJrGRFuTv-0" />
@@ -1659,6 +1659,21 @@
         </mxCell>
         <mxCell id="9ueiJQElbsFf-dfXedeA-0" value="Si le 2 a été fait le 6 est impossible" style="rhombus;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="pnk6eSNMhnhxJrGRFuTv-1" vertex="1">
           <mxGeometry x="1356.5" y="-450" width="185" height="165" as="geometry" />
+        </mxCell>
+        <mxCell id="DcP6vaYhVVDHaKgPSOMd-0" value="Fait" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="pnk6eSNMhnhxJrGRFuTv-1">
+          <mxGeometry x="760" y="350" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DcP6vaYhVVDHaKgPSOMd-1" value="Fait" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="pnk6eSNMhnhxJrGRFuTv-1">
+          <mxGeometry x="1480" y="-360" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DcP6vaYhVVDHaKgPSOMd-2" value="A faire" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#a20025;strokeColor=#6F0000;fontColor=#ffffff;" vertex="1" parent="pnk6eSNMhnhxJrGRFuTv-1">
+          <mxGeometry x="2785" y="315" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DcP6vaYhVVDHaKgPSOMd-3" value="A faire" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#a20025;strokeColor=#6F0000;fontColor=#ffffff;" vertex="1" parent="pnk6eSNMhnhxJrGRFuTv-1">
+          <mxGeometry x="3010" y="320" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DcP6vaYhVVDHaKgPSOMd-4" value="A faire" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#a20025;strokeColor=#6F0000;fontColor=#ffffff;" vertex="1" parent="pnk6eSNMhnhxJrGRFuTv-1">
+          <mxGeometry x="3260" y="-145" width="80" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
