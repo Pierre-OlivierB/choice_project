@@ -5,6 +5,7 @@ function Chapter(props) {
   const txt = props.txt;
   const perso = props.perso;
   const mj = props.mj;
+  const inventory = props.inventory;
 
   // console.log("chapter" + chpt);
 
@@ -33,6 +34,11 @@ function Chapter(props) {
                     <p className="card-text">D : {perso.dexterite}</p>
                     <p className="card-text">I : {perso.intelligence}</p>
                   </div>
+                  {inventory == "" ? (
+                    <></>
+                  ) : (
+                    <p className="card-text"> Inventaire : {inventory} </p>
+                  )}
                 </div>
               </div>
             </div>

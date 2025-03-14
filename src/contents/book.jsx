@@ -17,9 +17,12 @@ function Book(props) {
   // get all stories from json
   const stories = storiesData;
 
-  // !------------------------------
-  const [choiceAlreadyDone, setChoiceAlreadyDone] = useState([]);
-  // !------------------------------
+  // !--------------------------------------
+  const [inventory, setInventory] = useState([]);
+  // !--------------------------------------
+
+  // keep in mind what choice has been made
+  const [choiceAlreadyDone, setChoiceAlreadyDone] = useState("");
 
   // set actual storie
   const currentStories = stories[choice];
@@ -106,7 +109,7 @@ function Book(props) {
 
     for (let i = 0; i < btnList.length; i++) {
       // console.log(JSON.stringify(currentStories));
-      // console.log("what is in alreadydone ? " + choiceAlreadyDone);
+      console.log("what is in alreadydone ? " + choiceAlreadyDone);
       if (!choiceAlreadyDone.includes(currentStories.choix[i])) {
         // console.log("test num chap alreadydone" + currentStories.choix[i]);
 
@@ -119,11 +122,57 @@ function Book(props) {
               const chc = currentStories.choix[i];
               handleClick(chc);
               setActionActive(false);
-              setChoiceAlreadyDone([choiceAlreadyDone, choice]);
+              setChoiceAlreadyDone([...choiceAlreadyDone, choice]);
               if (choice == 2) {
                 setChoiceAlreadyDone([choiceAlreadyDone, "6"]);
               }
-              console.log("TEST book" + currentStories.choix[i]);
+              console.log(
+                "TEST book" + JSON.stringify(currentStories.choix[i])
+              );
+            }}
+          />
+        );
+        console.log("list btn TEST : " + currentStories.choix[i]);
+      }
+    }
+
+    if (choiceAlreadyDone.includes("15")) {
+      console.log("on est ici");
+      if (
+        choiceAlreadyDone != "" &&
+        parseInt(currentStories.numero_chapitre) < 15
+      ) {
+        console.log("on est là");
+        listBtn.push(
+          <ChoiceCard
+            key={15}
+            content={"retourner à la porte"}
+            onSwipeRight={() => {
+              handleSwipeRight(15);
+              const chc = "15";
+              handleClick(chc);
+              setActionActive(false);
+              console.log("TEST book" + "15");
+            }}
+          />
+        );
+      }
+    }
+
+    if (choiceAlreadyDone.includes("10")) {
+      setInventory("clef");
+      if (currentStories.numero_chapitre == "15") {
+        listBtn.push(
+          <ChoiceCard
+            key={19}
+            content={currentStories.btn_choix_sup[1]}
+            onSwipeRight={() => {
+              handleSwipeRight(19);
+              const chc = currentStories.btn_choix_sup[0];
+              handleClick(chc);
+              setActionActive(false);
+              setChoiceAlreadyDone([choiceAlreadyDone, choice]);
+              console.log("TEST book" + currentStories.btn_choix_sup[0]);
             }}
           />
         );
@@ -163,6 +212,7 @@ function Book(props) {
           txt={precendentAction}
           mj={currentStories.mj_question}
           perso={perso}
+          inventory={inventory}
         />
       ) : (
         <Events
@@ -172,6 +222,7 @@ function Book(props) {
           flag={flag}
           actions={currentStories.actions}
           save={save.current}
+          inventory={inventory}
         />
       )}
 

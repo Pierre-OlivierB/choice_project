@@ -423,7 +423,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="Copie de Page-1" id="m_a13MJ87UJKYPncnSow">
-    <mxGraphModel dx="2837" dy="1695" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="2856" dy="1705" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="pnk6eSNMhnhxJrGRFuTv-0" />
         <mxCell id="pnk6eSNMhnhxJrGRFuTv-1" parent="pnk6eSNMhnhxJrGRFuTv-0" />
@@ -471,7 +471,7 @@
         <mxCell id="pnk6eSNMhnhxJrGRFuTv-20" value="9 - atteindre le bureau" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="pnk6eSNMhnhxJrGRFuTv-12" vertex="1">
           <mxGeometry y="60" width="300" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="pnk6eSNMhnhxJrGRFuTv-21" value="10 - atteindre la porte" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="pnk6eSNMhnhxJrGRFuTv-12" vertex="1">
+        <mxCell id="pnk6eSNMhnhxJrGRFuTv-21" value="15 - atteindre la porte" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="pnk6eSNMhnhxJrGRFuTv-12" vertex="1">
           <mxGeometry y="90" width="300" height="30" as="geometry" />
         </mxCell>
         <mxCell id="pnk6eSNMhnhxJrGRFuTv-22" value="11 - atteindre la télé" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="pnk6eSNMhnhxJrGRFuTv-12" vertex="1">
@@ -914,7 +914,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="iAANMyzKoAnhCtGlSeD2-87" value="13 - le volet dans l&#39;état..." style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="pnk6eSNMhnhxJrGRFuTv-1" vertex="1">
-          <mxGeometry x="2400" y="400" width="240" height="120" as="geometry" />
+          <mxGeometry x="2400" y="400" width="240" height="150" as="geometry" />
         </mxCell>
         <mxCell id="iAANMyzKoAnhCtGlSeD2-89" value="11 - atteindre la télé" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="iAANMyzKoAnhCtGlSeD2-87" vertex="1">
           <mxGeometry y="30" width="240" height="30" as="geometry" />
@@ -924,6 +924,9 @@
         </mxCell>
         <mxCell id="iAANMyzKoAnhCtGlSeD2-91" value="4 - tu ne fais plus de bruit et tu écoutes" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="iAANMyzKoAnhCtGlSeD2-87" vertex="1">
           <mxGeometry y="90" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="DcP6vaYhVVDHaKgPSOMd-7" value="10 - fouiller le bureau" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="iAANMyzKoAnhCtGlSeD2-87">
+          <mxGeometry y="120" width="240" height="30" as="geometry" />
         </mxCell>
         <mxCell id="iAANMyzKoAnhCtGlSeD2-92" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.009;entryY=0.125;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.081;exitDx=0;exitDy=0;exitPerimeter=0;" parent="pnk6eSNMhnhxJrGRFuTv-1" source="iAANMyzKoAnhCtGlSeD2-77" target="iAANMyzKoAnhCtGlSeD2-87" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -1078,7 +1081,7 @@
         <mxCell id="iAANMyzKoAnhCtGlSeD2-132" value="14 - le document renferme" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="pnk6eSNMhnhxJrGRFuTv-1" vertex="1">
           <mxGeometry x="3170" y="740" width="240" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="iAANMyzKoAnhCtGlSeD2-134" value="10 - atteindre le bureau" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="iAANMyzKoAnhCtGlSeD2-132" vertex="1">
+        <mxCell id="iAANMyzKoAnhCtGlSeD2-134" value="9 - atteindre le bureau" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="iAANMyzKoAnhCtGlSeD2-132" vertex="1">
           <mxGeometry y="30" width="240" height="30" as="geometry" />
         </mxCell>
         <mxCell id="ojWSzpdNRe1vm9Hle58x-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="iAANMyzKoAnhCtGlSeD2-132" source="iAANMyzKoAnhCtGlSeD2-135" edge="1">
@@ -1666,14 +1669,20 @@
         <mxCell id="DcP6vaYhVVDHaKgPSOMd-1" value="Fait" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="pnk6eSNMhnhxJrGRFuTv-1">
           <mxGeometry x="1480" y="-360" width="80" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="DcP6vaYhVVDHaKgPSOMd-2" value="A faire" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#a20025;strokeColor=#6F0000;fontColor=#ffffff;" vertex="1" parent="pnk6eSNMhnhxJrGRFuTv-1">
-          <mxGeometry x="2785" y="315" width="80" height="80" as="geometry" />
-        </mxCell>
-        <mxCell id="DcP6vaYhVVDHaKgPSOMd-3" value="A faire" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#a20025;strokeColor=#6F0000;fontColor=#ffffff;" vertex="1" parent="pnk6eSNMhnhxJrGRFuTv-1">
-          <mxGeometry x="3010" y="320" width="80" height="80" as="geometry" />
-        </mxCell>
         <mxCell id="DcP6vaYhVVDHaKgPSOMd-4" value="A faire" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#a20025;strokeColor=#6F0000;fontColor=#ffffff;" vertex="1" parent="pnk6eSNMhnhxJrGRFuTv-1">
           <mxGeometry x="3260" y="-145" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DcP6vaYhVVDHaKgPSOMd-5" value="Fait" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="pnk6eSNMhnhxJrGRFuTv-1">
+          <mxGeometry x="2800" y="297.5" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DcP6vaYhVVDHaKgPSOMd-6" value="Fait" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="pnk6eSNMhnhxJrGRFuTv-1">
+          <mxGeometry x="3010" y="315" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DcP6vaYhVVDHaKgPSOMd-8" value="Faut il ajouter fouilles bureau, fouille télé ?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#97D077;strokeColor=#b85450;" vertex="1" parent="pnk6eSNMhnhxJrGRFuTv-1">
+          <mxGeometry x="2580" y="-375" width="185" height="165" as="geometry" />
+        </mxCell>
+        <mxCell id="DcP6vaYhVVDHaKgPSOMd-9" value="A faire" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#a20025;strokeColor=#6F0000;fontColor=#ffffff;" vertex="1" parent="pnk6eSNMhnhxJrGRFuTv-1">
+          <mxGeometry x="2685" y="-260" width="80" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

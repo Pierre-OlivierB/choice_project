@@ -9,6 +9,7 @@ function Events(props) {
   const flag = props.flag;
   const actions = props.actions;
   const save = props.save;
+  const inventory = props.inventory;
   //   console.log(perso, story);
 
   //   set result dice
@@ -118,6 +119,11 @@ function Events(props) {
                     <p className="card-text">D : {perso.dexterite}</p>
                     <p className="card-text">I : {perso.intelligence}</p>
                   </div>
+                  {inventory == "" ? (
+                    <></>
+                  ) : (
+                    <p className="card-text"> Inventaire : {inventory} </p>
+                  )}
                 </div>
               </div>
             </div>
