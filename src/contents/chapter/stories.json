@@ -165,7 +165,7 @@
   },
   {
     "numero_chapitre": "10",
-    "card_context": "test",
+    "card_context": "Tu ouvres le tiroir et tu scrutes à l'intérieur.",
     "mj_question": "Que fais-tu ?",
     "txt": " Tu ouvres le tiroir et tu scrutes à l'intérieur. ",
     "choix": ["13", "11", "15", "4"],
@@ -314,8 +314,8 @@
     "d_l": ["Tu ouvres la porte sans faire attention et tu as devant toi une forêt sombre avec une route goudronné qui te sépare de cette nature. Des places de parking sont dessinées sur ce bitume. Un ensemble de chambre se suivent et se ressemble sur ton côté gauche. De l'autre côté un parking d'une vingtainte de place se dévoile sous tes yeux. La présence d'un homme assez grand et corpulent en plein milieu du parking cigarette à la bouche te fait froid dans le dos. Cette masse peu réconfortante jette sa cigarette d'un geste brusque en te voyant. Et se dirige vers toi l'air déterminé et peu amical. Sa voiture à les fares allumés, et la fenêtre est à moitier ouverte"],
     "i_l": ["Tu ouvres la porte doucement, mais cette dernière et vieille et grince dans ce silence de plomb. Tu as devant toi une forêt sombre avec une route goudronné qui te sépare de cette nature. Des places de parking sont dessinées sur ce bitume. Un ensemble de chambre se suivent et se ressemble sur ton côté gauche. De l'autre côté un parking d'une vingtainte de place se dévoile sous tes yeux. La présence d'un homme assez grand et corpulent en plein milieu du parking cigarette à la bouche te fait froid dans le dos. Cette masse peu réconfortante jette sa cigarette d'un geste brusque en te voyant. Et se dirige vers toi l'air déterminé et peu amical. Sa voiture à les fares allumés, et la fenêtre est à moitier ouverte"],
     "actions": {
-      "btn": ["Je m'enferme dans la chambre et je tiens la porte", "J'essaye de courrir pour prendre la voiture", "J'essaye de lui parler"],
-      "carac": ["constitution", "dexterite", "intelligence"]
+      "btn": ["J'ouvre la porte doucement'", "J'ouvre sans faire attention"],
+      "carac": ["intelligence", "dexterite"]
     }
   }, {
     "numero_chapitre": "20",
@@ -368,7 +368,7 @@
     }
   }, {
     "numero_chapitre": "23",
-    "card_context": "Tu arrives devant le bureau. Il est sommaire. Sur le bureau il semble y avoir comme une sorte de manivelle, la chaise est rentrée, mais un tiroir fait toute la longueur de la table. Au dessus, une fenêtre fermée sans ouverture possible avec un volet coulissant fermé lui aussi. Le mécanisme est absent, c'est surement la manivelle qui a du être arrachée",
+    "card_context": "Tu essayes de sortir sans te faire remarquer.",
     "mj_question": "Que fais-tu ?",
     "txt": "Txt qu'on doit pas voir",
     "choix_win": {
@@ -382,7 +382,7 @@
     "choix_loose": ["27"],
     "btn_choix_loose": ["Tu n'as pas le choix il va falloir battre l'inconnu"],
     "c_w": ["Tu t'éloignes sans te faire remarquer"],
-    "d_w": ["Tu ouvres délicatement le tiroir et tu scrutes consciencieusement l'intérieur du tiroir et tu vois un objet brillant au fond c'est une clef de chambre d'hotel"],
+    "d_w": ["Tu contourne facilement l'inconnu, tu rentre dans la voiture. Le contact est déjà enclenché. Tu appuyes sur la pédale et tu t'éloigne le plus loin possible"],
     "c_l": ["Tu essayes de t'éloigner mais l'inconnu t'attrape par l'épaule"],
     "d_l": ["Tu essayes de contourner mais l'inconnu t'attrape par l'épaule"],
     "actions": {

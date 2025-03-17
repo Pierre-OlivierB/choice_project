@@ -17,8 +17,12 @@ function Book(props) {
   // get all stories from json
   const stories = storiesData;
 
-  // !--------------------------------------
+  // add inventory to caracter
   const [inventory, setInventory] = useState([]);
+
+  // !--------------------------------------
+  const [win, setWin] = useState(true);
+  const [action, setAction] = useState("");
   // !--------------------------------------
 
   // keep in mind what choice has been made
@@ -63,26 +67,35 @@ function Book(props) {
     switch (child_choice[1]) {
       case "c_w":
         setPrecendentAction(currentStories.c_w[0]);
+        setWin(true);
+        setAction("c");
         // setActionSup(currentStories.c_w[1]);
         break;
       case "d_w":
         setPrecendentAction(currentStories.d_w[0]);
+        setWin(true);
+        setAction("d");
         // setActionSup(currentStories.d_w[1]);
         break;
       case "i_w":
         setPrecendentAction(currentStories.i_w[0]);
+        setWin(true);
+        setAction("i");
         // setActionSup(currentStories.i_w[1]);
         break;
       case "c_l":
         setPrecendentAction(currentStories.c_l[0]);
+        setWin(false);
         // setActionSup(currentStories.c_l[1]);
         break;
       case "d_l":
         setPrecendentAction(currentStories.d_l[0]);
+        setWin(false);
         // setActionSup(currentStories.d_l[1]);
         break;
       case "i_l":
         setPrecendentAction(currentStories.i_l[0]);
+        setWin(false);
         // setActionSup(currentStories.i_l[1]);
         break;
 
@@ -90,9 +103,36 @@ function Book(props) {
         break;
     }
   }
-
-  // set all buttons from data
-  const btnList = currentStories.btn_choix;
+  if (currentStories.btn_choix) {
+    // set all buttons from data
+    var btnList = currentStories.btn_choix;
+  } else if (win) {
+    // verification if win and if array or object)
+    if (Array.isArray(currentStories.choix_win)) {
+      var btnList = currentStories.btn_choix_win;
+      var choix = currentStories.choix_win;
+    } else {
+      switch (action) {
+        case "c":
+          var btnList = [currentStories.btn_choix_win.c];
+          var choix = [currentStories.choix_win.c];
+          break;
+        case "d":
+          var btnList = [currentStories.btn_choix_win.d];
+          var choix = [currentStories.choix_win.d];
+          break;
+        case "i":
+          var btnList = [currentStories.btn_choix_win.i];
+          var choix = [currentStories.choix_win.i];
+          break;
+        default:
+          break;
+      }
+    }
+  } else {
+    var btnList = currentStories.btn_choix_loose;
+    var choix = currentStories.choix_loose;
+  }
 
   const [btnChoiceContent, setBtnChoiceContent] = useState([]);
   // reload list of buttons when choices was done
@@ -110,76 +150,118 @@ function Book(props) {
     for (let i = 0; i < btnList.length; i++) {
       // console.log(JSON.stringify(currentStories));
       console.log("what is in alreadydone ? " + choiceAlreadyDone);
-      if (!choiceAlreadyDone.includes(currentStories.choix[i])) {
-        // console.log("test num chap alreadydone" + currentStories.choix[i]);
+      if (currentStories.choix) {
+        if (!choiceAlreadyDone.includes(currentStories.choix[i])) {
+          // console.log("test num chap alreadydone" + currentStories.choix[i]);
 
+          listBtn.push(
+            <ChoiceCard
+              key={i}
+              content={currentStories.btn_choix[i]}
+              onSwipeRight={() => {
+                handleSwipeRight(i);
+                const chc = currentStories.choix[i];
+                handleClick(chc);
+                setActionActive(false);
+                setChoiceAlreadyDone([...choiceAlreadyDone, choice]);
+                if (choice == 2) {
+                  setChoiceAlreadyDone([choiceAlreadyDone, "6"]);
+                }
+                // console.log(
+                //   "TEST book" + JSON.stringify(currentStories.choix[i])
+                // );
+              }}
+            />
+          );
+          // console.log("list btn TEST : " + currentStories.choix[i]);
+        }
+      } else {
+        // console.log("win ? " + win + " " + currentStories.choix_win[i]);
         listBtn.push(
           <ChoiceCard
             key={i}
-            content={currentStories.btn_choix[i]}
+            content={btnList[i]}
             onSwipeRight={() => {
               handleSwipeRight(i);
-              const chc = currentStories.choix[i];
+              // !-------------------------
+              const chc = choix[i];
               handleClick(chc);
               setActionActive(false);
               setChoiceAlreadyDone([...choiceAlreadyDone, choice]);
               if (choice == 2) {
                 setChoiceAlreadyDone([choiceAlreadyDone, "6"]);
               }
-              console.log(
-                "TEST book" + JSON.stringify(currentStories.choix[i])
-              );
-            }}
-          />
-        );
-        console.log("list btn TEST : " + currentStories.choix[i]);
-      }
-    }
-
-    if (choiceAlreadyDone.includes("15")) {
-      console.log("on est ici");
-      if (
-        choiceAlreadyDone != "" &&
-        parseInt(currentStories.numero_chapitre) < 15
-      ) {
-        console.log("on est là");
-        listBtn.push(
-          <ChoiceCard
-            key={15}
-            content={"retourner à la porte"}
-            onSwipeRight={() => {
-              handleSwipeRight(15);
-              const chc = "15";
-              handleClick(chc);
-              setActionActive(false);
-              console.log("TEST book" + "15");
+              // console.log(
+              //   "TEST book" + JSON.stringify(currentStories.choix[i])
+              // );
             }}
           />
         );
       }
     }
+    if (currentStories.choix) {
+      if (choiceAlreadyDone.includes("15")) {
+        if (
+          choiceAlreadyDone != "" &&
+          parseInt(currentStories.numero_chapitre) < 15
+        ) {
+          listBtn.push(
+            <ChoiceCard
+              key={15}
+              content={"retourner à la porte"}
+              onSwipeRight={() => {
+                handleSwipeRight(15);
+                const chc = "15";
+                handleClick(chc);
+                setActionActive(false);
+                console.log("TEST book" + "15");
+              }}
+            />
+          );
+        }
+      }
 
-    if (choiceAlreadyDone.includes("10")) {
-      setInventory("clef");
-      if (currentStories.numero_chapitre == "15") {
-        listBtn.push(
-          <ChoiceCard
-            key={19}
-            content={currentStories.btn_choix_sup[1]}
-            onSwipeRight={() => {
-              handleSwipeRight(19);
-              const chc = currentStories.btn_choix_sup[0];
-              handleClick(chc);
-              setActionActive(false);
-              setChoiceAlreadyDone([choiceAlreadyDone, choice]);
-              console.log("TEST book" + currentStories.btn_choix_sup[0]);
-            }}
-          />
-        );
+      if (choiceAlreadyDone.includes("10")) {
+        setInventory("clef");
+        if (currentStories.numero_chapitre == "15") {
+          listBtn.push(
+            <ChoiceCard
+              key={19}
+              content={currentStories.btn_choix_sup[1]}
+              onSwipeRight={() => {
+                handleSwipeRight(19);
+                const chc = currentStories.btn_choix_sup[0];
+                handleClick(chc);
+                setActionActive(false);
+                setChoiceAlreadyDone([choiceAlreadyDone, choice]);
+                console.log("TEST book" + currentStories.btn_choix_sup[0]);
+              }}
+            />
+          );
+        }
       }
     }
+    if (currentStories.numero_chapitre == "19" && win) {
+      listBtn.push(
+        <ChoiceCard
+          key={23}
+          content={currentStories.btn_choix_sup[1]}
+          onSwipeRight={() => {
+            handleSwipeRight(23);
+            const chc = currentStories.btn_choix_sup[0];
+            handleClick(chc);
+            setActionActive(false);
+            setChoiceAlreadyDone([choiceAlreadyDone, choice]);
+            console.log("TEST book" + currentStories.btn_choix_sup[0]);
+          }}
+        />
+      );
+    }
+    console.log(
+      "tentative sneaky n°" + currentStories.numero_chapitre + " win ? " + win
+    );
 
-    console.log("render 1", actionActive);
+    // console.log("render 1", actionActive);
     actionActive ? setPrecendentAction(currentStories.card_context) : null;
 
     // if action to add from precedent action, add button
