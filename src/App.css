@@ -117,6 +117,16 @@ h1 {
   animation: mouse-move-right 3s infinite ease;
 }
 
+/* copy texte */
+.copy-texte {
+  width: 30px;
+  height: 30px;
+}
+
+.copy-texte:hover {
+  cursor: pointer;
+}
+
 @keyframes move-right {
   0% {
     left: 0;

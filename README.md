@@ -22,3 +22,18 @@ change buttons by swipes
 ## histoire
 
 petit jeu d'essai pour découvrir le role play.
+
+## test histoire
+
+Tu es en position assise, il fait noir, tu ne sais pas qui tu es, tu ne sais pas ce que tu fais là. L'amnèsie es total. Plusieurs option s'offrent à toi. Tu peux chercher autour de toi ou fouiller tes poches.
+Tu tâtes autour de toi et tu sens un objet coincé entre 2 coussins derrière toi. Visiblement tu es assis sur un canapé. Au touché cet objet ressemble à une manette de télévison. En la prenant en main tu ne sais pas très bien comment et la télévision s'allume. Grâce à la lumière tu vois ce qui t'entoure. A ta droite un bureau à côté d'une fenêtre fermée par un volet. Devant toi la télévision. Derrière la télévision une porte fermée. Grâce à la lumière tu en es sûr il n'y a plus rien à fouiller autour de toi
+Tu va doucement vers le bureau en essayant de ne pas faire de bruit, ton stress monte. Tes jambes sont en coton et tu atteinds le bureau avec difficulté et les planches sous tes pieds font à chaque pas un bruit à réveillé le diable.
+Tu fouilles rapidement dans le tiroir. A première vue le tiroir semble vide, la recherche lente prends un tournur infini comme si tu devais chercher un objet dedans. Enfin ta main sens un objet petit et froid. En sortant l'objet du tiroir te voilà en possesion d'une clef. Mais à quoi peut bien t elle servir?
+Tu vas doucement vers la porte en essayant de ne pas faire de bruit, ton stress monte. Tes jambes sont en coton mais tu atteinds la porte sans difficulté et sans faire de bruit.
+Tu ouvres la porte sans faire attention. Par réflexe tu fais un pas en arrière. Devant toi se dévoile un parking. Il semble que tu sors d'une chambre d'hôtel. Un homme se tient contre une voiture, une cigarette à la bouche. Il fume sa cigarette et se tiends contre la seule voiture du parking.
+Tu essayes de contourner mais l'inconnu t'attrape par l'épaule
+Tu pensais bien faire mais tu finis à terre rouer de coups.
+
+## test prompt
+
+Tu es un écrivain de livre d'horreur. Tu t'adresses à un publique adulte. Le contexte se déroule dans la période actuelle. A partir de l'histoire, écrit moi un texte qui met du lien à cette histoire et rends-la la plus épique possible. histoire {{}}

@@ -1687,14 +1687,14 @@
         <mxCell id="DcP6vaYhVVDHaKgPSOMd-11" value="gestion des multiples choix" style="rhombus;whiteSpace=wrap;html=1;fillColor=#97D077;strokeColor=#b85450;" parent="pnk6eSNMhnhxJrGRFuTv-1" vertex="1">
           <mxGeometry x="3800" y="480" width="185" height="165" as="geometry" />
         </mxCell>
-        <mxCell id="DcP6vaYhVVDHaKgPSOMd-12" value="A faire" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#a20025;strokeColor=#6F0000;fontColor=#ffffff;" parent="pnk6eSNMhnhxJrGRFuTv-1" vertex="1">
-          <mxGeometry x="3905" y="575" width="80" height="80" as="geometry" />
-        </mxCell>
         <mxCell id="jg0Y9eYbjq9Q0eSjdh8o-1" value="add action if win" style="rhombus;whiteSpace=wrap;html=1;fillColor=#97D077;strokeColor=#b85450;" vertex="1" parent="pnk6eSNMhnhxJrGRFuTv-1">
           <mxGeometry x="3507" y="-200" width="185" height="165" as="geometry" />
         </mxCell>
-        <mxCell id="jg0Y9eYbjq9Q0eSjdh8o-2" value="A faire" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#a20025;strokeColor=#6F0000;fontColor=#ffffff;" vertex="1" parent="pnk6eSNMhnhxJrGRFuTv-1">
-          <mxGeometry x="3640" y="-115" width="80" height="80" as="geometry" />
+        <mxCell id="jg0Y9eYbjq9Q0eSjdh8o-3" value="Fait" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="pnk6eSNMhnhxJrGRFuTv-1">
+          <mxGeometry x="3890" y="580" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="jg0Y9eYbjq9Q0eSjdh8o-4" value="Fait" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="pnk6eSNMhnhxJrGRFuTv-1">
+          <mxGeometry x="3620" y="-115" width="80" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
