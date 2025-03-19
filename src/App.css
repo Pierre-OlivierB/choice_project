@@ -3,7 +3,7 @@ h1 {
 }
 
 .description {
-  background: linear-gradient(145deg, hsl(30, 55%, 75%), hsl(30, 5%, 63%));
+  background: linear-gradient(145deg, hsla(336, 20%, 90%, 85%), hsla(30, 5%, 72%, 85%));
   border-radius: 10px;
 }
 
