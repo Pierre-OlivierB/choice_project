@@ -1,5 +1,10 @@
 h1 {
-  color: blue;
+  color: hsl(0, 0%, 95%);
+}
+
+.description {
+  background: linear-gradient(145deg, hsl(30, 55%, 75%), hsl(30, 5%, 63%));
+  border-radius: 10px;
 }
 
 .cardChoice {
@@ -91,12 +96,18 @@ h1 {
 .cardChoice {
   animation: move-right 3s infinite ease;
   border-radius: 10px;
-  /* background-color: hsl(160, 100%, 90%); */
-  background: linear-gradient(145deg, hsl(331, 100%, 93%), hsl(340, 48%, 81%));
-  box-shadow: 25px 25px 71px #a88792,
-    -25px -25px 71px #ffffff;
+  /* background-color: hsl(176 50% 40%); */
+  background: linear-gradient(145deg, hsl(176, 100%, 52%), hsl(176, 50%, 40%));
+  box-shadow: 0 0 100px hsl(176deg 64.54% 35.69%), -25px -25px 71px #ffffff;
   border: 0;
   padding: 5px;
+  transition: box-shadow 1s, transform 1s;
+}
+
+.cardChoice:hover {
+  transform: scale(1.05);
+  box-shadow: 25px 25px 71px hsl(176, 16%, 59%),
+    -25px -25px 71px #ffffff;
 }
 
 .card,

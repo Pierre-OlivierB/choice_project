@@ -32,7 +32,7 @@ function Home() {
               </div>
             </div>
             <div className="row justify-content-md-center">
-              <div className="col col-10">
+              <div className="col col-10 description p-4">
                 <p>
                   Je vous propose de vous plonger dans une expérience de jeu de
                   role ("Role Play", RP) afin de découvrir les intéractions que

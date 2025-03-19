@@ -12,7 +12,18 @@
 
 
 .test {
-    background-color: hsl(160, 100%, 90%);
+    /* background-color: hsl(160, 100%, 90%); */
+    background:
+        linear-gradient(to right,
+            hsla(0, 0%, 0%, 0.95) 0%,
+            hsla(0, 0%, 25%, 0.75) 40%,
+            hsla(0, 0%, 50%, 0.5) 50%,
+            hsla(0, 0%, 25%, 0.75) 60%,
+            hsla(0, 0%, 0%, 0.95) 100%),
+        url("./assets/background_horror.png") center/contain no-repeat,
+        hsl(0, 0%, 10%);
+
+
 }
 
 .card-charac {

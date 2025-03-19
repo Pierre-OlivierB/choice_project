@@ -37,3 +37,11 @@ Tu pensais bien faire mais tu finis à terre rouer de coups.
 ## test prompt
 
 Tu es un écrivain de livre d'horreur. Tu t'adresses à un publique adulte. Le contexte se déroule dans la période actuelle. A partir de l'histoire, écrit moi un texte qui met du lien à cette histoire et rends-la la plus épique possible. histoire {{}}
+
+## TODO
+
+Améliorer les explications
+Améliorer le texte (histoire)
+revoir le positionnement des cards
+Mettre une image en background
+Ajouer bouton sauvegarder
