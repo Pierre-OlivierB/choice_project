@@ -285,7 +285,7 @@ function Book(props) {
   }, [currentStories, swipedCardIndex, flag]);
 
   return !storyEnd ? (
-    <div className="d-flex flex-column main-content">
+    <div className="d-flex flex-column main-content test">
       {flag ? (
         <Chapter
           where={currentStories.card_context}
@@ -307,10 +307,13 @@ function Book(props) {
           inventory={inventory}
         />
       )}
-
-      <div className="d-flex justify-content-evenly footer-content test">
-        {flag ? <>{btnChoiceContent}</> : <></>}
-      </div>
+      {flag ? (
+        <div className="d-flex justify-content-evenly footer-content">
+          <>{btnChoiceContent}</>
+        </div>
+      ) : (
+        <></>
+      )}
     </div>
   ) : (
     <TheEnd save={save} />

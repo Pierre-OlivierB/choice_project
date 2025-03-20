@@ -24,7 +24,7 @@ function Chapter(props) {
   }
 
   return (
-    <div className="test">
+    <div>
       <div className="inside-content container-fluid d-flex flex-column justify-content-evenly">
         <div className="row justify-content-md-center">
           <div className="col col-10">

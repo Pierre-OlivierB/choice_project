@@ -2,6 +2,13 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import ChoiceCard from "./choicecard";
 import TheEnd from "./theend";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faUserGraduate,
+  faUserNinja,
+  faUserSecret,
+  faExclamation,
+} from "@fortawesome/free-solid-svg-icons";
 
 function Events(props) {
   const perso = props.perso;
@@ -101,23 +108,79 @@ function Events(props) {
   }, []);
 
   return (
-    <div className="test">
-      <div className="inside-content container-fluid d-flex flex-column justify-content-evenly">
+    <div className="h-100">
+      <div className="inside-content container-fluid d-flex flex-column justify-content-evenly h-100">
         <div className="row justify-content-md-center">
           <div className="col col-6">
             <div className="row">
-              <div className="col col-6">
-                <h1>Event</h1>
-                <h2>chapitre {story.numero_chapitre}</h2>
+              <div className="col col-6 me-5">
+                <article className="p-2">
+                  <h1>Rappel des règles</h1>
+                  <section className="bg-light p-2 rounded">
+                    <p>Les règles sont les suivantes :</p>
+                    <div className="d-flex">
+                      <FontAwesomeIcon className="me-1" icon={faExclamation} />
+                      <p>
+                        Chaque action disponible correspond à une
+                        caractéristique.
+                      </p>
+                    </div>
+                    <div className="d-flex">
+                      <FontAwesomeIcon className="me-1" icon={faExclamation} />
+                      <p>
+                        L'issu du choix est lié à la probabilité de réussite
+                        correspondant à cette caractéristique.
+                      </p>
+                    </div>
+                    <div className="d-flex">
+                      <FontAwesomeIcon className="me-1" icon={faExclamation} />
+                      <p>
+                        Plus la caractéristique est grande, plus la réussite est
+                        probable.
+                      </p>
+                    </div>
+                  </section>
+                </article>
               </div>
-              <div className="col col-6">
+              <div className="col col-5">
                 <div className="card card-charac">
                   <div className="card-body">
-                    <h4 className="card-title">{perso.name}</h4>
-                    <h5 className="card-title">{perso.type}</h5>
-                    <p className="card-text">C : {perso.constitution}</p>
-                    <p className="card-text">D : {perso.dexterite}</p>
-                    <p className="card-text">I : {perso.intelligence}</p>
+                    <article className="d-flex justify-content-sm-evenly">
+                      <section>
+                        <h4 className="card-title">{perso.name}</h4>
+                        <h5 className="card-title">{perso.type}</h5>
+                        <p className="card-text">C : {perso.constitution}</p>
+                        <p className="card-text">D : {perso.dexterite}</p>
+                        <p className="card-text">I : {perso.intelligence}</p>
+                      </section>
+
+                      <section className="d-flex justify-content-md-center align-items-center w-50">
+                        {perso.intelligence == "75" ? (
+                          <FontAwesomeIcon
+                            className="w-50 h-50"
+                            icon={faUserGraduate}
+                          />
+                        ) : (
+                          <></>
+                        )}
+                        {perso.dexterite == "75" ? (
+                          <FontAwesomeIcon
+                            className="w-50 h-50"
+                            icon={faUserNinja}
+                          />
+                        ) : (
+                          <></>
+                        )}
+                        {perso.constitution == "75" ? (
+                          <FontAwesomeIcon
+                            className="w-50 h-50"
+                            icon={faUserSecret}
+                          />
+                        ) : (
+                          <></>
+                        )}
+                      </section>
+                    </article>
                   </div>
                   {inventory == "" ? (
                     <></>
@@ -130,7 +193,7 @@ function Events(props) {
           </div>
         </div>
         <div className="row justify-content-md-center">
-          <div className="col col-10">
+          <div className="col col-10 description p-4">
             <p>{story.card_context}</p>
             <p>{story.mj_question}</p>
           </div>
@@ -138,11 +201,15 @@ function Events(props) {
 
         {!storyEnd ? (
           <>
-            <div className="container-fluid position-absolute top-50 start-0 d-flex justify-content-evenly">
-              {hideDice ? <></> : btnChoiceContent}
-            </div>
             {hideDice ? (
-              <div className="container-fluid">
+              <></>
+            ) : (
+              <div className="d-flex justify-content-evenly footer-content">
+                {btnChoiceContent}
+              </div>
+            )}
+            {hideDice ? (
+              <div className="container-fluid d-flex justify-content-evenly">
                 {flagevent && hideDice ? (
                   <>
                     <ChoiceCard
@@ -150,22 +217,27 @@ function Events(props) {
                       onSwipeRight={() => handleClickDice()}
                     />
                     {console.log(contentBtnActionChoice)}
-                    <p> Ton choix : {contentBtnActionChoice}</p>
-                    <p>
-                      Il faut faire moins ou égale à la caractéristique : /
-                      {caracChoice}
-                    </p>
+                    <article className="description p-4">
+                      <p> Ton choix : {contentBtnActionChoice}</p>
+                      <p>
+                        Il faut faire moins ou égale à la caractéristique : /
+                        {caracChoice}
+                      </p>
+                    </article>
                   </>
                 ) : (
                   <>
-                    <p>
-                      Result : {dice} / {caracChoice}
-                    </p>
-                    {win ? (
-                      <p>Tu as réussi ton action</p>
-                    ) : (
-                      <p>Tu as échoué dans ton action</p>
-                    )}
+                    <article className="description p-4">
+                      <p>
+                        Result : {dice} / {caracChoice}
+                      </p>
+                      {win ? (
+                        <p>Tu as réussi ton action</p>
+                      ) : (
+                        <p>Tu as échoué dans ton action</p>
+                      )}
+                    </article>
+
                     <ChoiceCard
                       content={"Continue"}
                       onSwipeRight={() => handleClickContinu()}

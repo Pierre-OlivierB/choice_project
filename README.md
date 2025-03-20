@@ -43,5 +43,7 @@ Tu es un écrivain de livre d'horreur. Tu t'adresses à un publique adulte. Le c
 Améliorer les explications
 Améliorer le texte (histoire)
 revoir le positionnement des cards
-Mettre une image en background
-Ajouer bouton sauvegarder
+//Mettre une image en background
+Ajouter bouton sauvegarder
+Mettre le composants "characteres" à la place dans le composant "chapter" et "events".
+Mettre un background contextuel
