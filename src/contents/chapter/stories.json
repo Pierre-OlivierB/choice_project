@@ -207,8 +207,8 @@
     "btn_choix": ["Atteindre la télé", "Atteindre la porte", "tu ne fais pas de bruit et tu écoutes", "fouiller le bureau"],
     "c_w": ["Malgrè tout tes efforts tu ne peux que faire appraître une entre baillure dans le volet et le mécanisme se casse. Juste assez pour voir que dehors il fait nuit, il ne pleut pas et que tu es à côté d'un parking. Une seule voiture y est arrêté."],
     "d_w": ["Malgrè tout tes efforts tu ne peux que faire appraître une entre baillure dans le volet et la manivelle casse le mécanisme. Juste assez pour voir que dehors il fait nuit, il ne pleut pas et que tu es à côté d'un parking. Une seule voiture y est arrêté."],
-    "c_l": ["Malgrè tout tes efforts tu ne peux n'arrives pas à faire bouger le volet. De plus le mécanisme se casse"],
-    "d_l": ["Malgrè tout tes efforts tu ne peux n'arrives pas à faire bouger le volet. De plus la manivelle casse le mécanisme."],
+    "c_l": ["Malgrè tout tes efforts tu n'arrives pas à faire bouger le volet. De plus le mécanisme se casse"],
+    "d_l": ["Malgrè tout tes efforts tu n'arrives pas à faire bouger le volet. De plus la manivelle casse le mécanisme."],
     "actions": {
       "btn": ["ouvrir le volet avec la manivelle", "ouvrir le volet avec force"],
       "carac": ["dexterite", "dexterite"]
@@ -222,8 +222,8 @@
     "btn_choix": ["Atteindre le bureau", "Atteindre la porte", "tu ne fais pas de bruit et tu écoutes"],
     "d_w": ["Tu fouilles rapidement le meuble télé. Sans grande difficulté tu tombes sur un porte document. A l'intérieur des feuilles qui décrivent les habitudes d'une personne. Le nom est barré en noir. La photo qui y est accroché te semble familière. Tu plis les feuilles et tu les ranges dans ta veste"],
     "i_w": ["Tu fouilles consciencieusement le meuble télé. Sans grande difficulté tu tombes sur un porte document. A l'intérieur des feuilles qui décrivent les habitudes d'une personne. Le nom est barré en noir. La photo qui y est accroché te semble familière et de ce que tu as pu voir dans les reflets cette personne te reseemble beaucoup. Tu plis les feuilles et tu les ranges dans ta veste"],
-    "d_l": ["Tu fouilles rapidement le meuble télé. Les pubs s'enchaînent, tu es comme hypnotysé par ces contenus. Tout semble s'arrêter quand ta main tombe sur un porte document. A l'intérieur des feuilles qui décrivent les habitudes d'une personne. Le nom est barré en noir. La photo qui y est accroché te semble familière. Tu plis les feuilles et tu les ranges dans ta veste"],
-    "i_l": ["Tu fouilles consciencieusement le meuble télé.  Les pubs s'enchaînent, tu es comme hypnotysé par ces contenus. Tout semble s'arrêter quand ta main tombe sur un porte document. A l'intérieur des feuilles qui décrivent les habitudes d'une personne. Le nom est barré en noir. La photo qui y est accroché te semble familière. Tu plis les feuilles et tu les ranges dans ta veste"],
+    "d_l": ["Tu fouilles rapidement le meuble télé. La neige, tu es comme hypnotysé par l'écran. Tout semble s'arrêter quand ta main tombe sur un porte document. A l'intérieur des feuilles qui décrivent les habitudes d'une personne. Le nom est barré en noir. La photo qui y est accroché te semble familière. Tu plis les feuilles et tu les ranges dans ta veste"],
+    "i_l": ["Tu fouilles consciencieusement le meuble télé. La neige, tu es comme hypnotysé par l'écran. Tout semble s'arrêter quand ta main tombe sur un porte document. A l'intérieur des feuilles qui décrivent les habitudes d'une personne. Le nom est barré en noir. La photo qui y est accroché te semble familière. Tu plis les feuilles et tu les ranges dans ta veste"],
     "actions": {
       "btn": ["Fouiller le meuble consciencieusement", "Fouiller le meuble rapidement"],
       "carac": ["intelligence", "dexterite"]
@@ -237,7 +237,7 @@
     "c_w": ["Tu cours le plus vite, ton stress monte. Tu manques de glisser sur le sol, tes jambes sont en coton mais tu atteinds la porte sans difficulté mais pas sans faire de bruit."],
     "d_w": ["Tu vas doucement vers la porte en essayant de ne pas faire de bruit, ton stress monte. Tes jambes sont en coton mais tu atteinds la porte sans difficulté et sans faire de bruit."],
     "c_l": ["Tu cours le plus vite, ton stress monte. Tu glisses sur le sol et tu tombes en arrière, tes jambes sont en coton mais tu atteinds la porte avec difficulté et en faisant beaucoup de bruit."],
-    "d_l": ["Tu vas doucement vers la porte en essayant de ne pas faire de bruit, ton stress monte. Tes jambes sont en coton et tu atteinds la porte avec difficulté et les planches sous tes pieds font à chaque pas grince comme si tu faisait plusieurs tonnes."],
+    "d_l": ["Tu vas doucement vers la porte en essayant de ne pas faire de bruit, ton stress monte. Tes jambes sont en coton et tu atteinds la porte avec difficulté et les planches sous tes pieds grincent à chaque pas comme si tu faisais plusieurs tonnes."],
     "actions": {
       "btn": ["j'y vais sans bruit'", "je cours vers porte"],
       "carac": ["dexterite", "constitution"]

@@ -165,7 +165,7 @@ function Book(props) {
                 setActionActive(false);
                 setChoiceAlreadyDone([...choiceAlreadyDone, choice]);
                 if (choice == 2) {
-                  setChoiceAlreadyDone([choiceAlreadyDone, "6"]);
+                  setChoiceAlreadyDone([...choiceAlreadyDone, choice, "6"]);
                 }
                 // console.log(
                 //   "TEST book" + JSON.stringify(currentStories.choix[i])
@@ -223,7 +223,10 @@ function Book(props) {
 
       if (choiceAlreadyDone.includes("10")) {
         setInventory("clef");
-        if (currentStories.numero_chapitre == "15") {
+        if (
+          currentStories.numero_chapitre == "15" ||
+          currentStories.numero_chapitre == "16"
+        ) {
           listBtn.push(
             <ChoiceCard
               key={19}
