@@ -1,6 +1,4 @@
-import React, { useRef } from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+import React, { useRef, useEffect, useState, useMemo } from "react";
 import Chapter from "./chapter/chapter";
 import storiesData from "./chapter/stories.json";
 import ChoiceCard from "./events/choicecard";
@@ -10,242 +8,256 @@ import TheEnd from "./events/theend";
 function Book(props) {
   //get player choice
   const perso = props.perso;
+  // get all stories from json
+  const stories = storiesData;
+
   // set button player choice
   const [choice, setChoice] = useState(0);
   // set content show
   const [flag, setFlag] = useState(true);
-  // get all stories from json
-  const stories = storiesData;
-
   // add inventory to caracter
   const [inventory, setInventory] = useState([]);
-
-  // !--------------------------------------
+  // victory / loose statut
   const [win, setWin] = useState(true);
+  // Action link with (c, d, i)
   const [action, setAction] = useState("");
-  // !--------------------------------------
 
   // keep in mind what choice has been made
-  const [choiceAlreadyDone, setChoiceAlreadyDone] = useState("");
+  const [choiceAlreadyDone, setChoiceAlreadyDone] = useState([]);
 
   // set actual storie
   const currentStories = stories[choice];
 
   // set precedent action
   const [precendentAction, setPrecendentAction] = useState(currentStories.txt);
-  // const [actionSup, setActionSup] = useState([]);
+  // actions has been before ?
   const [actionActive, setActionActive] = useState(false);
-
   // save
-  var save = useRef([]);
-
-  useEffect(() => {
-    save.current.push([precendentAction, choice, perso]);
-    console.log("histo : ", save.current);
-  }, [precendentAction]);
-
+  const save = useRef([]);
   // set story end
   const [storyEnd, setStoryEnd] = useState(false);
 
+  // !---------------------------
+  // ! BEGIN Need to keep ?
+  // Choix de carte swipée (utilisé pour déclencher l'action)
+  const [swipedCardIndex, setSwipedCardIndex] = useState(null);
+  // ! END Need to keep ?
+  // !---------------------------
+
   // set content show
   function handleClick(newChapter) {
+    // newChapter with his index
     setChoice(newChapter);
-    setFlag(!flag);
+    setFlag((prevFlag) => !prevFlag);
 
     if (newChapter == 24 || newChapter == 26 || newChapter == 28) {
       setStoryEnd(true);
     }
   }
 
+  // !---------------------------
+  // ! BEGIN Need to keep ?
+  // Gestion du swipe sur ChoiceCard
+  const handleSwipeRight = (index) => {
+    setSwipedCardIndex(index);
+    // Le log original utilisait `flag`, ce qui est peut-être confus.
+    // On garde le set pour l'index swipé.
+    console.log("swipe index: " + index);
+  };
+  // ! END Need to keep ?
+  // !---------------------------
+
   // get data from child event
   function handleDiceFromEvent(child_choice) {
-    // setDice(child_dice[0]);
-    console.log("TEST setflag " + child_choice[0]);
     setFlag(child_choice[0]);
 
     // event by the action win or not
+
     switch (child_choice[1]) {
       case "c_w":
         setPrecendentAction(currentStories.c_w[0]);
         setWin(true);
         setAction("c");
-        // setActionSup(currentStories.c_w[1]);
         break;
       case "d_w":
         setPrecendentAction(currentStories.d_w[0]);
         setWin(true);
         setAction("d");
-        // setActionSup(currentStories.d_w[1]);
         break;
       case "i_w":
         setPrecendentAction(currentStories.i_w[0]);
         setWin(true);
         setAction("i");
-        // setActionSup(currentStories.i_w[1]);
         break;
       case "c_l":
         setPrecendentAction(currentStories.c_l[0]);
         setWin(false);
-        // setActionSup(currentStories.c_l[1]);
         break;
       case "d_l":
         setPrecendentAction(currentStories.d_l[0]);
         setWin(false);
-        // setActionSup(currentStories.d_l[1]);
         break;
       case "i_l":
         setPrecendentAction(currentStories.i_l[0]);
         setWin(false);
-        // setActionSup(currentStories.i_l[1]);
         break;
-
       default:
         break;
     }
   }
-  if (currentStories.btn_choix) {
-    // set all buttons from data
-    var btnList = currentStories.btn_choix;
-  } else if (win) {
-    // verification if win and if array or object)
-    if (Array.isArray(currentStories.choix_win)) {
-      var btnList = currentStories.btn_choix_win;
-      var choix = currentStories.choix_win;
-    } else {
-      switch (action) {
-        case "c":
-          var btnList = [currentStories.btn_choix_win.c];
-          var choix = [currentStories.choix_win.c];
-          break;
-        case "d":
-          var btnList = [currentStories.btn_choix_win.d];
-          var choix = [currentStories.choix_win.d];
-          break;
-        case "i":
-          var btnList = [currentStories.btn_choix_win.i];
-          var choix = [currentStories.choix_win.i];
-          break;
-        default:
-          break;
+
+  // --- LOGIQUE BTNS (Render) ---
+
+  // Definition btnList and choix with win/loose
+  const { btnList, choix } = useMemo(() => {
+    let list = [];
+    let choiceValues = [];
+
+    if (currentStories.btn_choix) {
+      list = currentStories.btn_choix;
+      choiceValues = currentStories.choix;
+    } else if (win) {
+      if (Array.isArray(currentStories.choix_win)) {
+        list = currentStories.btn_choix_win;
+        choiceValues = currentStories.choix_win;
+      } else {
+        // Logique win/loose action (c, d, i)
+        switch (action) {
+          case "c":
+            list = [currentStories.btn_choix_win.c];
+            choiceValues = [currentStories.choix_win.c];
+            break;
+          case "d":
+            list = [currentStories.btn_choix_win.d];
+            choiceValues = [currentStories.choix_win.d];
+            break;
+          case "i":
+            list = [currentStories.btn_choix_win.i];
+            choiceValues = [currentStories.choix_win.i];
+            break;
+          default:
+            list = [];
+            choiceValues = [];
+            break;
+        }
       }
+    } else {
+      // Loose logic
+      list = currentStories.btn_choix_loose || [];
+      choiceValues = currentStories.choix_loose || [];
     }
-  } else {
-    var btnList = currentStories.btn_choix_loose;
-    var choix = currentStories.choix_loose;
-  }
 
-  const [btnChoiceContent, setBtnChoiceContent] = useState([]);
-  // reload list of buttons when choices was done
+    return { btnList: list, choix: choiceValues };
+  }, [currentStories, win, action]);
 
-  // choose card with swipe
-  const [swipedCardIndex, setSwipedCardIndex] = useState(null);
-  const handleSwipeRight = (index) => {
-    setSwipedCardIndex(index);
-    console.log("swipe setflag " + flag);
-  };
+  // --- CONSTRUCTION LOGIC (useMemo) ---
+  // list btn to display
+  const listBtnJSX = useMemo(() => {
+    const generatedList = [];
 
-  useEffect(() => {
-    let listBtn = [];
-
+    // Boucle principale de génération des boutons de choix
     for (let i = 0; i < btnList.length; i++) {
-      // console.log(JSON.stringify(currentStories));
-      console.log("what is in alreadydone ? " + choiceAlreadyDone);
+      const choiceValue = choix[i];
+      const buttonContent = btnList[i];
+
+      // IF currentStories.choix not null and choice not already done
       if (currentStories.choix) {
         if (!choiceAlreadyDone.includes(currentStories.choix[i])) {
-          // console.log("test num chap alreadydone" + currentStories.choix[i]);
-
-          listBtn.push(
+          generatedList.push(
             <ChoiceCard
-              key={i}
+              key={`choice-${i}`}
               content={currentStories.btn_choix[i]}
               onSwipeRight={() => {
                 handleSwipeRight(i);
                 const chc = currentStories.choix[i];
                 handleClick(chc);
                 setActionActive(false);
-                setChoiceAlreadyDone([...choiceAlreadyDone, choice]);
-                if (choice == 2) {
-                  setChoiceAlreadyDone([...choiceAlreadyDone, choice, "6"]);
-                }
-                // console.log(
-                //   "TEST book" + JSON.stringify(currentStories.choix[i])
-                // );
+
+                setChoiceAlreadyDone((prevChoices) => {
+                  let newChoices = [...prevChoices, chc];
+
+                  if (chc == "2") {
+                    newChoices = [...newChoices, "6"];
+                  }
+                  return newChoices;
+                });
               }}
             />
           );
-          // console.log("list btn TEST : " + currentStories.choix[i]);
         }
+
+        // IF currentStories.choix doesn't exist
       } else {
-        // console.log("win ? " + win + " " + currentStories.choix_win[i]);
-        listBtn.push(
+        generatedList.push(
           <ChoiceCard
-            key={i}
-            content={btnList[i]}
+            key={`choice-alt-${i}`}
+            content={buttonContent}
             onSwipeRight={() => {
               handleSwipeRight(i);
-              // !-------------------------
-              const chc = choix[i];
+              const chc = choiceValue;
               handleClick(chc);
               setActionActive(false);
-              setChoiceAlreadyDone([...choiceAlreadyDone, choice]);
-              if (choice == 2) {
-                setChoiceAlreadyDone([choiceAlreadyDone, "6"]);
-              }
-              // console.log(
-              //   "TEST book" + JSON.stringify(currentStories.choix[i])
-              // );
+
+              setChoiceAlreadyDone((prevChoices) => {
+                let newChoices = [...prevChoices, chc];
+
+                if (chc == "2") {
+                  newChoices = [...newChoices, "6"];
+                }
+                return newChoices;
+              });
             }}
           />
         );
       }
-    }
-    if (currentStories.choix) {
-      if (choiceAlreadyDone.includes("15")) {
-        if (
-          choiceAlreadyDone != "" &&
-          parseInt(currentStories.numero_chapitre) < 15
-        ) {
-          listBtn.push(
-            <ChoiceCard
-              key={15}
-              content={"retourner à la porte"}
-              onSwipeRight={() => {
-                handleSwipeRight(15);
-                const chc = "15";
-                handleClick(chc);
-                setActionActive(false);
-                console.log("TEST book" + "15");
-              }}
-            />
-          );
-        }
-      }
+    } // END FOR
 
-      if (choiceAlreadyDone.includes("10")) {
-        setInventory("clef");
-        if (
-          currentStories.numero_chapitre == "15" ||
-          currentStories.numero_chapitre == "16"
-        ) {
-          listBtn.push(
-            <ChoiceCard
-              key={19}
-              content={currentStories.btn_choix_sup[1]}
-              onSwipeRight={() => {
-                handleSwipeRight(19);
-                const chc = currentStories.btn_choix_sup[0];
-                handleClick(chc);
-                setActionActive(false);
-                setChoiceAlreadyDone([choiceAlreadyDone, choice]);
-                console.log("TEST book" + currentStories.btn_choix_sup[0]);
-              }}
-            />
-          );
-        }
-      }
+    // --- BTN Logic PLUS ---
+    // renturn door
+    if (
+      currentStories.choix &&
+      choiceAlreadyDone.includes("15") &&
+      choiceAlreadyDone.length > 0 &&
+      parseInt(currentStories.numero_chapitre) < 15
+    ) {
+      generatedList.push(
+        <ChoiceCard
+          key={15}
+          content={"retourner à la porte"}
+          onSwipeRight={() => {
+            handleSwipeRight(15);
+            handleClick("15");
+            setActionActive(false);
+          }}
+        />
+      );
     }
+    // Key or items
+    if (
+      currentStories.choix &&
+      choiceAlreadyDone.includes("10") &&
+      (currentStories.numero_chapitre == "15" ||
+        currentStories.numero_chapitre == "16")
+    ) {
+      generatedList.push(
+        <ChoiceCard
+          key={19}
+          content={currentStories.btn_choix_sup[1]}
+          onSwipeRight={() => {
+            handleSwipeRight(19);
+            const chc = currentStories.btn_choix_sup[0];
+            handleClick(chc);
+            setActionActive(false);
+
+            setChoiceAlreadyDone((prevChoices) => [...prevChoices, chc]);
+          }}
+        />
+      );
+    }
+
+    // Bouton final (si chapitre 19 et victoire)
     if (currentStories.numero_chapitre == "19" && win) {
-      listBtn.push(
+      generatedList.push(
         <ChoiceCard
           key={23}
           content={currentStories.btn_choix_sup[1]}
@@ -254,39 +266,63 @@ function Book(props) {
             const chc = currentStories.btn_choix_sup[0];
             handleClick(chc);
             setActionActive(false);
-            setChoiceAlreadyDone([choiceAlreadyDone, choice]);
-            console.log("TEST book" + currentStories.btn_choix_sup[0]);
+
+            setChoiceAlreadyDone((prevChoices) => [...prevChoices, chc]);
           }}
         />
       );
     }
+
+    return generatedList;
+  }, [
+    btnList,
+    choix,
+    choiceAlreadyDone,
+    currentStories,
+    handleSwipeRight,
+    handleClick,
+    setActionActive,
+    setChoiceAlreadyDone,
+    win,
+  ]);
+
+  // --- useEffects Logic ---
+
+  // History
+  useEffect(() => {
+    save.current.push([precendentAction, choice, perso]);
+    console.log("histo : ", save.current);
+  }, [precendentAction, choice, perso]);
+
+  // setInventory, setPrecendentAction
+  useEffect(() => {
+    if (choiceAlreadyDone.includes("10")) {
+      // IF setInventory is an ARRAY [clef, potion, ...]:
+      // if (!inventory.includes("clef")) { setInventory(prev => [...prev, "clef"]); }
+      // ELSE :
+      setInventory("clef");
+    }
+
+    // setPrecedentaction
+    if (actionActive) {
+      setPrecendentAction(currentStories.card_context);
+    }
+
     console.log(
       "tentative sneaky n°" + currentStories.numero_chapitre + " win ? " + win
     );
+  }, [
+    currentStories,
+    listBtnJSX,
+    actionActive,
+    win,
+    choiceAlreadyDone,
+    setInventory,
+    setPrecendentAction,
+    // setBtnChoiceContent,
+  ]);
 
-    // console.log("render 1", actionActive);
-    actionActive ? setPrecendentAction(currentStories.card_context) : null;
-
-    // if action to add from precedent action, add button
-
-    // if (actionSup && actionSup.length != 0) {
-    //   listBtn.push(
-    //     <ChoiceCard
-    //       key={5}
-    //       content={actionSup[1]}
-    //       onSwipeRight={() => {
-    //         const chc = actionSup[0];
-    //         setChoice(chc);
-    //         setActionSup([]);
-    //         setActionActive(true);
-    //       }}
-    //     />
-    //   );
-    //   console.log("test actionsup", actionSup);
-    // }
-    setBtnChoiceContent(listBtn);
-  }, [currentStories, swipedCardIndex, flag]);
-
+  // --- RENDER ---
   return !storyEnd ? (
     <div className="d-flex flex-column main-content test">
       {flag ? (
@@ -310,12 +346,10 @@ function Book(props) {
           inventory={inventory}
         />
       )}
-      {flag ? (
+      {flag && (
         <div className="d-flex justify-content-evenly footer-content">
-          <>{btnChoiceContent}</>
+          {listBtnJSX}
         </div>
-      ) : (
-        <></>
       )}
     </div>
   ) : (

@@ -47,3 +47,5 @@ revoir le positionnement des cards
 Ajouter bouton sauvegarder
 Mettre le composants "characteres" à la place dans le composant "chapter" et "events".
 Mettre un background contextuel
+Après être jusqu'à la porte (15) l'action suivante (9 ou 11) n'est plus enregistrée => proposition par gemini d'un code réparateur, fonctionnel ?
+Il nous faut la page du win PUIS la génération de l'historique.
