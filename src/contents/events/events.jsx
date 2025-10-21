@@ -17,6 +17,7 @@ function Events(props) {
   const actions = props.actions;
   const save = props.save;
   const inventory = props.inventory;
+  const event = props.where;
   //   console.log(perso, story);
 
   //   set result dice
@@ -70,6 +71,55 @@ function Events(props) {
   function handleClickEvent(id) {
     setHideDice(true);
     setCurrentAction(id);
+
+    // !-----------------------------------
+
+    if (id === "fin") {
+      // const finalContext = event;
+      // const finalChoiceId = id; // Le choix lui-même, ici "fin" const persoData = props.perso; // L'objet perso
+      // console.log("save : " + save);
+      // console.log("savecurrent : " + save.current);
+      // // 2. Manipulation DIRECTE du useRef pour la sauvegarde finale
+      // save.current.push([finalContext, finalChoiceId, persoData]);
+      // console.log(
+      //   "Sauvegarde finale forcée dans Events.jsx:",
+      //   props.save.current
+      // );
+      if (save && save.current) {
+        // ⚠️ Il est essentiel que props.save.current soit un Array [] dans le parent.
+
+        // Récupération des données pour la sauvegarde
+        const finalContext = event;
+        const finalChoiceId = id; // "fin"
+        const persoData = perso;
+
+        // 2. Sauvegarde SÉCURISÉE
+        save.current.push([finalContext, finalChoiceId, persoData]);
+        console.log("Sauvegarde finale forcée dans Events.jsx:", save.current);
+      } else {
+        console.error(
+          "Erreur de sauvegarde: props.save.current n'est pas défini."
+        );
+        // Poursuivre la fin sans enregistrer, car la variable est inaccessible.
+      }
+      if (save) {
+        const finalContext = event;
+        const finalChoiceId = id; // "fin"
+        const persoData = perso;
+
+        // 2. Sauvegarde SÉCURISÉE
+        save.push([finalContext, finalChoiceId, persoData]);
+        console.log("Sauvegarde finale forcée test", save);
+      } else {
+        console.error("Erreur de sauvegarde: props.save  n'est pas défini.");
+      }
+
+      setStoryEnd(true);
+      console.log("This is the end: StoryEnd set to true");
+      return; // Sortir de la fonction si c'est la fin
+    }
+    // !-----------------------------------
+
     switch (id) {
       case "constitution":
         setCaracChoice(perso.constitution);

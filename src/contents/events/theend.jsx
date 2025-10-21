@@ -6,8 +6,15 @@ import { Toast } from "bootstrap";
 
 function TheEnd(props) {
   const save = props.save;
-  console.log(save);
-  const story = save.current.map((step, key) => <div key={key}>{step[0]}</div>);
+  console.log("history in theend : " + save);
+  let story = [];
+  if (save.current) {
+    const storyHistory = save.current || [];
+    story = storyHistory.map((step, key) => <div key={key}>{step[0]}</div>);
+  } else {
+    story = save.map((step, key) => <div key={key}>{step[0]}</div>);
+  }
+
   return (
     <div className="test">
       <div className="main-content container-fluid d-flex flex-column justify-content-evenly">
@@ -45,7 +52,7 @@ function TheEnd(props) {
             <div className="toast-container position-fixed top-0 end-0 p-3">
               <div
                 id="liveToast"
-                class="toast"
+                className="toast"
                 role="alert"
                 aria-live="assertive"
                 aria-atomic="true"

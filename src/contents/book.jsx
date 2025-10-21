@@ -49,10 +49,9 @@ function Book(props) {
     // newChapter with his index
     setChoice(newChapter);
     setFlag((prevFlag) => !prevFlag);
-
-    if (newChapter == 24 || newChapter == 26 || newChapter == 28) {
-      setStoryEnd(true);
-    }
+    // if (newChapter == 24 || newChapter == 26 || newChapter == 28) {
+    //   setStoryEnd(true);
+    // }
   }
 
   // !---------------------------
@@ -70,7 +69,6 @@ function Book(props) {
   // get data from child event
   function handleDiceFromEvent(child_choice) {
     setFlag(child_choice[0]);
-
     // event by the action win or not
 
     switch (child_choice[1]) {
@@ -155,7 +153,7 @@ function Book(props) {
   const listBtnJSX = useMemo(() => {
     const generatedList = [];
 
-    // Boucle principale de génération des boutons de choix
+    // Choices Btns
     for (let i = 0; i < btnList.length; i++) {
       const choiceValue = choix[i];
       const buttonContent = btnList[i];
@@ -170,6 +168,7 @@ function Book(props) {
               onSwipeRight={() => {
                 handleSwipeRight(i);
                 const chc = currentStories.choix[i];
+
                 handleClick(chc);
                 setActionActive(false);
 
@@ -195,6 +194,7 @@ function Book(props) {
             onSwipeRight={() => {
               handleSwipeRight(i);
               const chc = choiceValue;
+
               handleClick(chc);
               setActionActive(false);
 
@@ -255,7 +255,7 @@ function Book(props) {
       );
     }
 
-    // Bouton final (si chapitre 19 et victoire)
+    // Victory
     if (currentStories.numero_chapitre == "19" && win) {
       generatedList.push(
         <ChoiceCard
@@ -291,8 +291,11 @@ function Book(props) {
   // History
   useEffect(() => {
     save.current.push([precendentAction, choice, perso]);
-    console.log("histo : ", save.current);
-  }, [precendentAction, choice, perso]);
+    console.log("Historique enregistré : ", save.current);
+
+    // save.current.push([precendentAction, choice, perso]);
+    // console.log("histo : ", save.current);
+  }, [precendentAction]);
 
   // setInventory, setPrecendentAction
   useEffect(() => {
@@ -344,6 +347,7 @@ function Book(props) {
           actions={currentStories.actions}
           save={save.current}
           inventory={inventory}
+          where={currentStories.card_context}
         />
       )}
       {flag && (
