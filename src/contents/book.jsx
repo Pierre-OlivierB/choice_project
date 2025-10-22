@@ -351,7 +351,7 @@ function Book(props) {
         />
       )}
       {flag && (
-        <div className="d-flex justify-content-evenly footer-content">
+        <div className="d-flex flex-row p-1 gx-4 overflow-x-auto overflow-y-hidden align-items-center justify-content-evenly footer-content">
           {listBtnJSX}
         </div>
       )}

@@ -8,6 +8,17 @@
 
 .footer-content {
     height: 20vh;
+    /* overflow-x: hidden; */
+    /* width: 100%; */
+}
+
+.flex-shrink-0 {
+    flex-shrink: 0;
+    /* Empêche les éléments filles de se contracter */
+}
+
+.min-width-350px {
+    min-width: 350px;
 }
 
 

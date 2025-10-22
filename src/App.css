@@ -98,7 +98,7 @@ h1 {
   border-radius: 10px;
   /* background-color: hsl(176 50% 40%); */
   background: linear-gradient(145deg, hsl(176, 100%, 52%), hsl(176, 50%, 40%));
-  box-shadow: 0 0 100px hsl(176deg 64.54% 35.69%), -25px -25px 71px #ffffff;
+  box-shadow: 0 0 10px hsl(176deg 64.54% 35.69%), -9px 9px 16px #ffffff;
   border: 0;
   padding: 5px;
   transition: box-shadow 1s, transform 1s;
@@ -106,8 +106,8 @@ h1 {
 
 .cardChoice:hover {
   transform: scale(1.05);
-  box-shadow: 25px 25px 71px hsl(176, 16%, 59%),
-    -25px -25px 71px #ffffff;
+  box-shadow: 5px 5px 10px hsl(176, 16%, 59%),
+    -9px 10px 16px #ffffff;
 }
 
 .card,

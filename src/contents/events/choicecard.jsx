@@ -26,7 +26,7 @@ const ChoiceCard = ({ content, onSwipeRight, isDisabled }) => {
   }, [isDisabled]);
 
   return (
-    <div className="relative">
+    <div className="relative flex-shrink-0 min-width-350px d-flex justify-content-center">
       <div
         {...handlers}
         className={`cardChoice no-select cards-positions ${
