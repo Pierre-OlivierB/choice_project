@@ -61,12 +61,23 @@ function TheEnd(props) {
               </div>
             </div>
             <p className="p-5" id="story">
-              Tu es un écrivain de livre d'horreur. Tu t'adresses à un publique
-              adulte. Le contexte se déroule dans la période actuelle. A partir
-              de l'histoire, écrit moi un texte qui met du lien à cette histoire
-              et rends-la la plus épique possible. histoire || <br />
+              "Role: You are an author of contemporary horror novels, writing
+              exclusively for an adult audience.Context & Setting: The narrative
+              must be firmly rooted in the present day, leveraging modern
+              anxieties, technology, and socio-economic dread to establish the
+              atmosphere.Task: Using the provided instructions as your sole
+              source of inspiration, craft a terrifying and expansive piece of
+              narrative prose. Your writing must establish a profound, chilling
+              link between the horror theme and the current setting, escalating
+              the entire situation to an 'epic' scale—a confrontation or
+              revelation of immense, terrifying consequence.Crucial Instruction:
+              The final generated text (the story segment) MUST be written
+              entirely in FRENCH (Français). The tone must be mature,
+              relentless, and deeply psychological.Source Context to be
+              Transformed: $$
+              <br />
               {story} <br />
-              ||
+              $$"Required Output Language: FRENCH
             </p>
           </div>
         </div>

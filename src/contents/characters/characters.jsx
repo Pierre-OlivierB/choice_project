@@ -27,7 +27,7 @@ function Characters() {
   return (
     <>
       {flag ? (
-        <div className="test">
+        <div className="house">
           <div className="main-content container-fluid d-flex justify-content-center">
             <div className="main-content row d-flex justify-content-evenly">
               <div className="row justify-content-md-center mt-4">

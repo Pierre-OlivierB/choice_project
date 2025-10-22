@@ -1,4 +1,10 @@
-import React, { useRef, useEffect, useState, useMemo } from "react";
+import React, {
+  useRef,
+  useEffect,
+  useState,
+  useMemo,
+  useCallback,
+} from "react";
 import Chapter from "./chapter/chapter";
 import storiesData from "./chapter/stories.json";
 import ChoiceCard from "./events/choicecard";
@@ -36,6 +42,28 @@ function Book(props) {
   const save = useRef([]);
   // set story end
   const [storyEnd, setStoryEnd] = useState(false);
+  // !------------------------------------------- BEGIN CAUTION
+  //set background
+  const [activeBackground, setActiveBackground] = useState("house");
+  // !----------------------------------------------------
+  // Dice throw
+  const [choiceAfterDiceRoll, setChoiceAfterDiceRoll] = useState(null);
+
+  // call after dice
+  const handleDiceRollComplete = useCallback(() => {
+    setChoiceAfterDiceRoll(choice);
+  }, [choice]);
+
+  // 2. afterdice
+  useEffect(() => {
+    if (choiceAfterDiceRoll === "15") {
+      setActiveBackground("car");
+    } else if (choiceAfterDiceRoll === "1") {
+      setActiveBackground("tv");
+    }
+  }, [choiceAfterDiceRoll]);
+  // !----------------------------------------------------
+  // !-------------------------------------------END CAUTION
 
   // !---------------------------
   // ! BEGIN Need to keep ?
@@ -104,7 +132,18 @@ function Book(props) {
     }
   }
 
-  // --- LOGIQUE BTNS (Render) ---
+  // // --- LOGIC BG ---
+  // useEffect(() => {
+  //   if (choice === "15") {
+  //     setActiveBackground("car");
+  //   } else if (choice === "1") {
+  //     setActiveBackground("tv");
+  //   }
+  // }, [choice]);
+
+  // // ...
+
+  // --- LOGIC BTNS (Render) ---
 
   // Definition btnList and choix with win/loose
   const { btnList, choix } = useMemo(() => {
@@ -327,7 +366,7 @@ function Book(props) {
 
   // --- RENDER ---
   return !storyEnd ? (
-    <div className="d-flex flex-column main-content test">
+    <div className={`d-flex flex-column main-content ${activeBackground}`}>
       {flag ? (
         <Chapter
           where={currentStories.card_context}
@@ -348,6 +387,7 @@ function Book(props) {
           save={save.current}
           inventory={inventory}
           where={currentStories.card_context}
+          onDiceRollComplete={handleDiceRollComplete}
         />
       )}
       {flag && (

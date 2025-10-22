@@ -14,7 +14,7 @@ function Home() {
   return (
     <>
       {page ? (
-        <div className="test">
+        <div className="house">
           <div className="main-content container-fluid d-flex flex-column justify-content-evenly">
             <div className="row justify-content-md-center">
               <div className="col col-6">

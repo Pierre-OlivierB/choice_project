@@ -38,18 +38,21 @@ Tu pensais bien faire mais tu finis à terre rouer de coups.
 
 Tu es un écrivain de livre d'horreur. Tu t'adresses à un publique adulte. Le contexte se déroule dans la période actuelle. A partir de l'histoire, écrit moi un texte qui met du lien à cette histoire et rends-la la plus épique possible. histoire {{}}
 
+## DOING
+
+Mettre un background contextuel (look begin caution)
+
 ## TODO
 
-Améliorer les explications
 Améliorer le texte (histoire)
-Améliorer le prompt
 Ajouter bouton sauvegarder
 Mettre le composants "characteres" à la place dans le composant "chapter" et "events".
-Mettre un background contextuel
-Ajouter au début de chaque card_contexte dans le json l'action effectuée. Afin d'avoir un texte finale compréhensible.
 
 ## DONE
 
+//Améliorer le prompt
+// Améliorer les explications
+//Ajouter au début de chaque card_contexte dans le json l'action effectuée. Afin d'avoir un texte finale compréhensible.
 //revoir le positionnement des cards
 //Mettre une image en background
 //Après être jusqu'à la porte (15) l'action suivante (9 ou 11) n'est plus enregistrée => proposition par gemini d'un code réparateur, fonctionnel ?

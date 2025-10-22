@@ -46,7 +46,9 @@ function Events(props) {
     setFlagevent(!flagevent);
     const action = result / caracChoice;
     action > 1 ? setWin(false) : "";
+    props.onDiceRollComplete();
   }
+
   // send result form child to parent
   function handleClickContinu() {
     let next = "";
