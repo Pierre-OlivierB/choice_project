@@ -43,7 +43,6 @@ Tu es un écrivain de livre d'horreur. Tu t'adresses à un publique adulte. Le c
 Améliorer les explications
 Améliorer le texte (histoire)
 Améliorer le prompt
-revoir le positionnement des cards
 Ajouter bouton sauvegarder
 Mettre le composants "characteres" à la place dans le composant "chapter" et "events".
 Mettre un background contextuel
@@ -51,6 +50,7 @@ Ajouter au début de chaque card_contexte dans le json l'action effectuée. Afin
 
 ## DONE
 
+//revoir le positionnement des cards
 //Mettre une image en background
 //Après être jusqu'à la porte (15) l'action suivante (9 ou 11) n'est plus enregistrée => proposition par gemini d'un code réparateur, fonctionnel ?
 //Il nous faut la page du win PUIS la génération de l'historique.

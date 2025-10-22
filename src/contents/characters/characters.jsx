@@ -33,13 +33,35 @@ function Characters() {
               <div className="row justify-content-md-center mt-4">
                 <article className="col col-10 description p-4">
                   <p>
-                    Dans un RP, il nous faut choisir un personnage qui va nou
-                    représenté. Pour l'exemple, voici 3 personnages
-                    pré-construit afin de vous familiariser avec la construction
+                    Dans un RP, il te faut choisir un personnage qui va te
+                    représenter. Pour l'exemple, voici 3 personnages
+                    pré-construit afin de te familiariser avec la construction
                     d'un personnage.
                   </p>
-                  <p>Et maintenant à vous de jouer.</p>
-                  <p> Quel est votre choix ?</p>
+                  <p>
+                    Chaque choix que tu feras, sera irrémédiable. Un autre choix
+                    est une autre histoire. Tu n'as pas de limite de temps,
+                    alors choisis bien.
+                  </p>
+                  <p>
+                    Ici je te propose une construction de personnage très
+                    simplifiée. Ton personnage a un nom, une fonction qui est
+                    ici plus une représentation global de ton personnage et des
+                    caractéristiques. Ces dernières vont être le centre de tes
+                    préoccupations étant donné qu'elles vont te permettre ou non
+                    de la réussite de ton action. Ici, les caractéristiques vont
+                    de 1 à 100. Pour savoir si la personne à réussit une action
+                    on jette un dé 100. Pour que l'action soit une réussite, il
+                    faut que le dé affiche un résultat égale ou inférieur. Plus
+                    la caractéristique lié à l'action est grande, plus la
+                    probabilité de réussite est grande. Prenons exemple sur
+                    Chris. Il est costo, il a une constitution de 75. S'il avait
+                    à se battre, il aurait 75% de réussite. D'un autre côté,
+                    s'il avait à réfléchir à une situation, il n'aurait que 25%
+                    de réussite.
+                  </p>
+                  <p>Et maintenant à toi de jouer.</p>
+                  <p> Quel est ton choix ?</p>
                 </article>
               </div>
               {data.map((tmp, key) => {

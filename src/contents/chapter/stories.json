@@ -12,10 +12,10 @@
     "mj_question": "Que fais-tu ?",
     "choix": ["6", "9", "15", "11"],
     "btn_choix": ["Fouiller tes poches", "Atteindre le bureau", "Atteindre la porte", "Atteindre la télé"],
-    "d_w": ["Les grincements des ressors du canapé te font comprendre que tu es assis sur un canapé de mauvaise facture. Tu te sens t'enfoncer dans ses coussins. Tu cherches autour de toi rapidement. Tu trouves une manette de télévision coincée entre 2 coussins derrière toi. En la saisissant, tu ne sais pas très bien comment, la télévision s'allume. L'écran noir laisse place à une neige continue et ajoute un son constant à ce moment rempli de questions. Mais grâce à la lumière tu vois ce qui t'entoure. A ta droite un bureau en bois en dessous d'une fenêtre à l'encadrement blanc fermée par un volet qui devait être blanc à son installation. Devant toi la télévision posé sur un meuble de bois ou alors c'est peut être un tabouret. Derrière la télévision une porte en bois blanc fermée. Grâce à la lumière tu en es sûr il n'y a plus rien à fouiller autour de toi."],
-    "i_w": ["Les grincements des ressors du canapé te font comprendre que tu es assis sur un canapé de mauvaise facture. Tu te sens t'enfoncer dans ses coussins. Tu cherches autour de toi en prenant tout ton temps et tu trouves une manette de télévision coincé entre 2 coussins derrière toi. Visiblement tu es assis sur un canapé de mauvaise facture. En la saisissant, tu ne sais pas très bien comment, la télévision s'allume. L'écran noir laisse place à une neige continue et ajoute un son constant à ce moment rempli de questions. Mais grâce à la lumière tu vois ce qui t'entoure. A ta droite un bureau en bois en dessous d'une fenêtre à l'encadrement blanc fermée par un volet qui devait être blanc à son installation. Devant toi la télévision posé sur un meuble de bois ou alors c'est peut être un tabouret. Derrière la télévision une porte en bois blanc fermée. Grâce à la lumière tu en es sûr il n'y a plus rien à fouiller autour de toi."],
-    "d_l": ["Les grincements des ressors du canapé te font comprendre que tu es assis sur un canapé de mauvaise facture. Tu te sens t'enfoncer dans ses coussins. Tu cherches rapidement autour de toi. Tu as du mal à passer ta main entre les coussins. Ton corps est engourdi, ce qui ne facilite pas la tâche. Tu finis par sentir un objet coincé entre 2 coussins derrière toi. Au touché, cet objet ressemble à une manette de télévison. En la prenant en main, tu ne sais pas très bien comment mais la télévision s'allume. L'écran noir laisse place à une neige continue et ajoute un son constant à ce moment rempli de questions. Cependant grâce à la lumière tu vois ce qui t'entoure. A ta droite un bureau en bois en dessous d'une fenêtre à l'encadrement blanc fermée par un volet qui devait être blanc à son installation. Devant toi la télévision posé sur un meuble de bois ou alors c'est peut être un tabouret. Derrière la télévision une porte en bois blanc fermée. Grâce à la lumière tu en es sûr il n'y a plus rien à fouiller autour de toi."],
-    "i_l": ["Les grincements des ressors du canapé te font comprendre que tu es assis sur un canapé de mauvaise facture. Tu te sens t'enfoncer dans ses coussins. Tu cherches encore et encore. Les grincementds du canapé te font penser aux gromelements d'un animal.  Tu finis par sentir un objet coincé entre 2 coussins derrière toi. Au touché cet objet ressemble à une manette de télévison. En la prenant en main tu ne sais pas très bien comment et la télévision s'allume. L'écran noir laisse place à une neige continue et ajoute un son constant à ce moment rempli de questions. Grâce à la lumière tu vois ce qui t'entoure. A ta droite un bureau en bois en dessous d'une fenêtre à l'encadrement blanc fermée par un volet qui devait être blanc à son installation. Devant toi la télévision posé sur un meuble de bois ou alors c'est peut être un tabouret. Derrière la télévision une porte en bois blanc fermée. Grâce à la lumière tu en es sûr il n'y a plus rien à fouiller autour de toi."],
+    "d_w": ["Tu tâtonnes rapidement ce sur quoi tu es assis, les grincements des ressors du canapé te font comprendre que tu es assis sur un canapé de mauvaise facture. Tu te sens t'enfoncer dans ses coussins. Tu cherches autour de toi rapidement. Tu trouves une manette de télévision coincée entre 2 coussins derrière toi. En la saisissant, tu ne sais pas très bien comment, la télévision s'allume. L'écran noir laisse place à une neige continue et ajoute un son constant à ce moment rempli de questions. Mais grâce à la lumière tu vois ce qui t'entoure. A ta droite un bureau en bois en dessous d'une fenêtre à l'encadrement blanc fermée par un volet qui devait être blanc à son installation. Devant toi la télévision posé sur un meuble de bois ou alors c'est peut être un tabouret. Derrière la télévision une porte en bois blanc fermée. Grâce à la lumière tu en es sûr il n'y a plus rien à fouiller autour de toi."],
+    "i_w": ["Tu tâtonnes consciencieusement ce sur quoi tu es assis, les grincements des ressors du canapé te font comprendre que tu es assis sur un canapé de mauvaise facture. Tu te sens t'enfoncer dans ses coussins. Tu cherches autour de toi en prenant tout ton temps et tu trouves une manette de télévision coincé entre 2 coussins derrière toi. Visiblement tu es assis sur un canapé de mauvaise facture. En la saisissant, tu ne sais pas très bien comment, la télévision s'allume. L'écran noir laisse place à une neige continue et ajoute un son constant à ce moment rempli de questions. Mais grâce à la lumière tu vois ce qui t'entoure. A ta droite un bureau en bois en dessous d'une fenêtre à l'encadrement blanc fermée par un volet qui devait être blanc à son installation. Devant toi la télévision posé sur un meuble de bois ou alors c'est peut être un tabouret. Derrière la télévision une porte en bois blanc fermée. Grâce à la lumière tu en es sûr il n'y a plus rien à fouiller autour de toi."],
+    "d_l": ["Tu tâtonnes rapidement ce sur quoi tu es assis, les grincements des ressors du canapé te font comprendre que tu es assis sur un canapé de mauvaise facture. Tu te sens t'enfoncer dans ses coussins. Tu cherches rapidement autour de toi. Tu as du mal à passer ta main entre les coussins. Ton corps est engourdi, ce qui ne facilite pas la tâche. Tu finis par sentir un objet coincé entre 2 coussins derrière toi. Au touché, cet objet ressemble à une manette de télévison. En la prenant en main, tu ne sais pas très bien comment mais la télévision s'allume. L'écran noir laisse place à une neige continue et ajoute un son constant à ce moment rempli de questions. Cependant grâce à la lumière tu vois ce qui t'entoure. A ta droite un bureau en bois en dessous d'une fenêtre à l'encadrement blanc fermée par un volet qui devait être blanc à son installation. Devant toi la télévision posé sur un meuble de bois ou alors c'est peut être un tabouret. Derrière la télévision une porte en bois blanc fermée. Grâce à la lumière tu en es sûr il n'y a plus rien à fouiller autour de toi."],
+    "i_l": ["Tu tâtonnes consciencieusement ce sur quoi tu es assis, les grincements des ressors du canapé te font comprendre que tu es assis sur un canapé de mauvaise facture. Tu te sens t'enfoncer dans ses coussins. Tu cherches encore et encore. Les grincementds du canapé te font penser aux gromelements d'un animal.  Tu finis par sentir un objet coincé entre 2 coussins derrière toi. Au touché cet objet ressemble à une manette de télévison. En la prenant en main tu ne sais pas très bien comment et la télévision s'allume. L'écran noir laisse place à une neige continue et ajoute un son constant à ce moment rempli de questions. Grâce à la lumière tu vois ce qui t'entoure. A ta droite un bureau en bois en dessous d'une fenêtre à l'encadrement blanc fermée par un volet qui devait être blanc à son installation. Devant toi la télévision posé sur un meuble de bois ou alors c'est peut être un tabouret. Derrière la télévision une porte en bois blanc fermée. Grâce à la lumière tu en es sûr il n'y a plus rien à fouiller autour de toi."],
     "actions": {
       "btn": ["Tu tâtonnes consciencieusement", "Tu tâtonnes rapidement"],
       "carac": ["intelligence", "dexterite"]
@@ -250,9 +250,9 @@
     "choix": ["9", "11", "17"],
     "btn_choix": ["Atteindre le bureau", "Atteindre la télé", "Forcer la porte"],
     "btn_choix_sup": ["19", "Utiliser la clef"],
-    "i_w": ["La porte qui se dresse devant toi est assez ancienne et pourtant tu vois qu'elle est robuste. Si tu décides de forcer le passage tu vas faire beaucoup de bruits. Elle a une serrure basique. Il se pourrait bien que la clef se trouve dans cette chambre."],
-    "d_w": ["La porte semble assez resistante, si tu voulais la forcer, ça va te mettre en difficulté. Ca peut te prendre beaucoup de temps et tu vas faire un maximum de bruits."],
-    "i_l": ["Tu regardes cette porte en espérant qu'elle te parle. Avec tout de brouillard dans ta tête tu n'arrives à rien. C'est une porte standard, avec une serrure."],
+    "i_w": ["Tu fronces les sourciles et tu te concentres sur la porte qui se dresse devant toi. Elle est assez ancienne et pourtant tu vois qu'elle est robuste. Si tu décides de forcer le passage tu vas faire beaucoup de bruits. Elle a une serrure basique. Il se pourrait bien que la clef se trouve dans cette chambre."],
+    "d_w": ["Tu regardes cette porte rapidement. Elle te semble assez resistante, si tu voulais la forcer, ça va te mettre en difficulté. Ca peut te prendre beaucoup de temps et tu vas faire un maximum de bruits."],
+    "i_l": ["Tu fronces les sourciles et tu te concentres sur la porte qui se dresse devant toi. Tu la regardes en espérant qu'elle te parle. Avec tout de brouillard dans ta tête tu n'arrives à rien. C'est une porte standard, avec une serrure."],
     "d_l": ["Tu regardes cette porte rapidement. Avec tout de brouillard dans ta tête tu n'arrives à rien. C'est une porte standard, avec une serrure."],
     "actions": {
       "btn": ["J'analyse intelligemment", "J'analyse rapidement"],
@@ -313,8 +313,8 @@
     "btn_choix_win": ["Rentrer dans la voiture et essayer de la démarer", "courrir au loin"],
     "choix_loose": ["27"],
     "btn_choix_loose": ["Tu n'as pas le choix il va falloir battre l'inconnu"],
-    "c_w": ["Tu arrives à côté de la voiture et l'inconnu est KO."],
-    "c_l": ["Tu n'as pas réussi à passer. Et tu vas devoir te débarasser de cette personnes, il ne te laisse pas le choix."],
+    "c_w": ["Tu pousses l'inconnu de toute tes forces, il trébuche et se cogne la tête contre la voiture. Te voilà à côté de la voiture et l'inconnu est KO."],
+    "c_l": ["Tu essayes de passer mais l'inconnu te repousse assez facilement. Tu n'as pas réussi à passer. Et tu vas devoir te débarasser de cette personnes, il ne te laisse pas le choix."],
     "actions": {
       "btn": ["Foncer sur l'inconnu"],
       "carac": ["constitution"]
@@ -328,10 +328,10 @@
     "btn_choix_win": ["Rentrer dans la voiture et essayer de la démarer", "Rentrer dans la voiture et claxonner", "courrir au loin"],
     "choix_loose": ["27"],
     "btn_choix_loose": ["Tu n'as pas le choix il va falloir battre l'inconnu"],
-    "d_w": ["Tu passes sans difficultés, tu arrives derrière l'inconnu. Tu entres dans la voiture tu tournes la clef du moteur."],
-    "i_w": ["Ton chemin était le bon et tu l'as bien exécuté. Tu arrives derrière l'inconnu. Tu entres dans la voiture tu tournes la clef du moteur."],
-    "d_l": ["Ta dextérité  ne suffit pas à passer l'inconnu. Te voilà arrêté par l'inconnu, il va falloire te battre."],
-    "i_l": ["Ton chemin n'est pas bon et tu ne peux pas ignorer l'inconnu. Te voilà arrêté par lui, il va falloire te battre."],
+    "d_w": ["En utilisant tes réflexes, tu passes sans difficultés. Désromais derrière l'inconnu, tu entres dans la voiture et tu tournes la clef du moteur."],
+    "i_w": ["Tu te représentes un chemin dans ta tête et tout se passe comme prévu. Tu arrives derrière l'inconnu. Tu entres dans la voiture et tu tournes la clef du moteur."],
+    "d_l": ["Ta dextérité ne suffit pas à passer l'inconnu. Te voilà arrêté devant lui, il va falloire te battre."],
+    "i_l": ["Tu te représentes un chemin dans ta tête et rien ne se passe comme prévu. Te voilà arrêté devant lui, il va falloire te battre."],
     "actions": {
       "btn": ["Courrir avec la meilleure dextérité", "Réfléchir à un trajet et s'y tenir"],
       "carac": ["dexterite", "intelligence"]
@@ -368,17 +368,17 @@
     },
     "choix_loose": ["27"],
     "btn_choix_loose": ["Tu n'as pas le choix il va falloir battre l'inconnu"],
-    "c_w": ["Tu t'éloignes sans te faire remarquer"],
-    "d_w": ["Tu contourne facilement l'inconnu, tu rentre dans la voiture. Le contact est déjà enclenché. Tu appuyes sur la pédale et tu t'éloignes le plus loin possible"],
-    "c_l": ["Tu essayes de t'éloigner mais l'inconnu t'attrape par l'épaule"],
-    "d_l": ["Tu essayes de contourner mais l'inconnu t'attrape par l'épaule"],
+    "c_w": ["Tu t'éloignes sans te faire remarquer."],
+    "d_w": ["Tu contourne facilement l'inconnu, tu rentre dans la voiture. Le contact est déjà enclenché. Tu appuyes sur la pédale et tu t'éloignes le plus loin possible."],
+    "c_l": ["Tu essayes de t'éloigner mais l'inconnu t'attrape par l'épaule."],
+    "d_l": ["Tu essayes de contourner mais l'inconnu t'attrape par l'épaule."],
     "actions": {
       "btn": ["Essayer de contourner pour rentrer dans la voiture", "Essayer de s'éloigner sans se faire remarquer"],
       "carac": ["dexterite", "constitution"]
     }
   }, {
     "numero_chapitre": "24",
-    "card_context": "Tu démarres la voiture sans difficulté et tu t'éloigne de cette situation incompréhensible.",
+    "card_context": "Tu démarres la voiture sans difficulté et tu t'éloignes de cette situation incompréhensible.",
     "mj_question": "Veux tu générer ton histoire ?",
     "txt": "Txt qu'on doit pas voir",
     "choix": ["28"],
@@ -404,7 +404,7 @@
     }
   }, {
     "numero_chapitre": "26",
-    "card_context": "Tute mets à courrir au loin et tu repenses à ce qui vient de se passer.",
+    "card_context": "Tu te mets à courrir au loin et tu repenses à ce qui vient de se passer.",
     "mj_question": "Veux tu générer ton histoire ?",
     "txt": "Txt qu'on doit pas voir",
     "choix": ["28"],
@@ -417,7 +417,7 @@
     }
   }, {
     "numero_chapitre": "27",
-    "card_context": "Tu te retrouves dans une situation précaire. Te voilà devant un inconnu et ta seule façon de sortir de cette situation c'est de le battre",
+    "card_context": "Tu te retrouves dans une situation précaire. Te voilà devant un inconnu et ta seule façon de sortir de cette situation c'est de le battre.",
     "mj_question": "Que fais-tu ?",
     "txt": "Txt qu'on doit pas voir",
     "choix_win": ["24", "26"],
