@@ -265,7 +265,7 @@
     "txt": "Txt qu'on doit pas voir",
     "choix": ["20", "21", "22"],
     "btn_choix": ["Forcer le passage", "Eviter et rentrer dans la voiture", "Essayer de lui parler"],
-    "c_w": ["En un coup de pied tu ouvres la porte. Devant toi se dévoile un parking. Il semble que tu sors d'une chambre d'hôtel. Un homme se tient contre une voituren une cigarette à la bouche. Quand il te voit, il jette sa cigarette et se dirige vers toi."],
+    "c_w": ["En un coup de pied tu ouvres la porte. Devant toi se dévoile un parking. Il semble que tu sors d'une chambre d'hôtel. Un homme se tient contre une voitur avec une cigarette à la bouche. Quand il te voit, il jette sa cigarette et se dirige vers toi."],
     "c_l": ["Tu as beaucoup de mal, tu t 'y reprends à plusieurs fois et tu finis par faire tomber la porte. Devant toi se dévoile un parking. Il semble que tu sors d'une chambre d'hôtel. Une cigarette à terre encore fumante, un homme est à mi chemin entre toi et une voiture. Il se dirige vers toi."],
     "actions": {
       "btn": ["Forcer la porte"],
@@ -314,7 +314,7 @@
     "choix_loose": ["27"],
     "btn_choix_loose": ["Tu n'as pas le choix il va falloir battre l'inconnu"],
     "c_w": ["Tu pousses l'inconnu de toute tes forces, il trébuche et se cogne la tête contre la voiture. Te voilà à côté de la voiture et l'inconnu est KO."],
-    "c_l": ["Tu essayes de passer mais l'inconnu te repousse assez facilement. Tu n'as pas réussi à passer. Et tu vas devoir te débarasser de cette personnes, il ne te laisse pas le choix."],
+    "c_l": ["Tu essayes de passer mais l'inconnu te repousse assez facilement. Tu n'as pas réussi à passer. Et tu vas devoir te débarasser de cette personne, il ne te laisse pas le choix."],
     "actions": {
       "btn": ["Foncer sur l'inconnu"],
       "carac": ["constitution"]

@@ -48,6 +48,13 @@ function Events(props) {
     action > 1 ? setWin(false) : "";
     props.onDiceRollComplete();
   }
+  //send end ton mother component
+  const finishGame = () => {
+    setStoryEnd(true);
+    if (props.onStoryEnd) {
+      props.onStoryEnd(true);
+    }
+  };
 
   // send result form child to parent
   function handleClickContinu() {
@@ -116,10 +123,11 @@ function Events(props) {
         console.error("Erreur de sauvegarde: props.save  n'est pas défini.");
       }
 
-      setStoryEnd(true);
+      finishGame();
       console.log("This is the end: StoryEnd set to true");
       return; // Sortir de la fonction si c'est la fin
     }
+
     // !-----------------------------------
 
     switch (id) {
@@ -158,6 +166,11 @@ function Events(props) {
     }
     setBtnChoiceContent(listBtn);
   }, []);
+
+  //error organisation
+  if (storyEnd) {
+    return null; // ou un simple message
+  }
 
   return (
     <div className="h-100">

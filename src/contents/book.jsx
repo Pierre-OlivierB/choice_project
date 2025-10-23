@@ -56,7 +56,7 @@ function Book(props) {
 
   // 2. afterdice
   useEffect(() => {
-    if (choiceAfterDiceRoll === "15") {
+    if (choiceAfterDiceRoll === "17" || choiceAfterDiceRoll === "19") {
       setActiveBackground("car");
     } else if (choiceAfterDiceRoll === "1") {
       setActiveBackground("tv");
@@ -81,6 +81,10 @@ function Book(props) {
     //   setStoryEnd(true);
     // }
   }
+  // story end
+  const handleStoryEnd = useCallback((isEnd) => {
+    setStoryEnd(isEnd);
+  }, []);
 
   // !---------------------------
   // ! BEGIN Need to keep ?
@@ -388,6 +392,7 @@ function Book(props) {
           inventory={inventory}
           where={currentStories.card_context}
           onDiceRollComplete={handleDiceRollComplete}
+          onStoryEnd={handleStoryEnd}
         />
       )}
       {flag && (
