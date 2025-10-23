@@ -2,66 +2,66 @@
     "numero_chapitre": "0",
     "card_context": "Tu es en position assise, il fait noir.",
     "mj_question": "Que fais-tu ?",
-    "txt": "Tu es en position assise, il fait noir, tu ne sais pas qui tu es, tu ne sais pas ce que tu fais là. L'amnèsie es total. Plusieurs option s'offrent à toi. Tu peux chercher autour de toi, fouiller tes poches ou tenter de te lever.",
+    "txt": "Tu es en position assise, il fait noir. Tu ne sais pas qui tu es, ni ce que tu fais là. Ton amnèsie es total. Plusieurs options s'offrent à toi. Tu peux chercher autour de toi, fouiller tes poches ou tenter de te lever.",
     "choix": ["1", "2", "3"],
-    "btn_choix": ["Autour de toi", "Tes poches", "Tu te lèves"]
+    "btn_choix": ["Autour de toi.", "Tes poches.", "Tu te lèves."]
   },
   {
     "numero_chapitre": "1",
-    "card_context": "Tu veux savoir ce qui t'entoure. Mais il fait beaucoup trop noir dans la pièce pour que tu puisses voir quelque chose. Plusieurs choix s'offre à toi.",
+    "card_context": "Tu veux savoir ce qui t'entoure. Mais il fait beaucoup trop noir dans la pièce pour que tu puisses voir quelque chose. Plusieurs choix s'offrent à toi.",
     "mj_question": "Que fais-tu ?",
     "choix": ["6", "9", "15", "11"],
     "btn_choix": ["Fouiller tes poches", "Atteindre le bureau", "Atteindre la porte", "Atteindre la télé"],
-    "d_w": ["Tu tâtonnes rapidement ce sur quoi tu es assis, les grincements des ressors du canapé te font comprendre que tu es assis sur un canapé de mauvaise facture. Tu te sens t'enfoncer dans ses coussins. Tu cherches autour de toi rapidement. Tu trouves une manette de télévision coincée entre 2 coussins derrière toi. En la saisissant, tu ne sais pas très bien comment, la télévision s'allume. L'écran noir laisse place à une neige continue et ajoute un son constant à ce moment rempli de questions. Mais grâce à la lumière tu vois ce qui t'entoure. A ta droite un bureau en bois en dessous d'une fenêtre à l'encadrement blanc fermée par un volet qui devait être blanc à son installation. Devant toi la télévision posé sur un meuble de bois ou alors c'est peut être un tabouret. Derrière la télévision une porte en bois blanc fermée. Grâce à la lumière tu en es sûr il n'y a plus rien à fouiller autour de toi."],
-    "i_w": ["Tu tâtonnes consciencieusement ce sur quoi tu es assis, les grincements des ressors du canapé te font comprendre que tu es assis sur un canapé de mauvaise facture. Tu te sens t'enfoncer dans ses coussins. Tu cherches autour de toi en prenant tout ton temps et tu trouves une manette de télévision coincé entre 2 coussins derrière toi. Visiblement tu es assis sur un canapé de mauvaise facture. En la saisissant, tu ne sais pas très bien comment, la télévision s'allume. L'écran noir laisse place à une neige continue et ajoute un son constant à ce moment rempli de questions. Mais grâce à la lumière tu vois ce qui t'entoure. A ta droite un bureau en bois en dessous d'une fenêtre à l'encadrement blanc fermée par un volet qui devait être blanc à son installation. Devant toi la télévision posé sur un meuble de bois ou alors c'est peut être un tabouret. Derrière la télévision une porte en bois blanc fermée. Grâce à la lumière tu en es sûr il n'y a plus rien à fouiller autour de toi."],
-    "d_l": ["Tu tâtonnes rapidement ce sur quoi tu es assis, les grincements des ressors du canapé te font comprendre que tu es assis sur un canapé de mauvaise facture. Tu te sens t'enfoncer dans ses coussins. Tu cherches rapidement autour de toi. Tu as du mal à passer ta main entre les coussins. Ton corps est engourdi, ce qui ne facilite pas la tâche. Tu finis par sentir un objet coincé entre 2 coussins derrière toi. Au touché, cet objet ressemble à une manette de télévison. En la prenant en main, tu ne sais pas très bien comment mais la télévision s'allume. L'écran noir laisse place à une neige continue et ajoute un son constant à ce moment rempli de questions. Cependant grâce à la lumière tu vois ce qui t'entoure. A ta droite un bureau en bois en dessous d'une fenêtre à l'encadrement blanc fermée par un volet qui devait être blanc à son installation. Devant toi la télévision posé sur un meuble de bois ou alors c'est peut être un tabouret. Derrière la télévision une porte en bois blanc fermée. Grâce à la lumière tu en es sûr il n'y a plus rien à fouiller autour de toi."],
-    "i_l": ["Tu tâtonnes consciencieusement ce sur quoi tu es assis, les grincements des ressors du canapé te font comprendre que tu es assis sur un canapé de mauvaise facture. Tu te sens t'enfoncer dans ses coussins. Tu cherches encore et encore. Les grincementds du canapé te font penser aux gromelements d'un animal.  Tu finis par sentir un objet coincé entre 2 coussins derrière toi. Au touché cet objet ressemble à une manette de télévison. En la prenant en main tu ne sais pas très bien comment et la télévision s'allume. L'écran noir laisse place à une neige continue et ajoute un son constant à ce moment rempli de questions. Grâce à la lumière tu vois ce qui t'entoure. A ta droite un bureau en bois en dessous d'une fenêtre à l'encadrement blanc fermée par un volet qui devait être blanc à son installation. Devant toi la télévision posé sur un meuble de bois ou alors c'est peut être un tabouret. Derrière la télévision une porte en bois blanc fermée. Grâce à la lumière tu en es sûr il n'y a plus rien à fouiller autour de toi."],
+    "d_w": ["Tu tâtonnes rapidement ce sur quoi tu es assis, les grincements des ressorts du canapé te font comprendre que tu es assis sur un canapé de mauvaise facture. Tu te sens t'enfoncer dans ses coussins. Tu cherches autour de toi rapidement. Tu trouves une télécommande coincée entre deux coussins derrière toi. En la saisissant, tu ne sais pas très bien comment, la télévision s'allume. L'écran noir laisse place à une neige continue et ajoute un son constant à ce moment rempli de questions. Mais grâce à la lumière, tu vois ce qui t'entoure. A ta droite un bureau en bois en dessous d'une fenêtre à l'encadrement blanc fermée par un volet qui devait être blanc à son installation. Devant toi la télévision posé sur un meuble de bois ou alors c'est peut être un tabouret. Derrière la télévision une porte en bois blanc fermée. Grâce à la lumière, tu en es sûr il n'y a plus rien à fouiller autour de toi."],
+    "i_w": ["Tu tâtonnes consciencieusement ce sur quoi tu es assis, les grincements des ressorts du canapé te font comprendre que tu es assis sur un canapé de mauvaise facture. Tu te sens t'enfoncer dans ses coussins. Tu cherches autour de toi en prenant tout ton temps et tu trouves une télécommande coincé entre deux coussins derrière toi. Visiblement tu es assis sur un canapé de mauvaise facture. En la saisissant, tu ne sais pas très bien comment, la télévision s'allume. L'écran noir laisse place à une neige continue et ajoute un son constant à ce moment rempli de questions. Mais grâce à la lumière, tu vois ce qui t'entoure. A ta droite un bureau en bois en dessous d'une fenêtre à l'encadrement blanc fermée par un volet qui devait être blanc à son installation. Devant toi la télévision posé sur un meuble de bois ou alors c'est peut être un tabouret. Derrière la télévision une porte en bois blanc fermée. Grâce à la lumière, tu en es sûr il n'y a plus rien à fouiller autour de toi."],
+    "d_l": ["Tu tâtonnes rapidement ce sur quoi tu es assis, les grincements des ressorts du canapé te font comprendre que tu es assis sur un canapé de mauvaise facture. Tu te sens t'enfoncer dans ses coussins. Tu cherches rapidement autour de toi. Tu as du mal à passer ta main entre les coussins. Ton corps est engourdi, ce qui ne facilite pas la tâche. Tu finis par sentir un objet coincé entre deux coussins derrière toi. Au touché, cet objet ressemble à une télécommande. En la prenant en main, tu ne sais pas très bien comment mais la télévision s'allume. L'écran noir laisse place à une neige continue et ajoute un son constant à ce moment rempli de questions. Cependant grâce à la lumière, tu vois ce qui t'entoure. A ta droite un bureau en bois en dessous d'une fenêtre à l'encadrement blanc fermée par un volet qui devait être blanc à son installation. Devant toi la télévision posé sur un meuble de bois ou alors c'est peut être un tabouret. Derrière la télévision une porte en bois blanc fermée. Grâce à la lumière, tu en es sûr il n'y a plus rien à fouiller autour de toi."],
+    "i_l": ["Tu tâtonnes consciencieusement ce sur quoi tu es assis, les grincements des ressorts du canapé te font comprendre que tu es assis sur un canapé de mauvaise facture. Tu te sens t'enfoncer dans ses coussins. Tu cherches encore et encore. Les grincements du canapé te font penser aux grognements d'un animal.  Tu finis par sentir un objet coincé entre deux coussins derrière toi. Au touché cet objet ressemble à une télécommande. En la prenant en main tu ne sais pas très bien comment et la télévision s'allume. L'écran noir laisse place à une neige continue et ajoute un son constant à ce moment rempli de questions. Grâce à la lumière, tu vois ce qui t'entoure. A ta droite un bureau en bois en dessous d'une fenêtre à l'encadrement blanc fermée par un volet qui devait être blanc à son installation. Devant toi la télévision posé sur un meuble de bois ou alors c'est peut être un tabouret. Derrière la télévision une porte en bois blanc fermée. Grâce à la lumière, tu en es sûr il n'y a plus rien à fouiller autour de toi."],
     "actions": {
-      "btn": ["Tu tâtonnes consciencieusement", "Tu tâtonnes rapidement"],
+      "btn": ["Tâtonner consciencieusement (i).", "Tâtonner rapidement (d)."],
       "carac": ["intelligence", "dexterite"]
     }
   }, {
     "numero_chapitre": "2",
-    "card_context": "Tu veux fouiller tes poches en espérant trouvé des informations sur toi. Ton nom, ton adresse peut être ou un mot ?",
+    "card_context": "Tu veux fouiller tes poches dans l'espoir de trouver des informations sur toi. Ton nom, ton adresse, peut-être, ou un mot ?",
     "mj_question": "Que fais-tu ?",
     "choix": ["1", "3"],
     "btn_choix": ["Fouiller autour de toi", "Tu te lèves"],
-    "d_w": ["En un passage tu trouves tout ce qu'il y a dans tes poches. Te voilà en possetion d'un objet froid et carré. Tu penses tout de suite à un portable et il est éteint. Tu cherches le bouton pour l'allumer, mais celui-ci s'éteint instantannément, plus de batterie. Malheureusement le noir profond dans lequel tu es, t'empêche de disserner quoi que ce soit autour de toi."],
-    "i_w": ["Le temps te semble interminable. Cette fouille ne te prend pas beaucoup de temps. Te voilà en possetion d'un portable éteint. Tu essayes d'allumer le portable, mais celui-ci s'éteint instantannément, plus de batterie.  Malheureusement le noir profond dans lequel tu es t'empêche de disserner quoi que ce soit."],
-    "d_l": ["Tu passes une première fois tes mains sur ton corps et tu ne trouves rien. Tu insistes. Toujours rien. Finalement tu sens un objet lourd dans une de tes poches intérieur. Te voilà en possetion d'un objet froid et carré. Tu penses tout de suite à un portable et il est éteint. Tu cherches le bouton pour l'allumer, mais celui-ci s'éteint instantannément, plus de batterie. Malheureusement le noir profond dans lequel tu es, t'empêche de disserner quoi que ce soit autour de toi"],
-    "i_l": ["Le temps te semble interminable. Cette fouille est beaucoup trop longue. Finalement tu sans un objet carré dans une de tes poches intérieur. Tu penses à un portable. Tu sors le portable de ta poche et Tu essayes de l'allumer. Malheureusement celui-ci s'éteint instantannément, plus de batterie. Le noir profond dans lequel tu es, t'empêches de disserner quoi que ce soit."],
+    "d_w": ["En un passage tu trouves tout ce qu'il y a dans tes poches. Te voilà en possession d'un objet froid et carré. Tu penses tout de suite à un portable et il est éteint. Tu cherches le bouton pour l'allumer, mais celui-ci s'éteint instantanément, il n'a plus de batterie. Malheureusement, le noir profond dans lequel tu es, t'empêche de discerner quoi que ce soit autour de toi."],
+    "i_w": ["Le temps te semble interminable. Cette fouille ne te prend pas beaucoup de temps. Te voilà en possession d'un portable éteint. Tu essaies d'allumer le portable, mais celui-ci s'éteint instantanément, il n'a plus de batterie.  Malheureusement, le noir profond dans lequel tu es t'empêche de discerner quoi que ce soit."],
+    "d_l": ["Tu passes une première fois tes mains sur ton corps et tu ne trouves rien. Tu insistes. Toujours rien. Finalement, tu sens un objet lourd dans une de tes poches intérieur. Te voilà en possession d'un objet froid et carré. Tu penses tout de suite à un portable et il est éteint. Tu cherches le bouton pour l'allumer, mais celui-ci s'éteint instantanément, il n'a plus de batterie. Malheureusement, le noir profond dans lequel tu es, t'empêche de discerner quoi que ce soit autour de toi"],
+    "i_l": ["Le temps te semble interminable. Cette fouille est beaucoup trop longue. Finalement, tu sans un objet carré dans une de tes poches intérieur. Tu penses à un portable. Tu sors le portable de ta poche et tu essaies de l'allumer. Malheureusement, celui-ci s'éteint instantanément, il n'a plus de batterie. Le noir profond dans lequel tu es, t'empêches de discerner quoi que ce soit."],
     "actions": {
-      "btn": ["Fouiller tes poches consciencieusement", "Fouiller tes poches rapidement"],
+      "btn": ["Fouiller consciencieusement (i).", "Fouiller rapidement (d)."],
       "carac": ["intelligence", "dexterite"]
     }
   },
   {
     "numero_chapitre": "3",
-    "card_context": "Il est temps d'essayer de se lever. Ton corps t'envois plein de signaux contradictoire. Tu trembles mais tu as chaud. Tes pensées sont clair, pourtant tu ne sais rien de l'endroit où tu es et pourquoi tu es là. Et ton corps te cris de courrir le plus loin possible, mais tes jambes ne sont vraissemblablement pas de cette avis.",
+    "card_context": "Il est temps d'essayer de se lever. Ton corps t'envoie de nombreux signaux contradictoire. Tu trembles mais tu as chaud. Tes pensées sont claires, pourtant ignores où tu es et pourquoi. Et ton corps te crie de courrir le plus loin possible, mais tes jambes ne sont vraisemblablement pas de cette avis.",
     "mj_question": "Que fais-tu ?",
     "choix": ["1", "2"],
     "btn_choix": ["Fouiller autour de toi", "Fouiller tes poches"],
     "c_w": ["Tu te mets sur tes deux pieds rapidement. Tu sens ton corps trembler, tu ne sens plus rien. Ton corps bascule en arrière. Tu arrives à peine à faire en sorte de ne pas te faire mal en retombant. Ton corps réagit comme si tu avais été drogué."],
-    "d_w": ["Tu prends ton temps pour te mettre debout.Tu sens ton corps trembler, tu ne sens plus rien. Tu tombes en arrière et tu te rassois sur le canapé sur le quel tu étais d'un mouvement presque gracieux. Ton corps réagit comme si tu avais été drogué."],
-    "c_l": ["Tu te mets sur tes deux pieds rapidement. Tu sens ton corps trembler, tu ne sens plus rien. Ton corps bascule en arrière. Tu tombes lourdement sur le canapé. Les ressors grinces comme un cris stridents qui par cours la pièce. Ton corps réagit comme si tu avais été drogué."],
-    "d_l": ["Tu prends ton temps pour te mettre debout. Tu sens ton corps trembler, tu ne sens plus rien.  Tu tombes en arrière et tu te fracasse sur le canapé sur le quel tu étais. Les ressors grinces comme un cris stridents qui par cours la pièce. Ton corps réagit comme si tu avais été drogué."],
+    "d_w": ["Tu prends ton temps pour te mettre debout.Tu sens ton corps trembler, tu ne sens plus rien. Tu tombes en arrière et tu te rassois sur le canapé sur lequel tu étais d'un mouvement presque gracieux. Ton corps réagit comme si tu avais été drogué."],
+    "c_l": ["Tu te mets sur tes deux pieds rapidement. Tu sens ton corps trembler, tu ne sens plus rien. Ton corps bascule en arrière. Tu tombes lourdement sur le canapé. Les ressorts grinces comme un cris stridents qui parcourt la pièce. Ton corps réagit comme si tu avais été drogué."],
+    "d_l": ["Tu prends ton temps pour te mettre debout. Tu sens ton corps trembler, tu ne sens plus rien.  Tu tombes en arrière et tu te fracasse sur le canapé sur lequel tu étais. Les ressorts grinces comme un cris stridents qui parcourt la pièce. Ton corps réagit comme si tu avais été drogué."],
     "actions": {
-      "btn": ["Tu te lèves brutalement.", "Tu te lèves en prenant ton temps."],
+      "btn": ["Te lever brutalement (c)", "Te lever en prenant ton temps (d)."],
       "carac": ["constitution", "dexterite"]
     }
   }, {
     "numero_chapitre": "4",
-    "card_context": "Tu veux savoir ce qui est autour de toi. Tu essayes de faire le vide dans ta tête afin de pleinement apprécier les environs. En fermant les yeux tu sens ta tête tourner mais tu finis par passer audelà de ce problème.",
+    "card_context": "Tu veux savoir ce qui est autour de toi. Tu essayes de faire le vide dans ta tête afin de pleinement apprécier les environs. En fermant les yeux tu sens ta tête tourner mais tu parviens à passer au-delà de ce problème.",
     "mj_question": "Que fais-tu ?",
     "txt": " adipisicing elit.",
     "choix": ["9", "15", "11"],
     "btn_choix": ["Atteindre le bureau", "Atteindre la porte", "Atteindre la télé"],
-    "d_w": ["En écoutant rapidement, tu entends des voitures passées au loin."],
-    "i_w": ["En écoutant attentivement, tu entends des voitures passées au loin. Tu prends ton temps et tu évalues que tu dois être aux abords d'une route très passante, une autoroute par exemple."],
-    "d_l": ["En écoutant rapidement, tu entends de la pluie ou alors c'est peut être ton imagination"],
-    "i_l": ["En écoutant attentivement, tu entends du ressac ou alors c'est peut être ton imagination"],
+    "d_w": ["En écoutant rapidement, tu entends des voitures qui passent au loin."],
+    "i_w": ["En écoutant attentivement, tu entends des voitures qui passent au loin. Tu prends ton temps et tu en déduis que tu dois être aux abords d'une route très passante, une autoroute par exemple."],
+    "d_l": ["En écoutant rapidement, tu entends de la pluie ou alors, c'est peut être ton imagination"],
+    "i_l": ["En écoutant attentivement, tu entends du ressac ou alors, c'est peut être ton imagination"],
     "actions": {
-      "btn": ["Ecouter rapidement", "Ecouter attentivement"],
+      "btn": ["Écouter rapidement (d).", "Écouter attentivement (i)"],
       "carac": ["dexterite", "intelligence"]
     }
   }, {
@@ -84,17 +84,17 @@
   },
   {
     "numero_chapitre": "6",
-    "card_context": "Tu essayes de faire le vide dans ta tête et tu écoutes ton environnement.",
+    "card_context": "Tu tentes de faire le vide dans ta tête pour te concentrer à l'écoute de ton environnement.",
     "mj_question": "Que fais-tu ?",
     "txt": " adipisicing elit.",
     "choix": ["4", "9", "15", "11"],
-    "btn_choix": ["Tu ne fais plus de bruit et tu écoutes", "atteindre le bureau", "atteindre la porte", "atteindre la télé"],
-    "d_w": ["Le temps te semble interminable. Cette fouille ne te prend pas beaucoup de temps. Te voilà en possetion d'un portable éteint. Tu essayes d'allumer le portable, mais celui-ci s'éteint instantannément, plus de batterie"],
-    "i_w": ["Le temps te semble interminable. Cette fouille ne te prend pas beaucoup de temps. Te voilà en possetion d'un portable éteint. Tu essayes d'allumer le portable, mais celui-ci s'éteint instantannément, plus de batterie."],
-    "d_l": ["Le temps te semble interminable. Cette fouille est beaucoup trop longue. Te voilà en possetion d'un portable éteint. Tu essayes d'allumer le portable, mais celui-ci s'éteint instantannément, plus de batterie."],
-    "i_l": ["Le temps te semble interminable. Cette fouille est beaucoup trop longue. Te voilà en possetion d'un portable éteint. Tu essayes d'allumer le portable, mais celui-ci s'éteint instantannément, plus de batterie."],
+    "btn_choix": ["Tu ne fais plus de bruit et tu écoutes.", "Atteindre le bureau.", "Atteindre la porte.", "Atteindre la télé."],
+    "d_w": ["Le temps te semble interminable. Pourtant, cette fouille ne te prend pas beaucoup de temps. Te voilà en possession d'un portable éteint. Tu essaies d'allumer le portable, mais celui-ci s'éteint instantanément, plus de batterie."],
+    "i_w": ["Le temps te semble interminable. Pourtant, cette fouille ne te prend pas beaucoup de temps. Te voilà en possession d'un portable éteint. Tu essaies d'allumer le portable, mais celui-ci s'éteint instantanément, plus de batterie."],
+    "d_l": ["Le temps te semble interminable. Cette fouille est beaucoup trop longue. Te voilà en possession d'un portable éteint. Tu essaies d'allumer le portable, mais celui-ci s'éteint instantanément, plus de batterie."],
+    "i_l": ["Le temps te semble interminable. Cette fouille est beaucoup trop longue. Te voilà en possession d'un portable éteint. Tu essaies d'allumer le portable, mais celui-ci s'éteint instantanément, plus de batterie."],
     "actions": {
-      "btn": ["Fouilles réfléchit", "Fouilles rapide"],
+      "btn": ["Fouiller de façon réfléchie (i).", "Fouiller rapidement (d)."],
       "carac": ["intelligence", "dexterite"]
     }
   },
@@ -136,17 +136,17 @@
   },
   {
     "numero_chapitre": "9",
-    "card_context": "Tu choisis d'aller vers le bureau. Chaque pas est pour toi d'une difficultée assez improbable.",
+    "card_context": "Tu choisis d'aller vers le bureau. Chaque pas est pour toi d'une difficulté assez improbable.",
     "mj_question": "Que fais-tu ?",
     "txt": "Txt qu'on doit pas voir",
     "choix": ["10", "13", "11", "15", "4"],
-    "btn_choix": ["fouiller le bureau", "Essayer d'ouvrir le volet", "Atteindre la télé", "Atteindre la porte", "tu ne fais pas de bruit et tu écoutes"],
-    "c_w": ["Tu cours le plus vite, ton stress monte. Tu manques de glisser sur le sol, tes jambes sont en coton mais tu atteinds le bureau sans difficulté mais pas sans faire de bruit. Le bureau est sommaire. Sur le bureau il semble y avoir comme une sorte de manivelle, la chaise est rentrée, mais un tiroir fait toute la longueur de la table. Au dessus, une fenêtre fermée sans ouverture possible avec un volet coulissant fermé lui aussi. Le mécanisme est absent, c'est surement la manivelle qui a du être arrachée"],
-    "d_w": ["Tu va doucement vers le bureau en essayant de ne pas faire de bruit, ton stress monte. Tes jambes sont en coton mais tu atteinds le bureau sans difficulté et sans faire de bruit. Le bureau est sommaire. Sur le bureau il semble y avoir comme une sorte de manivelle, la chaise est rentrée, mais un tiroir fait toute la longueur de la table. Au dessus, une fenêtre fermée sans ouverture possible avec un volet coulissant fermé lui aussi. Le mécanisme est absent, c'est surement la manivelle qui a du être arrachée"],
-    "c_l": ["Tu cours le plus vite, ton stress monte. Tu glisses sur le sol et tu tombes en avant, tes jambes sont en coton mais tu atteinds le bureau avec difficulté et en faisant beaucoup de bruit. Le bureau est sommaire. Sur le bureau il semble y avoir comme une sorte de manivelle, la chaise est rentrée, mais un tiroir fait toute la longueur de la table. Au dessus, une fenêtre fermée sans ouverture possible avec un volet coulissant fermé lui aussi. Le mécanisme est absent, c'est surement la manivelle qui a du être arrachée"],
-    "d_l": ["Tu va doucement vers le bureau en essayant de ne pas faire de bruit, ton stress monte. Tes jambes sont en coton et tu atteinds le bureau avec difficulté et les planches sous tes pieds font à chaque pas un bruit à réveillé le diable. Le bureau est sommaire. Sur le bureau il semble y avoir comme une sorte de manivelle, la chaise est rentrée, mais un tiroir fait toute la longueur de la table. Au dessus, une fenêtre fermée sans ouverture possible avec un volet coulissant fermé lui aussi. Le mécanisme est absent, c'est surement la manivelle qui a du être arrachée"],
+    "btn_choix": ["Fouiller le bureau.", "Essayer d'ouvrir le volet.", "Atteindre la télé.", "Atteindre la porte.", "Tu ne fais pas de bruit et tu écoutes."],
+    "c_w": ["Tu cours le plus vite, ton stress monte. Tu manques de glisser sur le sol, tes jambes sont en coton mais tu atteins le bureau sans difficulté mais pas sans faire de bruit. Le bureau est sommaire. Dessus, il semble y avoir une sorte de manivelle. La chaise est rentrée, mais un tiroir court toute la longueur de la table. Au-dessus, une fenêtre fermée sans ouverture possible avec un volet coulissant fermé lui aussi. Le mécanisme est absent, c'est surement la manivelle qui a dû être arrachée"],
+    "d_w": ["Tu vas doucement vers le bureau en essayant de ne pas faire de bruit, ton stress monte. Tes jambes sont en coton mais tu atteins le bureau sans difficulté et sans faire de bruit. Le bureau est sommaire. Dessus, il semble y avoir une sorte de manivelle. La chaise est rentrée, mais un tiroir court toute la longueur de la table. Au-dessus, une fenêtre fermée sans ouverture possible avec un volet coulissant fermé lui aussi. Le mécanisme est absent, c'est surement la manivelle qui a dû être arrachée"],
+    "c_l": ["Tu cours le plus vite, ton stress monte. Tu glisses sur le sol et tu tombes en avant, tes jambes sont en coton mais tu atteins le bureau avec difficulté et en faisant beaucoup de bruit. Le bureau est sommaire. Dessus, il semble y avoir une sorte de manivelle. La chaise est rentrée, mais un tiroir court toute la longueur de la table. Au-dessus, une fenêtre fermée sans ouverture possible avec un volet coulissant fermé lui aussi. Le mécanisme est absent, c'est surement la manivelle qui a dû être arrachée"],
+    "d_l": ["Tu vas doucement vers le bureau en essayant de ne pas faire de bruit, ton stress monte. Tes jambes sont en coton et tu atteins le bureau avec difficulté et les planches sous tes pieds font à chaque pas un bruit à réveiller le diable. Le bureau est sommaire. Dessus, il semble y avoir une sorte de manivelle. La chaise est rentrée, mais un tiroir court toute la longueur de la table. Au-dessus, une fenêtre fermée sans ouverture possible avec un volet coulissant fermé lui aussi. Le mécanisme est absent, c'est surement la manivelle qui a dû être arrachée"],
     "actions": {
-      "btn": ["j'y vais sans bruit'", "je cours vers le bureau"],
+      "btn": ["J'y vais sans bruit (d).", "Je cours vers le bureau (c)."],
       "carac": ["dexterite", "constitution"]
     }
   },
@@ -157,12 +157,12 @@
     "txt": " Txt qu'on doit pas voir ",
     "choix": ["13", "11", "15", "4"],
     "btn_choix": ["Essayer d'ouvrir le volet", "Atteindre la télé", "Atteindre la porte", "tu ne fais pas de bruit et tu écoutes"],
-    "d_w": ["Tu fouilles rapidement dans le tiroir. A première vue le tiroir semble vide, mais finalement ta main sens un objet petit et froid. En sortant l'objet du tiroir te voilà en possesion d'une clef. Mais à quoi peut bien t elle servir?"],
-    "i_w": ["Tu fouilles consiencieusement dans le tiroir. A force de recherche ta main sent un objet petit et froid. En sortant l'objet du tiroir te voilà en possesion d'une clef. Mais à quoi peut bien t elle servir?"],
-    "d_l": ["Tu fouilles rapidement dans le tiroir. A première vue le tiroir semble vide, la recherche rapide prends finalement un temps infini comme si tu devais chercher un objet dedans. Enfin ta main sens un objet petit et froid. En sortant l'objet du tiroir te voilà en possesion d'une clef. Mais à quoi peut bien t elle servir?"],
-    "i_l": ["Tu fouilles rapidement dans le tiroir. A première vue le tiroir semble vide, la recherche lente prends un tournur infini comme si tu devais chercher un objet dedans. Enfin ta main sens un objet petit et froid. En sortant l'objet du tiroir te voilà en possesion d'une clef. Mais à quoi peut bien t elle servir?"],
+    "d_w": ["Tu fouilles rapidement dans le tiroir. À première vue il semble vide, mais finalement ta main sent un objet petit et froid. En sortant l'objet du tiroir te voilà en possession d'une clef. Mais à quoi peut-elle bien servir? Elle ressemble à une clef de porte."],
+    "i_w": ["Tu fouilles consciencieusement dans le tiroir. À force de recherche ta main sent un objet petit et froid. En sortant l'objet du tiroir te voilà en possession d'une clef. Mais à quoi peut-elle bien servir? Elle ressemble à une clef de porte."],
+    "d_l": ["Tu fouilles rapidement dans le tiroir. À première vue il semble vide, la recherche rapide prends finalement un temps infini comme si tu étais persuader de la présecnce d'un objet dedans. Enfin ta main sent un objet petit et froid. En sortant l'objet du tiroir te voilà en possession d'une clef. Mais à quoi peut-elle bien servir?"],
+    "i_l": ["Tu fouilles rapidement dans le tiroir. À première vue il semble vide, la recherche lente prends une tournure infinie comme si tu étais persuader de la présecnce d'un objet dedans. Enfin ta main sent un objet petit et froid. En sortant l'objet du tiroir te voilà en possession d'une clef. Mais à quoi peut-elle bien servir?"],
     "actions": {
-      "btn": ["Fouiller le tiroir consciencieusement", "Fouiller le tiroir rapidement"],
+      "btn": ["Fouiller consciencieusement (i).", "Fouiller rapidement (d)."],
       "carac": ["intelligence", "dexterite"]
     }
   },
@@ -178,7 +178,7 @@
     "c_l": ["Tu cours le plus vite, ton stress monte. Tu glisses sur le sol et tu tombes en arrière, tes jambes sont en coton mais tu atteinds la télé avec difficulté et en faisant beaucoup de bruit."],
     "d_l": ["Tu va doucement vers la télé en essayant de ne pas faire de bruit, ton stress monte. Tes jambes sont en coton et tu atteinds la télé avec difficulté et les planches sous tes pieds font à chaque pas grince comme si tu faisait plusieurs tonnes."],
     "actions": {
-      "btn": ["j'y vais sans bruit'", "je cours vers la télé"],
+      "btn": ["J'y vais sans bruit (d).", "je cours vers la télé (c)."],
       "carac": ["dexterite", "constitution"]
     }
   }, {
@@ -210,8 +210,8 @@
     "c_l": ["Malgrè tout tes efforts tu n'arrives pas à faire bouger le volet. De plus le mécanisme se casse"],
     "d_l": ["Malgrè tout tes efforts tu n'arrives pas à faire bouger le volet. De plus la manivelle casse le mécanisme."],
     "actions": {
-      "btn": ["ouvrir le volet avec la manivelle", "ouvrir le volet avec force"],
-      "carac": ["dexterite", "dexterite"]
+      "btn": ["Ouvrir le volet avec la manivelle (d).", "Ouvrir le volet avec force (c)."],
+      "carac": ["dexterite", "constitution"]
     }
   }, {
     "numero_chapitre": "14",
@@ -225,7 +225,7 @@
     "d_l": ["Tu fouilles rapidement le meuble télé. La neige, tu es comme hypnotysé par l'écran. Tout semble s'arrêter quand ta main tombe sur un porte document. A l'intérieur des feuilles qui décrivent les habitudes d'une personne. Le nom est barré en noir. La photo qui y est accroché te semble familière. Tu plis les feuilles et tu les ranges dans ta veste"],
     "i_l": ["Tu fouilles consciencieusement le meuble télé. La neige, tu es comme hypnotysé par l'écran. Tout semble s'arrêter quand ta main tombe sur un porte document. A l'intérieur des feuilles qui décrivent les habitudes d'une personne. Le nom est barré en noir. La photo qui y est accroché te semble familière. Tu plis les feuilles et tu les ranges dans ta veste"],
     "actions": {
-      "btn": ["Fouiller le meuble consciencieusement", "Fouiller le meuble rapidement"],
+      "btn": ["Fouiller le meuble consciencieusement (i).", "Fouiller le meuble rapidement (d)."],
       "carac": ["intelligence", "dexterite"]
     }
   }, {
@@ -239,7 +239,7 @@
     "c_l": ["Tu cours le plus vite, ton stress monte. Tu glisses sur le sol et tu tombes en arrière, tes jambes sont en coton mais tu atteinds la porte avec difficulté et en faisant beaucoup de bruit."],
     "d_l": ["Tu vas doucement vers la porte en essayant de ne pas faire de bruit, ton stress monte. Tes jambes sont en coton et tu atteinds la porte avec difficulté et les planches sous tes pieds grincent à chaque pas comme si tu faisais plusieurs tonnes."],
     "actions": {
-      "btn": ["j'y vais sans bruit'", "je cours vers porte"],
+      "btn": ["J'y vais sans bruit (d).", "Je cours vers porte (c)."],
       "carac": ["dexterite", "constitution"]
     }
   }, {
@@ -255,7 +255,7 @@
     "i_l": ["Tu fronces les sourciles et tu te concentres sur la porte qui se dresse devant toi. Tu la regardes en espérant qu'elle te parle. Avec tout de brouillard dans ta tête tu n'arrives à rien. C'est une porte standard, avec une serrure."],
     "d_l": ["Tu regardes cette porte rapidement. Avec tout de brouillard dans ta tête tu n'arrives à rien. C'est une porte standard, avec une serrure."],
     "actions": {
-      "btn": ["J'analyse intelligemment", "J'analyse rapidement"],
+      "btn": ["J'analyse intelligemment (i).", "J'analyse rapidement (d)."],
       "carac": ["intelligence", "dexterite"]
     }
   }, {
@@ -268,7 +268,7 @@
     "c_w": ["En un coup de pied tu ouvres la porte. Devant toi se dévoile un parking. Il semble que tu sors d'une chambre d'hôtel. Un homme se tient contre une voitur avec une cigarette à la bouche. Quand il te voit, il jette sa cigarette et se dirige vers toi."],
     "c_l": ["Tu as beaucoup de mal, tu t 'y reprends à plusieurs fois et tu finis par faire tomber la porte. Devant toi se dévoile un parking. Il semble que tu sors d'une chambre d'hôtel. Une cigarette à terre encore fumante, un homme est à mi chemin entre toi et une voiture. Il se dirige vers toi."],
     "actions": {
-      "btn": ["Forcer la porte"],
+      "btn": ["Forcer la porte (c)."],
       "carac": ["constitution"]
     }
   }, {
@@ -301,7 +301,7 @@
     "d_l": ["Tu ouvres la porte sans faire attention et tu as devant toi une forêt sombre avec une route goudronné qui te sépare de cette nature. Des places de parking sont dessinées sur ce bitume. Un ensemble de chambre se suivent et se ressemble sur ton côté gauche. De l'autre côté un parking d'une vingtainte de place se dévoile sous tes yeux. La présence d'un homme assez grand et corpulent en plein milieu du parking cigarette à la bouche te fait froid dans le dos. Cette masse peu réconfortante jette sa cigarette d'un geste brusque en te voyant. Et se dirige vers toi l'air déterminé et peu amical. Sa voiture à les fares allumés, et la fenêtre est à moitier ouverte"],
     "i_l": ["Tu ouvres la porte doucement, mais cette dernière et vieille et grince dans ce silence de plomb. Tu as devant toi une forêt sombre avec une route goudronné qui te sépare de cette nature. Des places de parking sont dessinées sur ce bitume. Un ensemble de chambre se suivent et se ressemble sur ton côté gauche. De l'autre côté un parking d'une vingtainte de place se dévoile sous tes yeux. La présence d'un homme assez grand et corpulent en plein milieu du parking cigarette à la bouche te fait froid dans le dos. Cette masse peu réconfortante jette sa cigarette d'un geste brusque en te voyant. Et se dirige vers toi l'air déterminé et peu amical. Sa voiture à les fares allumés, et la fenêtre est à moitier ouverte"],
     "actions": {
-      "btn": ["J'ouvre la porte doucement'", "J'ouvre sans faire attention"],
+      "btn": ["J'ouvre la porte doucement (i).", "J'ouvre sans faire attention (d)."],
       "carac": ["intelligence", "dexterite"]
     }
   }, {
@@ -316,7 +316,7 @@
     "c_w": ["Tu pousses l'inconnu de toute tes forces, il trébuche et se cogne la tête contre la voiture. Te voilà à côté de la voiture et l'inconnu est KO."],
     "c_l": ["Tu essayes de passer mais l'inconnu te repousse assez facilement. Tu n'as pas réussi à passer. Et tu vas devoir te débarasser de cette personne, il ne te laisse pas le choix."],
     "actions": {
-      "btn": ["Foncer sur l'inconnu"],
+      "btn": ["Foncer sur l'inconnu (c)."],
       "carac": ["constitution"]
     }
   }, {
@@ -333,7 +333,7 @@
     "d_l": ["Ta dextérité ne suffit pas à passer l'inconnu. Te voilà arrêté devant lui, il va falloire te battre."],
     "i_l": ["Tu te représentes un chemin dans ta tête et rien ne se passe comme prévu. Te voilà arrêté devant lui, il va falloire te battre."],
     "actions": {
-      "btn": ["Courrir avec la meilleure dextérité", "Réfléchir à un trajet et s'y tenir"],
+      "btn": ["Courrir avec la meilleure dextérité (d).", "Réfléchir à un trajet et s'y tenir (i)."],
       "carac": ["dexterite", "intelligence"]
     }
   }, {
@@ -350,7 +350,7 @@
     "c_l": ["Tes menaces sont complétement ignorer par l'inconnu. Te voilà arrêté par lui, il va falloire te battre."],
     "i_l": ["Ta tentative de destabilisation n'a aucun effet sur l'inconnu. Te voilà arrêté par lui, il va falloire te battre."],
     "actions": {
-      "btn": ["Menacer", "Saluer et essayer d'apaiser la situation"],
+      "btn": ["Menacer (c).", "Saluer et essayer d'apaiser la situation (i)."],
       "carac": ["constitution", "intelligence"]
     }
   }, {
@@ -363,8 +363,8 @@
       "d": "24"
     },
     "btn_choix_win": {
-      "c": "Regarder en arrière et partir en courant",
-      "d": "Démarer la voiture et partir le plus loin possible"
+      "c": "Regarder en arrière et partir en courant (c).",
+      "d": "Démarer la voiture et partir le plus loin possible (d)."
     },
     "choix_loose": ["27"],
     "btn_choix_loose": ["Tu n'as pas le choix il va falloir battre l'inconnu"],
@@ -373,7 +373,7 @@
     "c_l": ["Tu essayes de t'éloigner mais l'inconnu t'attrape par l'épaule."],
     "d_l": ["Tu essayes de contourner mais l'inconnu t'attrape par l'épaule."],
     "actions": {
-      "btn": ["Essayer de contourner pour rentrer dans la voiture", "Essayer de s'éloigner sans se faire remarquer"],
+      "btn": ["Essayer de contourner pour rentrer dans la voiture (d).", "Essayer de s'éloigner sans se faire remarquer (c)."],
       "carac": ["dexterite", "constitution"]
     }
   }, {
@@ -399,7 +399,7 @@
     "i_w": ["Le son raisonne dans ce parking vide et aucun mouvement ne se fait dans les alentoures"],
     "i_l": ["Le claxon semble débranché. Tu n'arrives pas à tes fins."],
     "actions": {
-      "btn": ["Claxonner"],
+      "btn": ["Claxonner (i)."],
       "carac": ["intelligence"]
     }
   }, {
@@ -431,8 +431,8 @@
     "d_l": ["Tu pensais bien faire mais tu finis à terre rouer de coups."],
     "i_l": ["Rien ne se passe comme prévu, tu finis à terre rouer de coups."],
     "actions": {
-      "btn": ["Y mettre toute ses forces", "Essayer d'éviter les coups pour l'essouffler", "Essayer d'anticiper ses coups"],
-      "carac": ["dexterite", "constitution", "intelligence"]
+      "btn": ["Y mettre toute ses forces (c).", "Essayer d'éviter les coups pour l'essouffler (d).", "Essayer d'anticiper ses coups (i)."],
+      "carac": ["constitution", "dexterite", "intelligence"]
     }
   }, {
     "numero_chapitre": "28",

@@ -41,7 +41,7 @@ function Events(props) {
   const [caracChoice, setCaracChoice] = useState("");
   //   roll the dice
   function handleClickDice() {
-    const result = Math.floor(Math.random() * 100);
+    const result = Math.floor(Math.random() * 100) + 1;
     setDice(result);
     setFlagevent(!flagevent);
     const action = result / caracChoice;

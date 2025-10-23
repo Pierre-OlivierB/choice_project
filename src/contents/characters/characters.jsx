@@ -60,6 +60,16 @@ function Characters() {
                     s'il avait à réfléchir à une situation, il n'aurait que 25%
                     de réussite.
                   </p>
+                  <p>
+                    L'échec comme la réussite peut parfois ne pas avoir de réel
+                    conséquences sur le résultat du but de l'action (ex:
+                    chercher un objet et le trouver) mais sur le temps pris pour
+                    réaliser l'action (ex: immédiat si réussite ou plusieurs
+                    jours si échec). Dernière information importante, il faut
+                    garder en tête que dans un vrai RP, le Maître du jeu peut
+                    sortir du script et ajouter du contenu ou du lore à votre
+                    histoire.
+                  </p>
                   <p>Et maintenant à toi de jouer.</p>
                   <p> Quel est ton choix ?</p>
                 </article>

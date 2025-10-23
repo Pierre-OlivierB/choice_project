@@ -40,6 +40,8 @@ Tu es un écrivain de livre d'horreur. Tu t'adresses à un publique adulte. Le c
 
 ## DOING
 
+Correction des erreurs du texte. STOP Chapitre 10 déjà fait
+
 ## TODO
 
 Améliorer le texte (histoire)
@@ -48,6 +50,9 @@ Mettre le composants "characteres" à la place dans le composant "chapter" et "e
 Ajouter un bouton rejouer
 Clean les log
 Faire une gestion des erreurs
+Gestion Réussite/Echec Critique.
+Mettre le résultat du dé en exergue
+Inverser les couleurs de l'explication des règles et de l'histoire en cours.
 
 ## DONE
 
