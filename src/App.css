@@ -138,6 +138,16 @@ h1 {
   cursor: pointer;
 }
 
+.end-component {
+  max-height: 60vh;
+}
+
+.tenvh {
+  max-height: 10vh;
+}
+
+
+
 @keyframes move-right {
   0% {
     left: 0;

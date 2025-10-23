@@ -40,18 +40,20 @@ Tu es un écrivain de livre d'horreur. Tu t'adresses à un publique adulte. Le c
 
 ## DOING
 
-Mettre un background contextuel (look begin caution)
-
 ## TODO
 
 Améliorer le texte (histoire)
 Ajouter bouton sauvegarder
 Mettre le composants "characteres" à la place dans le composant "chapter" et "events".
+Ajouter un bouton rejouer
+Clean les log
+Faire une gestion des erreurs
 
 ## DONE
 
+//Mettre un background contextuel (look begin caution)
 //Améliorer le prompt
-// Améliorer les explications
+//Améliorer les explications
 //Ajouter au début de chaque card_contexte dans le json l'action effectuée. Afin d'avoir un texte finale compréhensible.
 //revoir le positionnement des cards
 //Mettre une image en background
