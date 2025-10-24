@@ -14,15 +14,6 @@ function Chapter(props) {
   const mj = props.mj;
   const inventory = props.inventory;
 
-  // console.log("chapter" + chpt);
-
-  // if (chpt === "end") {
-  //   console.log("this is the end");
-  // }
-  function handleClick() {
-    console.log("render");
-  }
-
   return (
     <div>
       <div className="inside-content container-fluid d-flex flex-column justify-content-evenly">

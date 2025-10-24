@@ -34,6 +34,9 @@ function Home() {
             <div className="row justify-content-md-center">
               <div className="col col-10 description p-4">
                 <p>
+                  Attention ce site ne marche que sur pc pour le moment. Merci.
+                </p>
+                <p>
                   Je vous propose de vous plonger dans une expérience de jeu de
                   role ("Role Play", RP) afin de découvrir les intéractions que
                   vous pourriez avoir sur un monde imaginaire qui entoure votre

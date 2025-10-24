@@ -42,10 +42,8 @@ function Book(props) {
   const save = useRef([]);
   // set story end
   const [storyEnd, setStoryEnd] = useState(false);
-  // !------------------------------------------- BEGIN CAUTION
   //set background
   const [activeBackground, setActiveBackground] = useState("house");
-  // !----------------------------------------------------
   // Dice throw
   const [choiceAfterDiceRoll, setChoiceAfterDiceRoll] = useState(null);
 
@@ -63,13 +61,8 @@ function Book(props) {
     }
   }, [choiceAfterDiceRoll]);
   // !----------------------------------------------------
-  // !-------------------------------------------END CAUTION
-
-  // !---------------------------
-  // ! BEGIN Need to keep ?
-  // Choix de carte swipée (utilisé pour déclencher l'action)
+  // Card swipe
   const [swipedCardIndex, setSwipedCardIndex] = useState(null);
-  // ! END Need to keep ?
   // !---------------------------
 
   // set content show
@@ -77,9 +70,6 @@ function Book(props) {
     // newChapter with his index
     setChoice(newChapter);
     setFlag((prevFlag) => !prevFlag);
-    // if (newChapter == 24 || newChapter == 26 || newChapter == 28) {
-    //   setStoryEnd(true);
-    // }
   }
   // story end
   const handleStoryEnd = useCallback((isEnd) => {
@@ -87,15 +77,10 @@ function Book(props) {
   }, []);
 
   // !---------------------------
-  // ! BEGIN Need to keep ?
-  // Gestion du swipe sur ChoiceCard
+  // Swipe Card
   const handleSwipeRight = (index) => {
     setSwipedCardIndex(index);
-    // Le log original utilisait `flag`, ce qui est peut-être confus.
-    // On garde le set pour l'index swipé.
-    console.log("swipe index: " + index);
   };
-  // ! END Need to keep ?
   // !---------------------------
 
   // get data from child event
@@ -135,18 +120,6 @@ function Book(props) {
         break;
     }
   }
-
-  // // --- LOGIC BG ---
-  // useEffect(() => {
-  //   if (choice === "15") {
-  //     setActiveBackground("car");
-  //   } else if (choice === "1") {
-  //     setActiveBackground("tv");
-  //   }
-  // }, [choice]);
-
-  // // ...
-
   // --- LOGIC BTNS (Render) ---
 
   // Definition btnList and choix with win/loose
@@ -334,10 +307,6 @@ function Book(props) {
   // History
   useEffect(() => {
     save.current.push([precendentAction, choice, perso]);
-    console.log("Historique enregistré : ", save.current);
-
-    // save.current.push([precendentAction, choice, perso]);
-    // console.log("histo : ", save.current);
   }, [precendentAction]);
 
   // setInventory, setPrecendentAction
@@ -353,10 +322,6 @@ function Book(props) {
     if (actionActive) {
       setPrecendentAction(currentStories.card_context);
     }
-
-    console.log(
-      "tentative sneaky n°" + currentStories.numero_chapitre + " win ? " + win
-    );
   }, [
     currentStories,
     listBtnJSX,
@@ -365,7 +330,6 @@ function Book(props) {
     choiceAlreadyDone,
     setInventory,
     setPrecendentAction,
-    // setBtnChoiceContent,
   ]);
 
   // --- RENDER ---

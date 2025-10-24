@@ -40,13 +40,15 @@ Tu es un écrivain de livre d'horreur. Tu t'adresses à un publique adulte. Le c
 
 ## DOING
 
+Clean les log
+
 ## TODO
 
 Améliorer le texte (histoire)
 Ajouter bouton sauvegarder
 Mettre le composants "characteres" à la place dans le composant "chapter" et "events".
 Ajouter un bouton rejouer
-Clean les log
+
 Faire une gestion des erreurs
 Gestion Réussite/Echec Critique.
 Mettre le résultat du dé en exergue
