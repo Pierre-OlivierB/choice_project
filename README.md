@@ -40,8 +40,6 @@ Tu es un écrivain de livre d'horreur. Tu t'adresses à un publique adulte. Le c
 
 ## DOING
 
-Correction des erreurs du texte. STOP Chapitre 10 déjà fait
-
 ## TODO
 
 Améliorer le texte (histoire)
@@ -53,6 +51,8 @@ Faire une gestion des erreurs
 Gestion Réussite/Echec Critique.
 Mettre le résultat du dé en exergue
 Inverser les couleurs de l'explication des règles et de l'histoire en cours.
+Si on arrive à la télé et qu'on écoute autour de nous on ne peut plus fouiller la télé.
+Vérifier les correspondance caractéritiques et actions montré au joueur
 
 ## DONE
 
@@ -64,3 +64,4 @@ Inverser les couleurs de l'explication des règles et de l'histoire en cours.
 //Mettre une image en background
 //Après être jusqu'à la porte (15) l'action suivante (9 ou 11) n'est plus enregistrée => proposition par gemini d'un code réparateur, fonctionnel ?
 //Il nous faut la page du win PUIS la génération de l'historique.
+//Correction des erreurs du texte. STOP Chapitre 10 déjà fait

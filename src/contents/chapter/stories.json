@@ -37,7 +37,7 @@
   },
   {
     "numero_chapitre": "3",
-    "card_context": "Il est temps d'essayer de se lever. Ton corps t'envoie de nombreux signaux contradictoire. Tu trembles mais tu as chaud. Tes pensées sont claires, pourtant ignores où tu es et pourquoi. Et ton corps te crie de courrir le plus loin possible, mais tes jambes ne sont vraisemblablement pas de cette avis.",
+    "card_context": "Il est temps d'essayer de se lever. Ton corps t'envoie de nombreux signaux contradictoire. Tu trembles mais tu as chaud. Tes pensées sont claires, pourtant tu ignores où tu es et pourquoi. Et ton corps te crie de courrir le plus loin possible, mais tes jambes ne sont vraisemblablement pas de cette avis.",
     "mj_question": "Que fais-tu ?",
     "choix": ["1", "2"],
     "btn_choix": ["Fouiller autour de toi", "Fouiller tes poches"],
@@ -46,7 +46,7 @@
     "c_l": ["Tu te mets sur tes deux pieds rapidement. Tu sens ton corps trembler, tu ne sens plus rien. Ton corps bascule en arrière. Tu tombes lourdement sur le canapé. Les ressorts grinces comme un cris stridents qui parcourt la pièce. Ton corps réagit comme si tu avais été drogué."],
     "d_l": ["Tu prends ton temps pour te mettre debout. Tu sens ton corps trembler, tu ne sens plus rien.  Tu tombes en arrière et tu te fracasse sur le canapé sur lequel tu étais. Les ressorts grinces comme un cris stridents qui parcourt la pièce. Ton corps réagit comme si tu avais été drogué."],
     "actions": {
-      "btn": ["Te lever brutalement (c)", "Te lever en prenant ton temps (d)."],
+      "btn": ["Te lever brutalement (c).", "Te lever en prenant ton temps (d)."],
       "carac": ["constitution", "dexterite"]
     }
   }, {
@@ -168,15 +168,15 @@
   },
   {
     "numero_chapitre": "11",
-    "card_context": "Tu décides d'aller vers la télé. Ce bruit blanc qui émane de cet objet raisonne dans ta tête comme une cloche qui ne s'arrêterai pas.",
+    "card_context": "Tu décides d'aller vers la télé. Ce bruit blanc qui émane de cet objet résonne dans ta tête comme une cloche qui ne s'arrêterait pas.",
     "mj_question": "Que fais-tu ?",
     "txt": "Txt qu'on doit pas voir",
     "choix": ["14", "9", "15", "4"],
-    "btn_choix": ["Fouiller le meuble de télévision", "Atteindre le bureau", "Atteindre la porte", "tu ne fais pas de bruit et tu écoutes"],
-    "c_w": ["Tu cours le plus vite, ton stress monte. Tu manques de glisser sur le sol, tes jambes sont en coton mais tu atteinds la télé sans difficulté mais pas sans faire de bruit."],
-    "d_w": ["Tu va doucement vers la télé en essayant de ne pas faire de bruit, ton stress monte. Tes jambes sont en coton mais tu atteinds la télé sans difficulté et sans faire de bruit."],
-    "c_l": ["Tu cours le plus vite, ton stress monte. Tu glisses sur le sol et tu tombes en arrière, tes jambes sont en coton mais tu atteinds la télé avec difficulté et en faisant beaucoup de bruit."],
-    "d_l": ["Tu va doucement vers la télé en essayant de ne pas faire de bruit, ton stress monte. Tes jambes sont en coton et tu atteinds la télé avec difficulté et les planches sous tes pieds font à chaque pas grince comme si tu faisait plusieurs tonnes."],
+    "btn_choix": ["Fouiller le meuble de la télévision", "Atteindre le bureau", "Atteindre la porte", "Tu ne fais pas de bruit et tu écoutes"],
+    "c_w": ["Tu cours le plus vite possible, ton stress monte. Tu manques de glisser sur le sol. Tes jambes sont en coton mais tu atteins la télé sans difficulté, mais pas sans faire de bruit."],
+    "d_w": ["Tu vas doucement vers la télé en essayant de ne pas faire de bruit, ton stress monte. Tes jambes sont en coton mais tu atteins la télé sans difficulté et sans faire de bruit."],
+    "c_l": ["Tu cours le plus vite possible, ton stress monte. Tu glisses sur le sol et tu tombes en arrière. Tes jambes sont en coton mais tu atteins la télé avec difficulté et en faisant beaucoup de bruit."],
+    "d_l": ["Tu vas doucement vers la télé en essayant de ne pas faire de bruit, ton stress monte. Tes jambes sont en coton et tu atteins la télé avec difficulté. Les planches grincent à chaqu'unde tes pas, comme si tu pesais plusieurs tonnes."],
     "actions": {
       "btn": ["J'y vais sans bruit (d).", "je cours vers la télé (c)."],
       "carac": ["dexterite", "constitution"]
@@ -200,30 +200,30 @@
     }
   }, {
     "numero_chapitre": "13",
-    "card_context": "Tu choisis d'essayer d'ouvrir le volet. La manivelle qui est posé sur ce bureau doit servir à ouvrir ce volet. Mais tu peux décider de l'ouvrir grâce à ta force également.",
+    "card_context": "Tu choisis d'essayer d'ouvrir le volet. La manivelle qui est posée sur ce bureau doit servir à ouvrir ce volet. Mais tu peux décider de l'ouvrir en utilisant ta force.",
     "mj_question": "Que fais-tu ?",
     "txt": "Txt qu'on doit pas voir",
     "choix": ["11", "15", "4", "10"],
-    "btn_choix": ["Atteindre la télé", "Atteindre la porte", "tu ne fais pas de bruit et tu écoutes", "fouiller le bureau"],
-    "c_w": ["Malgrè tout tes efforts tu ne peux que faire appraître une entre baillure dans le volet et le mécanisme se casse. Juste assez pour voir que dehors il fait nuit, il ne pleut pas et que tu es à côté d'un parking. Une seule voiture y est arrêté."],
-    "d_w": ["Malgrè tout tes efforts tu ne peux que faire appraître une entre baillure dans le volet et la manivelle casse le mécanisme. Juste assez pour voir que dehors il fait nuit, il ne pleut pas et que tu es à côté d'un parking. Une seule voiture y est arrêté."],
-    "c_l": ["Malgrè tout tes efforts tu n'arrives pas à faire bouger le volet. De plus le mécanisme se casse"],
-    "d_l": ["Malgrè tout tes efforts tu n'arrives pas à faire bouger le volet. De plus la manivelle casse le mécanisme."],
+    "btn_choix": ["Atteindre la télé", "Atteindre la porte", "Tu ne fais pas de bruit et tu écoutes", "Fouiller le bureau"],
+    "c_w": ["Malgré tout tes efforts tu ne peux que faire apparaître une entrebâillure dans le volet et le mécanisme se casse. Juste assez pour voir que dehors il fait nuit, il ne pleut pas et que tu es à côté d'un parking. Une seule voiture y est stationnée."],
+    "d_w": ["Malgré tout tes efforts tu ne peux que faire apparaître une entrebâillure dans le volet et la manivelle casse le mécanisme. Juste assez pour voir que dehors il fait nuit, il ne pleut pas et que tu es à côté d'un parking. Une seule voiture y est stationnée."],
+    "c_l": ["Malgré tout tes efforts tu n'arrives pas à faire bouger le volet. De plus, le mécanisme se casse"],
+    "d_l": ["Malgré tout tes efforts tu n'arrives pas à faire bouger le volet. De plus, la manivelle casse le mécanisme."],
     "actions": {
       "btn": ["Ouvrir le volet avec la manivelle (d).", "Ouvrir le volet avec force (c)."],
       "carac": ["dexterite", "constitution"]
     }
   }, {
     "numero_chapitre": "14",
-    "card_context": "De la neige, du bruit blanc. Tu es devant la télévision. Quelle heure est-il ? Encore une question sans réponse. Tu te décides de fouiller le meuble de télévision.",
+    "card_context": "De la neige, du bruit blanc. Tu es devant la télévision. Quelle heure est-il ? Encore une question sans réponse. Tu te décides à fouiller le meuble de télévision.",
     "mj_question": "Que fais-tu ?",
     "txt": "Txt qu'on doit pas voir",
     "choix": ["9", "15", "4"],
-    "btn_choix": ["Atteindre le bureau", "Atteindre la porte", "tu ne fais pas de bruit et tu écoutes"],
-    "d_w": ["Tu fouilles rapidement le meuble télé. Sans grande difficulté tu tombes sur un porte document. A l'intérieur des feuilles qui décrivent les habitudes d'une personne. Le nom est barré en noir. La photo qui y est accroché te semble familière. Tu plis les feuilles et tu les ranges dans ta veste"],
-    "i_w": ["Tu fouilles consciencieusement le meuble télé. Sans grande difficulté tu tombes sur un porte document. A l'intérieur des feuilles qui décrivent les habitudes d'une personne. Le nom est barré en noir. La photo qui y est accroché te semble familière et de ce que tu as pu voir dans les reflets cette personne te reseemble beaucoup. Tu plis les feuilles et tu les ranges dans ta veste"],
-    "d_l": ["Tu fouilles rapidement le meuble télé. La neige, tu es comme hypnotysé par l'écran. Tout semble s'arrêter quand ta main tombe sur un porte document. A l'intérieur des feuilles qui décrivent les habitudes d'une personne. Le nom est barré en noir. La photo qui y est accroché te semble familière. Tu plis les feuilles et tu les ranges dans ta veste"],
-    "i_l": ["Tu fouilles consciencieusement le meuble télé. La neige, tu es comme hypnotysé par l'écran. Tout semble s'arrêter quand ta main tombe sur un porte document. A l'intérieur des feuilles qui décrivent les habitudes d'une personne. Le nom est barré en noir. La photo qui y est accroché te semble familière. Tu plis les feuilles et tu les ranges dans ta veste"],
+    "btn_choix": ["Atteindre le bureau", "Atteindre la porte", "Tu ne fais pas de bruit et tu écoutes"],
+    "d_w": ["Tu fouilles rapidement le meuble télé. Sans grande difficulté tu tombes sur un porte-document. A l'intérieur des feuilles qui décrivent les habitudes d'une personne. Le nom est barré en noir. La photo qui y est accrochée te semble familière. Tu plis les feuilles et tu les ranges dans ta veste"],
+    "i_w": ["Tu fouilles consciencieusement le meuble télé. Sans grande difficulté tu tombes sur un porte-document. A l'intérieur des feuilles qui décrivent les habitudes d'une personne. Le nom est barré en noir. La photo qui y est accrochée te semble familière et de ce que tu as pu voir dans les reflets, cette personne te ressemble beaucoup. Tu plis les feuilles et tu les ranges dans ta veste"],
+    "d_l": ["Tu fouilles rapidement le meuble télé. La neige, tu es comme hypnotisé par l'écran. Tout semble s'arrêter quand ta main tombe sur un porte-document. A l'intérieur des feuilles qui décrivent les habitudes d'une personne. Le nom est barré en noir. La photo qui y est accrochée te semble familière. Tu plis les feuilles et tu les ranges dans ta veste"],
+    "i_l": ["Tu fouilles consciencieusement le meuble télé. La neige, tu es comme hypnotisé par l'écran. Tout semble s'arrêter quand ta main tombe sur un porte-document. A l'intérieur des feuilles qui décrivent les habitudes d'une personne. Le nom est barré en noir. La photo qui y est accrochée te semble familière. Tu plis les feuilles et tu les ranges dans ta veste"],
     "actions": {
       "btn": ["Fouiller le meuble consciencieusement (i).", "Fouiller le meuble rapidement (d)."],
       "carac": ["intelligence", "dexterite"]
@@ -234,39 +234,39 @@
     "choix": ["9", "11", "16", "17"],
     "btn_choix": ["Atteindre le bureau", "Atteindre la télé", "Analyser la porte", "Forcer la porte"],
     "btn_choix_sup": ["19", "Utiliser la clef"],
-    "c_w": ["Tu cours le plus vite, ton stress monte. Tu manques de glisser sur le sol, tes jambes sont en coton mais tu atteinds la porte sans difficulté mais pas sans faire de bruit."],
-    "d_w": ["Tu vas doucement vers la porte en essayant de ne pas faire de bruit, ton stress monte. Tes jambes sont en coton mais tu atteinds la porte sans difficulté et sans faire de bruit."],
-    "c_l": ["Tu cours le plus vite, ton stress monte. Tu glisses sur le sol et tu tombes en arrière, tes jambes sont en coton mais tu atteinds la porte avec difficulté et en faisant beaucoup de bruit."],
-    "d_l": ["Tu vas doucement vers la porte en essayant de ne pas faire de bruit, ton stress monte. Tes jambes sont en coton et tu atteinds la porte avec difficulté et les planches sous tes pieds grincent à chaque pas comme si tu faisais plusieurs tonnes."],
+    "c_w": ["Tu cours le plus vite possible, ton stress monte. Tu manques de glisser sur le sol, tes jambes sont en coton mais tu atteins la porte sans difficulté, mais pas sans faire de bruit."],
+    "d_w": ["Tu vas doucement vers la porte en essayant de ne pas faire de bruit, ton stress monte. Tes jambes sont en coton mais tu atteins la porte sans difficulté et sans faire de bruit."],
+    "c_l": ["Tu cours le plus vite possible, ton stress monte. Tu glisses sur le sol et tu tombes en arrière, tes jambes sont en coton mais tu atteins la porte avec difficulté et en faisant beaucoup de bruit."],
+    "d_l": ["Tu vas doucement vers la porte en essayant de ne pas faire de bruit, ton stress monte. Tes jambes sont en coton et tu atteins la porte avec difficulté et les planches sous tes pieds grincent à chaque pas, comme si tu faisais plusieurs tonnes."],
     "actions": {
-      "btn": ["J'y vais sans bruit (d).", "Je cours vers porte (c)."],
+      "btn": ["Marcher sans bruit (d).", "Courrir vers porte (c)."],
       "carac": ["dexterite", "constitution"]
     }
   }, {
     "numero_chapitre": "16",
-    "card_context": "Tu regardes la porte avec insistence en espérant percevoir des informations qui pourrait t'aider à prendre une décision.",
+    "card_context": "Tu regardes la porte avec insistance, espérant percevoir des informations qui pourraient t'aider à prendre une décision.",
     "mj_question": "Que fais-tu ?",
     "txt": "Txt qu'on doit pas voir",
     "choix": ["9", "11", "17"],
     "btn_choix": ["Atteindre le bureau", "Atteindre la télé", "Forcer la porte"],
     "btn_choix_sup": ["19", "Utiliser la clef"],
-    "i_w": ["Tu fronces les sourciles et tu te concentres sur la porte qui se dresse devant toi. Elle est assez ancienne et pourtant tu vois qu'elle est robuste. Si tu décides de forcer le passage tu vas faire beaucoup de bruits. Elle a une serrure basique. Il se pourrait bien que la clef se trouve dans cette chambre."],
-    "d_w": ["Tu regardes cette porte rapidement. Elle te semble assez resistante, si tu voulais la forcer, ça va te mettre en difficulté. Ca peut te prendre beaucoup de temps et tu vas faire un maximum de bruits."],
-    "i_l": ["Tu fronces les sourciles et tu te concentres sur la porte qui se dresse devant toi. Tu la regardes en espérant qu'elle te parle. Avec tout de brouillard dans ta tête tu n'arrives à rien. C'est une porte standard, avec une serrure."],
-    "d_l": ["Tu regardes cette porte rapidement. Avec tout de brouillard dans ta tête tu n'arrives à rien. C'est une porte standard, avec une serrure."],
+    "i_w": ["Tu fronces les sourcils et tu te concentres sur la porte qui se dresse devant toi. Elle est assez ancienne, et pourtant tu vois qu'elle est robuste. Si tu décides de forcer le passage tu vas faire beaucoup de bruits. Elle a une serrure basique. Il se pourrait bien que la clef se trouve dans cette chambre."],
+    "d_w": ["Tu regardes cette porte rapidement. Elle te semble assez résistante, si tu voulais la forcer, cela te mettrait en difficulté. Cela pourrait te prendre beaucoup de temps et tu vas faire un maximum de bruits."],
+    "i_l": ["Tu fronces les sourcils et tu te concentres sur la porte qui se dresse devant toi. Tu la regardes en espérant qu'elle te parle. Avec tout ce brouillard dans ta tête tu n'arrives à rien. C'est une porte standard, avec une serrure."],
+    "d_l": ["Tu regardes cette porte rapidement. Avec tout ce brouillard dans ta tête tu n'arrives à rien. C'est une porte standard, avec une serrure."],
     "actions": {
-      "btn": ["J'analyse intelligemment (i).", "J'analyse rapidement (d)."],
+      "btn": ["Analyser intelligemment (i).", "Analyser rapidement (d)."],
       "carac": ["intelligence", "dexterite"]
     }
   }, {
     "numero_chapitre": "17",
-    "card_context": "Tu forces la porte de toutes ta puissance. Il est temps de sortir maintenant.",
+    "card_context": "Tu forces la porte de toute ta puissance. Il est temps de sortir maintenant.",
     "mj_question": "Que fais-tu ?",
     "txt": "Txt qu'on doit pas voir",
     "choix": ["20", "21", "22"],
-    "btn_choix": ["Forcer le passage", "Eviter et rentrer dans la voiture", "Essayer de lui parler"],
-    "c_w": ["En un coup de pied tu ouvres la porte. Devant toi se dévoile un parking. Il semble que tu sors d'une chambre d'hôtel. Un homme se tient contre une voitur avec une cigarette à la bouche. Quand il te voit, il jette sa cigarette et se dirige vers toi."],
-    "c_l": ["Tu as beaucoup de mal, tu t 'y reprends à plusieurs fois et tu finis par faire tomber la porte. Devant toi se dévoile un parking. Il semble que tu sors d'une chambre d'hôtel. Une cigarette à terre encore fumante, un homme est à mi chemin entre toi et une voiture. Il se dirige vers toi."],
+    "btn_choix": ["Forcer le passage", "Eviter l'inconnu", "Essayer de lui parler"],
+    "c_w": ["En un coup de pied tu ouvres la porte. Devant toi se dévoile un parking. Il semble que tu sors d'une chambre d'hôtel. Un homme se tient contre une voiture, une cigarette à la bouche. Quand il te voit, il jette sa cigarette et se dirige vers toi."],
+    "c_l": ["Tu as beaucoup de mal, tu t'y reprends à plusieurs fois et tu finis par faire tomber la porte. Devant toi se dévoile un parking. Il semble que tu sors d'une chambre d'hôtel. Une cigarette est à terre, encore fumante. Un homme est à mi-chemin entre toi et une voiture. Il se dirige vers toi."],
     "actions": {
       "btn": ["Forcer la porte (c)."],
       "carac": ["constitution"]
@@ -290,30 +290,30 @@
     }
   }, {
     "numero_chapitre": "19",
-    "card_context": "La clef rentre très naturellement dans le barrilé. Et la clef tourne facilement.",
+    "card_context": "La clef s'insère très naturellement dans le barrilet. Et la clef tourne facilement.",
     "mj_question": "Que fais-tu ?",
     "txt": "Txt qu'on doit pas voir",
     "choix": ["20", "21", "22"],
-    "btn_choix": ["J'essaye de forcer le passage", "J'essaye de courrir pour l'éviter et rentrer dans la voiture", "J'essaye de lui parler"],
+    "btn_choix": ["Forcer le passage", "Courrir pour l'éviter", "Essayer de lui parler"],
     "btn_choix_sup": ["23", "Essayer de ne pas se faire remarquer"],
-    "d_w": ["Tu ouvres la porte sans faire attention. Par réflexe tu fais un pas en arrière. Devant toi se dévoile un parking. Il semble que tu sors d'une chambre d'hôtel. Un homme se tient contre une voiture, une cigarette à la bouche. Il fume sa cigarette et se tiends contre la seule voiture du parking."],
-    "i_w": ["Tu ouvres doucement la porte. Devant toi se dévoile un parking. Il semble que tu sors d'une chambre d'hôtel. Un homme se tient contre une voiture, une cigarette à la bouche. Il fume sa cigarette et se tiends contre la seule voiture du parking."],
-    "d_l": ["Tu ouvres la porte sans faire attention et tu as devant toi une forêt sombre avec une route goudronné qui te sépare de cette nature. Des places de parking sont dessinées sur ce bitume. Un ensemble de chambre se suivent et se ressemble sur ton côté gauche. De l'autre côté un parking d'une vingtainte de place se dévoile sous tes yeux. La présence d'un homme assez grand et corpulent en plein milieu du parking cigarette à la bouche te fait froid dans le dos. Cette masse peu réconfortante jette sa cigarette d'un geste brusque en te voyant. Et se dirige vers toi l'air déterminé et peu amical. Sa voiture à les fares allumés, et la fenêtre est à moitier ouverte"],
-    "i_l": ["Tu ouvres la porte doucement, mais cette dernière et vieille et grince dans ce silence de plomb. Tu as devant toi une forêt sombre avec une route goudronné qui te sépare de cette nature. Des places de parking sont dessinées sur ce bitume. Un ensemble de chambre se suivent et se ressemble sur ton côté gauche. De l'autre côté un parking d'une vingtainte de place se dévoile sous tes yeux. La présence d'un homme assez grand et corpulent en plein milieu du parking cigarette à la bouche te fait froid dans le dos. Cette masse peu réconfortante jette sa cigarette d'un geste brusque en te voyant. Et se dirige vers toi l'air déterminé et peu amical. Sa voiture à les fares allumés, et la fenêtre est à moitier ouverte"],
+    "d_w": ["Tu ouvres la porte sans faire attention. Par réflexe tu fais un pas en arrière. Devant toi se dévoile un parking. Il semble que tu sors d'une chambre d'hôtel. Un homme se tient contre une voiture, une cigarette à la bouche. Il fume sa cigarette et se tient contre la seule voiture du parking."],
+    "i_w": ["Tu ouvres doucement la porte. Devant toi se dévoile un parking. Il semble que tu sors d'une chambre d'hôtel. Un homme se tient contre une voiture, une cigarette à la bouche. Il fume sa cigarette et se tient contre la seule voiture du parking."],
+    "d_l": ["Tu ouvres la porte sans faire attention et tu as devant toi une forêt sombre avec une route goudronnée qui te sépare de cette nature. Des places de parking sont dessinées sur ce bitume. Un ensemble de chambre se suivent et se ressemblent sur ton côté gauche. De l'autre côté un parking d'une vingtaine de place se dévoile sous tes yeux. La présence d'un homme assez grand et corpulent en plein milieu du parking cigarette à la bouche te fait froid dans le dos. Cette masse peu réconfortante jette sa cigarette d'un geste brusque en te voyant. Et se dirige vers toi l'air déterminé et peu amical. Sa voiture a les phares allumés, et la fenêtre est à moitié ouverte"],
+    "i_l": ["Tu ouvres la porte doucement, mais cette dernière et vieille et grince dans ce silence de plomb. Tu as devant toi une forêt sombre avec une route goudronnée qui te sépare de cette nature. Des places de parking sont dessinées sur ce bitume. Un ensemble de chambre se suivent et se ressemblent sur ton côté gauche. De l'autre côté un parking d'une vingtaine de place se dévoile sous tes yeux. La présence d'un homme assez grand et corpulent en plein milieu du parking cigarette à la bouche te fait froid dans le dos. Cette masse peu réconfortante jette sa cigarette d'un geste brusque en te voyant. Et se dirige vers toi l'air déterminé et peu amical. Sa voiture a les phares allumés, et la fenêtre est à moitié ouverte"],
     "actions": {
-      "btn": ["J'ouvre la porte doucement (i).", "J'ouvre sans faire attention (d)."],
+      "btn": ["Ouvrir la porte doucement (i).", "Ouvrir sans faire attention (d)."],
       "carac": ["intelligence", "dexterite"]
     }
   }, {
     "numero_chapitre": "20",
-    "card_context": "Tu décides de forcer le passage malgrè la stature imposante de ton adversaire.",
+    "card_context": "Tu décides de forcer le passage malgré la stature imposante de ton adversaire.",
     "mj_question": "Que fais-tu ?",
     "txt": "Txt qu'on doit pas voir",
     "choix_win": ["24", "26"],
-    "btn_choix_win": ["Rentrer dans la voiture et essayer de la démarer", "courrir au loin"],
+    "btn_choix_win": ["Entrer dans la voiture et essayer de la démarer.", "Courir au loin."],
     "choix_loose": ["27"],
-    "btn_choix_loose": ["Tu n'as pas le choix il va falloir battre l'inconnu"],
-    "c_w": ["Tu pousses l'inconnu de toute tes forces, il trébuche et se cogne la tête contre la voiture. Te voilà à côté de la voiture et l'inconnu est KO."],
+    "btn_choix_loose": ["Tu n'as pas le choix il va falloir affronter l'inconnu"],
+    "c_w": ["Tu pousses l'inconnu de toutes tes forces, il trébuche et se cogne la tête contre la voiture. Te voilà à côté de la voiture, l'inconnu est KO."],
     "c_l": ["Tu essayes de passer mais l'inconnu te repousse assez facilement. Tu n'as pas réussi à passer. Et tu vas devoir te débarasser de cette personne, il ne te laisse pas le choix."],
     "actions": {
       "btn": ["Foncer sur l'inconnu (c)."],
@@ -322,33 +322,33 @@
   }, {
     "numero_chapitre": "21",
     "card_context": "Tu tentes de passer et d'entrer dans la voiture en évitant l'inconnu.",
-    "mj_question": "Sachant que ça peut être ta dernière action. Que fais-tu ?",
+    "mj_question": "Sachant que ça peut être ta dernière action, que fais-tu ?",
     "txt": "Txt qu'on doit pas voir",
     "choix_win": ["24", "25", "26"],
-    "btn_choix_win": ["Rentrer dans la voiture et essayer de la démarer", "Rentrer dans la voiture et claxonner", "courrir au loin"],
+    "btn_choix_win": ["Entrer dans la voiture et essayer de la démarrer", "Entrer dans la voiture et klaxonner", "Courir au loin"],
     "choix_loose": ["27"],
-    "btn_choix_loose": ["Tu n'as pas le choix il va falloir battre l'inconnu"],
+    "btn_choix_loose": ["Tu n'as pas le choix il va falloir affronter l'inconnu"],
     "d_w": ["En utilisant tes réflexes, tu passes sans difficultés. Désromais derrière l'inconnu, tu entres dans la voiture et tu tournes la clef du moteur."],
     "i_w": ["Tu te représentes un chemin dans ta tête et tout se passe comme prévu. Tu arrives derrière l'inconnu. Tu entres dans la voiture et tu tournes la clef du moteur."],
-    "d_l": ["Ta dextérité ne suffit pas à passer l'inconnu. Te voilà arrêté devant lui, il va falloire te battre."],
-    "i_l": ["Tu te représentes un chemin dans ta tête et rien ne se passe comme prévu. Te voilà arrêté devant lui, il va falloire te battre."],
+    "d_l": ["Ta dextérité ne suffit pas à passer l'inconnu. Te voilà arrêté devant lui, il va falloir te battre."],
+    "i_l": ["Tu te représentes un chemin dans ta tête et rien ne se passe comme prévu. Te voilà arrêté devant lui, il va falloir te battre."],
     "actions": {
-      "btn": ["Courrir avec la meilleure dextérité (d).", "Réfléchir à un trajet et s'y tenir (i)."],
+      "btn": ["Courir avec la meilleure dextérité (d).", "Réfléchir à un trajet et s'y tenir (i)."],
       "carac": ["dexterite", "intelligence"]
     }
   }, {
     "numero_chapitre": "22",
-    "card_context": "Tu essayes de lui parler. Tu comprends vite qu'il va falloir soit lui faire peur soit négocier",
+    "card_context": "Tu essaies de lui parler. Tu comprends vite qu'il va falloir soit lui faire peur, soit négocier",
     "mj_question": "Que fais-tu ?",
     "txt": "Txt qu'on doit pas voir",
     "choix_win": ["24", "26"],
-    "btn_choix_win": ["Rentrer dans la voiture et essayer de la démarer", "courrir au loin"],
+    "btn_choix_win": ["Rentrer dans la voiture et essayer de la démarrer", "Courir au loin"],
     "choix_loose": ["27"],
-    "btn_choix_loose": ["Tu n'as pas le choix il va falloir battre l'inconnu"],
+    "btn_choix_loose": ["Tu n'as pas le choix il va falloir affronter l'inconnu"],
     "c_w": ["Dans les yeux de l'inconnu tu vois que tu prends le dessus, il n'a plus l'air sûr de lui. Cela te donne une fraction de temps pour agir."],
     "i_w": ["Dans les yeux de l'inconnu tu vois que tu prends le dessus, il n'a plus l'air sûr de lui. Cela te donne une fraction de temps pour agir."],
-    "c_l": ["Tes menaces sont complétement ignorer par l'inconnu. Te voilà arrêté par lui, il va falloire te battre."],
-    "i_l": ["Ta tentative de destabilisation n'a aucun effet sur l'inconnu. Te voilà arrêté par lui, il va falloire te battre."],
+    "c_l": ["Tes menaces sont complètement ignorées par l'inconnu. Te voilà arrêté par lui, il va falloir te battre."],
+    "i_l": ["Ta tentative de destabilisation n'a aucun effet sur l'inconnu. Te voilà arrêté par lui, il va falloir te battre."],
     "actions": {
       "btn": ["Menacer (c).", "Saluer et essayer d'apaiser la situation (i)."],
       "carac": ["constitution", "intelligence"]
@@ -363,17 +363,17 @@
       "d": "24"
     },
     "btn_choix_win": {
-      "c": "Regarder en arrière et partir en courant (c).",
-      "d": "Démarer la voiture et partir le plus loin possible (d)."
+      "c": "Regarder en arrière et partir en courant.",
+      "d": "Démarrer la voiture et partir le plus loin possible."
     },
     "choix_loose": ["27"],
     "btn_choix_loose": ["Tu n'as pas le choix il va falloir battre l'inconnu"],
     "c_w": ["Tu t'éloignes sans te faire remarquer."],
-    "d_w": ["Tu contourne facilement l'inconnu, tu rentre dans la voiture. Le contact est déjà enclenché. Tu appuyes sur la pédale et tu t'éloignes le plus loin possible."],
-    "c_l": ["Tu essayes de t'éloigner mais l'inconnu t'attrape par l'épaule."],
-    "d_l": ["Tu essayes de contourner mais l'inconnu t'attrape par l'épaule."],
+    "d_w": ["Tu contournes facilement l'inconnu, tu rentre dans la voiture. Le contact est déjà enclenché. Tu appuyes sur la pédale et tu t'éloignes le plus loin possible."],
+    "c_l": ["Tu essayes de t'éloigner, mais l'inconnu t'attrape par l'épaule."],
+    "d_l": ["Tu essayes de contourner, mais l'inconnu t'attrape par l'épaule."],
     "actions": {
-      "btn": ["Essayer de contourner pour rentrer dans la voiture (d).", "Essayer de s'éloigner sans se faire remarquer (c)."],
+      "btn": ["Essayer de contourner pour entrer dans la voiture (d).", "Essayer de s'éloigner sans se faire remarquer (c)."],
       "carac": ["dexterite", "constitution"]
     }
   }, {
@@ -382,7 +382,7 @@
     "mj_question": "Veux tu générer ton histoire ?",
     "txt": "Txt qu'on doit pas voir",
     "choix": ["28"],
-    "btn_choix": ["Démarer la voiture"],
+    "btn_choix": ["Démarrer la voiture"],
     "i_w": ["Que penser ?"],
     "i_l": ["Pourquoi ?"],
     "actions": {
@@ -391,20 +391,20 @@
     }
   }, {
     "numero_chapitre": "25",
-    "card_context": "Tu es dans la voiture et tu actives le claxon es espérant être entendu ou secouru.",
+    "card_context": "Tu es dans la voiture et tu actives le klaxon en espérant être entendu ou secouru.",
     "mj_question": "Que fais-tu ?",
     "txt": "Txt qu'on doit pas voir",
     "choix": ["24", "26"],
-    "btn_choix": ["Essayer de démarer la voiture", "Sortir de la voiture et courrir au loin"],
-    "i_w": ["Le son raisonne dans ce parking vide et aucun mouvement ne se fait dans les alentoures"],
-    "i_l": ["Le claxon semble débranché. Tu n'arrives pas à tes fins."],
+    "btn_choix": ["Essayer de démarrer la voiture", "Sortir de la voiture et courir au loin"],
+    "i_w": ["Le son résonne dans ce parking vide et aucun mouvement ne se fait dans les alentours"],
+    "i_l": ["Le klaxon semble débranché. Tu n'arrives pas à tes fins."],
     "actions": {
-      "btn": ["Claxonner (i)."],
+      "btn": ["Klaxonner (i)."],
       "carac": ["intelligence"]
     }
   }, {
     "numero_chapitre": "26",
-    "card_context": "Tu te mets à courrir au loin et tu repenses à ce qui vient de se passer.",
+    "card_context": "Tu te mets à courir au loin et tu repenses à ce qui vient de se passer.",
     "mj_question": "Veux tu générer ton histoire ?",
     "txt": "Txt qu'on doit pas voir",
     "choix": ["28"],
@@ -417,21 +417,21 @@
     }
   }, {
     "numero_chapitre": "27",
-    "card_context": "Tu te retrouves dans une situation précaire. Te voilà devant un inconnu et ta seule façon de sortir de cette situation c'est de le battre.",
+    "card_context": "Tu te retrouves dans une situation précaire. Te voilà devant un inconnu et ta seule façon de sortir de cette situation est de le battre.",
     "mj_question": "Que fais-tu ?",
     "txt": "Txt qu'on doit pas voir",
     "choix_win": ["24", "26"],
-    "btn_choix_win": ["Rentrer dans la voiture et essayer de la démarer", "courrir au loin"],
+    "btn_choix_win": ["Entrer dans la voiture et essayer de la démarrer", "Courir au loin"],
     "choix_loose": ["28"],
     "btn_choix_loose": ["Tu essayes de te relever"],
-    "c_w": ["Tu réussis à le mettre KO. Tu as une opportunité de t'échaper."],
-    "d_w": ["Il s'essoufle et fini par fatiguer. Tu as une opportunité de t'échaper."],
-    "i_w": ["Tu es dans sa tête quelque soit l'action qu'il essaye de mener il n'arrive à rien. Tu as une opportunité de t'échaper."],
+    "c_w": ["Tu réussis à le mettre KO. Tu as une opportunité de t'échapper."],
+    "d_w": ["Il s'essoufle et fini par fatiguer. Tu as une opportunité de t'échapper."],
+    "i_w": ["Tu es dans sa tête quelle que soit l'action qu'il essaye de mener, il n'arrive à rien. Tu as une opportunité de t'échapper."],
     "c_l": ["Tu finis à terre, à bout de force."],
     "d_l": ["Tu pensais bien faire mais tu finis à terre rouer de coups."],
     "i_l": ["Rien ne se passe comme prévu, tu finis à terre rouer de coups."],
     "actions": {
-      "btn": ["Y mettre toute ses forces (c).", "Essayer d'éviter les coups pour l'essouffler (d).", "Essayer d'anticiper ses coups (i)."],
+      "btn": ["Y mettre toute ses forces (c).", "Essayer d'éviter les coups (d).", "Essayer d'anticiper ses coups (i)."],
       "carac": ["constitution", "dexterite", "intelligence"]
     }
   }, {
