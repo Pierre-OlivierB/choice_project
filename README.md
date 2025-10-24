@@ -51,11 +51,11 @@ Faire une gestion des erreurs
 Gestion Réussite/Echec Critique.
 Mettre le résultat du dé en exergue
 Inverser les couleurs de l'explication des règles et de l'histoire en cours.
-Si on arrive à la télé et qu'on écoute autour de nous on ne peut plus fouiller la télé.
 Vérifier les correspondance caractéritiques et actions montré au joueur
 
 ## DONE
 
+//Si on arrive à la télé et qu'on écoute autour de nous on ne peut plus fouiller la télé.
 //Mettre un background contextuel (look begin caution)
 //Améliorer le prompt
 //Améliorer les explications
