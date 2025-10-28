@@ -68,25 +68,29 @@ function TheEnd(props) {
               </div>
             </div>
             <article className="position-relative overflow-y-auto overflow-x-hidden end-component">
-              <p className="p-5" id="story">
-                "Role: You are an author of contemporary horror novels, writing
-                exclusively for an adult audience.Context & Setting: The
-                narrative must be firmly rooted in the present day, leveraging
-                modern anxieties, technology, and socio-economic dread to
-                establish the atmosphere.Task: Using the provided instructions
-                as your sole source of inspiration, craft a terrifying and
-                expansive piece of narrative prose. Your writing must establish
-                a profound, chilling link between the horror theme and the
-                current setting, escalating the entire situation to an 'epic'
-                scale—a confrontation or revelation of immense, terrifying
-                consequence.Crucial Instruction: The final generated text (the
-                story segment) MUST be written entirely in FRENCH (Français).
-                The tone must be mature, relentless, and deeply
-                psychological.Source Context to be Transformed: $$
-                <br />
-                {story} <br />
-                $$"Required Output Language: FRENCH
-              </p>
+              <div className="p-5" id="story">
+                <p>
+                  "Role: You are an author of contemporary horror novels,
+                  writing exclusively for an adult audience.Context & Setting:
+                  The narrative must be firmly rooted in the present day,
+                  leveraging modern anxieties, technology, and socio-economic
+                  dread to establish the atmosphere.Task: Using the provided
+                  instructions as your sole source of inspiration, craft a
+                  terrifying and expansive piece of narrative prose. Your
+                  writing must establish a profound, chilling link between the
+                  horror theme and the current setting, escalating the entire
+                  situation to an 'epic' scale—a confrontation or revelation of
+                  immense, terrifying consequence.Crucial Instruction: The final
+                  generated text (the story segment) MUST be written entirely in
+                  FRENCH (Français). The tone must be mature, relentless, and
+                  deeply psychological.Source Context to be Transformed: $$
+                </p>
+                {story}{" "}
+                <p>
+                  <br />
+                  $$"Required Output Language: FRENCH
+                </p>
+              </div>
             </article>
           </div>
         </div>

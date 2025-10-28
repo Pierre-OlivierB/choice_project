@@ -59,6 +59,15 @@ function Book(props) {
     } else if (choiceAfterDiceRoll === "1") {
       setActiveBackground("tv");
     }
+    // add or del key if needed ou used
+    if (choiceAlreadyDone.includes("10")) {
+      if (!inventory.includes("clef")) {
+        setInventory((prev) => [...prev, "clef"]);
+      }
+      if (choiceAlreadyDone.includes("19")) {
+        setInventory((prev) => prev.filter((item) => item !== "clef"));
+      }
+    }
   }, [choiceAfterDiceRoll]);
   // !----------------------------------------------------
   // Card swipe
@@ -239,7 +248,7 @@ function Book(props) {
       generatedList.push(
         <ChoiceCard
           key={15}
-          content={"retourner à la porte"}
+          content={"Retourner à la porte"}
           onSwipeRight={() => {
             handleSwipeRight(15);
             handleClick("15");
@@ -309,16 +318,8 @@ function Book(props) {
     save.current.push([precendentAction, choice, perso]);
   }, [precendentAction]);
 
-  // setInventory, setPrecendentAction
+  //setPrecendentAction
   useEffect(() => {
-    if (choiceAlreadyDone.includes("10")) {
-      // IF setInventory is an ARRAY [clef, potion, ...]:
-      // if (!inventory.includes("clef")) { setInventory(prev => [...prev, "clef"]); }
-      // ELSE :
-      setInventory("clef");
-    }
-
-    // setPrecedentaction
     if (actionActive) {
       setPrecendentAction(currentStories.card_context);
     }

@@ -91,7 +91,9 @@ function Chapter(props) {
                   {inventory == "" ? (
                     <></>
                   ) : (
-                    <p className="card-text"> Inventaire : {inventory} </p>
+                    <p className="card-text p-2 fw-bold">
+                      Inventaire : {inventory}
+                    </p>
                   )}
                 </div>
               </div>

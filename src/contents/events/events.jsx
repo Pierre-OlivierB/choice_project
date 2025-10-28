@@ -146,7 +146,7 @@ function Events(props) {
     <div className="h-100">
       <div className="inside-content container-fluid d-flex flex-column justify-content-evenly h-100">
         <div className="row justify-content-md-center">
-          <div className="col col-6">
+          <div className="col col-10">
             <div className="row">
               <div className="col col-6 me-5">
                 <article className="p-2">
@@ -219,7 +219,9 @@ function Events(props) {
                   {inventory == "" ? (
                     <></>
                   ) : (
-                    <p className="card-text"> Inventaire : {inventory} </p>
+                    <p className="card-text p-2 fw-bold">
+                      Inventaire : {inventory}
+                    </p>
                   )}
                 </div>
               </div>
