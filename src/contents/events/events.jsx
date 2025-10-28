@@ -38,6 +38,7 @@ function Events(props) {
 
   //   event current choice
   const [caracChoice, setCaracChoice] = useState("");
+
   //   roll the dice
   function handleClickDice() {
     const result = Math.floor(Math.random() * 100) + 1;
@@ -126,7 +127,6 @@ function Events(props) {
         <ChoiceCard
           key={i}
           onSwipeRight={() => {
-            console.log("TEST event" + actions.carac[i]);
             handleClickEvent(actions.carac[i]);
             setContentBtnActionChoice(actions.btn[i]);
           }}
@@ -151,8 +151,7 @@ function Events(props) {
               <div className="col col-6 me-5">
                 <article className="p-2">
                   <h1>Rappel des règles</h1>
-                  <section className="bg-light p-2 rounded">
-                    <p>Les règles sont les suivantes :</p>
+                  <section className="rules-color p-2 rounded">
                     <div className="d-flex">
                       <FontAwesomeIcon className="me-1" icon={faExclamation} />
                       <p>
@@ -177,7 +176,7 @@ function Events(props) {
                   </section>
                 </article>
               </div>
-              <div className="col col-5">
+              <div className="col col-5 d-flex justify-content-center align-items-end p-2">
                 <div className="card card-charac">
                   <div className="card-body">
                     <article className="d-flex justify-content-sm-evenly">
@@ -251,7 +250,6 @@ function Events(props) {
                       content={"Lancer le Dé"}
                       onSwipeRight={() => handleClickDice()}
                     />
-                    {console.log(contentBtnActionChoice)}
                     <article className="description p-4">
                       <p> Ton choix : {contentBtnActionChoice}</p>
                       <p>

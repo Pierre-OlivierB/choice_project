@@ -23,8 +23,7 @@ function Chapter(props) {
               <div className="col col-6 me-5">
                 <article className="p-2">
                   <h1>Rappel des règles</h1>
-                  <section className="bg-light p-2 rounded">
-                    <p>Les règles sont les suivantes :</p>
+                  <section className="rules-color p-2 rounded">
                     <div className="d-flex">
                       <FontAwesomeIcon className="me-1" icon={faExclamation} />
                       <p>
@@ -49,7 +48,7 @@ function Chapter(props) {
                   </section>
                 </article>
               </div>
-              <div className="col col-5">
+              <div className="col col-5 d-flex justify-content-center align-items-end p-2">
                 <div className="card card-charac">
                   <div className="card-body">
                     <article className="d-flex justify-content-sm-evenly">

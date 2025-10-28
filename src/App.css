@@ -3,7 +3,7 @@ h1 {
 }
 
 .description {
-  background: linear-gradient(145deg, hsla(336, 20%, 90%, 85%), hsla(30, 5%, 72%, 85%));
+  background: linear-gradient(145deg, hsl(0, 0%, 94%), hsl(0, 0%, 100%));
   border-radius: 10px;
 }
 
@@ -132,10 +132,14 @@ h1 {
 .copy-texte {
   width: 30px;
   height: 30px;
+  margin-top: 5px;
+  transform: scale(1);
+  transition: transform 1s;
 }
 
 .copy-texte:hover {
   cursor: pointer;
+  transform: scale(1.1);
 }
 
 .end-component {
@@ -152,12 +156,39 @@ h1 {
   align-items: center;
   width: 35px;
   height: 35px;
-  background-color: hsl(0, 0%, 94%);
+  background: radial-gradient(circle at center,
+      hsl(0, 0%, 6%) 0%,
+      hsl(0, 0%, 6%) 65%,
+      hsl(0, 0%, 20%) 80%,
+      hsl(0, 0%, 94%) 100%);
+  color: hsl(0, 0%, 94%);
   margin-left: 5px;
   margin-right: 5px;
   padding: 4px;
   transform: translateY(-4px);
   border-radius: 5px;
+  font-size: large;
+  font-weight: bold;
+}
+
+.rules-color {
+  background: linear-gradient(145deg, hsla(336, 20%, 90%, 85%), hsla(30, 5%, 72%, 85%));
+}
+
+.btn-retry {
+  background: linear-gradient(145deg, hsl(176, 100%, 52%), hsl(176, 50%, 40%));
+  color: hsl(0, 0%, 6%);
+  font-size: large;
+  font-weight: bold;
+  padding: 4px;
+  margin-top: 5px;
+  margin-right: 5px;
+  transform: scale(1);
+  transition: transform 1s;
+}
+
+.btn-retry:hover {
+  transform: scale(1.1);
 }
 
 

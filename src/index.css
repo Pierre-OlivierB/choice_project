@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .main-content {
     height: 100vh;
 }
@@ -66,5 +72,6 @@
 }
 
 .card-charac {
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
 }

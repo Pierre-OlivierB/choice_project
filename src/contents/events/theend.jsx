@@ -5,7 +5,6 @@ import { Toast } from "bootstrap";
 
 function TheEnd(props) {
   const save = props.save;
-  console.log("history in theend : " + save);
   let story = [];
   if (save.current) {
     const storyHistory = save.current || [];
@@ -13,9 +12,18 @@ function TheEnd(props) {
   } else {
     story = save.map((step, key) => <div key={key}>{step[0]}</div>);
   }
+  //reload page
+  const handleReload = () => {
+    window.location.reload();
+  };
 
   return (
-    <div className="house">
+    <div className="house position-relative">
+      <div className="position-absolute top-0 end-0">
+        <button onClick={handleReload} className="rounded btn-retry">
+          Rejouer
+        </button>
+      </div>
       <div className="main-content container-fluid d-flex flex-column justify-content-evenly">
         <div className="row justify-content-md-center tenvh">
           <div className="col col-6">
@@ -25,8 +33,8 @@ function TheEnd(props) {
           </div>
         </div>
         <div className="row justify-content-md-center tenvh">
-          <article className="col col-10 justify-content-center description p-4">
-            <p>
+          <article className="col col-10 justify-content-center description p-3">
+            <p className="m-0">
               Voici votre histoire mise en forme et prompt tuné afin d'avoir une
               histoire narré de la meilleure façon.
               <br />
@@ -37,7 +45,7 @@ function TheEnd(props) {
         <div className="row justify-content-md-center end-component">
           <div className="col col-10 bg-white position-relative rounded">
             <FontAwesomeIcon
-              className="position-absolute top-0 end-5 copy-texte z-1"
+              className="position-absolute top-0 copy-texte z-1"
               icon={faCopy}
               onClick={() => {
                 var text = document.getElementById("story").innerHTML;
@@ -48,7 +56,7 @@ function TheEnd(props) {
                 toastBootstrap.show();
               }}
             />
-            <div className="toast-container position-fixed top-0 end-5 p-3">
+            <div className="toast-container position-fixed top-0 p-3">
               <div
                 id="liveToast"
                 className="toast"

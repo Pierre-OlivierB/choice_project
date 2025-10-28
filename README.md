@@ -40,21 +40,23 @@ Tu es un écrivain de livre d'horreur. Tu t'adresses à un publique adulte. Le c
 
 ## DOING
 
+Gestion inventaire
+
 ## TODO
 
 Améliorer le texte (histoire)
 Ajouter bouton sauvegarder
 Mettre le composants "characteres" à la place dans le composant "chapter" et "events".
-Ajouter un bouton rejouer
-
 Faire une gestion des erreurs
 Gestion Réussite/Echec Critique.
-Mettre le résultat du dé en exergue
-Inverser les couleurs de l'explication des règles et de l'histoire en cours.
 Vérifier les correspondance caractéritiques et actions montré au joueur
+Ajouter au bouton rejouer, êtes vous sûr ?
 
 ## DONE
 
+//Ajouter un bouton rejouer
+//Inverser les couleurs de l'explication des règles et de l'histoire en cours.
+//Mettre le résultat du dé en exergue
 //Clean les log
 //Si on arrive à la télé et qu'on écoute autour de nous on ne peut plus fouiller la télé.
 //Mettre un background contextuel (look begin caution)
