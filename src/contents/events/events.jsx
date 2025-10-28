@@ -248,7 +248,7 @@ function Events(props) {
                 {flagevent && hideDice ? (
                   <>
                     <ChoiceCard
-                      content={"Dice"}
+                      content={"Lancer le Dé"}
                       onSwipeRight={() => handleClickDice()}
                     />
                     {console.log(contentBtnActionChoice)}
@@ -263,18 +263,20 @@ function Events(props) {
                 ) : (
                   <>
                     <article className="description p-4">
-                      <p>
-                        Result : {dice} / {caracChoice}
-                      </p>
+                      <div className="d-flex">
+                        <p> Resultat : </p>
+                        <p className="dice-result">{dice}</p>{" "}
+                        <p>/ {caracChoice}</p>
+                      </div>
                       {win ? (
-                        <p>Tu as réussi ton action</p>
+                        <p>Tu as réussi ton action.</p>
                       ) : (
-                        <p>Tu as échoué dans ton action</p>
+                        <p>Tu as échoué dans ton action.</p>
                       )}
                     </article>
 
                     <ChoiceCard
-                      content={"Continue"}
+                      content={"Continuer"}
                       onSwipeRight={() => handleClickContinu()}
                     />
                   </>

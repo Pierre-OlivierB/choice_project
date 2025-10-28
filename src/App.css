@@ -13,7 +13,7 @@ h1 {
   position: relative;
   width: 300px;
   height: 150px;
-  background-color: #f0f0f0;
+  background-color: hsl(0, 0%, 94%);
   border: 1px solid #ccc;
   border-radius: 8px;
   overflow: hidden;
@@ -144,6 +144,20 @@ h1 {
 
 .tenvh {
   max-height: 10vh;
+}
+
+.dice-result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  background-color: hsl(0, 0%, 94%);
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 4px;
+  transform: translateY(-4px);
+  border-radius: 5px;
 }
 
 

@@ -40,8 +40,6 @@ Tu es un écrivain de livre d'horreur. Tu t'adresses à un publique adulte. Le c
 
 ## DOING
 
-Clean les log
-
 ## TODO
 
 Améliorer le texte (histoire)
@@ -57,6 +55,7 @@ Vérifier les correspondance caractéritiques et actions montré au joueur
 
 ## DONE
 
+//Clean les log
 //Si on arrive à la télé et qu'on écoute autour de nous on ne peut plus fouiller la télé.
 //Mettre un background contextuel (look begin caution)
 //Améliorer le prompt
