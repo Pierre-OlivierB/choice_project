@@ -11,14 +11,21 @@ h1 {
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 300px;
-  height: 150px;
+  width: 225px;
+  height: 330px;
   background-color: hsl(0, 0%, 94%);
   border: 1px solid #ccc;
   border-radius: 8px;
   overflow: hidden;
   transition: transform 0.3s ease;
   cursor: grab;
+  animation: move-right 3s infinite ease;
+  border-radius: 10px;
+  background: linear-gradient(145deg, hsl(176, 100%, 52%), hsl(176, 50%, 40%));
+  box-shadow: 0 0 10px hsl(176deg 64.54% 35.69%), -9px 9px 16px #ffffff;
+  border: 0;
+  padding: 5px;
+  transition: box-shadow 1s, transform 1s;
 }
 
 .cardChoice.swiped {
@@ -91,17 +98,6 @@ h1 {
 
 .cards-positions {
   z-index: 1;
-}
-
-.cardChoice {
-  animation: move-right 3s infinite ease;
-  border-radius: 10px;
-  /* background-color: hsl(176 50% 40%); */
-  background: linear-gradient(145deg, hsl(176, 100%, 52%), hsl(176, 50%, 40%));
-  box-shadow: 0 0 10px hsl(176deg 64.54% 35.69%), -9px 9px 16px #ffffff;
-  border: 0;
-  padding: 5px;
-  transition: box-shadow 1s, transform 1s;
 }
 
 .cardChoice:hover {
@@ -219,4 +215,29 @@ h1 {
   100% {
     left: 50px;
   }
+}
+
+.mh-35 {
+  max-height: 35vh;
+}
+
+.mh-25 {
+  max-height: 25vh;
+}
+
+.min-w-1200 {
+  min-width: 1200px;
+}
+
+.max-vw-90 {
+  max-width: 95vw;
+}
+
+.p-5px {
+  padding: 5px;
+}
+
+.del-ml-and-mr {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
 }

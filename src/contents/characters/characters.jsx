@@ -24,14 +24,28 @@ function Characters() {
     setFlag(false);
   }
 
+  function handleData(carac) {
+    switch (carac) {
+      case "25":
+        return <FontAwesomeIcon className="w-50 h-50" icon={faUserSecret} />;
+      case "50":
+        return <FontAwesomeIcon className="w-50 h-50" icon={faUserGraduate} />;
+      case "75":
+        return <FontAwesomeIcon className="w-50 h-50" icon={faUserNinja} />;
+
+      default:
+        return null;
+    }
+  }
+
   return (
     <>
       {flag ? (
         <div className="house">
           <div className="main-content container-fluid d-flex justify-content-center">
-            <div className="main-content row d-flex justify-content-evenly">
-              <div className="row justify-content-md-center mt-4">
-                <article className="col col-10 description p-4">
+            <div className="main-content">
+              <div className="d-flex justify-content-center mt-4 max-vw-100 p-3">
+                <article className="col col-10 description p-4 overflow-auto mh-25">
                   <p>
                     Dans un RP, il te faut choisir un personnage qui va te
                     représenter. Pour l'exemple, voici 3 personnages
@@ -74,67 +88,49 @@ function Characters() {
                   <p> Quel est ton choix ?</p>
                 </article>
               </div>
-              {data.map((tmp, key) => {
-                return (
-                  <div
-                    className="col col-4 d-flex justify-content-md-center align-items-center"
-                    key={key}
-                  >
-                    <div className="card card-charac ">
-                      <div className="card-body">
-                        <article className="d-flex justify-content-sm-evenly">
-                          <section>
-                            <h4 className="card-title">Nom : {tmp.name}</h4>
-                            <h5 className="card-title">
-                              Fonction : {tmp.type}
-                            </h5>
-                            <p className="card-text">
-                              Constitution (C) : {tmp.constitution}
-                            </p>
-                            <p className="card-text">
-                              Dextérité (D) : {tmp.dexterite}
-                            </p>
-                            <p className="card-text mb-5">
-                              Intelligence (I) : {tmp.intelligence}
-                            </p>
-                          </section>
-                          <section className="d-flex justify-content-md-center align-items-center w-50">
-                            {tmp.intelligence == "75" ? (
-                              <FontAwesomeIcon
-                                className="w-50 h-50"
-                                icon={faUserGraduate}
-                              />
-                            ) : (
-                              <></>
-                            )}
-                            {tmp.dexterite == "75" ? (
-                              <FontAwesomeIcon
-                                className="w-50 h-50"
-                                icon={faUserNinja}
-                              />
-                            ) : (
-                              <></>
-                            )}
-                            {tmp.constitution == "75" ? (
-                              <FontAwesomeIcon
-                                className="w-50 h-50"
-                                icon={faUserSecret}
-                              />
-                            ) : (
-                              <></>
-                            )}
-                          </section>
-                        </article>
-
-                        <ChoiceCard
-                          content={"choix : " + (parseInt(tmp.choix) + 1)}
-                          onSwipeRight={() => handleClick(tmp.choix)}
-                        />
-                      </div>
-                    </div>
+              <div className="container d-flex justify-content-center max-vw-90 p-3">
+                <div className="overflow-x-auto w-100">
+                  <div className="row d-flex justify-content-evenly min-w-1200 gx-5 del-ml-and-mr">
+                    {data.map((tmp, key) => {
+                      return (
+                        <div className="col width-400" key={key}>
+                          <div className="d-flex justify-content-md-center align-items-center ">
+                            <div className="card card-charac ">
+                              <div className="card-body">
+                                <ChoiceCard
+                                  content={
+                                    <article className="d-flex justify-content-sm-evenly">
+                                      <section>
+                                        <h4 className="card-title">
+                                          Nom : {tmp.name}
+                                        </h4>
+                                        <h5 className="card-title">
+                                          Fonction : {tmp.type}
+                                        </h5>
+                                        <p className="card-text">
+                                          Constitution (C) : {tmp.constitution}
+                                        </p>
+                                        <p className="card-text">
+                                          Dextérité (D) : {tmp.dexterite}
+                                        </p>
+                                        <p className="card-text mb-5">
+                                          Intelligence (I) : {tmp.intelligence}
+                                        </p>
+                                      </section>
+                                    </article>
+                                  }
+                                  onSwipeRight={() => handleClick(tmp.choix)}
+                                  data={handleData(tmp.intelligence)}
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
-                );
-              })}
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -16,23 +16,23 @@ function Home() {
       {page ? (
         <div className="house">
           <div className="main-content container-fluid d-flex flex-column justify-content-evenly">
-            <div className="row justify-content-md-center">
-              <div className="col col-6">
+            <div className="row justify-content-center">
+              <div className="col col-8">
                 <h1 className="text-center">
                   Bienvenue dans la maison de l'oubli
                 </h1>
               </div>
             </div>
-            <div className="row justify-content-md-center">
-              <div className="col col-2 d-flex justify-content-center">
+            <div className="row justify-content-center">
+              <div className="col col-8 d-flex justify-content-center">
                 <ChoiceCard
                   content={content}
                   onSwipeRight={() => handleClick()}
                 />
               </div>
             </div>
-            <div className="row justify-content-md-center">
-              <div className="col col-10 description p-4">
+            <div className="row justify-content-center">
+              <div className="col col-10 description p-4 mh-35 overflow-auto">
                 <p>
                   Attention ce site ne marche que sur pc pour le moment. Merci.
                 </p>
