@@ -15,15 +15,15 @@ function Chapter(props) {
   const inventory = props.inventory;
 
   return (
-    <div>
-      <div className="inside-content container-fluid d-flex flex-column justify-content-evenly">
-        <div className="row justify-content-md-center">
-          <div className="col col-10">
-            <div className="row">
-              <div className="col col-6 me-5">
+    <div className="h-65 w-100">
+      <div className="inside-content h-100">
+        <div className="row g-0 align-items-center justify-content-center h-50 w-100">
+          <div className="col col-12">
+            <div className="row g-0">
+              <div className="col col-7">
                 <article className="p-2">
                   <h1>Rappel des règles</h1>
-                  <section className="rules-color p-2 rounded">
+                  <section className="rules-color p-2 rounded overflow-x-auto max-h-160">
                     <div className="d-flex">
                       <FontAwesomeIcon className="me-1" icon={faExclamation} />
                       <p>
@@ -60,7 +60,7 @@ function Chapter(props) {
                         <p className="card-text">I : {perso.intelligence}</p>
                       </section>
 
-                      <section className="d-flex justify-content-md-center align-items-center w-50">
+                      <section className="d-flex justify-content-center align-items-center w-50">
                         {perso.intelligence == "75" ? (
                           <FontAwesomeIcon
                             className="w-50 h-50"
@@ -100,8 +100,8 @@ function Chapter(props) {
             </div>
           </div>
         </div>
-        <div className="row justify-content-md-center">
-          <div className="col col-10 description p-4">
+        <div className="row align-items-center justify-content-center h-50 w-100">
+          <div className="col col-10 description p-4 max-h-160 overflow-x-auto">
             <p>{txt}</p>
             <p>{mj}</p>
           </div>

@@ -27,6 +27,7 @@ function Home() {
               <div className="col col-8 d-flex justify-content-center">
                 <ChoiceCard
                   content={content}
+                  choiceCss={"cardChoiceSize"}
                   onSwipeRight={() => handleClick()}
                 />
               </div>

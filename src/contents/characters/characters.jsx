@@ -43,7 +43,7 @@ function Characters() {
       {flag ? (
         <div className="house">
           <div className="main-content container-fluid d-flex justify-content-center">
-            <div className="main-content">
+            <div className="main-content d-flex flex-column justify-content-evenly">
               <div className="d-flex justify-content-center mt-4 max-vw-100 p-3">
                 <article className="col col-10 description p-4 overflow-auto mh-25">
                   <p>
@@ -95,7 +95,7 @@ function Characters() {
                       return (
                         <div className="col width-400" key={key}>
                           <div className="d-flex justify-content-md-center align-items-center ">
-                            <div className="card card-charac ">
+                            <div className="card card-charac charac-el">
                               <div className="card-body">
                                 <ChoiceCard
                                   content={
@@ -113,7 +113,7 @@ function Characters() {
                                         <p className="card-text">
                                           Dextérité (D) : {tmp.dexterite}
                                         </p>
-                                        <p className="card-text mb-5">
+                                        <p className="card-text">
                                           Intelligence (I) : {tmp.intelligence}
                                         </p>
                                       </section>
@@ -121,6 +121,7 @@ function Characters() {
                                   }
                                   onSwipeRight={() => handleClick(tmp.choix)}
                                   data={handleData(tmp.intelligence)}
+                                  choiceCss={"cardChoiceSizeCarac"}
                                 />
                               </div>
                             </div>

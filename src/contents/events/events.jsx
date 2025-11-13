@@ -131,6 +131,7 @@ function Events(props) {
             setContentBtnActionChoice(actions.btn[i]);
           }}
           content={actions.btn[i]}
+          choiceCss={"cardChoiceSizeEvent"}
         />
       );
     }
@@ -145,10 +146,10 @@ function Events(props) {
   return (
     <div className="h-100">
       <div className="inside-content container-fluid d-flex flex-column justify-content-evenly h-100">
-        <div className="row justify-content-md-center">
-          <div className="col col-10">
-            <div className="row">
-              <div className="col col-6 me-5">
+        <div className="row  g-0 justify-content-md-center">
+          <div className="col col-12">
+            <div className="row g-0">
+              <div className="col col-7 me-5">
                 <article className="p-2">
                   <h1>Rappel des règles</h1>
                   <section className="rules-color p-2 rounded">
@@ -251,6 +252,7 @@ function Events(props) {
                     <ChoiceCard
                       content={"Lancer le Dé"}
                       onSwipeRight={() => handleClickDice()}
+                      choiceCss={"cardChoiceSizeDice"}
                     />
                     <article className="description p-4">
                       <p> Ton choix : {contentBtnActionChoice}</p>
@@ -278,6 +280,7 @@ function Events(props) {
                     <ChoiceCard
                       content={"Continuer"}
                       onSwipeRight={() => handleClickContinu()}
+                      choiceCss={"cardChoiceSizeContinu"}
                     />
                   </>
                 )}

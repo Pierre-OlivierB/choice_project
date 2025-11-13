@@ -4,7 +4,7 @@ import "../../App.css"; // Assurez-vous d'avoir un fichier CSS pour les styles
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHandPointer } from "@fortawesome/free-solid-svg-icons";
 
-const ChoiceCard = ({ content, onSwipeRight, isDisabled, data }) => {
+const ChoiceCard = ({ content, onSwipeRight, isDisabled, data, choiceCss }) => {
   const [swiped, setSwiped] = useState(false);
 
   const handlers = useSwipeable({
@@ -29,17 +29,16 @@ const ChoiceCard = ({ content, onSwipeRight, isDisabled, data }) => {
     <div className="relative flex-shrink-0 min-width-350px d-flex justify-content-center">
       <div
         {...handlers}
-        className={`cardChoice no-select cards-positions ${
+        className={`cardChoice ${choiceCss} no-select cards-positions ${
           swiped ? "swiped" : ""
         }`}
       >
         <div className="card">
           <div className="card-body">
-            <h5 className="card-title">{content}</h5>
+            <div className="card-title">{content}</div>
           </div>
         </div>
-        <div className="test">{data}</div>
-        <p></p>
+        {data ? <div className="card-img">{data}</div> : <></>}
         <FontAwesomeIcon className="mouse-move-right" icon={faHandPointer} />
       </div>
     </div>

@@ -190,6 +190,7 @@ function Book(props) {
             <ChoiceCard
               key={`choice-${i}`}
               content={currentStories.btn_choix[i]}
+              choiceCss={"cardChoiceSize"}
               onSwipeRight={() => {
                 handleSwipeRight(i);
                 const chc = currentStories.choix[i];
@@ -216,6 +217,7 @@ function Book(props) {
           <ChoiceCard
             key={`choice-alt-${i}`}
             content={buttonContent}
+            choiceCss={"cardChoiceSize"}
             onSwipeRight={() => {
               handleSwipeRight(i);
               const chc = choiceValue;
@@ -249,6 +251,7 @@ function Book(props) {
         <ChoiceCard
           key={15}
           content={"Retourner à la porte"}
+          choiceCss={"cardChoiceSize"}
           onSwipeRight={() => {
             handleSwipeRight(15);
             handleClick("15");
@@ -268,6 +271,7 @@ function Book(props) {
         <ChoiceCard
           key={19}
           content={currentStories.btn_choix_sup[1]}
+          choiceCss={"cardChoiceSize"}
           onSwipeRight={() => {
             handleSwipeRight(19);
             const chc = currentStories.btn_choix_sup[0];
@@ -286,6 +290,7 @@ function Book(props) {
         <ChoiceCard
           key={23}
           content={currentStories.btn_choix_sup[1]}
+          choiceCss={"cardChoiceSize"}
           onSwipeRight={() => {
             handleSwipeRight(23);
             const chc = currentStories.btn_choix_sup[0];
@@ -361,7 +366,7 @@ function Book(props) {
         />
       )}
       {flag && (
-        <div className="d-flex flex-row p-1 gx-4 overflow-x-auto overflow-y-hidden align-items-center justify-content-evenly footer-content">
+        <div className="d-flex flex-row overflow-x-auto overflow-y-hidden align-items-center justify-content-evenly footer-content h-35 w-100">
           {listBtnJSX}
         </div>
       )}
