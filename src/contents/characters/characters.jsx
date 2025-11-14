@@ -29,9 +29,9 @@ function Characters() {
       case "25":
         return <FontAwesomeIcon className="w-50 h-50" icon={faUserSecret} />;
       case "50":
-        return <FontAwesomeIcon className="w-50 h-50" icon={faUserGraduate} />;
-      case "75":
         return <FontAwesomeIcon className="w-50 h-50" icon={faUserNinja} />;
+      case "75":
+        return <FontAwesomeIcon className="w-50 h-50" icon={faUserGraduate} />;
 
       default:
         return null;

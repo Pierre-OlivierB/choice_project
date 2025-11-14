@@ -7,6 +7,10 @@ h1 {
   border-radius: 10px;
 }
 
+.event-description {
+  min-width: 150px;
+}
+
 
 .cardChoice {
   display: flex;

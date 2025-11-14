@@ -80,3 +80,25 @@
 .width-400 {
     width: 400px !important;
 }
+
+.max-height-96 {
+    max-height: 110px;
+}
+
+.padding-prompt {
+    padding: 1rem;
+}
+
+.enter-end-component {
+    max-height: 20vh;
+}
+
+@media (width<=600px) {
+    .min-width-350px {
+        min-width: 175px;
+    }
+
+    .padding-prompt {
+        padding: 5px;
+    }
+}

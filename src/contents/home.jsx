@@ -34,9 +34,7 @@ function Home() {
             </div>
             <div className="row justify-content-center">
               <div className="col col-10 description p-4 mh-35 overflow-auto">
-                <p>
-                  Attention ce site ne marche que sur pc pour le moment. Merci.
-                </p>
+                <p>Attention ce site optimisé sur pc pour le moment. Merci.</p>
                 <p>
                   Je vous propose de vous plonger dans une expérience de jeu de
                   role ("Role Play", RP) afin de découvrir les intéractions que

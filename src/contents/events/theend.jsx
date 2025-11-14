@@ -25,15 +25,15 @@ function TheEnd(props) {
         </button>
       </div>
       <div className="main-content container-fluid d-flex flex-column justify-content-evenly">
-        <div className="row justify-content-md-center tenvh">
-          <div className="col col-6">
-            <h1 className="text-center">
+        <div className="row g-0 justify-content-center tenvh">
+          <div className="col col-10 p-0 m-0">
+            <h1 className="text-center m-0">
               Merci d'avoir jouer à la maison de l'oubli
             </h1>
           </div>
         </div>
-        <div className="row justify-content-md-center tenvh">
-          <article className="col col-10 justify-content-center description p-3">
+        <div className="row justify-content-center tenvh">
+          <article className="col col-10 justify-content-center description padding-prompt overflow-y-auto max-height-96">
             <p className="m-0">
               Voici votre histoire mise en forme et prompt tuné afin d'avoir une
               histoire narré de la meilleure façon.
@@ -42,7 +42,7 @@ function TheEnd(props) {
             </p>
           </article>
         </div>
-        <div className="row justify-content-md-center end-component">
+        <div className="row justify-content-center end-component">
           <div className="col col-10 bg-white position-relative rounded">
             <FontAwesomeIcon
               className="position-absolute top-0 copy-texte z-1"
@@ -67,7 +67,7 @@ function TheEnd(props) {
                 <div className="toast-body">Texte Copié.</div>
               </div>
             </div>
-            <article className="position-relative overflow-y-auto overflow-x-hidden end-component">
+            <article className="position-relative overflow-y-auto overflow-x-hidden enter-end-component">
               <div className="p-5" id="story">
                 <p>
                   "Role: You are an author of contemporary horror novels,
