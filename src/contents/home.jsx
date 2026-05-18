@@ -1,7 +1,9 @@
-import React from "react";
 import { useState } from "react";
 import Characters from "./characters/characters";
 import ChoiceCard from "./events/choicecard";
+import SiteSignature from "./ui/site-signature";
+
+const PROJECT_URL = "https://github.com/Pierre-OlivierB/choice_project";
 
 function Home() {
   // show home page or other content
@@ -10,7 +12,7 @@ function Home() {
   function handleClick() {
     setPage(false);
   }
-  const content = " Entrez dans l'aventure";
+  const content = "Entrez dans l'aventure";
   return (
     <>
       {page ? (
@@ -18,6 +20,7 @@ function Home() {
           <div className="main-content container-fluid d-flex flex-column justify-content-evenly">
             <div className="row justify-content-center">
               <div className="col col-8">
+                <p className="project-mark text-center m-0">La maison de l'oubli</p>
                 <h1 className="text-center">
                   Bienvenue dans la maison de l'oubli
                 </h1>
@@ -28,7 +31,10 @@ function Home() {
                 <ChoiceCard
                   content={content}
                   choiceCss={"cardChoiceSize"}
-                  onSwipeRight={() => handleClick()}
+                  choiceType="chapter"
+                  sketchType="open-door"
+                  flavorText="Franchir le seuil."
+                  onActivate={() => handleClick()}
                 />
               </div>
             </div>
@@ -52,6 +58,13 @@ function Home() {
                 </p>
               </div>
             </div>
+            <footer className="home-footer text-center">
+              <a href={PROJECT_URL} target="_blank" rel="noreferrer">
+                GitHub
+              </a>
+              <span>Prototype narratif interactif</span>
+            </footer>
+            <SiteSignature />
           </div>
         </div>
       ) : (

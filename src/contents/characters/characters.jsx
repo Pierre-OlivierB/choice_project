@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 import Book from "../book";
 import ChoiceCard from "../events/choicecard";
@@ -9,6 +8,7 @@ import {
   faUserNinja,
   faUserSecret,
 } from "@fortawesome/free-solid-svg-icons";
+import SiteSignature from "../ui/site-signature";
 
 function Characters() {
   // get data from json of all characteres
@@ -95,16 +95,16 @@ function Characters() {
                       return (
                         <div className="col width-400" key={key}>
                           <div className="d-flex justify-content-md-center align-items-center ">
-                            <div className="card card-charac charac-el">
+                            <div className="card card-charac charac-el border-0">
                               <div className="card-body">
                                 <ChoiceCard
                                   content={
                                     <article className="d-flex justify-content-sm-evenly">
                                       <section>
-                                        <h4 className="card-title">
+                                        <h4 className="choice-character-title">
                                           Nom : {tmp.name}
                                         </h4>
-                                        <h5 className="card-title">
+                                        <h5 className="choice-character-subtitle">
                                           Fonction : {tmp.type}
                                         </h5>
                                         <p className="card-text">
@@ -122,6 +122,7 @@ function Characters() {
                                   onSwipeRight={() => handleClick(tmp.choix)}
                                   data={handleData(tmp.intelligence)}
                                   choiceCss={"cardChoiceSizeCarac"}
+                                  choiceType="character"
                                 />
                               </div>
                             </div>
@@ -132,6 +133,7 @@ function Characters() {
                   </div>
                 </div>
               </div>
+              <SiteSignature />
             </div>
           </div>
         </div>

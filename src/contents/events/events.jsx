@@ -1,146 +1,134 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import ChoiceCard from "./choicecard";
-import TheEnd from "./theend";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import PlayerPanel from "../player/player-panel";
+import RulesPanel from "../rules/rules-panel";
+import GameError from "../errors/game-error";
 import {
-  faUserGraduate,
-  faUserNinja,
-  faUserSecret,
-  faExclamation,
-} from "@fortawesome/free-solid-svg-icons";
+  getCharacterStat,
+  getResultKey,
+  resolveRoll,
+  rollD100,
+} from "../../game/resolveAction";
+import {
+  getChoiceFlavorText,
+  getChoiceSketchType,
+} from "../../game/storyNavigation";
+
+const RESOLUTION_PHASES = {
+  CHOOSING: "choosing",
+  ROLLING: "rolling",
+  RESOLVED: "resolved",
+};
 
 function Events(props) {
   const perso = props.perso;
   const story = props.choice;
-  const flag = props.flag;
   const actions = props.actions;
   const save = props.save;
   const inventory = props.inventory;
   const event = props.where;
 
-  //   set result dice
+  const [gameError, setGameError] = useState(null);
   const [dice, setDice] = useState("");
-  //   set event show
-  const [flagevent, setFlagevent] = useState(true);
-  const [hideDice, setHideDice] = useState(false);
+  const [resolutionPhase, setResolutionPhase] = useState(
+    RESOLUTION_PHASES.CHOOSING
+  );
+  const [success, setSuccess] = useState(true);
+  const [selectedAction, setSelectedAction] = useState(null);
 
-  // set story end
-  const [storyEnd, setStoryEnd] = useState(false);
+  const actionChoices = useMemo(() => {
+    if (!actions?.btn || !actions?.carac) {
+      return [];
+    }
 
-  // result dice
-  const [win, setWin] = useState(true);
-  // action done
-  const [currentAction, setCurrentAction] = useState("");
+    return actions.btn.map((label, index) => {
+      const sketchType = getChoiceSketchType(label, "action");
 
-  // catch content button actyion choice
-  const [contentBtnActionChoice, setContentBtnActionChoice] = useState("");
+      return {
+        id: `${actions.carac[index]}-${index}`,
+        label,
+        characteristic: actions.carac[index],
+        sketchType,
+        flavorText: getChoiceFlavorText(sketchType),
+      };
+    });
+  }, [actions]);
 
-  //   event current choice
-  const [caracChoice, setCaracChoice] = useState("");
-
-  //   roll the dice
   function handleClickDice() {
-    const result = Math.floor(Math.random() * 100) + 1;
+    const result = rollD100();
+    const rollSuccess = resolveRoll({ roll: result, stat: selectedAction.stat });
+
     setDice(result);
-    setFlagevent(!flagevent);
-    const action = result / caracChoice;
-    action > 1 ? setWin(false) : "";
+    setResolutionPhase(RESOLUTION_PHASES.RESOLVED);
+    setSuccess(rollSuccess);
     props.onDiceRollComplete();
   }
-  //send end ton mother component
-  const finishGame = () => {
-    setStoryEnd(true);
+
+  function finishGame() {
+    if (save) {
+      save.push([event, "fin", perso]);
+    }
+
     if (props.onStoryEnd) {
       props.onStoryEnd(true);
     }
-  };
-
-  // send result form child to parent
-  function handleClickContinu() {
-    let next = "";
-    if (currentAction == "constitution" && win) {
-      next = "c_w";
-    } else if (currentAction == "constitution" && win == false) {
-      next = "c_l";
-    }
-    if (currentAction == "dexterite" && win) {
-      next = "d_w";
-    } else if (currentAction == "dexterite" && win == false) {
-      next = "d_l";
-    }
-    if (currentAction == "intelligence" && win) {
-      next = "i_w";
-    } else if (currentAction == "intelligence" && win == false) {
-      next = "i_l";
-    }
-    props.onSendData([!flag, next]);
   }
-  //  player choice the possibility to action
-  function handleClickEvent(id) {
-    setHideDice(true);
-    setCurrentAction(id);
 
-    if (id === "fin") {
-      if (save && save.current) {
-        const finalContext = event;
-        const finalChoiceId = id;
-        const persoData = perso;
+  function handleClickContinu() {
+    const next = getResultKey({
+      characteristic: selectedAction.characteristic,
+      success,
+    });
 
-        // 2. save security
-        save.current.push([finalContext, finalChoiceId, persoData]);
-      }
-      if (save) {
-        const finalContext = event;
-        const finalChoiceId = id;
-        const persoData = perso;
+    props.onSendData({
+      isReadingChapter: true,
+      resultKey: next,
+    });
+  }
 
-        // 2. save security
-        save.push([finalContext, finalChoiceId, persoData]);
-      }
+  function handleClickEvent(actionChoice) {
+    if (actionChoice.characteristic === "fin") {
       finishGame();
       return;
     }
 
-    switch (id) {
-      case "constitution":
-        setCaracChoice(perso.constitution);
-        break;
-      case "dexterite":
-        setCaracChoice(perso.dexterite);
-        break;
-      case "intelligence":
-        setCaracChoice(perso.intelligence);
-        break;
-      default:
-        setStoryEnd(true);
-        break;
+    const stat = getCharacterStat(perso, actionChoice.characteristic);
+
+    if (!stat) {
+      setGameError({
+        message: "La caracteristique de cette action est inconnue.",
+        detail: `Action: ${actionChoice.label} / Caracteristique: ${actionChoice.characteristic}`,
+      });
+      return;
     }
+
+    setResolutionPhase(RESOLUTION_PHASES.ROLLING);
+    setSelectedAction({
+      ...actionChoice,
+      stat,
+    });
   }
 
-  const [btnChoiceContent, setBtnChoiceContent] = useState([]);
-  // reload list of buttons when choices was done
-  useEffect(() => {
-    let listBtn = [];
-    for (let i = 0; i < actions.btn.length; i++) {
-      listBtn.push(
-        <ChoiceCard
-          key={i}
-          onSwipeRight={() => {
-            handleClickEvent(actions.carac[i]);
-            setContentBtnActionChoice(actions.btn[i]);
-          }}
-          content={actions.btn[i]}
-          choiceCss={"cardChoiceSizeEvent"}
-        />
-      );
-    }
-    setBtnChoiceContent(listBtn);
-  }, []);
+  if (!actions) {
+    return (
+      <GameError
+        title="Erreur d'action"
+        message="Aucune action n'est disponible pour ce chapitre."
+        detail={`Chapitre: ${story?.numero_chapitre || "inconnu"}`}
+        onRetry={() => window.location.reload()}
+      />
+    );
+  }
 
-  //error organisation
-  if (storyEnd) {
-    return null; // ou un simple message
+  if (gameError) {
+    return (
+      <GameError
+        title="Erreur d'action"
+        message={gameError.message}
+        detail={gameError.detail}
+        onRetry={() => window.location.reload()}
+      />
+    );
   }
 
   return (
@@ -151,90 +139,10 @@ function Events(props) {
             <div className="col col-12">
               <div className="row g-0">
                 <div className="col col-7">
-                  <article className="p-2">
-                    <h1>Rappel des règles</h1>
-                    <section className="rules-color p-2 rounded overflow-x-auto max-h-160">
-                      <div className="d-flex">
-                        <FontAwesomeIcon
-                          className="me-1"
-                          icon={faExclamation}
-                        />
-                        <p>
-                          Chaque action disponible correspond à une
-                          caractéristique.
-                        </p>
-                      </div>
-                      <div className="d-flex">
-                        <FontAwesomeIcon
-                          className="me-1"
-                          icon={faExclamation}
-                        />
-                        <p>
-                          L'issu du choix est lié à la probabilité de réussite
-                          correspondant à cette caractéristique.
-                        </p>
-                      </div>
-                      <div className="d-flex">
-                        <FontAwesomeIcon
-                          className="me-1"
-                          icon={faExclamation}
-                        />
-                        <p>
-                          Plus la caractéristique est grande, plus la réussite
-                          est probable.
-                        </p>
-                      </div>
-                    </section>
-                  </article>
+                  <RulesPanel />
                 </div>
                 <div className="col col-5 d-flex justify-content-center align-items-end p-2">
-                  <div className="card card-charac">
-                    <div className="card-body">
-                      <article className="d-flex justify-content-sm-evenly">
-                        <section>
-                          <h4 className="card-title">{perso.name}</h4>
-                          <h5 className="card-title">{perso.type}</h5>
-                          <p className="card-text">C : {perso.constitution}</p>
-                          <p className="card-text">D : {perso.dexterite}</p>
-                          <p className="card-text">I : {perso.intelligence}</p>
-                        </section>
-
-                        <section className="d-flex justify-content-center align-items-center w-50">
-                          {perso.intelligence == "75" ? (
-                            <FontAwesomeIcon
-                              className="w-50 h-50"
-                              icon={faUserGraduate}
-                            />
-                          ) : (
-                            <></>
-                          )}
-                          {perso.dexterite == "75" ? (
-                            <FontAwesomeIcon
-                              className="w-50 h-50"
-                              icon={faUserNinja}
-                            />
-                          ) : (
-                            <></>
-                          )}
-                          {perso.constitution == "75" ? (
-                            <FontAwesomeIcon
-                              className="w-50 h-50"
-                              icon={faUserSecret}
-                            />
-                          ) : (
-                            <></>
-                          )}
-                        </section>
-                      </article>
-                    </div>
-                    {inventory == "" ? (
-                      <></>
-                    ) : (
-                      <p className="card-text p-2 fw-bold">
-                        Inventaire : {inventory}
-                      </p>
-                    )}
-                  </div>
+                  <PlayerPanel perso={perso} inventory={inventory} />
                 </div>
               </div>
             </div>
@@ -247,61 +155,72 @@ function Events(props) {
           </div>
         </div>
       </div>
-      {!storyEnd ? (
-        <>
-          {hideDice ? (
-            <></>
-          ) : (
-            <div className="d-flex flex-row p-1 overflow-x-auto overflow-y-hidden align-items-center justify-content-evenly footer-content h-35">
-              {btnChoiceContent}
-            </div>
-          )}
-          {hideDice ? (
-            <div className="d-flex flex-row p-1 overflow-x-auto overflow-y-hidden align-items-center justify-content-evenly footer-content h-35">
-              {flagevent && hideDice ? (
-                <>
-                  <ChoiceCard
-                    content={"Lancer le Dé"}
-                    onSwipeRight={() => handleClickDice()}
-                    choiceCss={"cardChoiceSizeDice"}
-                  />
-                  <article className="description p-4 max-h-160 overflow-y-auto event-description">
-                    <p> Ton choix : {contentBtnActionChoice}</p>
-                    <p>
-                      Il faut faire moins ou égale à la caractéristique : /
-                      {caracChoice}
-                    </p>
-                  </article>
-                </>
-              ) : (
-                <>
-                  <article className="description p-4">
-                    <div className="d-flex">
-                      <p> Resultat : </p>
-                      <p className="dice-result">{dice}</p>{" "}
-                      <p>/ {caracChoice}</p>
-                    </div>
-                    {win ? (
-                      <p>Tu as réussi ton action.</p>
-                    ) : (
-                      <p>Tu as échoué dans ton action.</p>
-                    )}
-                  </article>
 
-                  <ChoiceCard
-                    content={"Continuer"}
-                    onSwipeRight={() => handleClickContinu()}
-                    choiceCss={"cardChoiceSizeContinu"}
-                  />
-                </>
-              )}
-            </div>
-          ) : (
-            <></>
-          )}
-        </>
+      {resolutionPhase === RESOLUTION_PHASES.CHOOSING ? (
+        <div className="d-flex flex-row p-1 overflow-x-auto overflow-y-hidden align-items-center justify-content-evenly footer-content h-35">
+          {actionChoices.map((actionChoice) => (
+            <ChoiceCard
+              key={actionChoice.id}
+              onActivate={() => handleClickEvent(actionChoice)}
+              content={actionChoice.label}
+              choiceCss="cardChoiceSizeEvent"
+              choiceType="action"
+              sketchType={actionChoice.sketchType}
+              flavorText={actionChoice.flavorText}
+            />
+          ))}
+        </div>
       ) : (
-        <TheEnd save={save} />
+        <div className="d-flex flex-row p-1 overflow-x-auto overflow-y-hidden align-items-center justify-content-evenly footer-content h-35">
+          {resolutionPhase === RESOLUTION_PHASES.ROLLING ? (
+            <>
+              <ChoiceCard
+                content="Lancer le De"
+                onActivate={handleClickDice}
+                choiceCss="cardChoiceSizeDice"
+                choiceType="dice"
+                sketchType="dice"
+                flavorText={getChoiceFlavorText("dice")}
+              />
+              <article className="description p-4 max-h-160 overflow-y-auto event-description">
+                <p className="dice-preview">D100</p>
+                <p>Ton choix : {selectedAction.label}</p>
+                <p>
+                  Il faut faire moins ou egal a la caracteristique : /
+                  {selectedAction.stat}
+                </p>
+              </article>
+            </>
+          ) : (
+            <>
+              <article
+                className={`description result-panel p-4 ${
+                  success ? "result-panel--success" : "result-panel--failure"
+                }`}
+              >
+                <div className="d-flex">
+                  <p>Resultat : </p>
+                  <p className="dice-result">{dice}</p>
+                  <p>/ {selectedAction.stat}</p>
+                </div>
+                {success ? (
+                  <p>Tu as reussi ton action.</p>
+                ) : (
+                  <p>Tu as echoue dans ton action.</p>
+                )}
+              </article>
+
+              <ChoiceCard
+                content="Continuer"
+                onActivate={handleClickContinu}
+                choiceCss="cardChoiceSizeContinu"
+                choiceType="continue"
+                sketchType="book"
+                flavorText={getChoiceFlavorText("book")}
+              />
+            </>
+          )}
+        </div>
       )}
     </>
   );

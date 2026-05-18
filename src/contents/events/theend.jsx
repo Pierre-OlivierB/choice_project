@@ -1,26 +1,49 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy } from "@fortawesome/free-solid-svg-icons";
-import React from "react";
-import { Toast } from "bootstrap";
+import { useMemo, useState } from "react";
+import ConfirmModal from "../ui/confirm-modal";
+import SiteSignature from "../ui/site-signature";
+
+function getPlayerName(player) {
+  return player?.name || player?.nom || player?.prenom || "non renseigne";
+}
 
 function TheEnd(props) {
   const save = props.save;
-  let story = [];
-  if (save.current) {
-    const storyHistory = save.current || [];
-    story = storyHistory.map((step, key) => <div key={key}>{step[0]}</div>);
-  } else {
-    story = save.map((step, key) => <div key={key}>{step[0]}</div>);
+  const inventory = props.inventory || [];
+  const [isReloadConfirmOpen, setIsReloadConfirmOpen] = useState(false);
+  const [isCopied, setIsCopied] = useState(false);
+  const storyHistory = useMemo(() => save.current || save || [], [save]);
+  const player = storyHistory.find((step) => step[2])?.[2];
+  const finalStep = storyHistory[storyHistory.length - 1]?.[0] || "";
+  const story = storyHistory.map((step, key) => <div key={key}>{step[0]}</div>);
+  const promptText = useMemo(
+    () =>
+      [
+        "Role: You are an author of contemporary horror novels, writing for an adult audience. Using the source context below, craft a terrifying narrative prose segment in French. The tone must be mature, psychological and rooted in the present day.",
+        "",
+        "Source Context:",
+        ...storyHistory.map((step) => step[0]),
+        "",
+        "Required Output Language: FRENCH",
+      ].join("\n"),
+    [storyHistory]
+  );
+
+  function handleReload() {
+    setIsReloadConfirmOpen(true);
   }
-  //reload page
-  const handleReload = () => {
-    window.location.reload();
-  };
+
+  async function copyPrompt() {
+    await navigator.clipboard.writeText(promptText);
+    setIsCopied(true);
+    window.setTimeout(() => setIsCopied(false), 2200);
+  }
 
   return (
     <div className="house position-relative">
       <div className="position-absolute top-0 end-0">
-        <button onClick={handleReload} className="rounded btn-retry">
+        <button onClick={handleReload} className="rounded btn-retry" type="button">
           Rejouer
         </button>
       </div>
@@ -28,73 +51,69 @@ function TheEnd(props) {
         <div className="row g-0 justify-content-center tenvh">
           <div className="col col-10 p-0 m-0">
             <h1 className="text-center m-0">
-              Merci d'avoir jouer à la maison de l'oubli
+              Merci d'avoir joue a la maison de l'oubli
             </h1>
           </div>
+        </div>
+        <div className="row justify-content-center">
+          <article className="col col-10 description end-summary p-3">
+            <h2>Recapitulatif</h2>
+            <p>Personnage : {getPlayerName(player)}</p>
+            <p>Objets conserves : {inventory.length ? inventory.join(", ") : "aucun"}</p>
+            <p>Etapes enregistrees : {storyHistory.length}</p>
+            {finalStep ? <p>Derniere situation : {finalStep}</p> : null}
+          </article>
         </div>
         <div className="row justify-content-center tenvh">
           <article className="col col-10 justify-content-center description padding-prompt overflow-y-auto max-height-96">
             <p className="m-0">
-              Voici votre histoire mise en forme et prompt tuné afin d'avoir une
-              histoire narré de la meilleure façon.
-              <br />
-              Prompt testé sur Le chat, Chat GPT.
+              Voici le prompt de narration construit a partir de ton parcours.
+              Tu peux le copier dans ton outil d'ecriture prefere pour generer
+              une version romancee de l'histoire.
             </p>
           </article>
         </div>
         <div className="row justify-content-center end-component">
-          <div className="col col-10 bg-white position-relative rounded">
-            <FontAwesomeIcon
-              className="position-absolute top-0 copy-texte z-1"
-              icon={faCopy}
-              onClick={() => {
-                var text = document.getElementById("story").innerHTML;
-                navigator.clipboard.writeText(text);
-                const toastLiveExample = document.getElementById("liveToast");
-                const toastBootstrap =
-                  Toast.getOrCreateInstance(toastLiveExample);
-                toastBootstrap.show();
-              }}
-            />
-            <div className="toast-container position-fixed top-0 p-3">
-              <div
-                id="liveToast"
-                className="toast"
-                role="alert"
-                aria-live="assertive"
-                aria-atomic="true"
-              >
-                <div className="toast-body">Texte Copié.</div>
+          <div className="col col-10 position-relative rounded prompt-panel">
+            <button
+              className="position-absolute top-0 copy-texte z-1 copy-button"
+              onClick={copyPrompt}
+              type="button"
+              aria-label="Copier le prompt"
+            >
+              <FontAwesomeIcon icon={faCopy} />
+            </button>
+            {isCopied ? (
+              <div className="copy-feedback" role="status" aria-live="polite">
+                Texte copie.
               </div>
-            </div>
+            ) : null}
             <article className="position-relative overflow-y-auto overflow-x-hidden enter-end-component">
               <div className="p-5" id="story">
                 <p>
-                  "Role: You are an author of contemporary horror novels,
-                  writing exclusively for an adult audience.Context & Setting:
-                  The narrative must be firmly rooted in the present day,
-                  leveraging modern anxieties, technology, and socio-economic
-                  dread to establish the atmosphere.Task: Using the provided
-                  instructions as your sole source of inspiration, craft a
-                  terrifying and expansive piece of narrative prose. Your
-                  writing must establish a profound, chilling link between the
-                  horror theme and the current setting, escalating the entire
-                  situation to an 'epic' scale—a confrontation or revelation of
-                  immense, terrifying consequence.Crucial Instruction: The final
-                  generated text (the story segment) MUST be written entirely in
-                  FRENCH (Français). The tone must be mature, relentless, and
-                  deeply psychological.Source Context to be Transformed: $$
+                  Role: You are an author of contemporary horror novels,
+                  writing for an adult audience. Using the source context below,
+                  craft a terrifying narrative prose segment in French. The tone
+                  must be mature, psychological and rooted in the present day.
                 </p>
-                {story}{" "}
-                <p>
-                  <br />
-                  $$"Required Output Language: FRENCH
-                </p>
+                <p>Source Context:</p>
+                {story}
+                <p>Required Output Language: FRENCH</p>
               </div>
             </article>
           </div>
         </div>
+        <SiteSignature />
       </div>
+      <ConfirmModal
+        isOpen={isReloadConfirmOpen}
+        title="Rejouer"
+        message="Recommencer depuis le debut effacera la partie en cours."
+        confirmLabel="Rejouer"
+        cancelLabel="Annuler"
+        onConfirm={() => window.location.reload()}
+        onCancel={() => setIsReloadConfirmOpen(false)}
+      />
     </div>
   );
 }

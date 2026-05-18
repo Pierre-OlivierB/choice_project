@@ -1,0 +1,22 @@
+export const CHAPTER_IDS = {
+  START: "0",
+  TV_ON: "1",
+  POCKETS: "2",
+  DESK_KEY_FOUND: "10",
+  DOOR: "15",
+  DOOR_AFTER_FAIL: "16",
+  PARKING: "17",
+  KEY_USED: "19",
+};
+
+export const BACKGROUNDS = {
+  HOUSE: "house",
+  TV: "tv",
+  CAR: "car",
+};
+
+export const BACKGROUND_BY_CHAPTER_ID = {
+  [CHAPTER_IDS.TV_ON]: BACKGROUNDS.TV,
+  [CHAPTER_IDS.PARKING]: BACKGROUNDS.CAR,
+  [CHAPTER_IDS.KEY_USED]: BACKGROUNDS.CAR,
+};

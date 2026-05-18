@@ -2,6 +2,32 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scrollbar-color: hsla(43, 55%, 86%, 0.35) transparent;
+    scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: hsla(43, 55%, 86%, 0.3);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: hsla(43, 82%, 68%, 0.6);
+}
+
+body {
+    background: hsl(220, 19%, 9%);
+    color: hsl(36, 34%, 92%);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .main-content {
@@ -51,7 +77,7 @@
             hsla(0, 0%, 50%, 0.5) 50%,
             hsla(0, 0%, 25%, 0.75) 60%,
             hsla(0, 0%, 0%, 0.95) 100%),
-        url("./assets/background_tv.png") center/contain no-repeat,
+        url("./assets/background_tv.png") center/cover no-repeat,
         hsl(0, 0%, 10%);
 
 
@@ -66,7 +92,7 @@
             hsla(0, 0%, 50%, 0.5) 50%,
             hsla(0, 0%, 25%, 0.75) 60%,
             hsla(0, 0%, 0%, 0.95) 100%),
-        url("./assets/background_horror.png") center/contain no-repeat,
+        url("./assets/background_horror.png") center/cover no-repeat,
         hsl(0, 0%, 10%);
 
 

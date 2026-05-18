@@ -1,352 +1,155 @@
-import React, {
-  useRef,
-  useEffect,
-  useState,
-  useMemo,
-  useCallback,
-} from "react";
+import { useRef, useEffect, useState, useMemo, useCallback } from "react";
 import Chapter from "./chapter/chapter";
 import storiesData from "./chapter/stories.json";
 import ChoiceCard from "./events/choicecard";
 import Events from "./events/events";
 import TheEnd from "./events/theend";
+import GameError from "./errors/game-error";
+import ConfirmModal from "./ui/confirm-modal";
+import SiteSignature from "./ui/site-signature";
+import { updateInventoryFromChoices } from "../game/inventory";
+import {
+  addChoiceToHistory,
+  getDisplayChoices,
+  getStoryById,
+} from "../game/storyNavigation";
+import {
+  BACKGROUND_BY_CHAPTER_ID,
+  BACKGROUNDS,
+  CHAPTER_IDS,
+} from "../game/storyConstants";
+import { getActionFromResultKey } from "../game/resolveAction";
 
 function Book(props) {
-  //get player choice
   const perso = props.perso;
-  // get all stories from json
   const stories = storiesData;
 
-  // set button player choice
-  const [choice, setChoice] = useState(0);
-  // set content show
-  const [flag, setFlag] = useState(true);
-  // add inventory to caracter
+  const [choice, setChoice] = useState(CHAPTER_IDS.START);
+  const [isReadingChapter, setIsReadingChapter] = useState(true);
   const [inventory, setInventory] = useState([]);
-  // victory / loose statut
   const [win, setWin] = useState(true);
-  // Action link with (c, d, i)
   const [action, setAction] = useState("");
-
-  // keep in mind what choice has been made
   const [choiceAlreadyDone, setChoiceAlreadyDone] = useState([]);
-
-  // set actual storie
-  const currentStories = stories[choice];
-
-  // set precedent action
-  const [precendentAction, setPrecendentAction] = useState(currentStories.txt);
-  // actions has been before ?
-  const [actionActive, setActionActive] = useState(false);
-  // save
-  const save = useRef([]);
-  // set story end
+  const [previousActionText, setPreviousActionText] = useState(
+    getStoryById(stories, CHAPTER_IDS.START).txt
+  );
   const [storyEnd, setStoryEnd] = useState(false);
-  //set background
-  const [activeBackground, setActiveBackground] = useState("house");
-  // Dice throw
+  const [activeBackground, setActiveBackground] = useState(BACKGROUNDS.HOUSE);
   const [choiceAfterDiceRoll, setChoiceAfterDiceRoll] = useState(null);
+  const [pendingChoice, setPendingChoice] = useState(null);
+  const save = useRef([]);
 
-  // call after dice
+  const currentStories = getStoryById(stories, choice);
+
   const handleDiceRollComplete = useCallback(() => {
     setChoiceAfterDiceRoll(choice);
   }, [choice]);
 
-  // 2. afterdice
   useEffect(() => {
-    if (choiceAfterDiceRoll === "17" || choiceAfterDiceRoll === "19") {
-      setActiveBackground("car");
-    } else if (choiceAfterDiceRoll === "1") {
-      setActiveBackground("tv");
-    }
-    // add or del key if needed ou used
-    if (choiceAlreadyDone.includes("10")) {
-      if (!inventory.includes("clef")) {
-        setInventory((prev) => [...prev, "clef"]);
-      }
-      if (choiceAlreadyDone.includes("19")) {
-        setInventory((prev) => prev.filter((item) => item !== "clef"));
-      }
+    const nextBackground = BACKGROUND_BY_CHAPTER_ID[choiceAfterDiceRoll];
+
+    if (nextBackground) {
+      setActiveBackground(nextBackground);
     }
   }, [choiceAfterDiceRoll]);
-  // !----------------------------------------------------
-  // Card swipe
-  const [swipedCardIndex, setSwipedCardIndex] = useState(null);
-  // !---------------------------
 
-  // set content show
-  function handleClick(newChapter) {
-    // newChapter with his index
+  useEffect(() => {
+    setInventory((currentInventory) =>
+      updateInventoryFromChoices(currentInventory, choiceAlreadyDone)
+    );
+  }, [choiceAlreadyDone]);
+
+  function goToChapter(newChapter) {
     setChoice(newChapter);
-    setFlag((prevFlag) => !prevFlag);
+    setIsReadingChapter((wasReadingChapter) => !wasReadingChapter);
   }
-  // story end
+
   const handleStoryEnd = useCallback((isEnd) => {
     setStoryEnd(isEnd);
   }, []);
 
-  // !---------------------------
-  // Swipe Card
-  const handleSwipeRight = (index) => {
-    setSwipedCardIndex(index);
-  };
-  // !---------------------------
+  function recordChoice(chapterId) {
+    setChoiceAlreadyDone((prevChoices) =>
+      addChoiceToHistory(prevChoices, chapterId)
+    );
+  }
 
-  // get data from child event
-  function handleDiceFromEvent(child_choice) {
-    setFlag(child_choice[0]);
-    // event by the action win or not
+  function applyChoice(displayChoice) {
+    goToChapter(displayChoice.targetChapter);
 
-    switch (child_choice[1]) {
-      case "c_w":
-        setPrecendentAction(currentStories.c_w[0]);
-        setWin(true);
-        setAction("c");
-        break;
-      case "d_w":
-        setPrecendentAction(currentStories.d_w[0]);
-        setWin(true);
-        setAction("d");
-        break;
-      case "i_w":
-        setPrecendentAction(currentStories.i_w[0]);
-        setWin(true);
-        setAction("i");
-        break;
-      case "c_l":
-        setPrecendentAction(currentStories.c_l[0]);
-        setWin(false);
-        break;
-      case "d_l":
-        setPrecendentAction(currentStories.d_l[0]);
-        setWin(false);
-        break;
-      case "i_l":
-        setPrecendentAction(currentStories.i_l[0]);
-        setWin(false);
-        break;
-      default:
-        break;
+    if (!displayChoice.skipHistory) {
+      recordChoice(displayChoice.targetChapter);
     }
   }
-  // --- LOGIC BTNS (Render) ---
 
-  // Definition btnList and choix with win/loose
-  const { btnList, choix } = useMemo(() => {
-    let list = [];
-    let choiceValues = [];
-
-    if (currentStories.btn_choix) {
-      list = currentStories.btn_choix;
-      choiceValues = currentStories.choix;
-    } else if (win) {
-      if (Array.isArray(currentStories.choix_win)) {
-        list = currentStories.btn_choix_win;
-        choiceValues = currentStories.choix_win;
-      } else {
-        // Logique win/loose action (c, d, i)
-        switch (action) {
-          case "c":
-            list = [currentStories.btn_choix_win.c];
-            choiceValues = [currentStories.choix_win.c];
-            break;
-          case "d":
-            list = [currentStories.btn_choix_win.d];
-            choiceValues = [currentStories.choix_win.d];
-            break;
-          case "i":
-            list = [currentStories.btn_choix_win.i];
-            choiceValues = [currentStories.choix_win.i];
-            break;
-          default:
-            list = [];
-            choiceValues = [];
-            break;
-        }
-      }
-    } else {
-      // Loose logic
-      list = currentStories.btn_choix_loose || [];
-      choiceValues = currentStories.choix_loose || [];
+  function activateChoice(displayChoice) {
+    if (displayChoice.requiresConfirmation) {
+      setPendingChoice(displayChoice);
+      return;
     }
 
-    return { btnList: list, choix: choiceValues };
-  }, [currentStories, win, action]);
+    applyChoice(displayChoice);
+  }
 
-  // --- CONSTRUCTION LOGIC (useMemo) ---
-  // list btn to display
-  const listBtnJSX = useMemo(() => {
-    const generatedList = [];
-
-    // Choices Btns
-    for (let i = 0; i < btnList.length; i++) {
-      const choiceValue = choix[i];
-      const buttonContent = btnList[i];
-
-      // IF currentStories.choix not null and choice not already done
-      if (currentStories.choix) {
-        if (!choiceAlreadyDone.includes(currentStories.choix[i])) {
-          generatedList.push(
-            <ChoiceCard
-              key={`choice-${i}`}
-              content={currentStories.btn_choix[i]}
-              choiceCss={"cardChoiceSize"}
-              onSwipeRight={() => {
-                handleSwipeRight(i);
-                const chc = currentStories.choix[i];
-
-                handleClick(chc);
-                setActionActive(false);
-
-                setChoiceAlreadyDone((prevChoices) => {
-                  let newChoices = [...prevChoices, chc];
-
-                  if (chc == "2") {
-                    newChoices = [...newChoices, "6"];
-                  }
-                  return newChoices;
-                });
-              }}
-            />
-          );
-        }
-
-        // IF currentStories.choix doesn't exist
-      } else {
-        generatedList.push(
-          <ChoiceCard
-            key={`choice-alt-${i}`}
-            content={buttonContent}
-            choiceCss={"cardChoiceSize"}
-            onSwipeRight={() => {
-              handleSwipeRight(i);
-              const chc = choiceValue;
-
-              handleClick(chc);
-              setActionActive(false);
-
-              setChoiceAlreadyDone((prevChoices) => {
-                let newChoices = [...prevChoices, chc];
-
-                if (chc == "2") {
-                  newChoices = [...newChoices, "6"];
-                }
-                return newChoices;
-              });
-            }}
-          />
-        );
-      }
-    } // END FOR
-
-    // --- BTN Logic PLUS ---
-    // renturn door
-    if (
-      currentStories.choix &&
-      choiceAlreadyDone.includes("15") &&
-      choiceAlreadyDone.length > 0 &&
-      parseInt(currentStories.numero_chapitre) < 15
-    ) {
-      generatedList.push(
-        <ChoiceCard
-          key={15}
-          content={"Retourner à la porte"}
-          choiceCss={"cardChoiceSize"}
-          onSwipeRight={() => {
-            handleSwipeRight(15);
-            handleClick("15");
-            setActionActive(false);
-          }}
-        />
-      );
+  function confirmPendingChoice() {
+    if (pendingChoice) {
+      applyChoice(pendingChoice);
+      setPendingChoice(null);
     }
-    // Key or items
-    if (
-      currentStories.choix &&
-      choiceAlreadyDone.includes("10") &&
-      (currentStories.numero_chapitre == "15" ||
-        currentStories.numero_chapitre == "16")
-    ) {
-      generatedList.push(
-        <ChoiceCard
-          key={19}
-          content={currentStories.btn_choix_sup[1]}
-          choiceCss={"cardChoiceSize"}
-          onSwipeRight={() => {
-            handleSwipeRight(19);
-            const chc = currentStories.btn_choix_sup[0];
-            handleClick(chc);
-            setActionActive(false);
+  }
 
-            setChoiceAlreadyDone((prevChoices) => [...prevChoices, chc]);
-          }}
-        />
-      );
+  function handleDiceFromEvent(actionResolution) {
+    const resultKey = actionResolution.resultKey;
+    const resultText = currentStories[resultKey]?.[0];
+
+    setIsReadingChapter(actionResolution.isReadingChapter);
+    setAction(getActionFromResultKey(resultKey));
+    setWin(resultKey.endsWith("_w"));
+
+    if (resultText) {
+      setPreviousActionText(resultText);
     }
+  }
 
-    // Victory
-    if (currentStories.numero_chapitre == "19" && win) {
-      generatedList.push(
-        <ChoiceCard
-          key={23}
-          content={currentStories.btn_choix_sup[1]}
-          choiceCss={"cardChoiceSize"}
-          onSwipeRight={() => {
-            handleSwipeRight(23);
-            const chc = currentStories.btn_choix_sup[0];
-            handleClick(chc);
-            setActionActive(false);
+  const displayChoices = useMemo(
+    () =>
+      getDisplayChoices({
+        currentStory: currentStories,
+        win,
+        action,
+        choiceAlreadyDone,
+      }),
+    [currentStories, win, action, choiceAlreadyDone]
+  );
 
-            setChoiceAlreadyDone((prevChoices) => [...prevChoices, chc]);
-          }}
-        />
-      );
-    }
-
-    return generatedList;
-  }, [
-    btnList,
-    choix,
-    choiceAlreadyDone,
-    currentStories,
-    handleSwipeRight,
-    handleClick,
-    setActionActive,
-    setChoiceAlreadyDone,
-    win,
-  ]);
-
-  // --- useEffects Logic ---
-
-  // History
   useEffect(() => {
-    save.current.push([precendentAction, choice, perso]);
-  }, [precendentAction]);
+    const lastSavedStep = save.current[save.current.length - 1];
 
-  //setPrecendentAction
-  useEffect(() => {
-    if (actionActive) {
-      setPrecendentAction(currentStories.card_context);
+    if (lastSavedStep?.[0] !== previousActionText) {
+      save.current.push([previousActionText, choice, perso]);
     }
-  }, [
-    currentStories,
-    listBtnJSX,
-    actionActive,
-    win,
-    choiceAlreadyDone,
-    setInventory,
-    setPrecendentAction,
-  ]);
+  }, [choice, perso, previousActionText]);
 
-  // --- RENDER ---
+  if (!currentStories) {
+    return (
+      <GameError
+        title="Erreur de chapitre"
+        message="Le chapitre demande est introuvable."
+        detail={`Chapitre: ${choice}`}
+        onRetry={() => window.location.reload()}
+      />
+    );
+  }
+
+
   return !storyEnd ? (
     <div className={`d-flex flex-column main-content ${activeBackground}`}>
-      {flag ? (
+      {isReadingChapter ? (
         <Chapter
           where={currentStories.card_context}
           what={currentStories.mj_question}
           chpt={currentStories.numero_chapitre}
-          txt={precendentAction}
+          txt={previousActionText}
           mj={currentStories.mj_question}
           perso={perso}
           inventory={inventory}
@@ -356,7 +159,6 @@ function Book(props) {
           perso={perso}
           choice={currentStories}
           onSendData={handleDiceFromEvent}
-          flag={flag}
           actions={currentStories.actions}
           save={save.current}
           inventory={inventory}
@@ -365,14 +167,38 @@ function Book(props) {
           onStoryEnd={handleStoryEnd}
         />
       )}
-      {flag && (
+      {isReadingChapter && (
         <div className="d-flex flex-row overflow-x-auto overflow-y-hidden align-items-center justify-content-evenly footer-content h-35 w-100">
-          {listBtnJSX}
+          {displayChoices.map((displayChoice) => (
+            <ChoiceCard
+              key={displayChoice.id}
+              content={displayChoice.label}
+              choiceCss="cardChoiceSize"
+              choiceType={displayChoice.type}
+              sketchType={displayChoice.sketchType}
+              flavorText={displayChoice.flavorText}
+              onActivate={() => activateChoice(displayChoice)}
+            />
+          ))}
         </div>
       )}
+      <ConfirmModal
+        isOpen={Boolean(pendingChoice)}
+        title="Confirmer ce choix"
+        message={
+          pendingChoice
+            ? `Tu vas choisir : ${pendingChoice.label}`
+            : ""
+        }
+        confirmLabel="Continuer"
+        cancelLabel="Annuler"
+        onConfirm={confirmPendingChoice}
+        onCancel={() => setPendingChoice(null)}
+      />
+      <SiteSignature />
     </div>
   ) : (
-    <TheEnd save={save} />
+    <TheEnd save={save} inventory={inventory} />
   );
 }
 

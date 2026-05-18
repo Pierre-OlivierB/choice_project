@@ -1,46 +1,59 @@
-import React, { useEffect, useState } from "react";
-import { useSwipeable } from "react-swipeable";
-import "../../App.css"; // Assurez-vous d'avoir un fichier CSS pour les styles
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHandPointer } from "@fortawesome/free-solid-svg-icons";
+import "../../App.css";
+import SketchIcon from "./SketchIcon";
 
-const ChoiceCard = ({ content, onSwipeRight, isDisabled, data, choiceCss }) => {
-  const [swiped, setSwiped] = useState(false);
+const ChoiceCard = ({
+  content,
+  onActivate,
+  onSwipeRight,
+  isDisabled,
+  data,
+  choiceCss,
+  choiceType = "chapter",
+  sketchType = choiceType,
+  flavorText = "",
+}) => {
+  const activate = onActivate || onSwipeRight;
 
-  const handlers = useSwipeable({
-    onSwipedRight: () => {
-      if (!isDisabled) {
-        setSwiped(true);
-
-        onSwipeRight();
-      }
-    },
-    preventDefaultTouchmoveEvent: true,
-    trackMouse: true,
-  });
-
-  useEffect(() => {
-    if (isDisabled) {
-      setSwiped(false);
+  function handleActivate() {
+    if (isDisabled || !activate) {
+      return;
     }
-  }, [isDisabled]);
+
+    activate();
+  }
+
+  function handleKeyDown(event) {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      handleActivate();
+    }
+  }
 
   return (
     <div className="relative flex-shrink-0 min-width-350px d-flex justify-content-center">
-      <div
-        {...handlers}
+      <button
+        type="button"
+        tabIndex={isDisabled ? -1 : 0}
+        aria-disabled={isDisabled}
+        disabled={isDisabled}
+        onClick={handleActivate}
+        onKeyDown={handleKeyDown}
         className={`cardChoice ${choiceCss} no-select cards-positions ${
-          swiped ? "swiped" : ""
-        }`}
+          isDisabled ? "disabled" : ""
+        } cardChoice--${choiceType}`}
       >
-        <div className="card">
-          <div className="card-body">
-            <div className="card-title">{content}</div>
-          </div>
+        <SketchIcon type={sketchType} className={`sketch-wrapper--${sketchType}`} />
+
+        <div className="cardChoice-content choice-card-layer">
+          <div className="choice-card-title">{content}</div>
         </div>
-        {data ? <div className="card-img">{data}</div> : <></>}
-        <FontAwesomeIcon className="mouse-move-right" icon={faHandPointer} />
-      </div>
+
+        {flavorText ? (
+          <p className="choice-card-flavor choice-card-layer">{flavorText}</p>
+        ) : null}
+
+        {data ? <div className="card-img choice-card-layer">{data}</div> : null}
+      </button>
     </div>
   );
 };
