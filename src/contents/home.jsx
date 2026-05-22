@@ -70,20 +70,24 @@ function Home() {
             </div>
 
             <section className="description home-description p-4">
-              <p>Attention ce site optimise sur pc pour le moment. Merci.</p>
               <p>
-                Je vous propose de vous plonger dans une experience de jeu de
-                role ("Role Play", RP) afin de decouvrir les interactions que
-                vous pourriez avoir sur un monde imaginaire qui entoure votre
-                personnage. Le but de cette experience est de vous donner un
-                apercu automatise et solitaire de ce que vous pourriez vivre
-                en tant que joueur/euse seul/e dans un evenement aleatoire
-                d'une histoire de RP. Les choix que vous allez faire auront un
-                impact sur le recit. Recit que vous retrouverez a la fin de
-                votre aventure. Je vous donnerai les outils dans le but de
-                partager cette aventure a votre LLM prefere pour qu'il puisse
-                narrer votre incroyable histoire. <br /> <br /> Et maintenant
-                a vous de jouer.
+                Bienvenue dans cette aventure de d&eacute;couverte. La sauvegarde
+                est automatique et reste sur votre support d&apos;utilisation.
+                Aucune donn&eacute;e n&apos;est gard&eacute;e.
+              </p>
+              <p>
+                Je vous propose de vous plonger dans une exp&eacute;rience de jeu
+                de r&ocirc;le ("Role Play", RP), afin de d&eacute;couvrir les
+                interactions possibles avec le monde imaginaire qui entoure votre
+                personnage. Le but de cette exp&eacute;rience est de vous donner un
+                aper&ccedil;u automatis&eacute; et solitaire de ce que vous pourriez
+                vivre en tant que joueur ou joueuse dans un &eacute;v&eacute;nement
+                al&eacute;atoire d&apos;une histoire de RP. Les choix que vous allez
+                faire auront un impact sur le r&eacute;cit, que vous retrouverez
+                &agrave; la fin de votre aventure. Je vous donnerai les outils pour
+                partager cette aventure avec votre LLM pr&eacute;f&eacute;r&eacute;,
+                afin qu&apos;il puisse narrer votre incroyable histoire. <br /> <br />
+                Et maintenant, &agrave; vous de jouer.
                 <br /> Bonne aventure.
               </p>
             </section>

@@ -61,40 +61,44 @@ function Characters({ initialGameSnapshot = null }) {
             <article className="description character-description p-4">
               <p>
                 Dans un RP, il te faut choisir un personnage qui va te
-                representer. Pour l'exemple, voici 3 personnages pre-construit
-                afin de te familiariser avec la construction d'un personnage.
+                repr&eacute;senter. Pour l&apos;exemple, voici trois personnages
+                pr&eacute;construits afin de te familiariser avec la construction
+                d&apos;un personnage.
               </p>
               <p>
-                Chaque choix que tu feras, sera irremediable. Un autre choix
-                est une autre histoire. Tu n'as pas de limite de temps, alors
-                choisis bien.
+                Chaque choix que tu feras sera irr&eacute;m&eacute;diable. Un autre
+                choix raconte une autre histoire. Tu n&apos;as pas de limite de
+                temps, alors choisis bien.
               </p>
               <p>
-                Ici je te propose une construction de personnage tres
-                simplifiee. Ton personnage a un nom, une fonction qui est ici
-                plus une representation global de ton personnage et des
-                caracteristiques. Ces dernieres vont etre le centre de tes
-                preoccupations etant donne qu'elles vont te permettre ou non de
-                la reussite de ton action. Ici, les caracteristiques vont de 1
-                a 100. Pour savoir si la personne a reussit une action on jette
-                un de 100. Pour que l'action soit une reussite, il faut que le
-                de affiche un resultat egale ou inferieur. Plus la
-                caracteristique lie a l'action est grande, plus la probabilite
-                de reussite est grande. Prenons exemple sur Chris. Il est costo,
-                il a une constitution de 75. S'il avait a se battre, il aurait
-                75% de reussite. D'un autre cote, s'il avait a reflechir a une
-                situation, il n'aurait que 25% de reussite.
+                Ici, je te propose une construction de personnage tr&egrave;s
+                simplifi&eacute;e. Ton personnage a un nom, une fonction qui sert
+                ici de repr&eacute;sentation globale, ainsi que des
+                caract&eacute;ristiques. Ces derni&egrave;res vont devenir le centre
+                de tes pr&eacute;occupations, puisqu&apos;elles permettront ou non la
+                r&eacute;ussite de tes actions. Ici, les caract&eacute;ristiques vont
+                de 1 &agrave; 100. Pour savoir si une action r&eacute;ussit, on jette
+                un d&eacute; 100. Pour que l&apos;action soit une r&eacute;ussite, il
+                faut que le d&eacute; affiche un r&eacute;sultat &eacute;gal ou
+                inf&eacute;rieur &agrave; la caract&eacute;ristique concern&eacute;e.
+                Plus la caract&eacute;ristique li&eacute;e &agrave; l&apos;action est
+                grande, plus la probabilit&eacute; de r&eacute;ussite est grande.
+                Prenons l&apos;exemple de Chris. Il est costaud et poss&egrave;de une
+                constitution de 75. S&apos;il devait se battre, il aurait 75% de
+                r&eacute;ussite. En revanche, s&apos;il devait r&eacute;fl&eacute;chir
+                &agrave; une situation, il n&apos;aurait que 25% de r&eacute;ussite.
               </p>
               <p>
-                L'echec comme la reussite peut parfois ne pas avoir de reel
-                consequences sur le resultat du but de l'action (ex: chercher
-                un objet et le trouver) mais sur le temps pris pour realiser
-                l'action (ex: immediat si reussite ou plusieurs jours si
-                echec). Derniere information importante, il faut garder en tete
-                que dans un vrai RP, le Maitre du jeu peut sortir du script et
-                ajouter du contenu ou du lore a votre histoire.
+                L&apos;&eacute;chec comme la r&eacute;ussite peut parfois ne pas avoir de
+                r&eacute;elles cons&eacute;quences sur le but de l&apos;action (par
+                exemple, chercher un objet et le trouver), mais plut&ocirc;t sur le
+                temps n&eacute;cessaire pour la r&eacute;aliser (imm&eacute;diatement
+                en cas de r&eacute;ussite, ou apr&egrave;s plusieurs jours en cas
+                d&apos;&eacute;chec). Derni&egrave;re information importante : dans
+                un vrai RP, le Ma&icirc;tre du jeu peut sortir du script et ajouter
+                du contenu ou du lore &agrave; votre histoire.
               </p>
-              <p>Et maintenant a toi de jouer.</p>
+              <p>Et maintenant, &agrave; toi de jouer.</p>
               <p>Quel est ton choix ?</p>
             </article>
 
@@ -117,7 +121,7 @@ function Characters({ initialGameSnapshot = null }) {
                                 Constitution (C) : {tmp.constitution}
                               </p>
                               <p className="card-text">
-                                Dexterite (D) : {tmp.dexterite}
+                                Dext&eacute;rit&eacute; (D) : {tmp.dexterite}
                               </p>
                               <p className="card-text">
                                 Intelligence (I) : {tmp.intelligence}
