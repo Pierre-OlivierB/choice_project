@@ -14,8 +14,8 @@ L'objectif du projet est de proposer un prototype jouable de role play solo, sim
 | --- | --- | --- |
 | Sprint 1 - Stabilisation Systeme | Clos | Fondations techniques validees. Reserves acceptees et reportees dans `sprint1.md`. |
 | Sprint 2 - Experience Joueur et Refonte Ciblee | Clos avec reserves | Interaction clic/clavier, helpers, composants communs, inventaire, erreurs lisibles, ecran de fin et identite minimale valides. Finitions produit reportees. |
-| Sprint 3 - Narration, Contenu et Scenario | En cours avec reserves | Documentation narrative, tests, constantes, recuperation par id, validateur, cards illustrees, textes d'ambiance, prompt final sombre et signature projet valides. Les chapitres draft restent a arbitrer. |
-| Sprint 4 - Sauvegarde et Rejouabilite | Non demarre | Depend de la clarification de l'etat de `Book` et du journal de partie. |
+| Sprint 3 - Narration, Contenu et Scenario | Valide avec reserves narratives | Documentation narrative, tests, constantes, recuperation par id indexee, validateur, cards illustrees, textes d'ambiance, prompt final sombre, signature projet, accents visibles et mobile valides. Les chapitres draft restent a arbitrer plus tard. |
+| Sprint 4 - Sauvegarde et Rejouabilite | En cours | Sauvegarde, reprise, journal, statistiques simples et export texte en place. `Book` est allege via `gameState`, `gameReducer` et `useGameState`. Dette ouverte : stabiliser les layouts responsive. |
 | Sprint 5 - Qualite Produit | Non demarre | Depend des sprints 3 et 4. |
 
 ### Points Valides
@@ -37,13 +37,34 @@ L'objectif du projet est de proposer un prototype jouable de role play solo, sim
 - Dessins contextuels et textes d'ambiance ajoutes sur les cards.
 - Chapitres non references marques/documentes comme brouillons.
 - Architecture et guide narratif documentes.
+- Recuperation des chapitres indexee avec `createStoryIndex`.
+- Compatibilite mobile validee visuellement.
+- Accents visibles de l'UI corriges sur les ecrans principaux.
+- `sprint4.md` cree pour cadrer sauvegarde, reprise, journal et statistiques.
+- Sauvegarde locale versionnee ajoutee via `src/game/saveGame.js`.
+- Reprise de partie disponible depuis l'accueil si une sauvegarde valide existe.
+- Nettoyage de sauvegarde lors d'un nouveau depart ou de `Rejouer`.
+- Journal de partie visible pendant la partie.
+- Premieres statistiques de partie : personnage, etapes, jets, reussites, echecs et objets.
+- Export texte du journal de partie.
+- Journal et statistiques accessibles depuis l'ecran final.
+- Simplification visuelle de `Book` amorcee avec `GameShell`, `ChoiceFooter` et `GameJournalModal`.
+- `gameState.js` centralise l'etat initial et le snapshot sauvegardable.
+- Une tache de commentaires utiles est ajoutee au sprint 4.
+- Reducer `gameReducer` ajoute pour modales, navigation, confirmation, resolution d'action, inventaire, background, historique, jets et fin de partie.
+- Hook `useGameState` cree pour regrouper l'orchestration React, la sauvegarde automatique, le scroll, les choix affichables et les handlers de jeu.
+- Documentation interne du code ajoutee sur les regles metier, les limites techniques, les composants structurants et les effets React importants.
+- Dette responsive identifiee : les layouts mobile/desktop doivent etre stabilises avec des conteneurs et contrats CSS plus explicites.
+- Premiere consolidation layout appliquee : `game-main`, `game-stage`, `game-stage-content`, `game-choice-strip`, `game-reading-layout`, `home-screen`, `character-screen` et les classes dediees de `TheEnd` remplacent progressivement les contrats implicites `h-65/h-35/footer-content`, les grilles Bootstrap structurelles et les anciennes classes du prompt final.
 
 ### Points En Cours
 
-- Verification mobile/desktop approfondie.
 - Clarification de l'etat de `Book` avant sauvegarde.
-- Arbitrage narratif des chapitres `draft` et non references.
-- Verification finale des accents visibles dans l'UI.
+- Arbitrage narratif des chapitres `draft` et non references, volontairement reporte.
+- Statistiques de partie.
+- Import de l'historique.
+- Extraction eventuelle d'un `GameScreen` pour reduire encore le rendu de `Book`.
+- Stabilisation des layouts responsive : normaliser les conteneurs, supprimer les overrides contradictoires et verifier les ecrans clefs mobile/desktop.
 
 ### Points Non Demarres
 
@@ -141,7 +162,7 @@ Analyse actuelle du scenario :
 
 ### Logique React
 
-- `Book` reste le centre de l'etat global de partie ; il est allege, mais pas encore remplace par un reducer ou un hook dedie.
+- `Book` est allege par `gameReducer` et `useGameState`, mais assemble encore directement les ecrans de jeu.
 - Certains cas speciaux restent relies a des ids fixes : clef, retour porte, chapitre `19`, backgrounds.
 - Les erreurs de donnees sont mieux gerees via `GameError`.
 - Les confirmations principales utilisent une modale React dediee.
@@ -149,6 +170,7 @@ Analyse actuelle du scenario :
 ### Experience Joueur
 
 - L'interface mobile a recu des ajustements, mais merite encore une vraie verification visuelle.
+- Les layouts ne sont pas encore assez stables : l'application melange Bootstrap, CSS global, media queries et correctifs ponctuels. Un chantier dedie doit clarifier les conteneurs de page, les zones scrollables et les comportements mobile/desktop.
 - L'inventaire est plus clair, mais le systeme d'objets reste minimal.
 - L'ecran de fin est plus propre, mais le recapitulatif de partie pourrait etre enrichi.
 - Un logo dedie reste a finaliser.
@@ -185,7 +207,7 @@ La couche `src/game` contient les fonctions pures reutilisables :
 
 Les composants React gerent l'affichage et l'orchestration :
 
-- `Book` garde l'etat global de partie.
+- `Book` assemble l'ecran de jeu tandis que `useGameState` porte l'orchestration et `gameReducer` porte les mutations metier.
 - `Chapter` affiche une situation narrative.
 - `Events` affiche les actions et les jets.
 - `ChoiceCard` porte l'interaction generique.
@@ -275,40 +297,48 @@ Etat : **Clos avec reserves reportees**.
 
 Reserves reportees :
 
-- verification visuelle mobile/desktop approfondie ;
 - logo dedie ;
 - composants `ChoiceList` et `StoryPanel` ;
-- nettoyage plus large des textes encodes.
+- nettoyage plus large des textes narratifs hors parcours principal.
 
 ### Sprint 3 - Narration et Contenu
 
 Objectif : renforcer la qualite narrative et la maintenabilite du scenario.
 
-Etat : **En cours**.
+Etat : **Valide avec reserves narratives**.
 
 - Relire et corriger tous les textes jouables : valide avec reserves sur les chapitres `draft`.
 - Normaliser les noms de champs et les formats : documente, migration stricte reportee.
 - Integrer les diagrammes de decision dans la documentation : valide.
-- Marquer ou supprimer les chapitres non references : en cours, chapitres marques `draft`.
+- Marquer ou supprimer les chapitres non references : reporte, chapitres marques `draft`.
 - Ajouter des fins alternatives : non demarre.
 - Ajouter une table des objets et preconditions : valide pour la clef, extensible plus tard.
 - Preparer un guide d'ecriture pour nouveaux chapitres : valide.
 - Ajouter tests unitaires sur `src/game` : valide.
 - Centraliser les ids speciaux : valide.
 - Remplacer la recuperation par index : valide.
+- Indexer les chapitres via `createStoryIndex` : valide.
 - Ajouter dessins contextuels et textes d'ambiance sur les cards : valide.
 - Harmoniser le prompt final avec le theme sombre : valide.
 - Ajouter la signature et le contact LinkedIn : valide.
+- Valider la compatibilite mobile : valide.
+- Corriger les accents visibles de l'UI : valide.
 
 ### Sprint 4 - Sauvegarde et Rejouabilite
 
 Objectif : permettre de quitter, revenir, comparer et rejouer.
 
-- Ajouter sauvegarde locale via `localStorage`.
-- Ajouter reprise de partie.
-- Ajouter export/import de l'historique.
-- Ajouter recapitulatif des choix.
-- Ajouter statistiques de partie : personnage choisi, jets, reussites, echecs.
+Etat : **En cours**.
+
+- Ajouter sauvegarde locale via `localStorage` : valide.
+- Ajouter reprise de partie : valide.
+- Ajouter export/import de l'historique : export texte valide, import reporte.
+- Ajouter recapitulatif des choix : valide via le journal visible.
+- Ajouter statistiques de partie : premier niveau valide pendant la partie et a la fin, approfondissement restant.
+- Reduire la dette de `Book` : valide pour l'etat metier et les effets React ; reste une extraction possible de `GameScreen`.
+- Ajouter des commentaires utiles : valide comme documentation interne sur les zones metier, techniques et composants structurants.
+- Stabiliser les layouts responsive : en cours, dette technique ouverte apres les regressions mobile/desktop observees.
+  Premiere passe appliquee sur le layout de jeu principal, l'accueil, la selection de personnage et l'ecran de fin.
 
 ### Sprint 5 - Qualite Produit
 

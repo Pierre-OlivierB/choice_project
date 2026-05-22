@@ -2,25 +2,25 @@
 
 ## Etat D'Avancement
 
-Statut global : **En cours**.
+Statut global : **Valide avec reserves narratives**.
 
-Le sprint 3 est lance. Les dettes techniques liees au scenario ont fortement avance : ids centralises, recuperation de chapitre par id, validateur renforce, tests unitaires, documentation narrative, nettoyage des placeholders jouables, relecture des chapitres actifs, refactors courts, cards illustrees, textes d'ambiance, ecran de fin harmonise et signature projet sont en place. Les points restants sont les decisions narratives sur les chapitres brouillons/non references et une verification UI finale des accents.
+Le sprint 3 est valide sur son perimetre technique et UI. Les dettes techniques liees au scenario ont fortement avance : ids centralises, recuperation de chapitre par id avec index, validateur renforce, tests unitaires, documentation narrative, nettoyage des placeholders jouables, relecture des chapitres actifs, refactors courts, cards illustrees, textes d'ambiance, ecran de fin harmonise, signature projet et compatibilite mobile validee sont en place. Les seules reserves restantes concernent les decisions narratives sur les chapitres brouillons/non references, volontairement reportees.
 
 | Item | Statut | Notes |
 | --- | --- | --- |
 | 1. Audit narratif de `stories.json` | Valide | `scenario_audit.md` existe et le validateur liste les problemes restants. |
 | 2. Corriger les tournures sans changer le contenu | Valide avec reserves | Les chapitres jouables ont ete relus et corriges sans changer les transitions. Les chapitres `draft` restent hors contenu final. |
-| 3. Corriger les problemes d'encodage | Valide avec reserves | Les fichiers sont en UTF-8 et le validateur ne detecte plus de mojibake. Une verification UI reste utile avant livraison finale. |
+| 3. Corriger les problemes d'encodage | Valide | Les textes visibles de l'UI ont ete verifies et corriges ; le validateur ne detecte plus de mojibake. |
 | 4. Traiter les placeholders et chapitres brouillons | Valide avec reserves | Les placeholders involontaires ont ete retires des chapitres jouables. Les chapitres `4`, `5`, `7`, `8`, `12`, `18` restent marques `draft`. |
 | 5. Analyser les chapitres non references | Valide avec reserves | Statut documente dans `scenario_audit.md`; decisions narratives finales encore a prendre. |
 | 6. Normaliser progressivement le format narratif | Valide avec reserves | Format documente dans `narrative_guide.md`; JSON Schema ou migration stricte reportes. |
 | 7. Documenter objets et preconditions | Valide | Clef et preconditions documentees dans `narrative_guide.md`; constantes dans `storyConstants.js`. |
 | 8. Integrer les diagrammes de decision | Valide | Les fichiers Draw.io sont references dans `architecture.md` et `narrative_guide.md`. |
 | 9. Guide d'ecriture de chapitre | Valide | `narrative_guide.md`. |
-| 10. Remplacer la recuperation de chapitre par index | Valide | `getStoryById` utilise dans `Book`. |
+| 10. Remplacer la recuperation de chapitre par index | Valide | `createStoryIndex` prepare une map de chapitres et `getStoryById` l'utilise dans `Book`. |
 | 11. Centraliser les ids et regles speciales | Valide | `src/game/storyConstants.js`. |
 | 12. Renforcer le validateur de scenario | Valide | Warnings sur champs vides, placeholders, draft, actions alignees, avec regroupement par categorie. |
-| 13. Ajouter des tests unitaires sur `src/game` | Valide | `npm run test` couvre `resolveAction`, `inventory`, `storyNavigation`. |
+| 13. Ajouter des tests unitaires sur `src/game` | Valide | `npm run test` couvre `resolveAction`, `inventory`, `storyNavigation` et l'index de chapitres. |
 | 14. Preparer l'extraction de l'etat de `Book` | Valide | Etat minimal serialisable documente dans ce sprint ; `Book` est mieux prepare pour une extraction future. |
 | 15. Clarifier les noms et l'etat dans `Book` | Valide | `flag` est remplace par `isReadingChapter`, `precendentAction` par `previousActionText`, et le mapping de resultats sort de `Book`. |
 | 16. Rendre le validateur plus actionnable | Valide | Les warnings sont maintenant categories : priorite, draft, encodage, information. |
@@ -32,11 +32,12 @@ Le sprint 3 est lance. Les dettes techniques liees au scenario ont fortement ava
 | 22. Ajouter du texte d'ambiance sur les cards | Valide | `ChoiceCard` affiche un flavor text court derive du pictogramme, sans modifier `stories.json`. |
 | 23. Harmoniser le prompt final avec le theme | Valide | Le prompt final utilise un panneau sombre important, avec bordure doree et bouton de copie coherent avec le reste de l'interface. |
 | 24. Ajouter la signature et le contact | Valide | Les pages principales affichent la mention `Developpe, ecrit par Pierre-Olivier B. (Powered by Codex)` avec lien LinkedIn. |
+| 25. Revoir la compatibilite portable/mobile | Valide | Layout mobile repris et valide visuellement : icones en haut, fond global coherent, footer transparent, panneaux scrollables et absence de superposition sur la page finale. |
 
 Verification actuelle :
 
 - `npm run validate:story` : ne remonte plus que les chapitres `draft` et les chapitres non references.
-- `npm run test` : passe, 16 tests.
+- `npm run test` : passe, 17 tests.
 - `npm run lint` : passe.
 - `npm run build` : passe.
 - Recommandations UX/UI continues : les trois corrections ajoutees sont appliquees (`ChoiceCard` sans swipe, cartes personnage responsives, scrollbars personnalisees).
@@ -44,6 +45,7 @@ Verification actuelle :
 - Dessins de cards : pictogrammes contextuels integres par intention de choix, par exemple observer, fouiller, main pour tatonner, bureau, canape, meuble, porte ouverte, television, volet, voiture, pied rapide, pied leger, dialogue, force et livre ouvert pour continuer.
 - Prompt final : le bloc de copie n'utilise plus de fond blanc et reste visuellement important dans le theme sombre.
 - Signature : mention projet ajoutee sur les pages principales avec contact LinkedIn vers Pierre-Olivier B.
+- Accents visibles : passe UI effectuee sur l'ecran de fin, la signature, la phase de resolution et les libelles speciaux.
 
 ## Objectif
 
@@ -338,6 +340,10 @@ Resolution proposee :
 - ne pas optimiser prematurement tant que le scenario reste petit.
 
 Priorite : basse.
+
+Statut : **Valide**.
+
+`createStoryIndex(stories)` prepare maintenant une map de chapitres. `Book` utilise cet index pour recuperer le chapitre courant, tout en conservant `getStoryById` comme API centrale. Un test dedie verifie la recherche directe par index.
 
 ## Perimetre
 
@@ -986,3 +992,10 @@ Les pages doivent identifier clairement l'auteur et donner un moyen de contact.
   - Lier le nom a LinkedIn : `https://www.linkedin.com/in/pierre-olivier-baudino/`.
 
 * **Statut : Valide.** Le composant `SiteSignature` est affiche sur les pages principales et conserve le lien LinkedIn sur le nom.
+
+### 25. Revoir la Compatibilite Portable/Mobile
+L'affichage sur portable ne convient pas dans son etat actuel.
+
+Statut : **Valide**.
+
+La correction mobile est appliquee et validee : les icones restent en haut, le layout tient sur un ecran mobile, les choix multiples se parcourent horizontalement, les aides passent par des modales, les panneaux de texte restent scrollables et la signature ne se superpose plus au contenu.

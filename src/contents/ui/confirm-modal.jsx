@@ -1,3 +1,5 @@
+// Shared modal used for confirmations and compact information panels. It keeps
+// one accessible dialog structure for choices, journal, rules, and player stats.
 function ConfirmModal({
   isOpen,
   title = "Confirmer",
@@ -6,25 +8,36 @@ function ConfirmModal({
   cancelLabel = "Annuler",
   onConfirm,
   onCancel,
+  children,
+  compact = false,
 }) {
   if (!isOpen) {
     return null;
   }
 
+  const closeFromBackdrop = onCancel || onConfirm;
+
   return (
-    <div className="confirm-modal-backdrop" role="presentation">
+    <div
+      className="confirm-modal-backdrop"
+      onClick={closeFromBackdrop}
+      role="presentation"
+    >
       <section
         aria-modal="true"
-        className="confirm-modal description"
+        className={`confirm-modal description ${compact ? "confirm-modal--compact" : ""}`}
+        onClick={(event) => event.stopPropagation()}
         role="dialog"
         aria-labelledby="confirm-modal-title"
       >
         <h2 id="confirm-modal-title">{title}</h2>
-        <p>{message}</p>
+        {children || <p>{message}</p>}
         <div className="confirm-modal-actions">
-          <button className="confirm-modal-secondary" onClick={onCancel} type="button">
-            {cancelLabel}
-          </button>
+          {onCancel ? (
+            <button className="confirm-modal-secondary" onClick={onCancel} type="button">
+              {cancelLabel}
+            </button>
+          ) : null}
           <button className="confirm-modal-primary" onClick={onConfirm} type="button">
             {confirmLabel}
           </button>

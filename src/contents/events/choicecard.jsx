@@ -1,6 +1,9 @@
 import "../../App.css";
 import SketchIcon from "./SketchIcon";
 
+// ChoiceCard is the shared interaction surface for chapters, actions, dice,
+// character selection, and final continuations. Keeping click and keyboard
+// activation here avoids accessibility drift between card types.
 const ChoiceCard = ({
   content,
   onActivate,
@@ -12,6 +15,8 @@ const ChoiceCard = ({
   sketchType = choiceType,
   flavorText = "",
 }) => {
+  // onSwipeRight is kept as a compatibility alias from the first prototype,
+  // while the current UI activates cards by click, tap, Enter, or Space.
   const activate = onActivate || onSwipeRight;
 
   function handleActivate() {

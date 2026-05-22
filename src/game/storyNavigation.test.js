@@ -2,6 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {
   addChoiceToHistory,
+  createStoryIndex,
   getChoiceFlavorText,
   getChoiceSketchType,
   getDisplayChoices,
@@ -13,6 +14,13 @@ test("getStoryById finds a chapter by numero_chapitre", () => {
   const stories = [{ numero_chapitre: "2" }, { numero_chapitre: "0" }];
 
   assert.deepEqual(getStoryById(stories, "0"), { numero_chapitre: "0" });
+});
+
+test("createStoryIndex prepares direct chapter lookup", () => {
+  const stories = [{ numero_chapitre: "2" }, { numero_chapitre: "0" }];
+  const storyIndex = createStoryIndex(stories);
+
+  assert.deepEqual(getStoryById(storyIndex, "2"), { numero_chapitre: "2" });
 });
 
 test("addChoiceToHistory keeps the existing pocket side effect", () => {

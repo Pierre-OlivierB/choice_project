@@ -22,6 +22,8 @@ export function hasUsedKey(choiceAlreadyDone) {
   return choiceAlreadyDone.includes(CHAPTER_IDS.KEY_USED);
 }
 
+// Inventory is derived from visited chapters for now. This keeps saves small
+// and avoids duplicating object rules in the UI layer.
 export function updateInventoryFromChoices(inventory, choiceAlreadyDone) {
   let nextInventory = inventory;
 

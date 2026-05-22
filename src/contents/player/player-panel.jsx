@@ -6,6 +6,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import InventoryList from "./inventory-list";
 
+// Character icons are derived from the dominant stat of the prebuilt profile.
+// If new archetypes are added, this mapping should evolve with them.
 function getCharacterIcon(perso) {
   if (perso.intelligence === "75") {
     return faUserGraduate;
@@ -19,6 +21,8 @@ function getCharacterIcon(perso) {
   return null;
 }
 
+// PlayerPanel is intentionally compact: it appears in desktop panels and inside
+// mobile modals, so it must remain readable in constrained layouts.
 function PlayerPanel({ perso, inventory }) {
   const icon = getCharacterIcon(perso);
 
