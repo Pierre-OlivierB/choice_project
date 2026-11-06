@@ -1,15 +1,13 @@
 import ChoiceCard from "../events/choicecard";
 
-// Footer choices are already normalized by storyNavigation. This component only
-// renders the horizontal, scrollable choice strip used during chapter reading.
+// Choices are already normalized by storyNavigation; this only lays them out.
 function ChoiceFooter({ choices, onActivateChoice }) {
   return (
-    <div className="game-choice-strip">
+    <div className="card-row" data-count={choices.length}>
       {choices.map((choice) => (
         <ChoiceCard
           key={choice.id}
           content={choice.label}
-          choiceCss="cardChoiceSize"
           choiceType={choice.type}
           sketchType={choice.sketchType}
           flavorText={choice.flavorText}

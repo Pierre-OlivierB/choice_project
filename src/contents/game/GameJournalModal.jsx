@@ -1,29 +1,24 @@
 import ConfirmModal from "../ui/confirm-modal";
 import GameJournal from "../player/game-journal";
+import { useGame } from "../../hooks/useGame";
 
-// The journal is opened from several screens. This wrapper keeps the modal
-// contract and journal props identical everywhere.
-function GameJournalModal({
-  isOpen,
-  onClose,
-  perso,
-  inventory,
-  storyHistory,
-  rollHistory,
-}) {
+// The journal is opened from several screens; its state lives with the game.
+function GameJournalModal() {
+  const { closeJournal, state } = useGame();
+
   return (
     <ConfirmModal
-      isOpen={isOpen}
+      isOpen={state.isJournalOpen}
       title="Journal"
       confirmLabel="Fermer"
-      onConfirm={onClose}
+      onConfirm={closeJournal}
       compact
     >
       <GameJournal
-        perso={perso}
-        inventory={inventory}
-        storyHistory={storyHistory}
-        rollHistory={rollHistory}
+        perso={state.perso}
+        inventory={state.inventory}
+        storyHistory={state.storyHistory}
+        rollHistory={state.rollHistory}
       />
     </ConfirmModal>
   );

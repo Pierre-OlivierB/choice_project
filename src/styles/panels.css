@@ -1,0 +1,249 @@
+.panel {
+  animation: rise-in 0.55s var(--ease-out) both;
+  background:
+    linear-gradient(180deg, var(--panel-highlight), transparent 90px),
+    var(--panel-bg);
+  border: 1px solid var(--gold-line);
+  border-radius: var(--radius-panel);
+  box-shadow: var(--shadow-panel);
+}
+
+/* Story */
+.story-panel {
+  max-height: 100%;
+  min-height: 0;
+  overflow-y: auto;
+  padding: clamp(18px, 3vh, 30px) clamp(20px, 3vw, 36px);
+}
+
+.story-text {
+  color: var(--cream-100);
+  font-size: 1.07rem;
+  line-height: 1.72;
+  max-width: 66ch;
+  white-space: pre-line;
+}
+
+.story-question {
+  color: var(--gold-200);
+  font-family: var(--font-display);
+  font-size: 1.32rem;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-top: 14px;
+}
+
+/* Character */
+.player-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+}
+
+.player-panel-header {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+}
+
+.player-panel-emblem {
+  align-items: center;
+  border: 1px solid var(--gold-line-strong);
+  border-radius: 50%;
+  color: var(--gold-400);
+  display: inline-flex;
+  flex: 0 0 44px;
+  font-size: 1.2rem;
+  height: 44px;
+  justify-content: center;
+}
+
+.player-panel-name {
+  font-size: 1.5rem;
+}
+
+.player-panel-role {
+  color: var(--cream-500);
+  font-size: 0.84rem;
+}
+
+.stat-bars {
+  display: grid;
+  gap: 7px;
+  width: 100%;
+}
+
+.stat-bar {
+  color: var(--cream-300);
+  display: grid;
+  font-size: 0.78rem;
+  gap: 3px;
+  grid-template-columns: 1fr auto;
+  line-height: 1.2;
+}
+
+.stat-bar--dominant {
+  color: var(--gold-200);
+}
+
+.stat-bar-track {
+  background: hsla(40, 30%, 90%, 0.09);
+  border-radius: 2px;
+  grid-column: 1 / -1;
+  height: 3px;
+  overflow: hidden;
+}
+
+.stat-bar-fill {
+  background: var(--cream-500);
+  display: block;
+  height: 100%;
+}
+
+.stat-bar--dominant .stat-bar-fill {
+  background: var(--gold-gradient);
+}
+
+.inventory-list {
+  border-top: 1px solid var(--gold-line);
+  padding-top: 10px;
+}
+
+.inventory-title {
+  color: var(--cream-500);
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.inventory-empty {
+  color: var(--cream-500);
+  font-size: 0.86rem;
+  font-style: italic;
+}
+
+.inventory-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.inventory-item {
+  align-items: center;
+  animation: rise-in 0.5s var(--ease-out) both;
+  border: 1px solid var(--gold-line-strong);
+  border-radius: 999px;
+  color: var(--gold-200);
+  display: inline-flex;
+  font-size: 0.84rem;
+  gap: 6px;
+  padding: 2px 11px;
+  text-transform: capitalize;
+}
+
+/* Modals */
+.modal-backdrop {
+  align-items: center;
+  animation: rise-in 0.25s ease both;
+  background: hsla(255, 16%, 3%, 0.86);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  padding: 18px;
+  position: fixed;
+  z-index: 100;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  max-height: 88dvh;
+  max-width: 460px;
+  padding: 24px;
+  width: 100%;
+}
+
+.modal--compact {
+  max-width: 560px;
+}
+
+.modal-title {
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+}
+
+.modal-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 18px;
+}
+
+.modal .player-panel {
+  background: none;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+}
+
+.rules-panel {
+  display: grid;
+  gap: 10px;
+}
+
+/* Journal */
+.game-journal {
+  display: grid;
+  gap: 16px;
+}
+
+.game-journal h3 {
+  font-size: 1.25rem;
+  margin-bottom: 6px;
+}
+
+.game-journal p {
+  font-size: 0.95rem;
+}
+
+.game-journal-actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.game-journal-feedback {
+  color: var(--gold-400);
+  font-size: 0.9rem;
+}
+
+.game-journal-list {
+  display: grid;
+  font-size: 0.92rem;
+  gap: 7px;
+}
+
+/* Error */
+.game-error {
+  display: grid;
+  gap: 10px;
+  justify-items: start;
+  margin: auto;
+  max-width: 620px;
+  padding: 28px;
+}
+
+.game-error-detail {
+  color: var(--crimson-300);
+}

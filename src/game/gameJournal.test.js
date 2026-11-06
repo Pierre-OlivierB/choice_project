@@ -34,6 +34,6 @@ test("formatGameJournal builds an exportable text", () => {
   assert.equal(text.includes("Personnage : Chris"), true);
   assert.equal(text.includes("Objets : clef"), true);
   assert.equal(text.includes("1. Tu te reveilles."), true);
-  assert.equal(text.includes("1. Courir : 42/75 - reussite"), true);
+  assert.equal(text.includes("1. Courir : 42/75 - réussite"), true);
 });
 

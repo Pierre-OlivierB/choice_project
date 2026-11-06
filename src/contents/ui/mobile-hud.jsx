@@ -1,112 +1,54 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCircleQuestion,
-  faBookOpen,
-  faUserGraduate,
-  faUserNinja,
-  faUserSecret,
-  faKey,
-} from "@fortawesome/free-solid-svg-icons";
+import { faBookOpen, faKey } from "@fortawesome/free-solid-svg-icons";
 import ConfirmModal from "./confirm-modal";
+import CharacterIcon from "../player/character-icon";
 import PlayerPanel from "../player/player-panel";
-import RulesPanel from "../rules/rules-panel";
-import GameJournal from "../player/game-journal";
+import RulesButton from "../rules/rules-button";
+import { useGame } from "../../hooks/useGame";
 
-// Mobile uses compact icon buttons instead of the full desktop panels. Each
-// button opens a modal so the game can still fit on one small screen.
-function getCharacterIcon(perso) {
-  if (perso.intelligence === "75") {
-    return faUserGraduate;
-  }
-  if (perso.dexterite === "75") {
-    return faUserNinja;
-  }
-  if (perso.constitution === "75") {
-    return faUserSecret;
-  }
-  return faUserSecret;
-}
-
-function MobileHud({ perso, inventory, storyHistory, rollHistory }) {
-  const [openModal, setOpenModal] = useState(null);
+// Mobile uses compact icon buttons instead of the desktop side column.
+function MobileHud() {
+  const { openJournal, state } = useGame();
+  const { inventory, perso } = state;
+  const [isPlayerOpen, setIsPlayerOpen] = useState(false);
 
   return (
-    <div className="mobile-hud-container">
-      <div className="mobile-hud" aria-label="Informations de partie">
+    <div className="mobile-hud" aria-label="Informations de partie">
+      <RulesButton />
       <button
-        className="mobile-hud-button"
-        onClick={() => setOpenModal("rules")}
-        type="button"
-        aria-label="Afficher les regles"
-      >
-        <FontAwesomeIcon icon={faCircleQuestion} />
-        <span className="mobile-hud-fallback">?</span>
-      </button>
-
-      <button
-        className="mobile-hud-button"
-        onClick={() => setOpenModal("journal")}
-        type="button"
         aria-label="Afficher le journal"
+        className="icon-button"
+        onClick={openJournal}
+        type="button"
       >
         <FontAwesomeIcon icon={faBookOpen} />
       </button>
 
+      {inventory.map((item) => (
+        <span aria-label={item} className="mobile-item" key={item} role="img">
+          <FontAwesomeIcon icon={faKey} />
+        </span>
+      ))}
+
       <button
-        className="mobile-player-button"
-        onClick={() => setOpenModal("player")}
-        type="button"
         aria-label="Afficher le personnage"
+        className="mobile-player-button"
+        onClick={() => setIsPlayerOpen(true)}
+        type="button"
       >
-        <FontAwesomeIcon icon={getCharacterIcon(perso)} />
+        <CharacterIcon character={perso} />
         <span>{perso.name}</span>
       </button>
-      </div>
-
-      {inventory && inventory.length > 0 ? (
-        <div className="mobile-inventory-bar">
-          {inventory.map((item) => (
-            <div key={item} className="mobile-inventory-item" title={item}>
-              <FontAwesomeIcon icon={faKey} />
-            </div>
-          ))}
-        </div>
-      ) : null}
 
       <ConfirmModal
-        isOpen={openModal === "rules"}
-        title="Rappel des regles"
-        confirmLabel="Fermer"
-        onConfirm={() => setOpenModal(null)}
-        compact
-      >
-        <RulesPanel showTitle={false} />
-      </ConfirmModal>
-
-      <ConfirmModal
-        isOpen={openModal === "player"}
+        isOpen={isPlayerOpen}
         title="Personnage"
         confirmLabel="Fermer"
-        onConfirm={() => setOpenModal(null)}
+        onConfirm={() => setIsPlayerOpen(false)}
         compact
       >
         <PlayerPanel perso={perso} inventory={inventory} />
-      </ConfirmModal>
-
-      <ConfirmModal
-        isOpen={openModal === "journal"}
-        title="Journal"
-        confirmLabel="Fermer"
-        onConfirm={() => setOpenModal(null)}
-        compact
-      >
-        <GameJournal
-          perso={perso}
-          inventory={inventory}
-          storyHistory={storyHistory}
-          rollHistory={rollHistory}
-        />
       </ConfirmModal>
     </div>
   );

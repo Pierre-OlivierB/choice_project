@@ -31,7 +31,8 @@ npm run build
 
 - `master_plan.md` : vision, roadmap et etat d'avancement.
 - `architecture.md` : architecture applicative.
-- `sprint1.md`, `sprint2.md`, `sprint3.md` : suivi des sprints.
+- `fiche_design.html` : fiche design (couleurs, typographie, composants, illustrations).
+- `sprint1.md` a `sprint6.md` : suivi des sprints.
 - `narrative_guide.md` : guide d'ecriture du scenario.
 - `scenario_audit.md` : audit du contenu narratif.
 - `recherches.md` : recherches UX et pistes d'amelioration.

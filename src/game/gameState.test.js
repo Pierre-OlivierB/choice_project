@@ -2,17 +2,19 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {
   GAME_ACTIONS,
+  RESOLUTION_PHASES,
   createInitialGameState,
   createSaveableGameState,
   gameReducer,
+  getResolutionPhase,
 } from "./gameState.js";
-import { BACKGROUNDS, CHAPTER_IDS } from "./storyConstants.js";
+import { BACKGROUNDS, START_CHAPTER_ID } from "./storyConstants.js";
 import { createStoryIndex } from "./storyNavigation.js";
 
 const stories = createStoryIndex([
   {
-    numero_chapitre: CHAPTER_IDS.START,
-    txt: "Tu te reveilles.",
+    id: START_CHAPTER_ID,
+    intro: "Tu te reveilles.",
   },
 ]);
 
@@ -20,7 +22,7 @@ test("createInitialGameState creates defaults for a new game", () => {
   const perso = { name: "Chris" };
   const state = createInitialGameState({ perso, storyIndex: stories });
 
-  assert.equal(state.choice, CHAPTER_IDS.START);
+  assert.equal(state.choice, START_CHAPTER_ID);
   assert.equal(state.isReadingChapter, true);
   assert.equal(state.activeBackground, BACKGROUNDS.HOUSE);
   assert.equal(state.previousActionText, "Tu te reveilles.");
@@ -34,7 +36,6 @@ test("createInitialGameState restores saved values", () => {
     action: "c",
     activeBackground: BACKGROUNDS.CAR,
     choice: "17",
-    choiceAfterDiceRoll: "17",
     choiceAlreadyDone: ["1"],
     inventory: ["clef"],
     isReadingChapter: false,
@@ -62,8 +63,7 @@ test("createSaveableGameState excludes transient modal state", () => {
   const state = {
     action: "",
     activeBackground: BACKGROUNDS.HOUSE,
-    choice: CHAPTER_IDS.START,
-    choiceAfterDiceRoll: null,
+    choice: START_CHAPTER_ID,
     choiceAlreadyDone: [],
     inventory: [],
     isReadingChapter: true,
@@ -79,7 +79,7 @@ test("createSaveableGameState excludes transient modal state", () => {
   const snapshot = createSaveableGameState(state);
 
   assert.equal("pendingChoice" in snapshot, false);
-  assert.equal(snapshot.choice, CHAPTER_IDS.START);
+  assert.equal(snapshot.choice, START_CHAPTER_ID);
 });
 
 test("gameReducer opens and closes confirmation", () => {
@@ -155,26 +155,18 @@ test("gameReducer keeps skip-history choices out of history", () => {
   assert.deepEqual(nextState.choiceAlreadyDone, []);
 });
 
-test("gameReducer updates inventory when a choice changes item state", () => {
+test("gameReducer spends the item consumed by a choice", () => {
   const state = createInitialGameState({
     perso: { name: "Chris" },
+    initialGameState: { inventory: ["clef"] },
     storyIndex: stories,
   });
-  const keyFoundState = gameReducer(state, {
+  const nextState = gameReducer(state, {
     type: GAME_ACTIONS.GO_TO_CHAPTER,
-    payload: {
-      targetChapter: CHAPTER_IDS.DESK_KEY_FOUND,
-    },
-  });
-  const keyUsedState = gameReducer(keyFoundState, {
-    type: GAME_ACTIONS.GO_TO_CHAPTER,
-    payload: {
-      targetChapter: CHAPTER_IDS.KEY_USED,
-    },
+    payload: { consumesItem: "clef", targetChapter: "19" },
   });
 
-  assert.deepEqual(keyFoundState.inventory, ["clef"]);
-  assert.deepEqual(keyUsedState.inventory, []);
+  assert.deepEqual(nextState.inventory, []);
 });
 
 test("gameReducer records story steps without duplicate text", () => {
@@ -185,7 +177,7 @@ test("gameReducer records story steps without duplicate text", () => {
   const action = {
     type: GAME_ACTIONS.RECORD_STORY_STEP,
     payload: {
-      chapterId: CHAPTER_IDS.START,
+      chapterId: START_CHAPTER_ID,
       player: { name: "Chris" },
       text: "Tu te reveilles.",
     },
@@ -197,54 +189,107 @@ test("gameReducer records story steps without duplicate text", () => {
   assert.equal(secondState.storyHistory.length, 1);
 });
 
-test("gameReducer records dice rolls", () => {
+function rollWith(roll, stat = 50) {
   const state = createInitialGameState({
     perso: { name: "Chris" },
     storyIndex: stories,
   });
-  const roll = { actionLabel: "Courir", roll: 42, stat: 75, success: true };
-  const nextState = gameReducer(state, {
-    type: GAME_ACTIONS.RECORD_DICE_ROLL,
-    payload: roll,
+  const selectedState = gameReducer(state, {
+    type: GAME_ACTIONS.SELECT_ACTION,
+    payload: { label: "Courir", characteristic: "dexterite", stat },
   });
 
-  assert.deepEqual(nextState.rollHistory, [roll]);
+  return gameReducer(selectedState, {
+    type: GAME_ACTIONS.ROLL_DICE,
+    payload: { roll },
+  });
+}
+
+test("the dice cycle goes through choosing, rolling and resolved", () => {
+  const state = createInitialGameState({
+    perso: { name: "Chris" },
+    storyIndex: stories,
+  });
+  const selectedState = gameReducer(state, {
+    type: GAME_ACTIONS.SELECT_ACTION,
+    payload: { label: "Courir", characteristic: "dexterite", stat: 50 },
+  });
+
+  assert.equal(getResolutionPhase(state), RESOLUTION_PHASES.CHOOSING);
+  assert.equal(getResolutionPhase(selectedState), RESOLUTION_PHASES.ROLLING);
+  assert.equal(getResolutionPhase(rollWith(42)), RESOLUTION_PHASES.RESOLVED);
 });
 
-test("gameReducer resolves an action result", () => {
-  const state = createInitialGameState({
+test("gameReducer records the roll and resolves it against the stat", () => {
+  const nextState = rollWith(42);
+
+  assert.equal(nextState.pendingRoll.success, true);
+  assert.equal(rollWith(51).pendingRoll.success, false);
+  assert.deepEqual(nextState.rollHistory, [nextState.pendingRoll]);
+});
+
+test("gameReducer refuses a second throw for the same action", () => {
+  const rolledState = rollWith(90);
+  const nextState = gameReducer(rolledState, {
+    type: GAME_ACTIONS.ROLL_DICE,
+    payload: { roll: 1 },
+  });
+
+  assert.equal(nextState, rolledState);
+});
+
+test("a roll in progress survives a save and restore", () => {
+  const rolledState = rollWith(90);
+  const restoredState = createInitialGameState({
     perso: { name: "Chris" },
+    initialGameState: createSaveableGameState(rolledState),
     storyIndex: stories,
   });
-  const nextState = gameReducer(state, {
+
+  assert.deepEqual(restoredState.pendingRoll, rolledState.pendingRoll);
+  assert.equal(getResolutionPhase(restoredState), RESOLUTION_PHASES.RESOLVED);
+});
+
+test("createInitialGameState accepts saves without a dice cycle", () => {
+  const state = createInitialGameState({
+    perso: { name: "Chris" },
+    initialGameState: { choice: "17", isReadingChapter: false },
+    storyIndex: stories,
+  });
+
+  assert.equal(getResolutionPhase(state), RESOLUTION_PHASES.CHOOSING);
+});
+
+test("gameReducer resolves an action result and grants its item", () => {
+  const nextState = gameReducer(rollWith(90), {
     type: GAME_ACTIONS.RESOLVE_ACTION_RESULT,
-    payload: {
-      action: "d",
-      isReadingChapter: true,
-      previousActionText: "Tu avances sans bruit.",
-      win: false,
-    },
+    payload: { grantsItem: "clef", previousActionText: "Tu avances sans bruit." },
   });
 
   assert.equal(nextState.action, "d");
   assert.equal(nextState.isReadingChapter, true);
   assert.equal(nextState.previousActionText, "Tu avances sans bruit.");
   assert.equal(nextState.win, false);
+  assert.equal(nextState.pendingRoll, null);
+  assert.equal(nextState.selectedAction, null);
+  assert.equal(nextState.rollHistory.length, 1);
+  assert.deepEqual(nextState.inventory, ["clef"]);
 });
 
-test("gameReducer updates the active background after a dice chapter", () => {
+test("gameReducer changes the background on a chapter that declares one", () => {
   const state = createInitialGameState({
     perso: { name: "Chris" },
     storyIndex: stories,
   });
-  const nextState = gameReducer(state, {
-    type: GAME_ACTIONS.UPDATE_BACKGROUND,
-    payload: {
-      chapterId: CHAPTER_IDS.PARKING,
-    },
+  const selectedState = gameReducer(state, {
+    type: GAME_ACTIONS.SELECT_ACTION,
+    payload: { label: "Forcer", characteristic: "constitution", stat: 50 },
+  });
+  const nextState = gameReducer(selectedState, {
+    type: GAME_ACTIONS.ROLL_DICE,
+    payload: { background: BACKGROUNDS.CAR, roll: 10 },
   });
 
-  assert.equal(nextState.choiceAfterDiceRoll, CHAPTER_IDS.PARKING);
   assert.equal(nextState.activeBackground, BACKGROUNDS.CAR);
 });
 

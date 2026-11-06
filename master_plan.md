@@ -17,6 +17,7 @@ L'objectif du projet est de proposer un prototype jouable de role play solo, sim
 | Sprint 3 - Narration, Contenu et Scenario | Valide avec reserves narratives | Documentation narrative, tests, constantes, recuperation par id indexee, validateur, cards illustrees, textes d'ambiance, prompt final sombre, signature projet, accents visibles et mobile valides. Les chapitres draft restent a arbitrer plus tard. |
 | Sprint 4 - Sauvegarde et Rejouabilite | En cours | Sauvegarde, reprise, journal, statistiques simples et export texte en place. `Book` est allege via `gameState`, `gameReducer` et `useGameState`. Dette ouverte : stabiliser les layouts responsive. |
 | Sprint 5 - Qualite Produit | Non demarre | Depend des sprints 3 et 4. |
+| Sprint 6 - Finition Premium | Realise et deploye | Texte reecrit, bug de la clef corrige, code reorganise, Bootstrap retire, de 3D et cartes premium. Detail dans `sprint6.md`. |
 
 ### Points Valides
 
@@ -350,6 +351,12 @@ Objectif : preparer une version demo propre.
 - README complet.
 - Captures ou GIF de demonstration.
 - Nettoyage des assets inutilises.
+
+### Sprint 6 - Finition Premium
+
+Objectif : rendre le jeu le plus premium possible, sur le texte, le code et le design.
+
+Etat : **Realise et deploye**. Le detail, les verifications et la dette restante sont dans `sprint6.md`.
 
 ## Definition of Done Generale
 

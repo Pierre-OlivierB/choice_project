@@ -1,5 +1,9 @@
+import { useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
+
 // Shared modal used for confirmations and compact information panels. It keeps
 // one accessible dialog structure for choices, journal, rules, and player stats.
+// The portal keeps it above the tilted, composited cards and panels.
 function ConfirmModal({
   isOpen,
   title = "Confirmer",
@@ -11,39 +15,62 @@ function ConfirmModal({
   children,
   compact = false,
 }) {
+  const confirmRef = useRef(null);
+  const close = onCancel || onConfirm;
+
+  useEffect(() => {
+    if (!isOpen) {
+      return undefined;
+    }
+
+    confirmRef.current?.focus();
+
+    function handleKeyDown(event) {
+      if (event.key === "Escape") {
+        close();
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [close, isOpen]);
+
   if (!isOpen) {
     return null;
   }
 
-  const closeFromBackdrop = onCancel || onConfirm;
-
-  return (
-    <div
-      className="confirm-modal-backdrop"
-      onClick={closeFromBackdrop}
-      role="presentation"
-    >
+  return createPortal(
+    <div className="modal-backdrop" onClick={close} role="presentation">
       <section
+        aria-labelledby="modal-title"
         aria-modal="true"
-        className={`confirm-modal description ${compact ? "confirm-modal--compact" : ""}`}
+        className={`panel modal ${compact ? "modal--compact" : ""}`}
         onClick={(event) => event.stopPropagation()}
         role="dialog"
-        aria-labelledby="confirm-modal-title"
       >
-        <h2 id="confirm-modal-title">{title}</h2>
-        {children || <p>{message}</p>}
-        <div className="confirm-modal-actions">
+        <h2 className="modal-title" id="modal-title">
+          {title}
+        </h2>
+        <div className="modal-body">{children || <p>{message}</p>}</div>
+        <div className="modal-actions">
           {onCancel ? (
-            <button className="confirm-modal-secondary" onClick={onCancel} type="button">
+            <button className="button button--ghost" onClick={onCancel} type="button">
               {cancelLabel}
             </button>
           ) : null}
-          <button className="confirm-modal-primary" onClick={onConfirm} type="button">
+          <button
+            className="button button--gold"
+            onClick={onConfirm}
+            ref={confirmRef}
+            type="button"
+          >
             {confirmLabel}
           </button>
         </div>
       </section>
-    </div>
+    </div>,
+    document.body
   );
 }
 

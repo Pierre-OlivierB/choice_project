@@ -22,6 +22,10 @@ Le scenario contient 29 chapitres. Les transitions sont valides. Les placeholder
 - Verifier les textes en interface pour confirmer le rendu des accents.
 - Ne pas reconnecter les chapitres non references sans decision narrative.
 
+## Reecriture Complete
+
+Les chapitres jouables ont ete reecrits : fautes corrigees, incoherences levees (chapitres 6, 15, 21 et 23), repetitions reduites, accords neutres pour les personnages. Les transitions, issues de jet et objets ne changent pas.
+
 ## Decision Actuelle
 
 Les chapitres non references restent dans le fichier pour ne pas supprimer de contenu. Ils sont marques `draft` dans `stories.json` pour indiquer qu'ils ne doivent pas etre consideres comme du contenu final tant qu'une decision narrative n'a pas ete prise.

@@ -1,66 +1,36 @@
-import "../../App.css";
 import SketchIcon from "./SketchIcon";
 
-// ChoiceCard is the shared interaction surface for chapters, actions, dice,
-// character selection, and final continuations. Keeping click and keyboard
-// activation here avoids accessibility drift between card types.
-const ChoiceCard = ({
+// ChoiceCard is a trading card: an illustration window, a name plate, then a
+// description box. A native button gives click, tap, and keyboard activation.
+function ChoiceCard({
   content,
   onActivate,
-  onSwipeRight,
-  isDisabled,
-  data,
-  choiceCss,
+  isDisabled = false,
+  art,
+  gem,
+  typeLine,
+  children,
   choiceType = "chapter",
-  sketchType = choiceType,
+  sketchType,
   flavorText = "",
-}) => {
-  // onSwipeRight is kept as a compatibility alias from the first prototype,
-  // while the current UI activates cards by click, tap, Enter, or Space.
-  const activate = onActivate || onSwipeRight;
-
-  function handleActivate() {
-    if (isDisabled || !activate) {
-      return;
-    }
-
-    activate();
-  }
-
-  function handleKeyDown(event) {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      handleActivate();
-    }
-  }
-
+}) {
   return (
-    <div className="relative flex-shrink-0 min-width-350px d-flex justify-content-center">
-      <button
-        type="button"
-        tabIndex={isDisabled ? -1 : 0}
-        aria-disabled={isDisabled}
-        disabled={isDisabled}
-        onClick={handleActivate}
-        onKeyDown={handleKeyDown}
-        className={`cardChoice ${choiceCss} no-select cards-positions ${
-          isDisabled ? "disabled" : ""
-        } cardChoice--${choiceType}`}
-      >
-        <SketchIcon type={sketchType} className={`sketch-wrapper--${sketchType}`} />
-
-        <div className="cardChoice-content choice-card-layer">
-          <div className="choice-card-title">{content}</div>
-        </div>
-
-        {flavorText ? (
-          <p className="choice-card-flavor choice-card-layer">{flavorText}</p>
-        ) : null}
-
-        {data ? <div className="card-img choice-card-layer">{data}</div> : null}
-      </button>
-    </div>
+    <button
+      type="button"
+      disabled={isDisabled}
+      onClick={onActivate}
+      className={`choice-card choice-card--${choiceType}`}
+    >
+      <span className="choice-card-art">
+        {art || <SketchIcon type={sketchType} />}
+        {gem ? <span className="choice-card-gem">{gem}</span> : null}
+      </span>
+      <span className="choice-card-title">{content}</span>
+      {typeLine ? <span className="choice-card-type">{typeLine}</span> : null}
+      {flavorText ? <span className="choice-card-flavor">{flavorText}</span> : null}
+      {children ? <span className="choice-card-text">{children}</span> : null}
+    </button>
   );
-};
+}
 
 export default ChoiceCard;

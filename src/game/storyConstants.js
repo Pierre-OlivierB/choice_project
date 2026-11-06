@@ -1,13 +1,4 @@
-export const CHAPTER_IDS = {
-  START: "0",
-  TV_ON: "1",
-  POCKETS: "2",
-  DESK_KEY_FOUND: "10",
-  DOOR: "15",
-  DOOR_AFTER_FAIL: "16",
-  PARKING: "17",
-  KEY_USED: "19",
-};
+export const START_CHAPTER_ID = "0";
 
 export const BACKGROUNDS = {
   HOUSE: "house",
@@ -15,8 +6,5 @@ export const BACKGROUNDS = {
   CAR: "car",
 };
 
-export const BACKGROUND_BY_CHAPTER_ID = {
-  [CHAPTER_IDS.TV_ON]: BACKGROUNDS.TV,
-  [CHAPTER_IDS.PARKING]: BACKGROUNDS.CAR,
-  [CHAPTER_IDS.KEY_USED]: BACKGROUNDS.CAR,
-};
+// Action marker used by the scenario for "end the story" instead of a roll.
+export const END_ACTION_STAT = "fin";

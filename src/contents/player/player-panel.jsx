@@ -1,50 +1,21 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faUserGraduate,
-  faUserNinja,
-  faUserSecret,
-} from "@fortawesome/free-solid-svg-icons";
+import CharacterIcon from "./character-icon";
 import InventoryList from "./inventory-list";
+import StatBars from "./stat-bars";
 
-// Character icons are derived from the dominant stat of the prebuilt profile.
-// If new archetypes are added, this mapping should evolve with them.
-function getCharacterIcon(perso) {
-  if (perso.intelligence === "75") {
-    return faUserGraduate;
-  }
-  if (perso.dexterite === "75") {
-    return faUserNinja;
-  }
-  if (perso.constitution === "75") {
-    return faUserSecret;
-  }
-  return null;
-}
-
-// PlayerPanel is intentionally compact: it appears in desktop panels and inside
-// mobile modals, so it must remain readable in constrained layouts.
+// PlayerPanel appears in the desktop side column and inside a mobile modal.
 function PlayerPanel({ perso, inventory }) {
-  const icon = getCharacterIcon(perso);
-
   return (
-    <div className="card card-charac player-panel">
-      <div className="card-body">
-        <article className="d-flex justify-content-sm-evenly player-panel-content">
-          <section className="player-panel-stats">
-            <h4 className="player-panel-title">{perso.name}</h4>
-            <h5 className="player-panel-subtitle">{perso.type}</h5>
-            <p className="card-text">C : {perso.constitution}</p>
-            <p className="card-text">D : {perso.dexterite}</p>
-            <p className="card-text">I : {perso.intelligence}</p>
-          </section>
-
-          {icon ? (
-            <section className="d-flex justify-content-center align-items-center w-50">
-              <FontAwesomeIcon className="w-50 h-50" icon={icon} />
-            </section>
-          ) : null}
-        </article>
-      </div>
+    <div className="panel player-panel">
+      <header className="player-panel-header">
+        <span className="player-panel-emblem">
+          <CharacterIcon character={perso} />
+        </span>
+        <div>
+          <h2 className="player-panel-name">{perso.name}</h2>
+          <p className="player-panel-role">{perso.type}</p>
+        </div>
+      </header>
+      <StatBars character={perso} />
       <InventoryList inventory={inventory} />
     </div>
   );

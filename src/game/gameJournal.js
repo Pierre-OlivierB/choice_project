@@ -1,6 +1,4 @@
-function getPlayerName(player) {
-  return player?.name || player?.nom || player?.prenom || "Inconnu";
-}
+import { getPlayerName } from "./character.js";
 
 // Stats are computed from histories instead of stored separately so save files
 // cannot drift from the displayed journal.
@@ -30,10 +28,10 @@ export function formatGameJournal({
     "",
     "Statistiques",
     `Personnage : ${getPlayerName(perso)}`,
-    `Etapes narratives : ${stats.storyStepCount}`,
+    `Étapes narratives : ${stats.storyStepCount}`,
     `Jets de D100 : ${stats.rollCount}`,
-    `Reussites : ${stats.successCount}`,
-    `Echecs : ${stats.failureCount}`,
+    `Réussites : ${stats.successCount}`,
+    `Échecs : ${stats.failureCount}`,
     `Objets : ${inventory.length ? inventory.join(", ") : "aucun"}`,
     "",
     "Journal",
@@ -44,7 +42,7 @@ export function formatGameJournal({
       lines.push(`${index + 1}. ${step[0]}`);
     });
   } else {
-    lines.push("Aucune entree.");
+    lines.push("Aucune entrée.");
   }
 
   if (rollHistory.length) {
@@ -52,7 +50,7 @@ export function formatGameJournal({
     rollHistory.forEach((roll, index) => {
       lines.push(
         `${index + 1}. ${roll.actionLabel} : ${roll.roll}/${roll.stat} - ${
-          roll.success ? "reussite" : "echec"
+          roll.success ? "réussite" : "échec"
         }`
       );
     });

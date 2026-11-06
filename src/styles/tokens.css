@@ -1,0 +1,39 @@
+/* Design tokens: every colour, font and shadow of the game is declared here. */
+:root {
+  --ink-950: hsl(255, 12%, 5%);
+  --ink-900: hsl(255, 11%, 8%);
+  --ink-800: hsl(250, 10%, 12%);
+  --ink-700: hsl(248, 9%, 17%);
+
+  --cream-100: hsl(40, 38%, 92%);
+  --cream-300: hsl(40, 22%, 76%);
+  --cream-500: hsl(40, 12%, 58%);
+
+  --gold-200: hsl(43, 74%, 82%);
+  --gold-400: hsl(42, 58%, 62%);
+  --gold-600: hsl(40, 50%, 40%);
+  --gold-line: hsla(42, 58%, 62%, 0.28);
+  --gold-line-strong: hsla(42, 58%, 62%, 0.62);
+  --gold-glow: hsla(42, 70%, 58%, 0.3);
+  --gold-gradient: linear-gradient(135deg, var(--gold-200), var(--gold-400) 46%, var(--gold-600));
+  --gold-button: linear-gradient(180deg, var(--gold-200), var(--gold-400));
+  --gold-outline: linear-gradient(150deg, var(--gold-200), var(--gold-400) 45%, var(--gold-600) 75%, var(--gold-400));
+
+  --blue-glow: hsla(222, 50%, 26%, 0.55);
+
+  --crimson-300: hsl(355, 62%, 66%);
+  --crimson-500: hsl(355, 58%, 42%);
+  --crimson-glow: hsla(355, 66%, 46%, 0.36);
+
+  --panel-bg: hsla(252, 12%, 7%, 0.92);
+  --panel-highlight: hsla(40, 40%, 92%, 0.07);
+
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Spectral", Georgia, serif;
+
+  --shadow-panel: 0 24px 60px hsla(0, 0%, 0%, 0.55);
+  --shadow-card: 0 18px 38px hsla(0, 0%, 0%, 0.6);
+  --radius-panel: 14px;
+  --radius-card: 16px;
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+}

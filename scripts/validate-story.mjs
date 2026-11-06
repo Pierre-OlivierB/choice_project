@@ -7,58 +7,20 @@ const ids = new Set();
 const errors = [];
 const warnings = [];
 const references = [];
-const placeholderPatterns = [
-  /blabla/i,
-  /adipisicing/i,
-  /Txt qu/i,
-  /texte test/i,
-];
+const placeholderPatterns = [/blabla/i, /adipisicing/i, /Txt qu/i, /texte test/i];
 const mojibakePattern = /Ãƒ|Ã‚|ï¿½/;
+const resultPrefix = { constitution: "c", dexterite: "d", intelligence: "i" };
+const END_ACTION_STAT = "fin";
 
 function addWarning(category, message) {
   warnings.push({ category, message });
 }
 
-function addReference(from, field, value) {
-  if (Array.isArray(value)) {
-    value.forEach((target) =>
-      references.push({ from, field, target: String(target) })
-    );
-    return;
-  }
-
-  if (value && typeof value === "object") {
-    Object.values(value).forEach((target) =>
-      references.push({ from, field, target: String(target) })
-    );
-    return;
-  }
-
-  if (value !== undefined && value !== null) {
-    references.push({ from, field, target: String(value) });
-  }
-}
-
-function assertSameLength(story, fieldA, fieldB, chapterId = story.numero_chapitre) {
-  const valueA = story[fieldA];
-  const valueB = story[fieldB];
-
-  if (!Array.isArray(valueA) || !Array.isArray(valueB)) {
-    return;
-  }
-
-  if (valueA.length !== valueB.length) {
-    errors.push(
-      `Chapitre ${chapterId}: ${fieldA} et ${fieldB} n'ont pas la meme longueur.`
-    );
-  }
-}
-
 function warnEmptyText(story, field) {
-  if (story[field] !== undefined && String(story[field]).trim() === "") {
+  if (String(story[field] ?? "").trim() === "") {
     addWarning(
       story.status === "draft" ? "draft" : "blocking-soon",
-      `Chapitre ${story.numero_chapitre}: champ ${field} vide.`
+      `Chapitre ${story.id}: champ ${field} vide.`
     );
   }
 }
@@ -67,73 +29,78 @@ function warnNarrativeIssues(story) {
   const serializedStory = JSON.stringify(story);
 
   if (mojibakePattern.test(serializedStory)) {
-    addWarning(
-      "encoding",
-      `Chapitre ${story.numero_chapitre}: caracteres mal encodes detectes.`
-    );
+    addWarning("encoding", `Chapitre ${story.id}: caracteres mal encodes detectes.`);
   }
 
   if (placeholderPatterns.some((pattern) => pattern.test(serializedStory))) {
     addWarning(
       story.status === "draft" ? "draft" : "blocking-soon",
-      `Chapitre ${story.numero_chapitre}: placeholder ou texte de test detecte.`
+      `Chapitre ${story.id}: placeholder ou texte de test detecte.`
     );
   }
 
   if (story.status === "draft") {
-    addWarning("draft", `Chapitre ${story.numero_chapitre}: chapitre marque draft.`);
+    addWarning("draft", `Chapitre ${story.id}: chapitre marque draft.`);
+  }
+}
+
+// A playable action needs a text for both outcomes of the roll.
+function checkActionResults(story) {
+  if (story.status === "draft") {
+    return;
+  }
+
+  for (const { label, stat } of story.actions || []) {
+    if (stat === END_ACTION_STAT) {
+      continue;
+    }
+
+    if (!resultPrefix[stat]) {
+      errors.push(`Chapitre ${story.id}: caracteristique inconnue pour "${label}": ${stat}.`);
+      continue;
+    }
+
+    for (const outcome of ["w", "l"]) {
+      const key = `${resultPrefix[stat]}_${outcome}`;
+
+      if (!story.results?.[key]) {
+        errors.push(`Chapitre ${story.id}: texte de resultat manquant (${key}).`);
+      }
+    }
   }
 }
 
 for (const story of stories) {
-  const id = String(story.numero_chapitre);
-
-  if (ids.has(id)) {
-    errors.push(`Chapitre duplique: ${id}.`);
+  if (ids.has(story.id)) {
+    errors.push(`Chapitre duplique: ${story.id}.`);
   }
 
-  ids.add(id);
+  ids.add(story.id);
 }
 
 for (const story of stories) {
-  addReference(story.numero_chapitre, "choix", story.choix);
-  addReference(story.numero_chapitre, "choix_win", story.choix_win);
-  addReference(story.numero_chapitre, "choix_loose", story.choix_loose);
+  for (const { label, target } of story.choices || []) {
+    if (!label) {
+      errors.push(`Chapitre ${story.id}: choix sans libelle vers ${target}.`);
+    }
 
-  if (story.btn_choix_sup) {
-    addReference(
-      story.numero_chapitre,
-      "btn_choix_sup[0]",
-      story.btn_choix_sup[0]
-    );
+    references.push({ from: story.id, target });
   }
 
-  assertSameLength(story, "choix", "btn_choix");
-  assertSameLength(story, "choix_win", "btn_choix_win");
-  assertSameLength(story, "choix_loose", "btn_choix_loose");
-
-  if (story.actions) {
-    assertSameLength(story.actions, "btn", "carac", story.numero_chapitre);
-  }
-
-  warnEmptyText(story, "card_context");
-  warnEmptyText(story, "mj_question");
-  warnEmptyText(story, "txt");
+  checkActionResults(story);
+  warnEmptyText(story, "context");
+  warnEmptyText(story, "question");
   warnNarrativeIssues(story);
 }
 
-for (const reference of references) {
-  if (!ids.has(reference.target)) {
-    errors.push(
-      `Chapitre ${reference.from}: ${reference.field} pointe vers ${reference.target}, qui n'existe pas.`
-    );
+for (const { from, target } of references) {
+  if (!ids.has(target)) {
+    errors.push(`Chapitre ${from}: un choix pointe vers ${target}, qui n'existe pas.`);
   }
 }
 
-const referencedIds = new Set(references.map((reference) => reference.target));
-const unreferenced = [...ids].filter(
-  (id) => id !== "0" && !referencedIds.has(id)
-);
+const referencedIds = new Set(references.map(({ target }) => target));
+const unreferenced = [...ids].filter((id) => id !== "0" && !referencedIds.has(id));
 
 if (unreferenced.length > 0) {
   addWarning("info", `Chapitres non references: ${unreferenced.join(", ")}.`);
@@ -142,11 +109,7 @@ if (unreferenced.length > 0) {
 console.log(`Scenario: ${stories.length} chapitres analyses.`);
 
 const warningsByCategory = warnings.reduce((groups, warning) => {
-  if (!groups[warning.category]) {
-    groups[warning.category] = [];
-  }
-
-  groups[warning.category].push(warning.message);
+  (groups[warning.category] ||= []).push(warning.message);
   return groups;
 }, {});
 

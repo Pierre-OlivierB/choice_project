@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useReducer } from "react";
-import { getActionFromResultKey } from "../game/resolveAction";
+import { getResultKey, rollD100 } from "../game/resolveAction";
 import { writeGameSnapshot } from "../game/saveGame";
 import {
   GAME_ACTIONS,
@@ -10,6 +10,7 @@ import {
 import {
   createStoryIndex,
   getDisplayChoices,
+  getResultText,
   getStoryById,
 } from "../game/storyNavigation";
 
@@ -24,19 +25,6 @@ export function useGameState({ perso, initialGameState, stories }) {
   const [state, dispatch] = useReducer(gameReducer, initialState);
   const currentStory = getStoryById(storyIndex, state.choice);
 
-  const handleDiceRollComplete = useCallback(() => {
-    // The background changes after the dice resolution because the current
-    // chapter then represents the new narrative situation.
-    dispatch({
-      type: GAME_ACTIONS.UPDATE_BACKGROUND,
-      payload: { chapterId: state.choice },
-    });
-  }, [state.choice]);
-
-  const finishGame = useCallback(() => {
-    dispatch({ type: GAME_ACTIONS.FINISH_GAME });
-  }, []);
-
   const recordStoryStep = useCallback((text, chapterId, player) => {
     dispatch({
       type: GAME_ACTIONS.RECORD_STORY_STEP,
@@ -44,45 +32,46 @@ export function useGameState({ perso, initialGameState, stories }) {
     });
   }, []);
 
-  const recordDiceRoll = useCallback((roll) => {
-    dispatch({
-      type: GAME_ACTIONS.RECORD_DICE_ROLL,
-      payload: roll,
-    });
-  }, []);
-
   function activateChoice(displayChoice) {
-    if (displayChoice.requiresConfirmation) {
-      dispatch({
-        type: GAME_ACTIONS.OPEN_CONFIRMATION,
-        payload: displayChoice,
-      });
-      return;
-    }
-
     dispatch({
-      type: GAME_ACTIONS.GO_TO_CHAPTER,
+      type: displayChoice.requiresConfirmation
+        ? GAME_ACTIONS.OPEN_CONFIRMATION
+        : GAME_ACTIONS.GO_TO_CHAPTER,
       payload: displayChoice,
     });
   }
 
-  function confirmPendingChoice() {
-    dispatch({ type: GAME_ACTIONS.CONFIRM_CHOICE });
+  function selectAction(selectedAction) {
+    dispatch({ type: GAME_ACTIONS.SELECT_ACTION, payload: selectedAction });
   }
 
-  function resolveActionResult(actionResolution) {
-    const resultKey = actionResolution.resultKey;
-    const resultText = currentStory?.[resultKey]?.[0];
+  function rollDice() {
+    dispatch({
+      type: GAME_ACTIONS.ROLL_DICE,
+      payload: { background: currentStory?.background, roll: rollD100() },
+    });
+  }
+
+  function continueAfterRoll() {
+    const { pendingRoll } = state;
+    const resultKey = getResultKey({
+      characteristic: pendingRoll?.characteristic,
+      success: pendingRoll?.success,
+    });
 
     dispatch({
       type: GAME_ACTIONS.RESOLVE_ACTION_RESULT,
       payload: {
-        action: getActionFromResultKey(resultKey),
-        isReadingChapter: actionResolution.isReadingChapter,
-        previousActionText: resultText,
-        win: resultKey.endsWith("_w"),
+        grantsItem: currentStory?.grantsItem,
+        previousActionText: getResultText(currentStory, resultKey),
       },
     });
+  }
+
+  function finishGame() {
+    // End actions bypass the dice and record the final context directly.
+    recordStoryStep(currentStory?.context, "fin", perso);
+    dispatch({ type: GAME_ACTIONS.FINISH_GAME });
   }
 
   const displayChoices = useMemo(
@@ -92,8 +81,9 @@ export function useGameState({ perso, initialGameState, stories }) {
         win: state.win,
         action: state.action,
         choiceAlreadyDone: state.choiceAlreadyDone,
+        inventory: state.inventory,
       }),
-    [currentStory, state.action, state.choiceAlreadyDone, state.win]
+    [currentStory, state.action, state.choiceAlreadyDone, state.inventory, state.win]
   );
 
   useEffect(() => {
@@ -108,29 +98,18 @@ export function useGameState({ perso, initialGameState, stories }) {
     writeGameSnapshot(createSaveableGameState(state));
   }, [state]);
 
-  useEffect(() => {
-    // Page changes can otherwise leave the player scrolled into the previous
-    // chapter or footer on mobile.
-    window.requestAnimationFrame(() => {
-      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-      document.documentElement.scrollTop = 0;
-      document.body.scrollTop = 0;
-    });
-  }, [state.choice, state.isReadingChapter, state.storyEnd]);
-
   return {
     activateChoice,
     closeConfirmation: () => dispatch({ type: GAME_ACTIONS.CLOSE_CONFIRMATION }),
     closeJournal: () => dispatch({ type: GAME_ACTIONS.CLOSE_JOURNAL }),
-    confirmPendingChoice,
+    confirmPendingChoice: () => dispatch({ type: GAME_ACTIONS.CONFIRM_CHOICE }),
+    continueAfterRoll,
     currentStory,
     displayChoices,
     finishGame,
-    handleDiceRollComplete,
     openJournal: () => dispatch({ type: GAME_ACTIONS.OPEN_JOURNAL }),
-    recordDiceRoll,
-    recordStoryStep,
-    resolveActionResult,
+    rollDice,
+    selectAction,
     state,
   };
 }

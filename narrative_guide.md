@@ -27,31 +27,49 @@ Une correction non acceptable :
 
 Un chapitre est un objet dans `src/contents/chapter/stories.json`.
 
-Champs courants :
+Champs d'un chapitre :
 
-- `numero_chapitre` : id du chapitre sous forme de chaine.
-- `status` : optionnel, par exemple `draft` pour un chapitre brouillon.
-- `card_context` : contexte affiche au joueur.
-- `mj_question` : question ou relance.
-- `txt` : texte initial ou texte de fallback.
-- `choix` : ids des chapitres cibles.
-- `btn_choix` : textes des choix classiques.
-- `actions.btn` : libelles des actions.
-- `actions.carac` : caracteristiques associees aux actions.
-- `c_w`, `c_l`, `d_w`, `d_l`, `i_w`, `i_l` : resultats narratifs.
+- `id` : id du chapitre sous forme de chaine.
+- `status` : optionnel, `draft` pour un chapitre brouillon.
+- `context` : contexte affiche pendant le choix de l'action.
+- `question` : question ou relance.
+- `intro` : texte d'ouverture du chapitre de depart.
+- `background` : optionnel, decor active au moment du jet (`tv`, `car`).
+- `grantsItem` : optionnel, objet obtenu une fois le resultat lu.
+- `actions` : actions possibles, voir plus bas.
+- `results` : texte de chaque issue (`c_w`, `c_l`, `d_w`, `d_l`, `i_w`, `i_l`).
+- `resultEnding` : optionnel, texte commun ajoute a toutes les issues.
+- `choices` : suites possibles, voir plus bas.
+
+Une ligne vide (`\n\n`) dans un texte cree un nouveau paragraphe.
 
 ## Transitions
 
-Les tableaux de transition doivent rester alignes.
+Chaque choix porte son libelle, sa cible et ses conditions :
 
 ```json
 {
-  "choix": ["1", "2"],
-  "btn_choix": ["Regarder autour de toi", "Fouiller tes poches"]
+  "choices": [
+    { "label": "Fouiller le bureau", "target": "10" },
+    { "label": "Utiliser la clef", "target": "19", "type": "item", "requiresItem": "clef", "consumesItem": "clef" },
+    { "label": "Affronter l'inconnu", "target": "27", "on": "failure" }
+  ]
 }
 ```
 
-Ici, le bouton `Regarder autour de toi` mene au chapitre `1`, et `Fouiller tes poches` mene au chapitre `2`.
+Un choix est masque des que sa cible a ete visitee. Champs optionnels :
+
+- `on` : `success` ou `failure`, selon le dernier jet.
+- `onAction` : `c`, `d` ou `i`, selon la caracteristique du dernier jet.
+- `requiresItem` : objet necessaire.
+- `requiresVisited` : chapitre deja visite necessaire.
+- `repeatable` : le choix reste propose et n'entre pas dans l'historique.
+- `consumesItem` : objet retire en faisant ce choix.
+- `alsoVisits` : chapitres consideres comme visites avec celui-ci.
+- `type` : aspect de la carte (`item`, `special`).
+- `sketch` : dessin de la carte, a choisir dans `src/contents/events/sketches.js`.
+
+Un libelle est le nom d'une carte : 24 caracteres maximum, verifies par un test.
 
 ## Diagrammes De Decision
 
@@ -64,7 +82,7 @@ Ils peuvent aider a comprendre les branches, mais ils ne remplacent pas `stories
 
 - que le diagramme et le JSON racontent le meme chemin ;
 - que chaque cible de choix existe ;
-- que les boutons et les ids restent alignes ;
+- que les conditions des choix sont toujours justes ;
 - que `npm run validate:story` passe.
 
 Statut sprint 3 :
@@ -79,12 +97,13 @@ Chaque action associe un libelle joueur a une caracteristique.
 
 ```json
 {
-  "actions": {
-    "btn": ["Fouiller rapidement (d)."],
-    "carac": ["dexterite"]
-  }
+  "actions": [{ "label": "Fouiller vite", "stat": "dexterite", "sketch": "drawer" }]
 }
 ```
+
+La caracteristique est affichee sur la carte : ne pas la repeter dans le libelle.
+
+Chaque action et chaque choix jouables ont un champ `sketch` : le dessin doit montrer ce que fait le joueur a ce moment-la. Un test verifie qu'il existe et que deux actions d'un meme chapitre n'ont jamais le meme dessin : une action posee a des traits fins et peu de mouvement, une action rapide des traits de vitesse et des objets en mouvement.
 
 Les caracteristiques reconnues sont :
 
@@ -106,13 +125,11 @@ Les resultats sont lus avec les cles suivantes :
 
 La clef est l'objet principal actuel.
 
-- Elle est obtenue apres le chapitre `10`.
-- Elle est utilisable autour de la porte, chapitres `15` et `16`.
-- Elle est consommee apres le chapitre `19`.
+- Elle est obtenue a la fin du chapitre `10`, une fois le resultat lu (`grantsItem`).
+- Elle est utilisable autour de la porte, chapitres `15` et `16` (`requiresItem`).
+- Elle est consommee en choisissant de l'utiliser (`consumesItem`).
 
-Ces ids sont centralises dans `src/game/storyConstants.js`.
-
-Pour un futur objet, eviter d'ajouter directement des conditions dans les composants React. Preferer une fonction nommee dans `src/game/inventory.js` ou une future table de preconditions.
+Pour un futur objet, utiliser ces memes champs dans `stories.json` plutot qu'une condition dans le code.
 
 ## Chapitres Non References
 
@@ -148,6 +165,7 @@ Avant de terminer une passe narrative :
 - aucun placeholder involontaire ne reste dans le parcours principal ;
 - les accents sont lisibles ;
 - le ton reste en tutoiement ;
+- aucun accord ne suppose le genre du personnage ;
 - `npm run validate:story` passe.
 
 ## Commandes
